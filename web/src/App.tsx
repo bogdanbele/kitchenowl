@@ -7,6 +7,8 @@ import Login from "./routes/Login";
 import Recipes from "./routes/Recipes";
 import Recipe from "./routes/Recipe";
 import ShoppingList from "./routes/ShoppingList";
+import RecipeEdit from "./routes/RecipeEdit";
+import { ThemeToggle } from "./components/ThemeToggle";
 
 const SECTIONS = [
   { path: "shopping", label: "Shopping list" },
@@ -53,8 +55,14 @@ function Shell() {
           ))}
         </nav>
 
-        <div className="mt-auto hidden px-6 md:block">
+        <div className="px-6 pb-6">
           <div className="rule pt-4">
+            <p className="label">Theme</p>
+            <div className="mt-1 -ml-1.5">
+              <ThemeToggle />
+            </div>
+          </div>
+          <div className="rule mt-4 pt-4">
             <p className="label">Signed in</p>
             <p className="mt-1 text-sm">{user?.name}</p>
             <button
@@ -102,7 +110,9 @@ export default function App() {
       <Route path="/household/:householdId" element={<Shell />}>
         <Route path="shopping" element={<ShoppingList />} />
         <Route path="recipes" element={<Recipes />} />
+        <Route path="recipes/new" element={<RecipeEdit />} />
         <Route path="recipes/:recipeId" element={<Recipe />} />
+        <Route path="recipes/:recipeId/edit" element={<RecipeEdit />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

@@ -57,12 +57,20 @@ export default function Recipe() {
 
   return (
     <article className="mx-auto max-w-5xl">
-      <Link
-        to={`/household/${householdId}/recipes`}
-        className="label transition hover:text-accent"
-      >
-        ← The collection
-      </Link>
+      <div className="flex items-center justify-between">
+        <Link
+          to={`/household/${householdId}/recipes`}
+          className="label transition hover:text-accent"
+        >
+          ← The collection
+        </Link>
+        <Link
+          to={`/household/${householdId}/recipes/${recipe.id}/edit`}
+          className="label transition hover:text-accent"
+        >
+          Edit
+        </Link>
+      </div>
 
       <header className="mt-5 mb-8">
         <h1 className="text-5xl font-semibold tracking-tight text-balance">{recipe.name}</h1>

@@ -11,7 +11,9 @@
    radio.bonello.uk so this reads as part of the same set of sites: warm paper
    under near-black ink, one loud accent, an editorial serif for display, and
    small mono labels in caps. KitchenOwl's green survives only as the "in your
-   basket" state, where a colour that means done is worth more than a brand. */
+   basket" state, where a colour that means done is worth more than a brand.
+
+   Light is the base, matching the Archivist. */
 @theme {
   --color-paper: #f3efe7;
   --color-paper-deep: #e9e3d8;
@@ -31,9 +33,19 @@
   --radius-card: 0.5rem;
 }
 
-/* Radio's night side of the same house: near-black, the accent unchanged. */
+/* Radio's night side of the same house. Declared once and applied from two
+   places: the OS preference, and an explicit choice that overrides it.
+   The explicit choice has to win in both directions — someone on a dark OS
+   asking for light gets light. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root[data-theme="dark"],
+:root[data-theme="system"] {
+  color-scheme: light dark;
+}
+
 @media (prefers-color-scheme: dark) {
-  @theme {
+  :root[data-theme="system"] {
     --color-paper: #100e0c;
     --color-paper-deep: #17150f;
     --color-ink: #ece6dc;
@@ -46,8 +58,20 @@
   }
 }
 
-html {
-  color-scheme: light dark;
+:root[data-theme="dark"] {
+  --color-paper: #100e0c;
+  --color-paper-deep: #17150f;
+  --color-ink: #ece6dc;
+  --color-muted: #a09a91;
+  --color-faint: #6f6a63;
+  --color-line: rgba(236, 230, 220, 0.22);
+  --color-hairline: rgba(236, 230, 220, 0.1);
+  --color-accent-soft: rgba(239, 75, 82, 0.16);
+  --color-done: #7fb98f;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
 }
 
 body {
@@ -70,6 +94,11 @@ h3 {
 
 .rule {
   @apply border-t border-hairline;
+}
+
+.field {
+  @apply w-full border-b border-hairline bg-transparent py-2 outline-none transition
+         placeholder:text-faint focus:border-accent;
 }
 
 /* Recipe steps. The backend now delivers these as a real numbered list, and an

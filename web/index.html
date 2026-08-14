@@ -1,10 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="system">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>web</title>
+    <meta name="theme-color" content="#f3efe7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#100e0c" media="(prefers-color-scheme: dark)" />
+    <title>KitchenOwl</title>
+    <script>
+      // Applied before first paint, and deliberately not in React: by the time
+      // a component could set this, the browser has already painted the default
+      // theme, and a dark-mode reload flashes paper-white.
+      try {
+        const stored = localStorage.getItem("kitchenowl.theme");
+        document.documentElement.dataset.theme =
+          stored === "light" || stored === "dark" ? stored : "system";
+      } catch {
+        // Private mode with storage blocked: the OS preference still applies.
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

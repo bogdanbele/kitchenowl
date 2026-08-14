@@ -74,8 +74,19 @@ export default function Recipes() {
 
   return (
     <div className="mx-auto max-w-3xl">
-      <p className="label">The collection</p>
-      <h1 className="mt-1 mb-8 text-4xl font-semibold tracking-tight">Recipes</h1>
+      <div className="flex items-end justify-between">
+        <div>
+          <p className="label">The collection</p>
+          <h1 className="mt-1 text-4xl font-semibold tracking-tight">Recipes</h1>
+        </div>
+        <Link
+          to={`/household/${householdId}/recipes/new`}
+          className="mb-1 rounded-card bg-accent px-4 py-2 text-sm font-medium text-white transition hover:brightness-95"
+        >
+          New recipe
+        </Link>
+      </div>
+      <div className="mb-8" />
 
       <input
         value={query}
