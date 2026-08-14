@@ -7,7 +7,7 @@ import { api } from "../api/client";
 import type { Recipe as RecipeModel, RecipeItem, Shoppinglist } from "../api/types";
 import { Photo } from "../components/Photo";
 import { formatTime, scaleAmount } from "../lib/amount";
-import { Clock, Link as LinkIcon, Sparkles, Users } from "lucide-react";
+import { ChefHat, Clock, Link as LinkIcon, Sparkles, Users } from "lucide-react";
 
 /** "panlasangpinoy.com" from a URL, or the raw string if it is not one. */
 function sourceLabel(source: string): string {
@@ -99,12 +99,22 @@ export default function Recipe() {
         >
           ← The collection
         </Link>
-        <Link
-          to={`/household/${householdId}/recipes/${recipe.id}/edit`}
-          className="label transition hover:text-accent"
-        >
-          Edit
-        </Link>
+        <div className="flex items-center gap-5">
+          {recipe.description?.trim() && (
+            <Link
+              to={`/household/${householdId}/recipes/${recipe.id}/cook?servings=${current}`}
+              className="inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-3 py-1.5 text-xs font-medium text-accent transition hover:brightness-95"
+            >
+              <ChefHat size={14} /> Cook this
+            </Link>
+          )}
+          <Link
+            to={`/household/${householdId}/recipes/${recipe.id}/edit`}
+            className="label transition hover:text-accent"
+          >
+            Edit
+          </Link>
+        </div>
       </div>
 
       <header className="mt-6 mb-10">

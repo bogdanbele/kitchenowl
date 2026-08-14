@@ -26,6 +26,7 @@ const Expenses = lazy(() => import("./routes/Expenses"));
 const HouseholdSettings = lazy(() => import("./routes/HouseholdSettings"));
 const NotFound = lazy(() => import("./routes/NotFound"));
 const Settings = lazy(() => import("./routes/Settings"));
+const Cooking = lazy(() => import("./routes/Cooking"));
 import { ThemeToggle } from "./components/ThemeToggle";
 
 interface Section {
@@ -193,6 +194,16 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<HouseholdRedirect />} />
+      {/* Outside the shell: cooking mode takes the whole screen, and the nav
+          bars are exactly what you do not want under a wet finger. */}
+      <Route
+        path="/household/:householdId/recipes/:recipeId/cook"
+        element={
+          <Suspense fallback={<div className="h-screen animate-pulse bg-paper-deep" />}>
+            <Cooking />
+          </Suspense>
+        }
+      />
       <Route path="/household/:householdId" element={<Shell />}>
         <Route path="shopping" element={<ShoppingList />} />
         <Route path="recipes" element={<Recipes />} />
