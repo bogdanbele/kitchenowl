@@ -1,0 +1,17 @@
+# Shell scripts must keep LF endings even when checked out on Windows.
+#
+# Without this, a Windows clone with core.autocrlf=true rewrites entrypoint.sh
+# with CRLF, the shebang becomes "#!/bin/bash\r", and the image builds happily
+# and then dies at startup with:
+#
+#   exec ./entrypoint.sh: no such file or directory
+#
+# which points at a missing file rather than at the line ending that is the
+# actual cause.
+*.sh text eol=lf
+entrypoint.sh text eol=lf
+
+# Same reasoning: these are read inside Linux containers.
+Dockerfile text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
