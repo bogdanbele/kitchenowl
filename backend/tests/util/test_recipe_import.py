@@ -213,3 +213,36 @@ def testUntitledRecipeIsNotImported():
 
 def testPageWithoutStructuredData():
     assert recipe_import.recipe_from_jsonld("<html><body>Hi</body></html>") is None
+
+
+def testBareVerbLabelBecomesAHeadingNotAStep():
+    """Seen on kawalingpinoy.com: every other step was the single word "Boil"."""
+    markdown = recipe_import.instructions_to_markdown(
+        [
+            "Rinse pork ribs and drain well.",
+            "Boil",
+            "In a pot over medium heat, combine pork and enough water to cover.",
+            "Simmer",
+            "Once broth clears, add tomatoes, onion, and fish sauce and lower the heat.",
+        ]
+    )
+    assert markdown == (
+        "1. Rinse pork ribs and drain well.\n\n"
+        "## Boil\n\n"
+        "1. In a pot over medium heat, combine pork and enough water to cover.\n\n"
+        "## Simmer\n\n"
+        "1. Once broth clears, add tomatoes, onion, and fish sauce and lower the heat."
+    )
+
+
+def testShortLineWithNothingUnderItStaysAStep():
+    """Otherwise a recipe written in terse lines renders as headings and no steps."""
+    assert recipe_import.instructions_to_markdown(["Boil water.", "Serve"]) == (
+        "1. Boil water.\n2. Serve"
+    )
+
+
+def testShortLineFollowedByAnotherShortLineStaysAStep():
+    assert recipe_import.instructions_to_markdown(["Chop the onion", "Fry it"]) == (
+        "1. Chop the onion\n2. Fry it"
+    )

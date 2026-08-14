@@ -33,10 +33,25 @@ _STEP_PREFIX = re.compile(r"^\s*(step\s*)?\d{1,2}\s*[.):\-]\s+|^\s*step\s+\d{1,2
 
 # A heading inside instructions ends in a colon — but so does plenty of prose
 # ("Add the flour, then whisk hard:"). A heading is also short and label-like, so
-# require few words and no clause punctuation. Getting this wrong in the generous
-# direction turns a cooking step into a section title and silently drops it.
+# require few words and no clause punctuation.
 _HEADING = re.compile(r"^[^.!?,;]{2,48}:$")
 _HEADING_MAX_WORDS = 5
+
+# Some sites label each step with a bare verb and put the instruction on the
+# next line, which arrives as:
+#
+#     Boil
+#     In a pot over medium heat, combine pork and enough water to cover.
+#
+# Numbering both gives a list where every other entry is a single word. A line
+# that short, with no punctuation and a real sentence under it, is a label for
+# what follows rather than an instruction of its own.
+#
+# The trade: a genuinely terse step ("Serve") becomes a heading. The text is
+# still shown either way, so the cost is styling, where the cost of the old
+# behaviour was a list that read as broken.
+_LABEL_MAX_WORDS = 3
+_SENTENCE_MIN_WORDS = 5
 
 _YIELD_NUMBER = re.compile(r"\d+(?:[.,]\d+)?")
 
@@ -101,13 +116,23 @@ def instructions_to_markdown(instructions: str | list[str] | None) -> str:
     if not lines:
         return ""
 
-    def is_heading(line: str) -> bool:
-        return bool(_HEADING.match(line)) and len(line.split()) <= _HEADING_MAX_WORDS
+    def is_heading(index: int) -> bool:
+        line = lines[index]
+        if _HEADING.match(line) and len(line.split()) <= _HEADING_MAX_WORDS:
+            return True
+
+        # A bare label only counts as one when there is a real instruction under
+        # it. Without that test, a recipe written entirely in short lines would
+        # come out as headings with no steps at all.
+        if re.search(r"[.!?:,;]", line) or len(line.split()) > _LABEL_MAX_WORDS:
+            return False
+        following = lines[index + 1] if index + 1 < len(lines) else ""
+        return len(following.split()) >= _SENTENCE_MIN_WORDS
 
     rendered: list[str] = []
     step = 0
-    for line in lines:
-        if is_heading(line):
+    for index, line in enumerate(lines):
+        if is_heading(index):
             # A new section restarts the numbering, the way a recipe card does.
             rendered.append(f"\n## {line.rstrip(':')}\n")
             step = 0
