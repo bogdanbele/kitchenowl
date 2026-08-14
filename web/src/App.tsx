@@ -10,13 +10,15 @@ import ShoppingList from "./routes/ShoppingList";
 import RecipeEdit from "./routes/RecipeEdit";
 import Planner from "./routes/Planner";
 import Expenses from "./routes/Expenses";
+import HouseholdSettings from "./routes/HouseholdSettings";
 import { ThemeToggle } from "./components/ThemeToggle";
 
 const SECTIONS = [
-  { path: "shopping", label: "Shopping list" },
-  { path: "recipes", label: "Recipes" },
-  { path: "planner", label: "Meal planner" },
-  { path: "expenses", label: "Expenses" },
+  { path: "shopping", label: "Shopping list", short: "Shopping" },
+  { path: "recipes", label: "Recipes", short: "Recipes" },
+  { path: "planner", label: "Meal planner", short: "Planner" },
+  { path: "expenses", label: "Expenses", short: "Expenses" },
+  { path: "household", label: "Household", short: "Home" },
 ];
 
 function Shell() {
@@ -30,7 +32,20 @@ function Shell() {
 
   return (
     <div className="min-h-dvh md:grid md:grid-cols-[15rem_1fr]">
-      <aside className="border-hairline md:min-h-dvh md:border-r">
+      {/* Phones get a title bar and a bottom bar; the sidebar is desktop only.
+          Stacked, the sidebar pushed the shopping list a screen and a half down
+          — every visit began with a scroll past navigation you had just used. */}
+      <header className="sticky top-0 z-10 flex items-center justify-between border-b border-hairline bg-paper/90 px-5 py-3 backdrop-blur md:hidden">
+        <div>
+          <p className="label">{household?.name ?? "Household"}</p>
+          <p className="font-display text-lg leading-tight font-semibold">
+            Kitchen<span className="text-accent">Owl</span>
+          </p>
+        </div>
+        <ThemeToggle />
+      </header>
+
+      <aside className="hidden border-hairline md:block md:min-h-dvh md:border-r">
         <div className="px-6 py-6">
           <p className="label">{household?.name ?? "Household"}</p>
           <p className="mt-2 font-display text-2xl leading-none font-semibold tracking-tight">
@@ -79,7 +94,28 @@ function Shell() {
         </div>
       </aside>
 
-      <main className="px-6 py-8 md:px-10 md:py-12">
+      {/* Fixed to the bottom, where a thumb is. env(safe-area-inset-bottom)
+          keeps the labels clear of the home indicator on an iPhone. */}
+      <nav
+        className="fixed inset-x-0 bottom-0 z-10 flex border-t border-hairline bg-paper/95 backdrop-blur md:hidden"
+        style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+      >
+        {SECTIONS.map((section) => (
+          <NavLink
+            key={section.path}
+            to={`/household/${householdId}/${section.path}`}
+            className={({ isActive }) =>
+              `flex-1 py-3 text-center font-mono text-[10px] tracking-[0.1em] uppercase transition ${
+                isActive ? "text-accent" : "text-faint"
+              }`
+            }
+          >
+            {section.short}
+          </NavLink>
+        ))}
+      </nav>
+
+      <main className="px-5 pt-6 pb-24 md:px-10 md:py-12 md:pb-12">
         <Outlet />
       </main>
     </div>
@@ -119,6 +155,7 @@ export default function App() {
         <Route path="recipes/:recipeId/edit" element={<RecipeEdit />} />
         <Route path="planner" element={<Planner />} />
         <Route path="expenses" element={<Expenses />} />
+        <Route path="household" element={<HouseholdSettings />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
