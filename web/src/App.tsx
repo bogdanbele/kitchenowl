@@ -1,4 +1,4 @@
-import { Navigate, Outlet, Route, Routes, NavLink, useParams } from "react-router-dom";
+import { Navigate, NavLink, Outlet, Route, Routes, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "./api/client";
 import type { Household } from "./api/types";
@@ -6,36 +6,68 @@ import { useAuth } from "./auth";
 import Login from "./routes/Login";
 import Recipes from "./routes/Recipes";
 import Recipe from "./routes/Recipe";
+import ShoppingList from "./routes/ShoppingList";
+
+const SECTIONS = [
+  { path: "shopping", label: "Shopping list" },
+  { path: "recipes", label: "Recipes" },
+];
 
 function Shell() {
   const { householdId } = useParams();
   const { user, signOut } = useAuth();
-
-  const nav = ({ isActive }: { isActive: boolean }) =>
-    `rounded-lg px-3 py-1.5 text-sm font-medium transition ${
-      isActive ? "bg-accent-50 text-accent-700 dark:bg-accent-700/20 dark:text-accent-300" : "text-ink-soft hover:text-ink"
-    }`;
+  const { data: households } = useQuery({
+    queryKey: ["households"],
+    queryFn: () => api<Household[]>("/household"),
+  });
+  const household = households?.find((h) => String(h.id) === householdId);
 
   return (
-    <div className="min-h-dvh">
-      <header className="sticky top-0 z-10 border-b border-line bg-canvas/85 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center gap-6 px-6 py-3">
-          <span className="font-semibold tracking-tight">KitchenOwl</span>
-          <nav className="flex gap-1">
-            <NavLink to={`/household/${householdId}/recipes`} className={nav}>
-              Recipes
-            </NavLink>
-          </nav>
-          <button
-            onClick={signOut}
-            className="ml-auto text-sm text-ink-soft transition hover:text-ink"
-            title={user?.name}
-          >
-            Sign out
-          </button>
+    <div className="min-h-dvh md:grid md:grid-cols-[15rem_1fr]">
+      <aside className="border-hairline md:min-h-dvh md:border-r">
+        <div className="px-6 py-6">
+          <p className="label">{household?.name ?? "Household"}</p>
+          <p className="mt-2 font-display text-2xl leading-none font-semibold tracking-tight">
+            Kitchen<span className="text-accent">Owl</span>
+          </p>
         </div>
-      </header>
-      <main className="mx-auto max-w-7xl px-6 py-8">
+
+        <nav className="px-3 pb-6">
+          {SECTIONS.map((section, index) => (
+            <NavLink
+              key={section.path}
+              to={`/household/${householdId}/${section.path}`}
+              className={({ isActive }) =>
+                `flex items-center gap-3 rounded-card px-3 py-2 text-sm transition ${
+                  isActive ? "bg-accent-soft text-accent" : "text-muted hover:text-ink"
+                }`
+              }
+            >
+              {/* The numbered index is lifted from the Archivist's sidebar: it
+                  turns a list of links into a table of contents. */}
+              <span className="font-mono text-[10px] tracking-widest opacity-70">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              {section.label}
+            </NavLink>
+          ))}
+        </nav>
+
+        <div className="mt-auto hidden px-6 md:block">
+          <div className="rule pt-4">
+            <p className="label">Signed in</p>
+            <p className="mt-1 text-sm">{user?.name}</p>
+            <button
+              onClick={signOut}
+              className="mt-2 font-mono text-[10px] tracking-[0.14em] text-faint uppercase transition hover:text-accent"
+            >
+              Sign out
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <main className="px-6 py-8 md:px-10 md:py-12">
         <Outlet />
       </main>
     </div>
@@ -50,10 +82,10 @@ function HouseholdRedirect() {
   });
 
   if (isPending) return null;
-  if (error) return <p className="p-6 text-red-600">{(error as Error).message}</p>;
+  if (error) return <p className="p-6 text-accent">{(error as Error).message}</p>;
   if (!data?.length) return <p className="p-6">You are not a member of any household yet.</p>;
 
-  return <Navigate to={`/household/${data[0].id}/recipes`} replace />;
+  return <Navigate to={`/household/${data[0].id}/shopping`} replace />;
 }
 
 export default function App() {
@@ -68,6 +100,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<HouseholdRedirect />} />
       <Route path="/household/:householdId" element={<Shell />}>
+        <Route path="shopping" element={<ShoppingList />} />
         <Route path="recipes" element={<Recipes />} />
         <Route path="recipes/:recipeId" element={<Recipe />} />
       </Route>

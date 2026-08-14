@@ -1,33 +1,48 @@
 @import "tailwindcss";
 
-/* The palette keeps KitchenOwl's green as the accent but stops using it for
-   every surface, which is what made the Flutter build read as one flat wash of
-   colour. Surfaces are near-neutral with a trace of the accent's hue, so the
-   green reads as emphasis rather than as the background. */
+/* Self-hosted rather than fetched from a CDN: this app is run on a home server
+   that may have no outbound internet, and a recipe you cannot read because
+   Google Fonts is unreachable is a poor trade for saving a few kilobytes. */
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/jetbrains-mono";
+
+/* The palette and type are lifted from archivist.bonello.uk and
+   radio.bonello.uk so this reads as part of the same set of sites: warm paper
+   under near-black ink, one loud accent, an editorial serif for display, and
+   small mono labels in caps. KitchenOwl's green survives only as the "in your
+   basket" state, where a colour that means done is worth more than a brand. */
 @theme {
-  --color-accent-50: oklch(0.96 0.03 152);
-  --color-accent-100: oklch(0.92 0.06 152);
-  --color-accent-300: oklch(0.8 0.11 152);
-  --color-accent-500: oklch(0.66 0.14 152);
-  --color-accent-600: oklch(0.58 0.13 152);
-  --color-accent-700: oklch(0.48 0.11 152);
+  --color-paper: #f3efe7;
+  --color-paper-deep: #e9e3d8;
+  --color-ink: #1b1916;
+  --color-muted: #726c64;
+  --color-faint: #9c958b;
+  --color-line: rgba(27, 25, 22, 0.28);
+  --color-hairline: rgba(27, 25, 22, 0.12);
+  --color-accent: #ef4b52;
+  --color-accent-soft: rgba(239, 75, 82, 0.12);
+  --color-done: #4c8a5f;
 
-  --color-canvas: oklch(0.99 0.004 152);
-  --color-surface: oklch(1 0 0);
-  --color-line: oklch(0.91 0.006 152);
-  --color-ink: oklch(0.24 0.012 152);
-  --color-ink-soft: oklch(0.52 0.012 152);
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces Variable", Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "SF Mono", Menlo, monospace;
 
-  --radius-card: 0.875rem;
+  --radius-card: 0.5rem;
 }
 
+/* Radio's night side of the same house: near-black, the accent unchanged. */
 @media (prefers-color-scheme: dark) {
   @theme {
-    --color-canvas: oklch(0.19 0.008 152);
-    --color-surface: oklch(0.23 0.01 152);
-    --color-line: oklch(0.3 0.012 152);
-    --color-ink: oklch(0.95 0.006 152);
-    --color-ink-soft: oklch(0.7 0.01 152);
+    --color-paper: #100e0c;
+    --color-paper-deep: #17150f;
+    --color-ink: #ece6dc;
+    --color-muted: #a09a91;
+    --color-faint: #6f6a63;
+    --color-line: rgba(236, 230, 220, 0.22);
+    --color-hairline: rgba(236, 230, 220, 0.1);
+    --color-accent-soft: rgba(239, 75, 82, 0.16);
+    --color-done: #7fb98f;
   }
 }
 
@@ -36,31 +51,54 @@ html {
 }
 
 body {
-  @apply bg-canvas text-ink antialiased;
-  font-family:
-    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  @apply bg-paper text-ink antialiased;
+  font-family: var(--font-sans);
 }
 
-/* Recipe steps are markdown, and the whole point of the backend work was that
-   they arrive as a real numbered list. These styles are what make that show. */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+/* The 10px caps label both sites use to tag a section, down to the letter
+   spacing. It is the strongest single carrier of the house style. */
+.label {
+  @apply font-mono text-[10px] font-medium tracking-[0.14em] text-faint uppercase;
+}
+
+.rule {
+  @apply border-t border-hairline;
+}
+
+/* Recipe steps. The backend now delivers these as a real numbered list, and an
+   editorial hanging-number list is what makes that worth having: the eye finds
+   step 4 again after you look away at the pan. */
 .prose-recipe {
-  @apply text-[0.975rem] leading-7;
+  @apply text-[0.975rem] leading-[1.75];
 }
 .prose-recipe h2 {
-  @apply mt-8 mb-3 text-sm font-semibold tracking-wide uppercase text-ink-soft;
+  @apply mt-9 mb-4 font-mono text-[10px] font-medium tracking-[0.14em] text-faint uppercase;
 }
 .prose-recipe ol {
-  @apply list-decimal space-y-3 pl-6 marker:font-semibold marker:text-accent-600;
+  @apply mb-6 list-none space-y-4 pl-0;
+  counter-reset: step;
+}
+.prose-recipe ol > li {
+  @apply relative pl-10;
+  counter-increment: step;
+}
+.prose-recipe ol > li::before {
+  content: counter(step, decimal-leading-zero);
+  @apply absolute top-0.5 left-0 font-mono text-xs text-accent;
 }
 .prose-recipe ul {
-  @apply list-disc space-y-2 pl-6 marker:text-ink-soft;
+  @apply mb-6 list-disc space-y-2 pl-5 marker:text-faint;
 }
 .prose-recipe p {
   @apply mb-4;
 }
 .prose-recipe a {
-  @apply text-accent-700 underline underline-offset-2;
-}
-.prose-recipe strong {
-  @apply font-semibold;
+  @apply text-accent underline underline-offset-2;
 }

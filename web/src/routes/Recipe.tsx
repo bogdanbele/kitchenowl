@@ -5,7 +5,7 @@ import remarkGfm from "remark-gfm";
 import { useState } from "react";
 import { api } from "../api/client";
 import type { Recipe as RecipeModel, RecipeItem } from "../api/types";
-import { photoUrl } from "../photo";
+import { Photo } from "../components/Photo";
 
 /**
  * Scale an amount with the serving count.
@@ -25,42 +25,48 @@ function scaleAmount(description: string, factor: number): string {
 function Ingredient({ item, factor }: { item: RecipeItem; factor: number }) {
   const amount = scaleAmount(item.description, factor);
   return (
-    <li className="flex items-baseline justify-between gap-4 border-b border-line py-2.5 last:border-0">
+    <li className="flex items-baseline justify-between gap-4 border-b border-hairline py-2.5 last:border-0">
       <span>
         {item.name}
-        {item.optional && <span className="ml-2 text-xs text-ink-soft">optional</span>}
+        {item.optional && <span className="label ml-2">optional</span>}
       </span>
-      {amount && <span className="shrink-0 text-sm text-ink-soft tabular-nums">{amount}</span>}
+      {amount && <span className="shrink-0 font-mono text-xs text-muted">{amount}</span>}
     </li>
   );
 }
 
 export default function Recipe() {
   const { householdId = "1", recipeId } = useParams();
-  const { data: recipe, isPending, error } = useQuery({
+  const {
+    data: recipe,
+    isPending,
+    error,
+  } = useQuery({
     queryKey: ["recipe", recipeId],
     queryFn: () => api<RecipeModel>(`/recipe/${recipeId}`),
   });
 
   const [servings, setServings] = useState<number | null>(null);
 
-  if (isPending) return <div className="h-96 animate-pulse rounded-card bg-surface" />;
-  if (error) return <p className="text-red-600 dark:text-red-400">{(error as Error).message}</p>;
+  if (isPending) return <div className="h-96 animate-pulse rounded-card bg-paper-deep" />;
+  if (error) return <p className="text-accent">{(error as Error).message}</p>;
 
   const base = recipe.yields || 1;
   const current = servings ?? base;
   const factor = current / base;
-  const photo = photoUrl(recipe.photo);
 
   return (
     <article className="mx-auto max-w-5xl">
-      <Link to={`/household/${householdId}/recipes`} className="text-sm text-ink-soft hover:text-ink">
-        ← Recipes
+      <Link
+        to={`/household/${householdId}/recipes`}
+        className="label transition hover:text-accent"
+      >
+        ← The collection
       </Link>
 
-      <header className="mt-4 mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight text-balance">{recipe.name}</h1>
-        <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm text-ink-soft">
+      <header className="mt-5 mb-8">
+        <h1 className="text-5xl font-semibold tracking-tight text-balance">{recipe.name}</h1>
+        <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1 font-mono text-[11px] text-muted">
           {recipe.time > 0 && <span>{recipe.time} min total</span>}
           {recipe.prep_time > 0 && <span>{recipe.prep_time} min prep</span>}
           {recipe.cook_time > 0 && <span>{recipe.cook_time} min cooking</span>}
@@ -69,7 +75,7 @@ export default function Recipe() {
               href={recipe.source}
               target="_blank"
               rel="noreferrer noopener"
-              className="underline underline-offset-2 hover:text-ink"
+              className="underline underline-offset-2 transition hover:text-accent"
             >
               {new URL(recipe.source).hostname.replace(/^www\./, "")}
             </a>
@@ -77,35 +83,38 @@ export default function Recipe() {
         </div>
       </header>
 
-      {photo && (
-        <img src={photo} alt="" className="mb-10 aspect-[21/9] w-full rounded-card object-cover" />
-      )}
+      <Photo
+        photo={recipe.photo}
+        className="mb-10 aspect-[21/9] w-full rounded-card object-cover"
+      />
 
-      <div className="grid gap-10 lg:grid-cols-[20rem_1fr] lg:gap-14">
-        <aside className="lg:sticky lg:top-8 lg:self-start">
-          <div className="mb-4 flex items-center justify-between">
-            <h2 className="font-medium">Ingredients</h2>
+      <div className="grid gap-10 lg:grid-cols-[19rem_1fr] lg:gap-16">
+        <aside className="lg:sticky lg:top-10 lg:self-start">
+          <div className="mb-3 flex items-center justify-between">
+            <p className="label">Ingredients</p>
             {recipe.yields > 0 && (
-              <div className="flex items-center gap-1 rounded-full border border-line">
+              <div className="flex items-center gap-1">
                 <button
                   onClick={() => setServings(Math.max(1, current - 1))}
                   aria-label="Fewer servings"
-                  className="size-8 rounded-full text-ink-soft transition hover:bg-canvas hover:text-ink"
+                  className="size-7 rounded-card text-muted transition hover:bg-paper-deep hover:text-ink"
                 >
                   −
                 </button>
-                <span className="min-w-6 text-center text-sm tabular-nums">{current}</span>
+                <span className="min-w-8 text-center font-mono text-xs tabular-nums">
+                  {current}
+                </span>
                 <button
                   onClick={() => setServings(current + 1)}
                   aria-label="More servings"
-                  className="size-8 rounded-full text-ink-soft transition hover:bg-canvas hover:text-ink"
+                  className="size-7 rounded-card text-muted transition hover:bg-paper-deep hover:text-ink"
                 >
                   +
                 </button>
               </div>
             )}
           </div>
-          <ul className="rounded-card border border-line bg-surface px-4">
+          <ul className="rule pt-1">
             {recipe.items.map((item) => (
               <Ingredient key={item.id} item={item} factor={factor} />
             ))}

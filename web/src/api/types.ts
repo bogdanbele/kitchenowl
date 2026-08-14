@@ -23,6 +23,11 @@ export interface Household {
   member?: User[];
 }
 
+export interface Category {
+  id: number;
+  name: string;
+}
+
 export interface Item {
   id: number;
   name: string;
@@ -30,15 +35,21 @@ export interface Item {
   category?: Category | null;
 }
 
-export interface Category {
-  id: number;
-  name: string;
-}
-
 /** An item as it appears inside a recipe: the item, plus how much of it. */
 export interface RecipeItem extends Item {
   description: string;
   optional: boolean;
+}
+
+/** An item on a shopping list: the item, plus how much you need. */
+export interface ShoppinglistItem extends Item {
+  description: string;
+}
+
+export interface Shoppinglist {
+  id: number;
+  name: string;
+  items?: ShoppinglistItem[];
 }
 
 export interface Tag {

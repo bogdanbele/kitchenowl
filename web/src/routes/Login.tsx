@@ -24,16 +24,18 @@ export default function Login() {
   }
 
   const field =
-    "w-full rounded-lg border border-line bg-surface px-3 py-2.5 outline-none " +
-    "focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20";
+    "w-full border-b border-line bg-transparent py-2 outline-none transition " +
+    "placeholder:text-faint focus:border-accent";
 
   return (
     <main className="grid min-h-dvh place-items-center px-6">
       <form onSubmit={onSubmit} className="w-full max-w-sm">
-        <h1 className="text-2xl font-semibold tracking-tight">Sign in</h1>
-        <p className="mt-1 mb-8 text-sm text-ink-soft">to your KitchenOwl household</p>
+        <p className="label">Household · Access</p>
+        <h1 className="mt-2 mb-10 text-4xl font-semibold tracking-tight">
+          Kitchen<span className="text-accent">Owl</span>
+        </h1>
 
-        <label className="mb-1.5 block text-sm font-medium" htmlFor="username">
+        <label className="label mb-1 block" htmlFor="username">
           Username or email
         </label>
         <input
@@ -45,7 +47,7 @@ export default function Login() {
           onChange={(e) => setUsername(e.target.value)}
         />
 
-        <label className="mt-5 mb-1.5 block text-sm font-medium" htmlFor="password">
+        <label className="label mt-8 mb-1 block" htmlFor="password">
           Password
         </label>
         <input
@@ -58,7 +60,7 @@ export default function Login() {
         />
 
         {error && (
-          <p role="alert" className="mt-4 text-sm text-red-600 dark:text-red-400">
+          <p role="alert" className="mt-5 text-sm text-accent">
             {error}
           </p>
         )}
@@ -66,8 +68,8 @@ export default function Login() {
         <button
           type="submit"
           disabled={busy || !username || !password}
-          className="mt-7 w-full rounded-lg bg-accent-600 px-4 py-2.5 font-medium text-white
-                     transition hover:bg-accent-700 disabled:opacity-40"
+          className="mt-10 w-full rounded-card bg-accent px-4 py-3 font-medium text-white
+                     transition hover:brightness-95 disabled:opacity-40"
         >
           {busy ? "Signing in…" : "Sign in"}
         </button>
