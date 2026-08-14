@@ -27,8 +27,21 @@ class SelectableButtonCard extends StatefulWidget {
 class _SelectableButtonCardState extends State<SelectableButtonCard> {
   bool mouseHover = false;
 
+  /// Whether the card's corner action should be shown.
+  ///
+  /// It used to appear on mouse hover alone, which means it never appeared on a
+  /// phone — the platform most of this app is used on. There is nothing to hover
+  /// with there, so on touch it is simply always visible.
+  bool _showsAction(BuildContext context) {
+    if (mouseHover) return true;
+    final platform = Theme.of(context).platform;
+    return platform == TargetPlatform.iOS || platform == TargetPlatform.android;
+  }
+
   @override
   Widget build(BuildContext context) {
+    final showAction = _showsAction(context);
+
     return Card(
       elevation: widget.selected ? 1 : 0,
       color: widget.selected
@@ -57,10 +70,11 @@ class _SelectableButtonCardState extends State<SelectableButtonCard> {
           child: Stack(
             alignment: AlignmentDirectional.topEnd,
             children: [
-              if (widget.extraOption != null && mouseHover) widget.extraOption!,
+              if (widget.extraOption != null && showAction)
+                widget.extraOption!,
               if (widget.extraOption == null &&
                   widget.onLongPressed != null &&
-                  mouseHover)
+                  showAction)
                 IconButton(
                   onPressed: widget.onLongPressed,
                   color: widget.selected

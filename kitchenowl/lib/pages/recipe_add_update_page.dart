@@ -624,9 +624,16 @@ class _AddUpdateRecipePageState extends State<AddUpdateRecipePage> {
                             items:
                                 state.items.where((e) => !e.optional).toList(),
                             selected: (item) => true,
-                            onPressed: Nullable(cubit.removeItem),
+                            // Tapping an ingredient opens its amount, which is
+                            // what you came here to do. Removing one is rare and
+                            // destructive, so it gets its own control rather
+                            // than firing on any tap that lands on the card.
+                            onPressed: Nullable(
+                                (RecipeItem item) => _editItem(context, item)),
                             onLongPressed: Nullable(
                                 (RecipeItem item) => _editItem(context, item)),
+                            extraOption: (item) => _removeItemButton(
+                                context, () => cubit.removeItem(item)),
                           ),
                         ),
                         SliverPadding(
@@ -660,9 +667,12 @@ class _AddUpdateRecipePageState extends State<AddUpdateRecipePage> {
                             items:
                                 state.items.where((e) => e.optional).toList(),
                             selected: (item) => true,
-                            onPressed: Nullable(cubit.removeItem),
+                            onPressed: Nullable(
+                                (RecipeItem item) => _editItem(context, item)),
                             onLongPressed: Nullable(
                                 (RecipeItem item) => _editItem(context, item)),
+                            extraOption: (item) => _removeItemButton(
+                                context, () => cubit.removeItem(item)),
                           ),
                         ),
                         if (isUpdate)
@@ -735,6 +745,19 @@ class _AddUpdateRecipePageState extends State<AddUpdateRecipePage> {
           }),
     );
   }
+
+  /// The one control on an ingredient card that removes it.
+  ///
+  /// Removing used to be the card's own tap target, with the amount editor
+  /// hidden behind a long press. That is backwards: setting an amount is the
+  /// reason to touch an ingredient at all, and a mis-aimed tap silently deleted
+  /// one. Undo caught it, but only if you noticed.
+  Widget _removeItemButton(BuildContext context, void Function() onRemove) =>
+      IconButton(
+        icon: const Icon(Icons.close_rounded),
+        tooltip: AppLocalizations.of(context)!.remove,
+        onPressed: onRemove,
+      );
 
   Future<void> _updateItems(BuildContext context, bool optional) async {
     final items = await Navigator.of(context, rootNavigator: true)
