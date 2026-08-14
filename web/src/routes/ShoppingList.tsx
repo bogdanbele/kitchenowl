@@ -3,18 +3,8 @@ import { useParams } from "react-router-dom";
 import { useState, type FormEvent } from "react";
 import { api } from "../api/client";
 import type { Shoppinglist, ShoppinglistItem } from "../api/types";
-
-/** Groups items under their category, with uncategorised last rather than first. */
-function byCategory(items: ShoppinglistItem[]): [string, ShoppinglistItem[]][] {
-  const groups = new Map<string, ShoppinglistItem[]>();
-  for (const item of items) {
-    const key = item.category?.name ?? "";
-    (groups.get(key) ?? groups.set(key, []).get(key)!).push(item);
-  }
-  return [...groups.entries()].sort(([a], [b]) =>
-    a === "" ? 1 : b === "" ? -1 : a.localeCompare(b),
-  );
-}
+import { useLiveShoppingList } from "../hooks/useLiveShoppingList";
+import { byCategory } from "../lib/group";
 
 export default function ShoppingList() {
   const { householdId = "1" } = useParams();
@@ -33,6 +23,8 @@ export default function ShoppingList() {
     queryFn: () => api<ShoppinglistItem[]>(`/shoppinglist/${list!.id}/items`),
     enabled: list != null,
   });
+
+  useLiveShoppingList(list?.id);
 
   const { data: suggestions } = useQuery({
     queryKey: ["recent-items", list?.id],

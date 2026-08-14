@@ -17,7 +17,7 @@ from app.errors import (
     ForbiddenRequest,
     InvalidUsage,
 )
-from app.util import KitchenOwlJSONProvider
+from app.util import KitchenOwlJSONProvider, parse_front_urls
 from app.helpers.db_model_base import DbModelBase
 from oic.oic import Client
 from oic.oic.message import RegistrationResponse
@@ -56,6 +56,10 @@ UPLOAD_FOLDER = STORAGE_PATH + "/upload"
 ALLOWED_FILE_EXTENSIONS = {"txt", "pdf", "png", "jpg", "jpeg", "gif", "webp", "jxl"}
 
 FRONT_URL = os.getenv("FRONT_URL")
+# FRONT_URL may list several origins, comma separated: an instance is usually
+# reached both through its public hostname and directly on the LAN, and the
+# socket layer rejects any origin not named here.
+FRONT_URLS = parse_front_urls(FRONT_URL)
 
 PRIVACY_POLICY_URL = os.getenv("PRIVACY_POLICY_URL")
 TERMS_URL = os.getenv("TERMS_URL")
@@ -190,7 +194,7 @@ socketio = SocketIO(
     app,
     json=app.json,
     logger=app.logger,
-    cors_allowed_origins=FRONT_URL,
+    cors_allowed_origins=FRONT_URLS or FRONT_URL,
     message_queue=MESSAGE_BROKER,
 )
 api_spec = APISpec(
@@ -322,7 +326,7 @@ def add_cors_headers(response):
     if not request.referrer:
         return response
     r = request.referrer[:-1]
-    if app.debug or FRONT_URL and r == FRONT_URL:
+    if app.debug or r in FRONT_URLS:
         response.headers.add("Access-Control-Allow-Origin", r)
         response.headers.add("Access-Control-Allow-Credentials", "true")
         response.headers.add("Access-Control-Allow-Headers", "Content-Type")

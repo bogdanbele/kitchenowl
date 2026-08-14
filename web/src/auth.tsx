@@ -1,5 +1,6 @@
 import { createContext, use, useCallback, useState, type ReactNode } from "react";
 import { api, login as apiLogin, tokens } from "./api/client";
+import { disconnectLive } from "./api/live";
 import type { User } from "./api/types";
 
 interface AuthState {
@@ -55,6 +56,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     // failing to reach it must not leave you stuck in a session you asked to
     // leave. Revoking server-side belongs in the sessions screen.
     tokens.clear();
+    disconnectLive();
     setUser(null);
   }, [setUser]);
 

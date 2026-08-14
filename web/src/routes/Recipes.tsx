@@ -4,14 +4,7 @@ import { useState } from "react";
 import { api } from "../api/client";
 import type { Recipe } from "../api/types";
 import { Photo } from "../components/Photo";
-
-function formatTime(minutes: number): string | null {
-  if (!minutes) return null;
-  if (minutes < 60) return `${minutes} min`;
-  const hours = Math.floor(minutes / 60);
-  const rest = minutes % 60;
-  return rest ? `${hours} h ${rest}` : `${hours} h`;
-}
+import { formatTime } from "../lib/amount";
 
 function RecipeCard({ recipe, householdId }: { recipe: Recipe; householdId: string }) {
   const time = formatTime(recipe.time);

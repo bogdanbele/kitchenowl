@@ -1,16 +1,27 @@
 import { Navigate, NavLink, Outlet, Route, Routes, useParams } from "react-router-dom";
+import { Suspense, lazy } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "./api/client";
 import type { Household } from "./api/types";
 import { useAuth } from "./auth";
 import Login from "./routes/Login";
-import Recipes from "./routes/Recipes";
-import Recipe from "./routes/Recipe";
-import ShoppingList from "./routes/ShoppingList";
-import RecipeEdit from "./routes/RecipeEdit";
-import Planner from "./routes/Planner";
-import Expenses from "./routes/Expenses";
-import HouseholdSettings from "./routes/HouseholdSettings";
+
+/**
+ * Routes are split so the shopping list does not carry the recipe editor with
+ * it. The editor pulls in the markdown renderer and its plugins, which is the
+ * heaviest thing here and is needed by two screens out of seven — and the
+ * shopping list is the one opened on a phone on a bad connection.
+ *
+ * Login stays eagerly imported: it is the first thing an unauthenticated
+ * visitor sees, and a spinner before a login form is a worse trade.
+ */
+const ShoppingList = lazy(() => import("./routes/ShoppingList"));
+const Recipes = lazy(() => import("./routes/Recipes"));
+const Recipe = lazy(() => import("./routes/Recipe"));
+const RecipeEdit = lazy(() => import("./routes/RecipeEdit"));
+const Planner = lazy(() => import("./routes/Planner"));
+const Expenses = lazy(() => import("./routes/Expenses"));
+const HouseholdSettings = lazy(() => import("./routes/HouseholdSettings"));
 import { ThemeToggle } from "./components/ThemeToggle";
 
 const SECTIONS = [
@@ -118,7 +129,9 @@ function Shell() {
           none, so it can never sit under text or swallow a click. */}
       <main className="aurora relative overflow-hidden px-5 pt-6 pb-24 md:px-10 md:py-12 md:pb-12">
         <span aria-hidden className="aurora-glow" />
-        <Outlet />
+        <Suspense fallback={<div className="h-64 animate-pulse rounded-card bg-paper-deep" />}>
+          <Outlet />
+        </Suspense>
       </main>
     </div>
   );

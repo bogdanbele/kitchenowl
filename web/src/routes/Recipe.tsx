@@ -1,26 +1,12 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { Link, useParams } from "react-router-dom";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { api } from "../api/client";
-import type { Recipe as RecipeModel, RecipeItem } from "../api/types";
+import type { Recipe as RecipeModel, RecipeItem, Shoppinglist } from "../api/types";
 import { Photo } from "../components/Photo";
-
-/**
- * Scale an amount with the serving count.
- *
- * Amounts are free text ("2 pound", "1 packet", "a pinch"), so only a leading
- * number is scaled and everything else is left alone. Text with no number is
- * returned untouched rather than guessed at — doubling "a pinch" means nothing.
- */
-function scaleAmount(description: string, factor: number): string {
-  if (factor === 1) return description;
-  return description.replace(/^(\d+(?:[.,]\d+)?)/, (match) => {
-    const scaled = parseFloat(match.replace(",", ".")) * factor;
-    return String(Math.round(scaled * 100) / 100);
-  });
-}
+import { scaleAmount } from "../lib/amount";
 
 function Ingredient({ item, factor }: { item: RecipeItem; factor: number }) {
   const amount = scaleAmount(item.description, factor);
@@ -37,6 +23,7 @@ function Ingredient({ item, factor }: { item: RecipeItem; factor: number }) {
 
 export default function Recipe() {
   const { householdId = "1", recipeId } = useParams();
+  const factorRef = useRef(1);
   const {
     data: recipe,
     isPending,
@@ -47,6 +34,38 @@ export default function Recipe() {
   });
 
   const [servings, setServings] = useState<number | null>(null);
+  const [added, setAdded] = useState(0);
+
+  const { data: lists } = useQuery({
+    queryKey: ["shoppinglists", householdId],
+    queryFn: () => api<Shoppinglist[]>(`/household/${householdId}/shoppinglist`),
+  });
+  const list = lists?.[0];
+
+  /**
+   * The reason this app exists: a recipe becomes things to buy.
+   *
+   * Optional ingredients are left out — they are the ones you decide about at
+   * the shelf, and a list padded with maybes is a list people stop trusting.
+   * Amounts go over scaled, so planning for eight buys for eight. The server
+   * merges an amount into whatever is already on the list rather than
+   * duplicating the row.
+   */
+  const addToList = useMutation({
+    mutationFn: (items: RecipeItem[]) =>
+      api(`/shoppinglist/${list!.id}/recipeitems`, {
+        method: "POST",
+        body: {
+          items: items.map((item) => ({
+            id: item.id,
+            name: item.name,
+            description: scaleAmount(item.description ?? "", factorRef.current),
+            optional: false,
+          })),
+        },
+      }),
+    onSuccess: (_result, items) => setAdded(items.length),
+  });
 
   if (isPending) return <div className="h-96 animate-pulse rounded-card bg-paper-deep" />;
   if (error) return <p className="text-accent">{(error as Error).message}</p>;
@@ -54,6 +73,7 @@ export default function Recipe() {
   const base = recipe.yields || 1;
   const current = servings ?? base;
   const factor = current / base;
+  factorRef.current = factor;
 
   return (
     <article className="mx-auto max-w-5xl">
@@ -127,6 +147,27 @@ export default function Recipe() {
               <Ingredient key={item.id} item={item} factor={factor} />
             ))}
           </ul>
+
+          {list && recipe.items.some((item) => !item.optional) && (
+            <button
+              onClick={() =>
+                addToList.mutate(recipe.items.filter((item) => !item.optional))
+              }
+              disabled={addToList.isPending || added > 0}
+              className="btn-gradient mt-4 w-full rounded-card px-4 py-2.5 text-sm font-medium"
+            >
+              {added > 0
+                ? `${added} added to the list`
+                : addToList.isPending
+                  ? "Adding…"
+                  : `Add ${recipe.items.filter((item) => !item.optional).length} ingredients to the list`}
+            </button>
+          )}
+          {addToList.isError && (
+            <p role="alert" className="mt-2 text-sm text-accent">
+              Could not add these to the list.
+            </p>
+          )}
         </aside>
 
         {/* The description is markdown, and imported recipes now arrive as a

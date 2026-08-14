@@ -11,7 +11,7 @@ interface Member extends User {
   expense_balance?: number;
 }
 
-type FullHousehold = Household & {
+type FullHousehold = Omit<Household, "member"> & {
   member?: Member[];
   description?: string;
   planner_feature?: boolean;

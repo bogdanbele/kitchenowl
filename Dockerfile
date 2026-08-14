@@ -52,6 +52,25 @@ RUN flutter packages get
 RUN flutter build web --release --no-web-resources-cdn
 
 # ------------
+# WEB CLIENT BUILDER (React)
+# ------------
+FROM --platform=$BUILDPLATFORM node:22-alpine AS web_client_builder
+
+WORKDIR /usr/local/src/web
+
+# Dependencies are copied on their own so a change to source does not reinstall
+# them on every build.
+COPY web/package.json web/package-lock.json ./
+RUN npm ci
+
+COPY web/ ./
+
+# Served under /next, beside the Flutter build rather than instead of it, until
+# the React client is at parity.
+ENV VITE_BASE=/next/
+RUN npm run build
+
+# ------------
 # BACKEND BUILDER
 # ------------
 FROM python:3.14-slim AS backend_builder
@@ -93,6 +112,8 @@ ENV PATH="/opt/venv/bin:$PATH"
 # Setup Frontend
 RUN mkdir -p /var/www/web/kitchenowl
 COPY --from=app_builder /usr/local/src/app/build/web /var/www/web/kitchenowl
+RUN mkdir -p /var/www/web/next
+COPY --from=web_client_builder /usr/local/src/web/dist /var/www/web/next
 
 # Setup KitchenOwl Backend
 COPY backend/wsgi.ini backend/wsgi.py backend/entrypoint.sh backend/manage.py backend/manage_default_items.py backend/upgrade_default_items.py /usr/src/kitchenowl/
