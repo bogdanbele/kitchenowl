@@ -1,10 +1,10 @@
 /* Palette and gradients.
  *
  * Kept the editorial bones from archivist.bonello.uk — serif display, mono caps
- * labels, hairline rules — and changed what sits on them. The Archivist's flat
- * red is replaced by a warm three-stop ramp, ember through magenta into violet,
- * which is where the "modern gradient" look actually lives: in a few large,
- * quiet surfaces and one or two loud small ones, not on every element.
+ * labels, hairline rules — and changed what sits on them. The ramp runs indigo
+ * through purple into fuchsia, and the neutrals are tinted the same way: cool
+ * paper in light, an indigo-black in dark. A purple ramp over warm cream reads
+ * as two designs arguing, so the greys carry a trace of the same hue.
  *
  * Rules followed throughout:
  *   - Gradients carry emphasis, never information. Anything you must read is
@@ -15,24 +15,28 @@
  */
 
 @theme {
-  /* Light: warm paper, slightly cooler than the Archivist's to let the
-     magenta end of the ramp sit on it without turning muddy. */
-  --color-paper: #faf7f3;
-  --color-paper-deep: #f1ebe4;
-  --color-ink: #1a1420;
-  --color-muted: #6d6478;
-  --color-faint: #9c93a6;
-  --color-line: rgba(26, 20, 32, 0.26);
-  --color-hairline: rgba(26, 20, 32, 0.1);
+  /* Light: cool paper rather than cream, so the indigo end has somewhere to
+     sit without turning grey-brown. */
+  --color-paper: #f8f7fc;
+  --color-paper-deep: #efedf7;
+  --color-ink: #17142a;
+  --color-muted: #635d7d;
+  --color-faint: #948eae;
+  --color-line: rgba(23, 20, 42, 0.26);
+  --color-hairline: rgba(23, 20, 42, 0.1);
 
   /* The ramp, and a flat accent for anything that carries meaning: links,
      errors, the active tab. A gradient cannot be a text colour. */
-  --color-ember: #ff7a3d;
-  --color-magenta: #f72585;
-  --color-violet: #7209b7;
-  --color-accent: #d81b60;
-  --color-accent-soft: rgba(247, 37, 133, 0.1);
-  --color-done: #0f9b8e;
+  --color-iris: #4f46e5;
+  --color-purple: #9333ea;
+  --color-fuchsia: #d946ef;
+  --color-accent: #7c3aed;
+  --color-accent-soft: rgba(147, 51, 234, 0.1);
+
+  /* Teal for "done". A second hue rather than a lighter purple: on a shopping
+     list, ticked and not-ticked have to be told apart at a glance in a shop,
+     and two tints of one colour are exactly what a tired eye merges. */
+  --color-done: #0d9488;
 
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Fraunces Variable", Georgia, "Times New Roman", serif;
@@ -41,33 +45,33 @@
   --radius-card: 0.5rem;
 }
 
-/* Dark: aubergine rather than neutral black, so the violet end of the ramp
-   belongs to the background instead of floating on it. */
+/* Dark: indigo-black, so the iris end of the ramp belongs to the background
+   instead of floating on it. */
 @media (prefers-color-scheme: dark) {
   :root[data-theme="system"] {
-    --color-paper: #120e18;
-    --color-paper-deep: #1b1524;
-    --color-ink: #f2ecf5;
-    --color-muted: #a79db1;
-    --color-faint: #6f6579;
-    --color-line: rgba(242, 236, 245, 0.22);
-    --color-hairline: rgba(242, 236, 245, 0.1);
-    --color-accent: #ff5c93;
-    --color-accent-soft: rgba(247, 37, 133, 0.18);
+    --color-paper: #0f0d1a;
+    --color-paper-deep: #191527;
+    --color-ink: #ece9f7;
+    --color-muted: #a49dbd;
+    --color-faint: #6b6489;
+    --color-line: rgba(236, 233, 247, 0.22);
+    --color-hairline: rgba(236, 233, 247, 0.1);
+    --color-accent: #c084fc;
+    --color-accent-soft: rgba(192, 132, 252, 0.16);
     --color-done: #2dd4bf;
   }
 }
 
 :root[data-theme="dark"] {
-  --color-paper: #120e18;
-  --color-paper-deep: #1b1524;
-  --color-ink: #f2ecf5;
-  --color-muted: #a79db1;
-  --color-faint: #6f6579;
-  --color-line: rgba(242, 236, 245, 0.22);
-  --color-hairline: rgba(242, 236, 245, 0.1);
-  --color-accent: #ff5c93;
-  --color-accent-soft: rgba(247, 37, 133, 0.18);
+  --color-paper: #0f0d1a;
+  --color-paper-deep: #191527;
+  --color-ink: #ece9f7;
+  --color-muted: #a49dbd;
+  --color-faint: #6b6489;
+  --color-line: rgba(236, 233, 247, 0.22);
+  --color-hairline: rgba(236, 233, 247, 0.1);
+  --color-accent: #c084fc;
+  --color-accent-soft: rgba(192, 132, 252, 0.16);
   --color-done: #2dd4bf;
 }
 
@@ -83,9 +87,9 @@
 @utility gradient-ink {
   background-image: linear-gradient(
     100deg,
-    var(--color-ember),
-    var(--color-magenta) 55%,
-    var(--color-violet)
+    var(--color-iris),
+    var(--color-purple) 50%,
+    var(--color-fuchsia)
   );
   background-clip: text;
   color: transparent;
@@ -97,9 +101,9 @@
 @utility gradient-surface {
   background-image: linear-gradient(
     100deg,
-    var(--color-ember),
-    var(--color-magenta) 55%,
-    var(--color-violet)
+    var(--color-iris),
+    var(--color-purple) 50%,
+    var(--color-fuchsia)
   );
 }
 
@@ -118,9 +122,9 @@
   width: 36rem;
   pointer-events: none;
   background:
-    radial-gradient(40% 50% at 30% 40%, rgba(255, 122, 61, 0.22), transparent 70%),
-    radial-gradient(45% 55% at 60% 50%, rgba(247, 37, 133, 0.18), transparent 70%),
-    radial-gradient(40% 60% at 80% 60%, rgba(114, 9, 183, 0.16), transparent 70%);
+    radial-gradient(40% 50% at 30% 40%, rgba(79, 70, 229, 0.2), transparent 70%),
+    radial-gradient(45% 55% at 60% 50%, rgba(147, 51, 234, 0.18), transparent 70%),
+    radial-gradient(40% 60% at 80% 60%, rgba(217, 70, 239, 0.14), transparent 70%);
   filter: blur(18px);
 }
 
@@ -137,9 +141,9 @@
 .btn-gradient {
   background-image: linear-gradient(
     100deg,
-    var(--color-ember),
-    var(--color-magenta) 55%,
-    var(--color-violet)
+    var(--color-iris),
+    var(--color-purple) 50%,
+    var(--color-fuchsia)
   );
   background-size: 160% 100%;
   background-position: 0% 0%;
