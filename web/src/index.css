@@ -36,33 +36,53 @@ h3 {
          placeholder:text-faint focus:border-accent;
 }
 
-/* Recipe steps. The backend delivers these as a real numbered list, and an
-   editorial hanging-number list is what makes that worth having: the eye finds
-   step 4 again after you look away at the pan. */
+/* Recipe steps.
+ *
+ * A method is read from across a worktop, in glances, with wet hands — so this
+ * is set larger than UI text, not smaller. Section headings are real headings
+ * in the display face rather than the 10px eyebrow used elsewhere: they are the
+ * thing you look for when you lose your place, and at 10px caps they were
+ * losing to the body text around them.
+ */
 .prose-recipe {
-  @apply text-[0.975rem] leading-[1.75];
+  @apply text-[1.0625rem] leading-8;
 }
 .prose-recipe h2 {
-  @apply mt-9 mb-4 font-mono text-[10px] font-medium tracking-[0.14em] text-faint uppercase;
+  @apply mt-12 mb-5 border-t border-hairline pt-6 font-display text-2xl font-semibold tracking-tight;
+}
+.prose-recipe h2:first-child {
+  @apply mt-0 border-0 pt-0;
+}
+.prose-recipe h3 {
+  @apply mt-8 mb-3 font-display text-xl font-semibold;
 }
 .prose-recipe ol {
-  @apply mb-6 list-none space-y-4 pl-0;
+  @apply mb-8 list-none space-y-6 pl-0;
   counter-reset: step;
 }
 .prose-recipe ol > li {
-  @apply relative pl-10;
+  @apply relative pl-14;
   counter-increment: step;
 }
+/* The number sits in the margin, large enough to find again after looking away
+   at the pan. */
 .prose-recipe ol > li::before {
   content: counter(step, decimal-leading-zero);
-  @apply absolute top-0.5 left-0 font-mono text-xs text-accent;
+  @apply absolute top-0.5 left-0 font-mono text-base font-medium text-accent tabular-nums;
 }
 .prose-recipe ul {
-  @apply mb-6 list-disc space-y-2 pl-5 marker:text-faint;
+  @apply mb-6 list-disc space-y-2 pl-6 marker:text-faint;
 }
 .prose-recipe p {
   @apply mb-4;
 }
 .prose-recipe a {
   @apply text-accent underline underline-offset-2;
+}
+.prose-recipe strong {
+  @apply font-semibold;
+}
+/* An amount inside a step, so "45-60 minutes" is findable mid-cook. */
+.prose-recipe code {
+  @apply rounded bg-paper-deep px-1.5 py-0.5 font-mono text-[0.9em];
 }

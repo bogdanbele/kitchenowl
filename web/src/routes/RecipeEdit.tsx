@@ -6,6 +6,10 @@ import remarkGfm from "remark-gfm";
 import { api } from "../api/client";
 import type { Recipe } from "../api/types";
 import { EMPTY, fromScrape, toDraft, type Draft, type ScrapeResult } from "../lib/scrape";
+import { extractRecipeFromText, openRouter } from "../api/openrouter";
+import { toDraftFromExtraction } from "../lib/recipeExtraction";
+import { Link as RouterLink } from "react-router-dom";
+import { Link2, Sparkles } from "lucide-react";
 
 export default function RecipeEdit() {
   const { householdId = "1", recipeId } = useParams();
@@ -15,6 +19,8 @@ export default function RecipeEdit() {
 
   const [draft, setDraft] = useState<Draft | null>(isNew ? EMPTY : null);
   const [url, setUrl] = useState("");
+  const [pasted, setPasted] = useState("");
+  const [importMode, setImportMode] = useState<"link" | "text">("link");
   const [preview, setPreview] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -44,6 +50,26 @@ export default function RecipeEdit() {
       setError(
         "Could not read that page. Check the link opens in a browser — a dead link and an unreadable page look the same from here.",
       ),
+  });
+
+  /**
+   * Paste anything and get a recipe.
+   *
+   * The scraper needs a page it can parse; this needs nothing but text, which
+   * covers the cases that actually defeat it — a photo of a cookbook you typed
+   * up, a voice note transcript, a message from a relative, a site that blocks
+   * robots. The model fills the form and you correct it; nothing is saved until
+   * you press the button, because a model is a decent typist and an unreliable
+   * cook.
+   */
+  const extract = useMutation({
+    mutationFn: (text: string) => extractRecipeFromText(text),
+    onSuccess: (recipe) => {
+      setError(null);
+      setDraft(toDraftFromExtraction(recipe, openRouter.model));
+    },
+    onError: (caught) =>
+      setError(caught instanceof Error ? caught.message : "Could not read that text."),
   });
 
   const save = useMutation({
@@ -93,25 +119,81 @@ export default function RecipeEdit() {
 
       {isNew && (
         <section className="mb-10 rounded-card border border-hairline p-4">
-          <p className="label mb-2">Import from a link</p>
-          <div className="flex gap-2">
-            <input
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-              placeholder="https://…"
-              aria-label="Recipe URL"
-              className="field"
-            />
+          <div className="mb-3 flex gap-1">
             <button
               type="button"
-              disabled={!url.trim() || importFromUrl.isPending}
-              onClick={() => importFromUrl.mutate(url.trim())}
-              className="shrink-0 rounded-card border border-line px-4 py-2 text-sm transition
-                         hover:border-accent hover:text-accent disabled:opacity-40"
+              onClick={() => setImportMode("link")}
+              aria-pressed={importMode === "link"}
+              className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition ${
+                importMode === "link" ? "bg-accent-soft text-accent" : "text-muted hover:text-ink"
+              }`}
             >
-              {importFromUrl.isPending ? "Reading…" : "Import"}
+              <Link2 size={13} /> From a link
+            </button>
+            <button
+              type="button"
+              onClick={() => setImportMode("text")}
+              aria-pressed={importMode === "text"}
+              className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition ${
+                importMode === "text" ? "bg-accent-soft text-accent" : "text-muted hover:text-ink"
+              }`}
+            >
+              <Sparkles size={13} /> From pasted text
             </button>
           </div>
+
+          {importMode === "link" ? (
+            <div className="flex gap-2">
+              <input
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                placeholder="https://…"
+                aria-label="Recipe URL"
+                className="field"
+              />
+              <button
+                type="button"
+                disabled={!url.trim() || importFromUrl.isPending}
+                onClick={() => importFromUrl.mutate(url.trim())}
+                className="shrink-0 rounded-card border border-line px-4 py-2 text-sm transition
+                           hover:border-accent hover:text-accent disabled:opacity-40"
+              >
+                {importFromUrl.isPending ? "Reading…" : "Import"}
+              </button>
+            </div>
+          ) : (
+            <div>
+              <textarea
+                value={pasted}
+                onChange={(e) => setPasted(e.target.value)}
+                rows={6}
+                aria-label="Recipe text"
+                placeholder={"Paste anything: a message, a transcript, a page that will not scrape…"}
+                className="mb-2 w-full rounded-card border border-hairline bg-transparent p-3 text-sm
+                           outline-none placeholder:text-faint focus:border-accent"
+              />
+              <div className="flex flex-wrap items-center gap-3">
+                <button
+                  type="button"
+                  disabled={!pasted.trim() || extract.isPending || !openRouter.configured}
+                  onClick={() => extract.mutate(pasted.trim())}
+                  className="btn-gradient rounded-card px-4 py-2 text-sm font-medium"
+                >
+                  {extract.isPending ? "Reading the text…" : "Extract the recipe"}
+                </button>
+                {openRouter.configured ? (
+                  <span className="label">via {openRouter.model}</span>
+                ) : (
+                  <RouterLink
+                    to={`/household/${householdId}/settings`}
+                    className="label transition hover:text-accent"
+                  >
+                    Add an OpenRouter key first →
+                  </RouterLink>
+                )}
+              </div>
+            </div>
+          )}
         </section>
       )}
 

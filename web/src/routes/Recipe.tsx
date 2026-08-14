@@ -6,7 +6,17 @@ import { useRef, useState } from "react";
 import { api } from "../api/client";
 import type { Recipe as RecipeModel, RecipeItem, Shoppinglist } from "../api/types";
 import { Photo } from "../components/Photo";
-import { scaleAmount } from "../lib/amount";
+import { formatTime, scaleAmount } from "../lib/amount";
+import { Clock, Link as LinkIcon, Sparkles, Users } from "lucide-react";
+
+/** "panlasangpinoy.com" from a URL, or the raw string if it is not one. */
+function sourceLabel(source: string): string {
+  try {
+    return new URL(source).hostname.replace(/^www\./, "");
+  } catch {
+    return source;
+  }
+}
 
 function Ingredient({ item, factor }: { item: RecipeItem; factor: number }) {
   const amount = scaleAmount(item.description, factor);
@@ -75,8 +85,13 @@ export default function Recipe() {
   const factor = current / base;
   factorRef.current = factor;
 
+  // Recipes this app wrote carry a marker in `source`, because KitchenOwl has
+  // no field for provenance and quietly passing off generated text as tested
+  // cooking is the wrong default.
+  const aiGenerated = !!recipe.source?.startsWith("ai://");
+
   return (
-    <article className="mx-auto max-w-5xl">
+    <article className="mx-auto max-w-6xl">
       <div className="flex items-center justify-between">
         <Link
           to={`/household/${householdId}/recipes`}
@@ -92,21 +107,48 @@ export default function Recipe() {
         </Link>
       </div>
 
-      <header className="mt-5 mb-8">
-        <h1 className="text-5xl font-semibold tracking-tight text-balance">{recipe.name}</h1>
-        <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1 font-mono text-[11px] text-muted">
-          {recipe.time > 0 && <span>{recipe.time} min total</span>}
-          {recipe.prep_time > 0 && <span>{recipe.prep_time} min prep</span>}
-          {recipe.cook_time > 0 && <span>{recipe.cook_time} min cooking</span>}
-          {recipe.source && (
+      <header className="mt-6 mb-10">
+        {/* A recipe title is the one thing on this page you read from two metres
+            away while deciding what to cook. text-balance keeps a long Romanian
+            name from breaking into a one-word orphan line. */}
+        <h1 className="text-5xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl">
+          {recipe.name}
+        </h1>
+
+        <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted">
+          {recipe.time > 0 && (
+            <span className="inline-flex items-center gap-1.5">
+              <Clock size={15} />
+              <span className="font-medium text-ink">{formatTime(recipe.time)}</span> total
+            </span>
+          )}
+          {recipe.prep_time > 0 && <span>{formatTime(recipe.prep_time)} prep</span>}
+          {recipe.cook_time > 0 && <span>{formatTime(recipe.cook_time)} cooking</span>}
+          {recipe.yields > 0 && (
+            <span className="inline-flex items-center gap-1.5">
+              <Users size={15} />
+              serves <span className="font-medium text-ink">{recipe.yields}</span>
+            </span>
+          )}
+          {recipe.source && !recipe.source.startsWith("ai://") && (
             <a
               href={recipe.source}
               target="_blank"
               rel="noreferrer noopener"
-              className="underline underline-offset-2 transition hover:text-accent"
+              className="inline-flex items-center gap-1.5 underline underline-offset-2 transition hover:text-accent"
             >
-              {new URL(recipe.source).hostname.replace(/^www\./, "")}
+              <LinkIcon size={14} />
+              {sourceLabel(recipe.source)}
             </a>
+          )}
+          {aiGenerated && (
+            <span
+              className="inline-flex items-center gap-1.5 rounded-full border border-hairline px-2.5 py-1 text-xs"
+              title="Written by an AI model, not tested by a person"
+            >
+              <Sparkles size={13} className="text-accent" />
+              AI-written
+            </span>
           )}
         </div>
       </header>
@@ -116,10 +158,10 @@ export default function Recipe() {
         className="mb-10 aspect-[21/9] w-full rounded-card object-cover"
       />
 
-      <div className="grid gap-10 lg:grid-cols-[19rem_1fr] lg:gap-16">
+      <div className="grid gap-10 lg:grid-cols-[21rem_1fr] lg:gap-20">
         <aside className="lg:sticky lg:top-10 lg:self-start">
           <div className="mb-3 flex items-center justify-between">
-            <p className="label">Ingredients</p>
+            <h2 className="font-display text-xl font-semibold tracking-tight">Ingredients</h2>
             {recipe.yields > 0 && (
               <div className="flex items-center gap-1">
                 <button

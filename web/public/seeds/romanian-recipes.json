@@ -1,0 +1,174 @@
+{
+  "note": "Traditional Romanian recipes added to the household by Claude. Every one carries source 'ai://claude-opus-5' and the tag 'AI-written', because the app shows a badge for recipes a model wrote rather than a person cooked. Quantities are household-scale and follow the common versions; adjust to taste.",
+  "recipes": [
+    {
+      "name": "Sarmale în foi de varză murată",
+      "yields": 6,
+      "prep_time": 60,
+      "cook_time": 180,
+      "time": 240,
+      "tags": ["Romanian", "AI-written"],
+      "items": [
+        { "name": "Pickled cabbage", "description": "1 large head (varză murată)" },
+        { "name": "Pork mince", "description": "700 g, not too lean" },
+        { "name": "Smoked pork ribs", "description": "300 g" },
+        { "name": "Rice", "description": "150 g" },
+        { "name": "Onion", "description": "3 large, finely chopped" },
+        { "name": "Tomato paste", "description": "2 tbsp" },
+        { "name": "Sunflower oil", "description": "4 tbsp" },
+        { "name": "Bay leaves", "description": "3" },
+        { "name": "Thyme", "description": "1 tsp dried" },
+        { "name": "Black pepper", "description": "1 tsp" },
+        { "name": "Dill", "description": "1 small bunch", "optional": true },
+        { "name": "Sour cream", "description": "to serve", "optional": true }
+      ],
+      "description": "The dish every Romanian family argues about. Sour cabbage leaves rolled around pork and rice, then cooked so slowly the leaves go silky. Always better the second day.\n\n## 1. Prepare the cabbage\n\n1. Take the head of pickled cabbage apart leaf by leaf. Rinse each leaf if the brine is very sharp, and taste one — it should be pleasantly sour, not aggressive.\n2. Cut out the thick rib from each leaf so it will roll without cracking. Keep the trimmings and any torn leaves; they line the pot.\n\n## 2. Make the filling\n\n1. Soften the onion in the oil over low heat for 8-10 minutes until translucent but not coloured. Let it cool a little.\n2. Mix the pork mince, rice, cooked onion, tomato paste, thyme and black pepper. Do not salt heavily — the cabbage is already salty.\n3. Fry a teaspoon of the mix in a pan and taste it. This is the only chance to correct the seasoning.\n\n## 3. Roll\n\n1. Put a spoonful of filling on the stem end of each leaf, fold the sides in, and roll into a tight parcel. Tuck the loose end in with a finger.\n2. Keep them roughly the same size so they cook evenly. Smaller is more traditional than larger.\n\n## 4. Layer the pot\n\n1. Line the bottom of a heavy pot with shredded cabbage trimmings.\n2. Pack the rolls in tight circles, seam down, tucking the smoked ribs and bay leaves between the layers.\n3. Cover with the remaining trimmings, then add water until the rolls are just submerged.\n\n## 5. Cook slowly\n\n1. Bring to a bare simmer, cover, and cook for at least 3 hours on the lowest heat. An oven at 150°C does this more evenly than a hob.\n2. Check once an hour and top up with hot water if they look dry.\n3. Rest off the heat for 30 minutes before serving with sour cream, and mămăligă if you are doing it properly."
+    },
+    {
+      "name": "Mămăligă cu brânză și smântână",
+      "yields": 4,
+      "prep_time": 5,
+      "cook_time": 30,
+      "time": 35,
+      "tags": ["Romanian", "AI-written"],
+      "items": [
+        { "name": "Cornmeal", "description": "250 g coarse (mălai)" },
+        { "name": "Water", "description": "1 L" },
+        { "name": "Salt", "description": "1 tsp" },
+        { "name": "Butter", "description": "50 g" },
+        { "name": "Telemea cheese", "description": "200 g, crumbled (or feta)" },
+        { "name": "Sour cream", "description": "200 g" },
+        { "name": "Eggs", "description": "4, to fry", "optional": true }
+      ],
+      "description": "Polenta's Romanian cousin, and for centuries the everyday bread of the countryside. Cheese and sour cream turn it into a meal.\n\n## 1. Cook the mămăligă\n\n1. Bring the water and salt to a boil in a heavy pot.\n2. Pour the cornmeal in a steady stream with one hand while whisking hard with the other. Doing it slowly is what prevents lumps.\n3. Switch to a wooden spoon once it thickens. Cook 25-30 minutes over low heat, stirring often, until it pulls away from the sides of the pot.\n4. Stir in the butter at the end.\n\n## 2. Serve\n\n1. Traditionally it is turned out onto a wooden board and cut with a thread, not a knife. A bowl is fine.\n2. Layer hot mămăligă with crumbled cheese so it half melts, and put a generous spoon of sour cream on top.\n3. A fried egg on each portion makes it dinner rather than a side."
+    },
+    {
+      "name": "Ciorbă de perișoare",
+      "yields": 6,
+      "prep_time": 30,
+      "cook_time": 45,
+      "time": 75,
+      "tags": ["Romanian", "AI-written"],
+      "items": [
+        { "name": "Pork mince", "description": "500 g" },
+        { "name": "Rice", "description": "60 g" },
+        { "name": "Eggs", "description": "1" },
+        { "name": "Carrots", "description": "2, diced" },
+        { "name": "Parsnip", "description": "1, diced" },
+        { "name": "Celeriac", "description": "150 g, diced" },
+        { "name": "Onion", "description": "1, finely chopped" },
+        { "name": "Potatoes", "description": "2, diced" },
+        { "name": "Borș", "description": "500 ml (or juice of 2 lemons)" },
+        { "name": "Tomato paste", "description": "1 tbsp" },
+        { "name": "Lovage", "description": "1 small bunch (leuștean)" },
+        { "name": "Parsley", "description": "1 small bunch" },
+        { "name": "Sour cream", "description": "to serve", "optional": true }
+      ],
+      "description": "A sour soup with pork meatballs. The sourness comes from borș — fermented wheat bran liquid — and the finish comes from lovage, which is what makes it taste Romanian rather than merely good.\n\n## 1. Start the vegetables\n\n1. Put 2.5 L water on with the carrot, parsnip, celeriac, onion and a good pinch of salt. Simmer 15 minutes.\n2. Add the potatoes and the tomato paste and simmer another 10.\n\n## 2. Make the perișoare\n\n1. Mix the pork, uncooked rice, egg, a little chopped parsley, salt and pepper.\n2. Wet your hands and roll walnut-sized balls. The rice swells, so keep them small.\n\n## 3. Cook them in the soup\n\n1. Drop the meatballs into the simmering soup one at a time so they do not stick together.\n2. Simmer 20 minutes, uncovered, skimming any foam. Do not stir hard or they break up.\n\n## 4. Sour it\n\n1. Boil the borș separately in a small pan, then add it to the soup. Boiling it first is traditional and takes the raw edge off.\n2. Taste and add more until it is properly sour. Correct the salt afterwards, never before.\n3. Take the pot off the heat, throw in a generous handful of chopped lovage, and cover for 5 minutes.\n4. Serve with sour cream and a hot pepper on the side."
+    },
+    {
+      "name": "Mici",
+      "yields": 6,
+      "prep_time": 30,
+      "cook_time": 15,
+      "time": 300,
+      "tags": ["Romanian", "AI-written"],
+      "items": [
+        { "name": "Beef mince", "description": "600 g, fatty" },
+        { "name": "Lamb mince", "description": "200 g" },
+        { "name": "Pork mince", "description": "200 g" },
+        { "name": "Garlic", "description": "6 cloves, crushed to a paste" },
+        { "name": "Bicarbonate of soda", "description": "1 tsp" },
+        { "name": "Beef stock", "description": "150 ml, cold" },
+        { "name": "Black pepper", "description": "2 tsp, ground" },
+        { "name": "Ground coriander", "description": "1 tsp" },
+        { "name": "Ground allspice", "description": "1/2 tsp" },
+        { "name": "Dried thyme", "description": "1 tsp" },
+        { "name": "Salt", "description": "2 tsp" },
+        { "name": "Mustard", "description": "to serve" }
+      ],
+      "description": "Skinless grilled sausages, the smell of every Romanian summer. The bicarbonate and the cold stock are not optional: together they give mici the springy texture that separates them from ordinary meatballs.\n\n## 1. Mix\n\n1. Combine all three minces with the garlic, spices, salt and bicarbonate.\n2. Add the cold stock a little at a time, working the mixture hard with your hands for a good 10 minutes. It should become sticky and paste-like rather than crumbly.\n\n## 2. Rest — the part people skip\n\n1. Cover and refrigerate at least 4 hours, ideally overnight. The bicarbonate needs time and the flavour needs longer.\n\n## 3. Shape\n\n1. With wet hands, roll thick sausages about 8 cm long and 3 cm across. A piping bag with a wide nozzle makes them uniform.\n2. Chill again for 30 minutes if the kitchen is warm.\n\n## 4. Grill\n\n1. Grill over high heat, turning often, 10-15 minutes. They should char in places and stay juicy inside.\n2. Brush with a little salted water while grilling if they look dry.\n3. Serve with mustard, fresh bread and cold beer. Never with ketchup, unless you enjoy arguments."
+    },
+    {
+      "name": "Papanași",
+      "yields": 4,
+      "prep_time": 25,
+      "cook_time": 15,
+      "time": 40,
+      "tags": ["Romanian", "AI-written"],
+      "items": [
+        { "name": "Cottage cheese", "description": "500 g, well drained (brânză de vaci)" },
+        { "name": "Eggs", "description": "2" },
+        { "name": "Semolina", "description": "3 tbsp" },
+        { "name": "Plain flour", "description": "150 g, plus more to shape" },
+        { "name": "Sugar", "description": "3 tbsp" },
+        { "name": "Baking powder", "description": "1 tsp" },
+        { "name": "Lemon zest", "description": "1 lemon" },
+        { "name": "Vanilla extract", "description": "1 tsp" },
+        { "name": "Salt", "description": "1 pinch" },
+        { "name": "Sunflower oil", "description": "for frying" },
+        { "name": "Sour cream", "description": "300 g, to serve" },
+        { "name": "Sour cherry jam", "description": "to serve" }
+      ],
+      "description": "Fried doughnuts of sweet cheese, each wearing a little hat, buried under sour cream and sour cherry jam. Romania's best dessert argument-ender.\n\n## 1. Make the dough\n\n1. Drain the cheese properly — press it in a sieve or a cloth. Wet cheese means dough you cannot shape.\n2. Mix cheese, eggs, sugar, semolina, lemon zest, vanilla and salt.\n3. Add the flour with the baking powder and work it just until it comes together. Overworking makes them tough.\n4. Rest 15 minutes so the semolina swells.\n\n## 2. Shape\n\n1. With floured hands, take a ball about the size of a small apple and flatten it slightly, then make a hole in the middle with your finger and widen it into a ring.\n2. From the same dough make a small ball — the hat — for each ring.\n\n## 3. Fry\n\n1. Heat 4-5 cm of oil to 160-170°C. Too hot and the outside colours before the middle cooks.\n2. Fry the rings 3-4 minutes a side until deep gold, then the little balls, which take less.\n3. Drain on paper.\n\n## 4. Build\n\n1. Sit each ring on a plate, spoon over cold sour cream, then sour cherry jam, then perch the hat on top.\n2. Serve immediately, while the contrast between hot doughnut and cold cream is still the point."
+    },
+    {
+      "name": "Zacuscă de vinete",
+      "yields": 8,
+      "prep_time": 60,
+      "cook_time": 120,
+      "time": 180,
+      "tags": ["Romanian", "AI-written"],
+      "items": [
+        { "name": "Aubergine", "description": "2 kg" },
+        { "name": "Red peppers", "description": "1.5 kg" },
+        { "name": "Onion", "description": "1 kg, finely chopped" },
+        { "name": "Tomato paste", "description": "300 g" },
+        { "name": "Sunflower oil", "description": "300 ml" },
+        { "name": "Bay leaves", "description": "4" },
+        { "name": "Black peppercorns", "description": "1 tsp" },
+        { "name": "Salt", "description": "to taste" }
+      ],
+      "description": "Autumn in a jar. Made in enormous quantities when peppers are cheap, eaten on bread all winter. The smell of roasting peppers is half the reason to make it.\n\n## 1. Roast\n\n1. Roast the aubergines and peppers whole, over a flame or under a hot grill, until the skins are blackened all over.\n2. Put them in a covered pot or a bag for 20 minutes — the steam loosens the skins.\n3. Peel, deseed the peppers, and drain the aubergines well in a colander. Chop both coarsely. Never use a blender: zacuscă should have texture.\n\n## 2. Cook the base\n\n1. Cook the onion in the oil over low heat for 25-30 minutes until sweet and golden. This is the longest step and the one that decides the flavour.\n2. Add the tomato paste and cook another 5 minutes.\n\n## 3. Bring it together\n\n1. Add the aubergine and peppers, bay leaves and peppercorns.\n2. Cook uncovered over low heat for 1.5-2 hours, stirring often with a wooden spoon, until the oil separates and rises to the surface. That is the sign it is done.\n3. Salt at the very end, tasting as you go.\n\n## 4. Jar it\n\n1. Spoon boiling hot into sterilised jars, seal, and turn upside down.\n2. Wrap the jars in a blanket and leave overnight — cooling slowly is what stops them spoiling.\n3. Keeps a year in a cold, dark place."
+    },
+    {
+      "name": "Salată de vinete",
+      "yields": 6,
+      "prep_time": 20,
+      "cook_time": 30,
+      "time": 50,
+      "tags": ["Romanian", "AI-written"],
+      "items": [
+        { "name": "Aubergine", "description": "1.5 kg" },
+        { "name": "Onion", "description": "1 small, very finely chopped" },
+        { "name": "Sunflower oil", "description": "100 ml" },
+        { "name": "Lemon", "description": "1/2, juiced" },
+        { "name": "Salt", "description": "to taste" },
+        { "name": "Tomatoes", "description": "to serve", "optional": true }
+      ],
+      "description": "Smoked aubergine beaten with oil until creamy. Three ingredients, and all of it depends on how well you burn the aubergines.\n\n## 1. Burn them properly\n\n1. Cook the aubergines whole directly over a flame — a gas hob, a grill, a barbecue — turning until the skin is completely black and the flesh has collapsed. Oven-roasting works but gives you a purée, not a salad: the smoke is the flavour.\n\n## 2. Drain\n\n1. Peel while still hot, taking care not to leave black flecks in the flesh.\n2. Leave in a sieve or on a tilted wooden board for at least 30 minutes. Wet aubergine makes a watery salad, and this cannot be fixed later.\n\n## 3. Beat\n\n1. Chop with a wooden knife on a wooden board — metal is said to discolour it, and after enough repetitions you stop arguing.\n2. Beat with a wooden spoon while pouring the oil in a thin stream, as if making mayonnaise, until pale and creamy.\n3. Beat in the lemon juice and salt, then fold in the raw onion at the very end.\n4. Serve cool with tomatoes and good bread."
+    },
+    {
+      "name": "Ciorbă rădăuțeană",
+      "yields": 6,
+      "prep_time": 20,
+      "cook_time": 40,
+      "time": 60,
+      "tags": ["Romanian", "AI-written"],
+      "items": [
+        { "name": "Chicken breast", "description": "600 g" },
+        { "name": "Carrots", "description": "2" },
+        { "name": "Parsnip", "description": "1" },
+        { "name": "Celeriac", "description": "100 g" },
+        { "name": "Onion", "description": "1" },
+        { "name": "Garlic", "description": "6 cloves" },
+        { "name": "Sour cream", "description": "400 g" },
+        { "name": "Eggs", "description": "3 yolks" },
+        { "name": "Vinegar", "description": "2 tbsp" },
+        { "name": "Salt", "description": "to taste" },
+        { "name": "Black pepper", "description": "to taste" }
+      ],
+      "description": "A creamy garlic and chicken soup from Rădăuți in the north — invented in the 1970s as a tripe-free ciorbă de burtă, and now more popular than the original. Forgiving, rich, and quick by ciorbă standards.\n\n## 1. Poach\n\n1. Simmer the chicken with the whole vegetables in 2.5 L salted water for 30 minutes, skimming the foam in the first few minutes.\n2. Lift out the chicken and the vegetables. Strain the broth back into the pot.\n3. Cut the chicken into thin strips and the carrots into small dice; discard the rest or eat it as the cook's portion.\n\n## 2. Temper the cream\n\n1. Whisk the sour cream with the egg yolks and a ladle of hot broth. Then another. Then a third.\n2. Pour the tempered mixture slowly back into the pot, off the boil, stirring constantly. If it boils after this point it will split.\n\n## 3. Finish\n\n1. Return the chicken and carrots, and warm gently without boiling.\n2. Crush the garlic to a paste with a little salt and stir it in off the heat — raw garlic is the whole character of this soup.\n3. Sharpen with vinegar to taste, season, and serve with a hot pepper and bread."
+    }
+  ]
+}
