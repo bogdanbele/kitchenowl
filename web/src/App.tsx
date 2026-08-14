@@ -9,12 +9,14 @@ import Recipe from "./routes/Recipe";
 import ShoppingList from "./routes/ShoppingList";
 import RecipeEdit from "./routes/RecipeEdit";
 import Planner from "./routes/Planner";
+import Expenses from "./routes/Expenses";
 import { ThemeToggle } from "./components/ThemeToggle";
 
 const SECTIONS = [
   { path: "shopping", label: "Shopping list" },
   { path: "recipes", label: "Recipes" },
   { path: "planner", label: "Meal planner" },
+  { path: "expenses", label: "Expenses" },
 ];
 
 function Shell() {
@@ -116,6 +118,7 @@ export default function App() {
         <Route path="recipes/:recipeId" element={<Recipe />} />
         <Route path="recipes/:recipeId/edit" element={<RecipeEdit />} />
         <Route path="planner" element={<Planner />} />
+        <Route path="expenses" element={<Expenses />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
