@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* The palette keeps KitchenOwl's green as the accent but stops using it for
+   every surface, which is what made the Flutter build read as one flat wash of
+   colour. Surfaces are near-neutral with a trace of the accent's hue, so the
+   green reads as emphasis rather than as the background. */
+@theme {
+  --color-accent-50: oklch(0.96 0.03 152);
+  --color-accent-100: oklch(0.92 0.06 152);
+  --color-accent-300: oklch(0.8 0.11 152);
+  --color-accent-500: oklch(0.66 0.14 152);
+  --color-accent-600: oklch(0.58 0.13 152);
+  --color-accent-700: oklch(0.48 0.11 152);
+
+  --color-canvas: oklch(0.99 0.004 152);
+  --color-surface: oklch(1 0 0);
+  --color-line: oklch(0.91 0.006 152);
+  --color-ink: oklch(0.24 0.012 152);
+  --color-ink-soft: oklch(0.52 0.012 152);
+
+  --radius-card: 0.875rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-canvas: oklch(0.19 0.008 152);
+    --color-surface: oklch(0.23 0.01 152);
+    --color-line: oklch(0.3 0.012 152);
+    --color-ink: oklch(0.95 0.006 152);
+    --color-ink-soft: oklch(0.7 0.01 152);
+  }
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  @apply bg-canvas text-ink antialiased;
+  font-family:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Recipe steps are markdown, and the whole point of the backend work was that
+   they arrive as a real numbered list. These styles are what make that show. */
+.prose-recipe {
+  @apply text-[0.975rem] leading-7;
+}
+.prose-recipe h2 {
+  @apply mt-8 mb-3 text-sm font-semibold tracking-wide uppercase text-ink-soft;
+}
+.prose-recipe ol {
+  @apply list-decimal space-y-3 pl-6 marker:font-semibold marker:text-accent-600;
+}
+.prose-recipe ul {
+  @apply list-disc space-y-2 pl-6 marker:text-ink-soft;
+}
+.prose-recipe p {
+  @apply mb-4;
+}
+.prose-recipe a {
+  @apply text-accent-700 underline underline-offset-2;
+}
+.prose-recipe strong {
+  @apply font-semibold;
+}
