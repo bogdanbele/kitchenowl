@@ -294,8 +294,7 @@ export default function RecipeEdit() {
         <button
           type="submit"
           disabled={save.isPending}
-          className="rounded-card bg-accent px-5 py-2.5 font-medium text-white transition
-                     hover:brightness-95 disabled:opacity-40"
+          className="btn-gradient rounded-card px-5 py-2.5 font-medium"
         >
           {save.isPending ? "Saving…" : isNew ? "Create recipe" : "Save changes"}
         </button>

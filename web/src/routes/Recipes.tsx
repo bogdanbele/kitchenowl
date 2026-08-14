@@ -19,8 +19,8 @@ function RecipeCard({ recipe, householdId }: { recipe: Recipe; householdId: stri
   // A tinted initial rather than a broken-image icon: most hand-typed recipes
   // have no photo, and the row should still hold its shape.
   const placeholder = (
-    <div className="grid size-20 shrink-0 place-items-center rounded-card bg-paper-deep">
-      <span className="font-display text-xl text-faint">{recipe.name.charAt(0)}</span>
+    <div className="gradient-surface grid size-20 shrink-0 place-items-center rounded-card opacity-90">
+      <span className="font-display text-xl text-white/90">{recipe.name.charAt(0)}</span>
     </div>
   );
 
@@ -81,7 +81,7 @@ export default function Recipes() {
         </div>
         <Link
           to={`/household/${householdId}/recipes/new`}
-          className="mb-1 rounded-card bg-accent px-4 py-2 text-sm font-medium text-white transition hover:brightness-95"
+          className="btn-gradient mb-1 rounded-card px-4 py-2 text-sm font-medium"
         >
           New recipe
         </Link>

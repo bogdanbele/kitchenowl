@@ -38,9 +38,7 @@ function Shell() {
       <header className="sticky top-0 z-10 flex items-center justify-between border-b border-hairline bg-paper/90 px-5 py-3 backdrop-blur md:hidden">
         <div>
           <p className="label">{household?.name ?? "Household"}</p>
-          <p className="font-display text-lg leading-tight font-semibold">
-            Kitchen<span className="text-accent">Owl</span>
-          </p>
+          <p className="gradient-ink font-display text-lg leading-tight font-semibold">KitchenOwl</p>
         </div>
         <ThemeToggle />
       </header>
@@ -48,8 +46,8 @@ function Shell() {
       <aside className="hidden border-hairline md:block md:min-h-dvh md:border-r">
         <div className="px-6 py-6">
           <p className="label">{household?.name ?? "Household"}</p>
-          <p className="mt-2 font-display text-2xl leading-none font-semibold tracking-tight">
-            Kitchen<span className="text-accent">Owl</span>
+          <p className="gradient-ink mt-2 font-display text-2xl leading-none font-semibold tracking-tight">
+            KitchenOwl
           </p>
         </div>
 
@@ -115,7 +113,11 @@ function Shell() {
         ))}
       </nav>
 
-      <main className="px-5 pt-6 pb-24 md:px-10 md:py-12 md:pb-12">
+      {/* One large gradient for the whole app rather than one per page: a bloom
+          behind the heading, clipped by the main element and pointer-events
+          none, so it can never sit under text or swallow a click. */}
+      <main className="aurora relative overflow-hidden px-5 pt-6 pb-24 md:px-10 md:py-12 md:pb-12">
+        <span aria-hidden className="aurora-glow" />
         <Outlet />
       </main>
     </div>

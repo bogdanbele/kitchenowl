@@ -84,7 +84,7 @@ export default function HouseholdSettings() {
             <button
               onClick={() => update.mutate({ name: name.trim() })}
               disabled={!name.trim() || update.isPending}
-              className="shrink-0 rounded-card bg-accent px-4 py-2 text-sm font-medium text-white transition hover:brightness-95 disabled:opacity-40"
+              className="btn-gradient shrink-0 rounded-card px-4 py-2 text-sm font-medium"
             >
               {update.isPending ? "Saving…" : "Save"}
             </button>

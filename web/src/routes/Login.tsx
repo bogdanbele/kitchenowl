@@ -31,9 +31,7 @@ export default function Login() {
     <main className="grid min-h-dvh place-items-center px-6">
       <form onSubmit={onSubmit} className="w-full max-w-sm">
         <p className="label">Household · Access</p>
-        <h1 className="mt-2 mb-10 text-4xl font-semibold tracking-tight">
-          Kitchen<span className="text-accent">Owl</span>
-        </h1>
+        <h1 className="gradient-ink mt-2 mb-10 text-4xl font-semibold tracking-tight">KitchenOwl</h1>
 
         <label className="label mb-1 block" htmlFor="username">
           Username or email
@@ -68,8 +66,7 @@ export default function Login() {
         <button
           type="submit"
           disabled={busy || !username || !password}
-          className="mt-10 w-full rounded-card bg-accent px-4 py-3 font-medium text-white
-                     transition hover:brightness-95 disabled:opacity-40"
+          className="btn-gradient mt-10 w-full rounded-card px-4 py-3 font-medium"
         >
           {busy ? "Signing in…" : "Sign in"}
         </button>

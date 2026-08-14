@@ -69,7 +69,7 @@ export default function Expenses() {
         </div>
         <button
           onClick={() => setAdding(true)}
-          className="mb-1 rounded-card bg-accent px-4 py-2 text-sm font-medium text-white transition hover:brightness-95"
+          className="btn-gradient mb-1 rounded-card px-4 py-2 text-sm font-medium"
         >
           Add expense
         </button>
@@ -257,7 +257,7 @@ function AddExpense({
           <button
             type="submit"
             disabled={pending || !name.trim() || !amount.trim() || paidFor.length === 0}
-            className="rounded-card bg-accent px-5 py-2.5 font-medium text-white transition hover:brightness-95 disabled:opacity-40"
+            className="btn-gradient rounded-card px-5 py-2.5 font-medium"
           >
             {pending ? "Saving…" : "Add expense"}
           </button>

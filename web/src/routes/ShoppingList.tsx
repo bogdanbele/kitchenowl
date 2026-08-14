@@ -114,8 +114,7 @@ export default function ShoppingList() {
         <button
           type="submit"
           disabled={!draft.trim()}
-          className="rounded-card bg-accent px-5 py-3 font-medium text-white transition
-                     hover:brightness-95 disabled:opacity-40"
+          className="btn-gradient rounded-card px-5 py-3 font-medium"
         >
           Add
         </button>

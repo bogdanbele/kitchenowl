@@ -7,72 +7,7 @@
 @import "@fontsource-variable/fraunces";
 @import "@fontsource-variable/jetbrains-mono";
 
-/* The palette and type are lifted from archivist.bonello.uk and
-   radio.bonello.uk so this reads as part of the same set of sites: warm paper
-   under near-black ink, one loud accent, an editorial serif for display, and
-   small mono labels in caps. KitchenOwl's green survives only as the "in your
-   basket" state, where a colour that means done is worth more than a brand.
-
-   Light is the base, matching the Archivist. */
-@theme {
-  --color-paper: #f3efe7;
-  --color-paper-deep: #e9e3d8;
-  --color-ink: #1b1916;
-  --color-muted: #726c64;
-  --color-faint: #9c958b;
-  --color-line: rgba(27, 25, 22, 0.28);
-  --color-hairline: rgba(27, 25, 22, 0.12);
-  --color-accent: #ef4b52;
-  --color-accent-soft: rgba(239, 75, 82, 0.12);
-  --color-done: #4c8a5f;
-
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Fraunces Variable", Georgia, "Times New Roman", serif;
-  --font-mono: "JetBrains Mono Variable", ui-monospace, "SF Mono", Menlo, monospace;
-
-  --radius-card: 0.5rem;
-}
-
-/* Radio's night side of the same house. Declared once and applied from two
-   places: the OS preference, and an explicit choice that overrides it.
-   The explicit choice has to win in both directions — someone on a dark OS
-   asking for light gets light. */
-@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
-
-:root[data-theme="dark"],
-:root[data-theme="system"] {
-  color-scheme: light dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root[data-theme="system"] {
-    --color-paper: #100e0c;
-    --color-paper-deep: #17150f;
-    --color-ink: #ece6dc;
-    --color-muted: #a09a91;
-    --color-faint: #6f6a63;
-    --color-line: rgba(236, 230, 220, 0.22);
-    --color-hairline: rgba(236, 230, 220, 0.1);
-    --color-accent-soft: rgba(239, 75, 82, 0.16);
-    --color-done: #7fb98f;
-  }
-}
-
-:root[data-theme="dark"] {
-  --color-paper: #100e0c;
-  --color-paper-deep: #17150f;
-  --color-ink: #ece6dc;
-  --color-muted: #a09a91;
-  --color-faint: #6f6a63;
-  --color-line: rgba(236, 230, 220, 0.22);
-  --color-hairline: rgba(236, 230, 220, 0.1);
-  --color-accent-soft: rgba(239, 75, 82, 0.16);
-  --color-done: #7fb98f;
-}
-
-:root[data-theme="light"] {
-  color-scheme: light;
-}
+@import "./styles/theme.css";
 
 body {
   @apply bg-paper text-ink antialiased;
@@ -86,7 +21,7 @@ h3 {
   font-optical-sizing: auto;
 }
 
-/* The 10px caps label both sites use to tag a section, down to the letter
+/* The 10px caps label the other sites use to tag a section, down to the letter
    spacing. It is the strongest single carrier of the house style. */
 .label {
   @apply font-mono text-[10px] font-medium tracking-[0.14em] text-faint uppercase;
@@ -101,7 +36,7 @@ h3 {
          placeholder:text-faint focus:border-accent;
 }
 
-/* Recipe steps. The backend now delivers these as a real numbered list, and an
+/* Recipe steps. The backend delivers these as a real numbered list, and an
    editorial hanging-number list is what makes that worth having: the eye finds
    step 4 again after you look away at the pan. */
 .prose-recipe {
