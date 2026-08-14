@@ -3,40 +3,13 @@ import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import { api } from "../api/client";
 import type { Recipe } from "../api/types";
+import { DAY_MS, isUnscheduled, relativeDay, utcMidnight } from "../lib/format";
 
 interface PlannedRecipe {
   recipe_id: number;
   cooking_date: number;
   yields: number;
   recipe: Recipe;
-}
-
-/**
- * The API stores a plan's date as midnight UTC and serialises it as epoch
- * milliseconds, so every comparison here is in UTC. Reading it in local time
- * puts a plan on the wrong day for anyone east or west of Greenwich, which is
- * the kind of bug that only shows up as "why is dinner on Tuesday".
- */
-const DAY_MS = 86_400_000;
-
-function utcMidnight(date: Date): number {
-  return Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
-}
-
-/** An unscheduled plan is stored as date.min — year 1, so far negative. */
-function isUnscheduled(cookingDate: number): boolean {
-  return cookingDate < 0;
-}
-
-function dayLabel(timestamp: number, today: number): string {
-  if (timestamp === today) return "Today";
-  if (timestamp === today + DAY_MS) return "Tomorrow";
-  return new Date(timestamp).toLocaleDateString(undefined, {
-    weekday: "short",
-    day: "numeric",
-    month: "short",
-    timeZone: "UTC",
-  });
 }
 
 export default function Planner() {
@@ -146,7 +119,7 @@ export default function Planner() {
                 <p
                   className={`label mb-1 ${timestamp === today ? "text-accent" : ""}`}
                 >
-                  {dayLabel(timestamp, today)}
+                  {relativeDay(timestamp, today)}
                 </p>
                 <div className="rule pt-1">
                   {entries.map((entry) => (
@@ -185,7 +158,7 @@ export default function Planner() {
             onClick={(event) => event.stopPropagation()}
           >
             <p className="label mb-3">
-              Plan for {pickingFor === -1 ? "someday" : dayLabel(pickingFor, today)}
+              Plan for {pickingFor === -1 ? "someday" : relativeDay(pickingFor, today)}
             </p>
             <input
               value={query}

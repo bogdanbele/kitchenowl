@@ -1,11 +1,16 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { ApiError, SessionExpired, api, tokens } from "./client";
+import { ApiError, SessionExpired, api, tokens, uploadFile } from "./client";
 
 /**
  * The token dance is the part of this client that fails silently and late: a
  * mistake here signs someone out an hour after the mistake, on a page that has
  * nothing to do with auth. It is worth testing properly.
  */
+
+/** The backend's real error shape: a bare string with no content type of note. */
+function textResponse(body: string, status: number) {
+  return new Response(body, { status, headers: { "content-type": "text/html; charset=utf-8" } });
+}
 
 function jsonResponse(body: unknown, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -35,7 +40,7 @@ describe("api", () => {
 
     const [url, init] = fetchMock.mock.calls[0];
     expect(url).toBe("/api/user");
-    expect((init.headers as Record<string, string>).Authorization).toBe("Bearer access-1");
+    expect(new Headers(init.headers).get("Authorization")).toBe("Bearer access-1");
   });
 
   it("refreshes once on a 401 and retries the original request", async () => {
@@ -51,8 +56,8 @@ describe("api", () => {
     expect(fetchMock).toHaveBeenCalledTimes(3);
     expect(fetchMock.mock.calls[1][0]).toBe("/api/auth/refresh");
     // The retry must carry the new token, not the one that just failed.
-    const retry = fetchMock.mock.calls[2][1] as { headers: Record<string, string> };
-    expect(retry.headers.Authorization).toBe("Bearer access-2");
+    const retry = fetchMock.mock.calls[2][1] as RequestInit;
+    expect(new Headers(retry.headers).get("Authorization")).toBe("Bearer access-2");
   });
 
   it("stores the rotated refresh token, not just the access token", async () => {
@@ -73,13 +78,13 @@ describe("api", () => {
   });
 
   it("shares one refresh between requests that all 401 at once", async () => {
-    fetchMock.mockImplementation((url: string, init?: { headers?: Record<string, string> }) => {
+    fetchMock.mockImplementation((url: string, init?: RequestInit) => {
       if (url === "/api/auth/refresh") {
         return Promise.resolve(
           jsonResponse({ access_token: "access-2", refresh_token: "refresh-2", user: {} }),
         );
       }
-      const auth = init?.headers?.Authorization;
+      const auth = new Headers(init?.headers).get("Authorization");
       return Promise.resolve(
         auth === "Bearer access-2" ? jsonResponse({ ok: true }) : jsonResponse({}, 401),
       );
@@ -129,5 +134,60 @@ describe("api", () => {
       SessionExpired,
     );
     expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe("error messages", () => {
+  it("reads a plain-text error body, which is what this backend actually sends", async () => {
+    // Its error handlers return text, not JSON. Parsing as JSON first made every
+    // message collapse to "Bad Request" and hid what the server was telling us.
+    fetchMock.mockResolvedValueOnce(textResponse("Request invalid: email", 400));
+    await expect(api("/user")).rejects.toThrow("Request invalid: email");
+  });
+
+  it("still unwraps the routes that do answer with JSON", async () => {
+    fetchMock.mockResolvedValueOnce(jsonResponse({ msg: "Onboarding not allowed" }, 403));
+    await expect(api("/onboarding")).rejects.toThrow("Onboarding not allowed");
+  });
+
+  it("falls back to the status text when the body is empty", async () => {
+    fetchMock.mockResolvedValueOnce(new Response("", { status: 500, statusText: "Server Error" }));
+    await expect(api("/x")).rejects.toThrow("Server Error");
+  });
+});
+
+describe("query parameters", () => {
+  it("encodes values and drops the ones that are not set", async () => {
+    fetchMock.mockResolvedValueOnce(jsonResponse([]));
+    await api("/recipe/search", { query: { query: "pork sinigang", page: 0, language: undefined } });
+    expect(fetchMock.mock.calls[0][0]).toBe("/api/recipe/search?query=pork+sinigang&page=0");
+  });
+
+  it("repeats a key for array values, which is how the expense filter passes categories", async () => {
+    fetchMock.mockResolvedValueOnce(jsonResponse([]));
+    await api("/household/1/expense", { query: { filter: [3, 7] } });
+    expect(fetchMock.mock.calls[0][0]).toBe("/api/household/1/expense?filter=3&filter=7");
+  });
+});
+
+describe("uploadFile", () => {
+  const file = () => new File(["x"], "photo.jpg", { type: "image/jpeg" });
+
+  it("posts multipart without setting a content type", async () => {
+    // Only fetch knows the boundary it generated; setting the header by hand
+    // corrupts the request.
+    fetchMock.mockResolvedValueOnce(jsonResponse({ filename: "abc.jpg" }));
+    await expect(uploadFile(file())).resolves.toBe("abc.jpg");
+
+    const init = fetchMock.mock.calls[0][1] as { body: unknown; headers: Headers };
+    expect(init.body).toBeInstanceOf(FormData);
+    expect(new Headers(init.headers).get("Content-Type")).toBeNull();
+  });
+
+  it("treats a 200 with no filename as a failure, because the server does that", async () => {
+    // A fresh Response per call: a body can only be read once.
+    fetchMock.mockImplementation(() => Promise.resolve(jsonResponse({ msg: "missing file" }, 200)));
+    await expect(uploadFile(file())).rejects.toBeInstanceOf(ApiError);
+    await expect(uploadFile(file())).rejects.toThrow("missing file");
   });
 });

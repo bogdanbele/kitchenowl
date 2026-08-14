@@ -19,6 +19,21 @@
         // Private mode with storage blocked: the OS preference still applies.
       }
     </script>
+    <script>
+      // The Flutter build registers a service worker at scope "/". Once this
+      // client is served from "/", that worker would keep handing back the old
+      // Flutter shell and no amount of reloading would fix it — the classic way
+      // a web cutover appears to silently fail. Unregistering here is a no-op
+      // while we live at /next, and the thing that saves the swap later.
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+          for (const registration of registrations) registration.unregister();
+        });
+        if (window.caches) {
+          caches.keys().then((keys) => keys.forEach((key) => caches.delete(key)));
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

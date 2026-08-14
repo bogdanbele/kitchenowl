@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, type FormEvent } from "react";
 import { api } from "../api/client";
 import type { Household, User } from "../api/types";
+import { money } from "../lib/format";
 
 interface Member extends User {
   expense_balance: number;
@@ -16,16 +17,6 @@ interface Expense {
   paid_by_id: number;
   description?: string;
 }
-
-/**
- * Money is shown with two decimals and no currency symbol.
- *
- * The API stores a bare float and the household has no currency setting, so any
- * symbol here would be this client inventing one. A wrong symbol on a number
- * people settle up with is worse than no symbol.
- */
-const money = (amount: number) =>
-  amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
 export default function Expenses() {
   const { householdId = "1" } = useParams();

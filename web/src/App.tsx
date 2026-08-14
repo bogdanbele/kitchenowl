@@ -1,8 +1,10 @@
 import { Navigate, NavLink, Outlet, Route, Routes, useParams } from "react-router-dom";
 import { Suspense, lazy } from "react";
+import { useLocation } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "./api/client";
 import type { Household } from "./api/types";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 import { useAuth } from "./auth";
 import Login from "./routes/Login";
 
@@ -22,9 +24,16 @@ const RecipeEdit = lazy(() => import("./routes/RecipeEdit"));
 const Planner = lazy(() => import("./routes/Planner"));
 const Expenses = lazy(() => import("./routes/Expenses"));
 const HouseholdSettings = lazy(() => import("./routes/HouseholdSettings"));
+const NotFound = lazy(() => import("./routes/NotFound"));
 import { ThemeToggle } from "./components/ThemeToggle";
 
-const SECTIONS = [
+interface Section {
+  path: string;
+  label: string;
+  short: string;
+}
+
+const ALL_SECTIONS: Section[] = [
   { path: "shopping", label: "Shopping list", short: "Shopping" },
   { path: "recipes", label: "Recipes", short: "Recipes" },
   { path: "planner", label: "Meal planner", short: "Planner" },
@@ -32,14 +41,32 @@ const SECTIONS = [
   { path: "household", label: "Household", short: "Home" },
 ];
 
+/**
+ * The nav follows the household's own settings.
+ *
+ * A household with expenses turned off should not show an Expenses tab that
+ * loads an empty screen — the Flutter app hides them, and the toggles on the
+ * household settings page are meaningless if nothing reads them. Both flags
+ * default to on when the field is absent, matching the server.
+ */
+function sectionsFor(household?: { planner_feature?: boolean; expenses_feature?: boolean }): Section[] {
+  return ALL_SECTIONS.filter((section) => {
+    if (section.path === "planner") return household?.planner_feature !== false;
+    if (section.path === "expenses") return household?.expenses_feature !== false;
+    return true;
+  });
+}
+
 function Shell() {
   const { householdId } = useParams();
   const { user, signOut } = useAuth();
+  const location = useLocation();
   const { data: households } = useQuery({
     queryKey: ["households"],
     queryFn: () => api<Household[]>("/household"),
   });
   const household = households?.find((h) => String(h.id) === householdId);
+  const sections = sectionsFor(household);
 
   return (
     <div className="min-h-dvh md:grid md:grid-cols-[15rem_1fr]">
@@ -63,7 +90,7 @@ function Shell() {
         </div>
 
         <nav className="px-3 pb-6">
-          {SECTIONS.map((section, index) => (
+          {sections.map((section, index) => (
             <NavLink
               key={section.path}
               to={`/household/${householdId}/${section.path}`}
@@ -109,7 +136,7 @@ function Shell() {
         className="fixed inset-x-0 bottom-0 z-10 flex border-t border-hairline bg-paper/95 backdrop-blur md:hidden"
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       >
-        {SECTIONS.map((section) => (
+        {sections.map((section) => (
           <NavLink
             key={section.path}
             to={`/household/${householdId}/${section.path}`}
@@ -129,9 +156,11 @@ function Shell() {
           none, so it can never sit under text or swallow a click. */}
       <main className="aurora relative overflow-hidden px-5 pt-6 pb-24 md:px-10 md:py-12 md:pb-12">
         <span aria-hidden className="aurora-glow" />
-        <Suspense fallback={<div className="h-64 animate-pulse rounded-card bg-paper-deep" />}>
-          <Outlet />
-        </Suspense>
+        <ErrorBoundary key={location.pathname}>
+          <Suspense fallback={<div className="h-64 animate-pulse rounded-card bg-paper-deep" />}>
+            <Outlet />
+          </Suspense>
+        </ErrorBoundary>
       </main>
     </div>
   );
@@ -171,8 +200,9 @@ export default function App() {
         <Route path="planner" element={<Planner />} />
         <Route path="expenses" element={<Expenses />} />
         <Route path="household" element={<HouseholdSettings />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

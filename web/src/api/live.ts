@@ -1,5 +1,5 @@
 import { io, type Socket } from "socket.io-client";
-import { tokens } from "./client";
+import { onTokensChanged, tokens } from "./client";
 import type { ShoppinglistItem } from "./types";
 
 /**
@@ -51,6 +51,10 @@ export function disconnectLive() {
  * drop. Rebuilding the socket with the current token on reconnect is what stops
  * a refresh mid-session from silently ending live updates for the rest of it.
  */
+// Registered once at module load, so a rotation reaches the socket without the
+// API client needing to know the socket exists.
+onTokensChanged(() => refreshLiveAuth());
+
 export function refreshLiveAuth() {
   if (!socket) return;
   const token = tokens.access;

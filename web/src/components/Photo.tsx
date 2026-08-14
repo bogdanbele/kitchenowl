@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { tokens } from "../api/client";
+import { authedFetch } from "../api/client";
 
 /**
  * An uploaded photo cannot be loaded by <img src> alone.
@@ -18,9 +18,7 @@ function loadPhoto(filename: string): Promise<string> {
   const existing = cache.get(filename);
   if (existing) return existing;
 
-  const pending = fetch(`/api/upload/${filename}`, {
-    headers: { Authorization: `Bearer ${tokens.access}` },
-  })
+  const pending = authedFetch(`/upload/${filename}`)
     .then((response) => {
       if (!response.ok) throw new Error(String(response.status));
       return response.blob();
