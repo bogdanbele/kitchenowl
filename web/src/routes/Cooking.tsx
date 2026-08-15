@@ -124,23 +124,47 @@ export default function Cooking() {
             </div>
           )}
 
-          {stepItems.length > 0 && (
+          {recipe.items.length > 0 && (
             <div className="mt-10">
-              <p className="label mb-2">For this step</p>
-              <ul className="rule">
-                {stepItems.map((item) => (
-                  <li
-                    key={item.id}
-                    className="flex items-baseline justify-between gap-4 border-b border-hairline py-2.5"
-                  >
-                    <span>{item.name}</span>
-                    {item.description && (
-                      <span className="shrink-0 font-mono text-sm text-muted">
-                        {scaleAmount(item.description, factor)}
+              <p className="label mb-3">
+                {stepItems.length > 0 ? "For this step" : "Ingredients"}
+              </p>
+              {/* Every ingredient stays on screen, with the ones this step needs
+                  lit up. A list of only the current step's items answers "what
+                  now"; the whole board also answers "what is coming", which is
+                  what you want while something is already in the pan. Lit tiles
+                  carry a ring as well as a fill, because a tint alone is the cue
+                  a colour-blind cook loses. */}
+              <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+                {recipe.items.map((item) => {
+                  const active = step.itemIds.includes(item.id);
+                  return (
+                    <li
+                      key={item.id}
+                      aria-current={active ? "true" : undefined}
+                      className={`rounded-card border p-3 transition ${
+                        active
+                          ? "border-accent bg-accent-soft"
+                          : // No opacity here. Dimming muted text to 70% put it
+                            // at 3.7:1 — the border and the fill already say
+                            // which tiles are live, so the type does not have
+                            // to go faint as well to make the point.
+                            "border-hairline text-muted"
+                      }`}
+                    >
+                      <span className={`block text-sm leading-snug ${active ? "font-medium" : ""}`}>
+                        {item.name}
                       </span>
-                    )}
-                  </li>
-                ))}
+                      {item.description && (
+                        <span
+                          className={`mt-0.5 block font-mono text-xs ${active ? "text-accent" : "text-faint"}`}
+                        >
+                          {scaleAmount(item.description, factor)}
+                        </span>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           )}

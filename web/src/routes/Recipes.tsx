@@ -69,7 +69,7 @@ export default function Recipes() {
     queryKey: ["recipes", householdId],
     queryFn: () => api<Recipe[]>(`/household/${householdId}/recipe`),
   });
-  const { pantry, knownCount } = usePantry(householdId);
+  const { pantry, knownCount, source } = usePantry(householdId);
 
   // Filtering happens here rather than through /recipe/search: the list is a
   // household's own recipes, which is tens of items, and a local filter answers
@@ -122,7 +122,9 @@ export default function Recipes() {
         ))}
         {mode === "cookable" && (
           <span className="ml-1 font-mono text-[11px] text-faint">
-            from {knownCount} items on the list and recently bought
+            {source === "inventory"
+              ? `from ${knownCount} things in your kitchen`
+              : `from ${knownCount} items on the list and recently bought`}
           </span>
         )}
       </div>

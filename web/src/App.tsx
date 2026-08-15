@@ -3,6 +3,7 @@ import { Suspense, lazy } from "react";
 import { useLocation } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "./api/client";
+import { spisoApi } from "./api/spiso";
 import type { Household } from "./api/types";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { useAuth } from "./auth";
@@ -29,6 +30,8 @@ const SettingsMenu = lazy(() => import("./routes/settings/SettingsMenu"));
 const AiSettings = lazy(() => import("./routes/settings/AiSettings"));
 const AppearanceSettings = lazy(() => import("./routes/settings/AppearanceSettings"));
 const AccountSettings = lazy(() => import("./routes/settings/AccountSettings"));
+const SpisoSettings = lazy(() => import("./routes/settings/SpisoSettings"));
+const Inventory = lazy(() => import("./routes/Inventory"));
 const Cooking = lazy(() => import("./routes/Cooking"));
 import { ThemeToggle } from "./components/ThemeToggle";
 
@@ -41,6 +44,7 @@ interface Section {
 const ALL_SECTIONS: Section[] = [
   { path: "shopping", label: "Shopping list", short: "Shopping" },
   { path: "recipes", label: "Recipes", short: "Recipes" },
+  { path: "inventory", label: "In the kitchen", short: "Kitchen" },
   { path: "planner", label: "Meal planner", short: "Planner" },
   { path: "expenses", label: "Expenses", short: "Expenses" },
   { path: "household", label: "Household", short: "Home" },
@@ -55,10 +59,16 @@ const ALL_SECTIONS: Section[] = [
  * household settings page are meaningless if nothing reads them. Both flags
  * default to on when the field is absent, matching the server.
  */
-function sectionsFor(household?: { planner_feature?: boolean; expenses_feature?: boolean }): Section[] {
+function sectionsFor(
+  household?: { planner_feature?: boolean; expenses_feature?: boolean },
+  spisoConnected = false,
+): Section[] {
   return ALL_SECTIONS.filter((section) => {
     if (section.path === "planner") return household?.planner_feature !== false;
     if (section.path === "expenses") return household?.expenses_feature !== false;
+    // Inventory is somebody's own bridge to another app. It appears when it has
+    // something to show and is invisible — not broken-looking — otherwise.
+    if (section.path === "inventory") return spisoConnected;
     return true;
   });
 }
@@ -72,7 +82,13 @@ function Shell() {
     queryFn: () => api<Household[]>("/household"),
   });
   const household = households?.find((h) => String(h.id) === householdId);
-  const sections = sectionsFor(household);
+  const { data: spiso } = useQuery({
+    queryKey: ["spiso"],
+    queryFn: spisoApi.status,
+    staleTime: 5 * 60_000,
+    retry: false,
+  });
+  const sections = sectionsFor(household, spiso?.connected === true);
 
   return (
     <div className="min-h-dvh md:grid md:grid-cols-[15rem_1fr]">
@@ -220,6 +236,9 @@ export default function App() {
         <Route path="settings/ai" element={<AiSettings />} />
         <Route path="settings/appearance" element={<AppearanceSettings />} />
         <Route path="settings/account" element={<AccountSettings />} />
+        {/* Not on the settings menu on purpose — see SpisoSettings. */}
+        <Route path="settings/spiso" element={<SpisoSettings />} />
+        <Route path="inventory" element={<Inventory />} />
         <Route path="*" element={<NotFound />} />
       </Route>
       <Route path="*" element={<NotFound />} />

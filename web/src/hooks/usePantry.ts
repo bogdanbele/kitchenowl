@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { api } from "../api/client";
 import type { Shoppinglist, ShoppinglistItem } from "../api/types";
-import { pantryFrom } from "../lib/cookable";
+import { pantryFrom, normaliseName } from "../lib/cookable";
+import { spisoApi } from "../api/spiso";
 
 /**
  * A guess at what the kitchen holds.
@@ -29,9 +30,32 @@ export function usePantry(householdId: string) {
     enabled: list != null,
   });
 
+  /**
+   * A real inventory beats the guess.
+   *
+   * When Foodminder is connected this stops being an approximation: those are
+   * things someone scanned into the kitchen, with dates. The shopping-list
+   * guess is dropped entirely rather than merged — a recipe ranked as cookable
+   * because you bought flour three weeks ago is exactly the wrong answer once
+   * the app can see there is none.
+   */
+  const { data: inventory } = useQuery({
+    queryKey: ["spiso-inventory"],
+    queryFn: spisoApi.inventory,
+    staleTime: 60_000,
+    // 404 is "not connected", which is the ordinary case, not an error worth
+    // retrying or shouting about.
+    retry: false,
+  });
+
+  const fromInventory = inventory?.items?.length
+    ? new Set(inventory.items.map((item) => normaliseName(item.name)).filter(Boolean))
+    : null;
+
   return {
-    pantry: pantryFrom(onList, recent),
+    pantry: fromInventory ?? pantryFrom(onList, recent),
+    source: fromInventory ? ("inventory" as const) : ("history" as const),
     isPending: list != null && (onList == null || recent == null),
-    knownCount: (onList?.length ?? 0) + (recent?.length ?? 0),
+    knownCount: fromInventory ? fromInventory.size : (onList?.length ?? 0) + (recent?.length ?? 0),
   };
 }
