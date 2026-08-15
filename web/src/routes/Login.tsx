@@ -19,7 +19,19 @@ export default function Login() {
       // The API answers 401 for both a wrong password and an unknown user, and
       // says so deliberately. Repeat that rather than inventing a distinction
       // the server refused to make.
-      setError(caught instanceof Error ? caught.message : "Could not sign in");
+      //
+      // The Foodminder path needs one extra sentence, though. Its 401 also
+      // covers "this address has never been connected", which is the state
+      // everybody is in the first time — and the server will not say so,
+      // because that would tell a stranger which addresses are linked. So the
+      // way out is spelled out here, on the client, where it costs nothing.
+      setError(
+        mode === "spiso"
+          ? "Could not sign in with Foodminder. If you have not connected it yet, sign in with your KitchenOwl password first, then Settings → Foodminder."
+          : caught instanceof Error
+            ? caught.message
+            : "Could not sign in",
+      );
       setBusy(false);
     }
   }
