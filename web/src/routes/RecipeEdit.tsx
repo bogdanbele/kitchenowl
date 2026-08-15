@@ -346,9 +346,20 @@ export default function RecipeEdit() {
                   </RouterLink>
                 )}
               </div>
-              <p className="mt-2 text-xs text-faint">
-                Needs a model that can see images — the picker in Settings marks them.
-              </p>
+              {readPhotos.isSuccess ? (
+                // A misread ingredient is the one error nobody catches: the
+                // draft looks complete and plausible, and "griș" arriving as
+                // "grău" is semolina turning into wheat. Smaller models do this
+                // on a photo that is dim or slightly out of focus.
+                <p className="mt-2 text-xs text-accent">
+                  Read from the photo — check the ingredients against the page before saving. If a
+                  word looks wrong, a larger model in Settings will usually get it right.
+                </p>
+              ) : (
+                <p className="mt-2 text-xs text-faint">
+                  Needs a model that can see images — the picker in Settings marks them.
+                </p>
+              )}
             </div>
           ) : importMode === "link" ? (
             <div className="flex gap-2">

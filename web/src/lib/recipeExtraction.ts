@@ -31,8 +31,12 @@ Rules:
   exactly as written in the source ("800 g", "2 tbsp", "a pinch").
 - "optional": true only when the text says optional, to taste, or garnish.
 - Times are whole minutes. "yields" is the number of servings. Use 0 when the
-  text does not say — never guess a number.
+  text does not say — never guess a number. If only a total time is given, put
+  it in "time" and leave "prep_time" and "cook_time" at 0; do not split it.
 - Keep the source's language for names and steps; do not translate.
+- Reproduce every diacritic exactly as printed — ș ț ă î â, ü ö, é è ç. A name
+  spelled without them is a different word, and this text is read back by
+  someone who wrote it.
 - Never invent an ingredient or a step that is not in the text. If the text is
   not a recipe, return {"name": ""} and nothing else.`;
 
