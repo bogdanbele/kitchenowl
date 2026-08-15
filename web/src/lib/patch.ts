@@ -16,12 +16,25 @@
  * and an object on the way out).
  */
 
-export function pick<T extends object, K extends keyof T>(source: T, keys: readonly K[]): Pick<T, K> {
-  const result = {} as Pick<T, K>;
+/**
+ * The key list is deliberately not constrained to `keyof T`.
+ *
+ * An allowlist mirrors a *write* schema, and that is not the shape of what was
+ * read: `merge_category_id` and `password` are accepted on the way in and never
+ * come back out. Demanding that every allowed field exist on the source type
+ * would mean inventing those on the read models, where they would be wrong.
+ */
+export function pick<T extends object, K extends PropertyKey>(
+  source: T,
+  keys: readonly K[],
+): Partial<Pick<T, Extract<K, keyof T>>> {
+  const result: Record<PropertyKey, unknown> = {};
   for (const key of keys) {
-    if (source[key] !== undefined) result[key] = source[key];
+    const value = (source as Record<PropertyKey, unknown>)[key];
+    // undefined means "not changing this"; null is a real value that clears it.
+    if (value !== undefined) result[key] = value;
   }
-  return result;
+  return result as Partial<Pick<T, Extract<K, keyof T>>>;
 }
 
 /** backend/app/controller/item/schemas.py :: UpdateItem */

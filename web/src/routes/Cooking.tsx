@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, Timer as TimerIcon, X } from "lucide-react";
 import { api } from "../api/client";
 import type { Recipe as RecipeModel } from "../api/types";
 import { formatCountdown, splitSteps, type Timer } from "../lib/cooking";
+import { stripMentions } from "../lib/mentions";
 import { scaleAmount } from "../lib/amount";
 import { useWakeLock } from "../hooks/useWakeLock";
 import { useTimers } from "../hooks/useTimers";
@@ -31,7 +32,7 @@ export default function Cooking() {
   const { timers, start, dismiss } = useTimers();
 
   const steps = useMemo(
-    () => (recipe ? splitSteps(recipe.description, recipe.items) : []),
+    () => (recipe ? splitSteps(stripMentions(recipe.description), recipe.items) : []),
     [recipe],
   );
 

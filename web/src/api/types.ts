@@ -21,6 +21,11 @@ export interface Household {
   photo?: string | null;
   language?: string | null;
   member?: User[];
+  /** Feature toggles. Absent on the endpoints that return a public summary, so
+   *  the nav treats "missing" as on rather than hiding a section. */
+  planner_feature?: boolean;
+  expenses_feature?: boolean;
+  view_ordering?: string[];
 }
 
 export interface Category {
@@ -67,7 +72,9 @@ export interface Recipe {
   prep_time: number;
   photo?: string | null;
   source?: string;
-  visibility?: string;
+  /** 0 private, 1 link-only, 2 public. An int, not a name: the API's JSON
+   *  provider serialises every enum as `int(value)`. */
+  visibility?: number;
   items: RecipeItem[];
   tags: Tag[];
 }

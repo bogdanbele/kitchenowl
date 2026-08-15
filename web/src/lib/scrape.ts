@@ -10,7 +10,14 @@ export interface Draft {
   source: string;
   photo: string | null;
   items: { name: string; description: string; optional: boolean }[];
+  tags: string[];
+  /** 0 private, 1 link-only, 2 public — ints, because that is what the API takes. */
+  visibility: number;
 }
+
+export const PRIVATE = 0;
+export const LINK_ONLY = 1;
+export const PUBLIC = 2;
 
 export const EMPTY: Draft = {
   name: "",
@@ -22,6 +29,10 @@ export const EMPTY: Draft = {
   source: "",
   photo: null,
   items: [],
+  tags: [],
+  // New recipes start private. Anything else would publish someone's cooking by
+  // default, and the button to share is easier to find than the one to unshare.
+  visibility: PRIVATE,
 };
 
 export function toDraft(recipe: Recipe): Draft {
@@ -39,6 +50,9 @@ export function toDraft(recipe: Recipe): Draft {
       description: item.description ?? "",
       optional: item.optional ?? false,
     })),
+    // Tags round-trip as names: the API answers with objects and takes strings.
+    tags: (recipe.tags ?? []).map((tag) => tag.name),
+    visibility: recipe.visibility ?? PRIVATE,
   };
 }
 

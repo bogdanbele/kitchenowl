@@ -3,13 +3,24 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useState, type FormEvent } from "react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { api } from "../api/client";
-import type { Recipe } from "../api/types";
-import { EMPTY, fromScrape, toDraft, type Draft, type ScrapeResult } from "../lib/scrape";
+import { api, uploadFile } from "../api/client";
+import type { Recipe, Tag } from "../api/types";
+import {
+  EMPTY,
+  LINK_ONLY,
+  PRIVATE,
+  PUBLIC,
+  fromScrape,
+  toDraft,
+  type Draft,
+  type ScrapeResult,
+} from "../lib/scrape";
 import { extractRecipeFromText, openRouter } from "../api/openrouter";
 import { toDraftFromExtraction } from "../lib/recipeExtraction";
+import { missingFromIngredients } from "../lib/mentions";
+import { Photo } from "../components/Photo";
 import { Link as RouterLink } from "react-router-dom";
-import { Link2, Sparkles } from "lucide-react";
+import { ImagePlus, Link2, Sparkles, X } from "lucide-react";
 
 export default function RecipeEdit() {
   const { householdId = "1", recipeId } = useParams();
@@ -23,6 +34,14 @@ export default function RecipeEdit() {
   const [importMode, setImportMode] = useState<"link" | "text">("link");
   const [preview, setPreview] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [tagDraft, setTagDraft] = useState("");
+
+  // The household's existing tags, so a second "Weeknight" is a click rather
+  // than a typo waiting to happen.
+  const { data: knownTags } = useQuery({
+    queryKey: ["tags", householdId],
+    queryFn: () => api<Tag[]>(`/household/${householdId}/tag`),
+  });
 
   useQuery({
     queryKey: ["recipe", recipeId],
@@ -72,6 +91,23 @@ export default function RecipeEdit() {
       setError(caught instanceof Error ? caught.message : "Could not read that text."),
   });
 
+  /**
+   * The photo uploads immediately and the draft keeps the returned filename.
+   *
+   * Deferring the upload to save time would mean holding a File across an
+   * import, a preview toggle and a possible navigation, and losing it silently
+   * if any of those reset the form.
+   */
+  const upload = useMutation({
+    mutationFn: (file: File) => uploadFile(file),
+    onSuccess: (filename) => {
+      setError(null);
+      setDraft((current) => (current ? { ...current, photo: filename } : current));
+    },
+    onError: (caught) =>
+      setError(caught instanceof Error ? caught.message : "Could not upload that image."),
+  });
+
   const save = useMutation({
     mutationFn: (value: Draft) =>
       isNew
@@ -95,6 +131,24 @@ export default function RecipeEdit() {
       ...draft,
       items: draft.items.map((item, i) => (i === index ? { ...item, ...patch } : item)),
     });
+
+  const addTag = (name: string) => {
+    const clean = name.trim();
+    setTagDraft("");
+    if (!clean) return;
+    // Case-insensitive, because "romanian" and "Romanian" as two tags is how a
+    // tag list stops being useful.
+    if (draft.tags.some((tag) => tag.toLowerCase() === clean.toLowerCase())) return;
+    set("tags", [...draft.tags, clean]);
+  };
+
+  const suggestedTags = (knownTags ?? [])
+    .map((tag) => tag.name)
+    .filter((name) => !draft.tags.some((tag) => tag.toLowerCase() === name.toLowerCase()))
+    .filter((name) => !tagDraft.trim() || name.toLowerCase().includes(tagDraft.trim().toLowerCase()))
+    .slice(0, 8);
+
+  const mentioned = missingFromIngredients(draft.description, draft.items);
 
   function onSubmit(event: FormEvent) {
     event.preventDefault();
@@ -196,6 +250,43 @@ export default function RecipeEdit() {
           )}
         </section>
       )}
+
+      <section className="mb-10 flex items-center gap-4">
+        <Photo
+          photo={draft.photo}
+          className="size-24 shrink-0 rounded-card object-cover"
+          fallback={
+            <div className="grid size-24 shrink-0 place-items-center rounded-card border border-dashed border-line text-faint">
+              <ImagePlus size={18} />
+            </div>
+          }
+        />
+        <div>
+          <label className="cursor-pointer rounded-card border border-line px-4 py-2 text-sm transition hover:border-accent hover:text-accent">
+            {upload.isPending ? "Uploading…" : draft.photo ? "Replace photo" : "Add a photo"}
+            <input
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={(event) => {
+                const file = event.target.files?.[0];
+                // Clear the input so choosing the same file twice still fires.
+                event.target.value = "";
+                if (file) upload.mutate(file);
+              }}
+            />
+          </label>
+          {draft.photo && (
+            <button
+              type="button"
+              onClick={() => set("photo", null)}
+              className="ml-3 text-sm text-muted transition hover:text-accent"
+            >
+              Remove
+            </button>
+          )}
+        </div>
+      </section>
 
       <div className="mb-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
         {(
@@ -303,6 +394,108 @@ export default function RecipeEdit() {
                        leading-relaxed outline-none placeholder:text-faint focus:border-accent"
           />
         )}
+
+        {/* Nothing is added silently: a mistyped @onin stays a mistyped word
+            rather than becoming an ingredient nobody notices. */}
+        {mentioned.length > 0 && (
+          <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
+            <span className="text-muted">Mentioned in the method but not listed:</span>
+            {mentioned.map((name) => (
+              <button
+                key={name}
+                type="button"
+                onClick={() =>
+                  set("items", [...draft.items, { name, description: "", optional: false }])
+                }
+                className="rounded-full border border-hairline px-3 py-1 text-muted
+                           transition hover:border-accent hover:text-accent"
+              >
+                + {name}
+              </button>
+            ))}
+          </div>
+        )}
+        <p className="mt-2 text-xs text-faint">
+          Write @onion or @{"{pork belly}"} in a step to pull it into the ingredients.
+        </p>
+      </section>
+
+      <section className="mb-10">
+        <p className="label mb-2">Tags</p>
+        <div className="mb-2 flex flex-wrap items-center gap-2">
+          {draft.tags.map((tag) => (
+            <span
+              key={tag}
+              className="inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-3 py-1 text-xs text-accent"
+            >
+              {tag}
+              <button
+                type="button"
+                onClick={() => set("tags", draft.tags.filter((other) => other !== tag))}
+                aria-label={`Remove tag ${tag}`}
+                className="transition hover:text-ink"
+              >
+                <X size={11} />
+              </button>
+            </span>
+          ))}
+          <input
+            value={tagDraft}
+            onChange={(e) => setTagDraft(e.target.value)}
+            // Enter inside a form submits it; a tag is not a save.
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === ",") {
+                e.preventDefault();
+                addTag(tagDraft);
+              }
+            }}
+            placeholder="Add a tag…"
+            aria-label="Add a tag"
+            className="w-36 bg-transparent py-1 text-sm outline-none placeholder:text-faint"
+          />
+        </div>
+        {suggestedTags.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {suggestedTags.map((name) => (
+              <button
+                key={name}
+                type="button"
+                onClick={() => addTag(name)}
+                className="rounded-full border border-hairline px-3 py-1 text-xs text-muted
+                           transition hover:border-accent hover:text-accent"
+              >
+                + {name}
+              </button>
+            ))}
+          </div>
+        )}
+      </section>
+
+      <section className="mb-10">
+        <p className="label mb-2">Who can see it</p>
+        <div className="flex flex-wrap gap-2">
+          {(
+            [
+              [PRIVATE, "Just this household"],
+              [LINK_ONLY, "Anyone with the link"],
+              [PUBLIC, "Public — listed in discover"],
+            ] as const
+          ).map(([value, label]) => (
+            <button
+              key={value}
+              type="button"
+              onClick={() => set("visibility", value)}
+              aria-pressed={draft.visibility === value}
+              className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
+                draft.visibility === value
+                  ? "btn-gradient"
+                  : "border border-hairline text-muted hover:border-accent hover:text-ink"
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
       </section>
 
       {error && (

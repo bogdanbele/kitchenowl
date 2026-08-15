@@ -1,4 +1,4 @@
-import type { Draft } from "./scrape";
+import { PRIVATE, type Draft } from "./scrape";
 
 /**
  * Turning a wall of pasted text into a recipe.
@@ -147,5 +147,9 @@ export function toDraftFromExtraction(recipe: ExtractedRecipe, model: string): D
     source: `ai://${model}`,
     photo: null,
     items: recipe.items,
+    // Tagged as written by a model, and private, without anyone having to
+    // remember to set either after reading what came back.
+    tags: ["AI-written"],
+    visibility: PRIVATE,
   };
 }

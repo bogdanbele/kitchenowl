@@ -7,6 +7,7 @@ import { api } from "../api/client";
 import type { Recipe as RecipeModel, RecipeItem, Shoppinglist } from "../api/types";
 import { Photo } from "../components/Photo";
 import { formatTime, scaleAmount } from "../lib/amount";
+import { stripMentions } from "../lib/mentions";
 import { ChefHat, Clock, Link as LinkIcon, Sparkles, Users } from "lucide-react";
 
 /** "panlasangpinoy.com" from a URL, or the raw string if it is not one. */
@@ -227,7 +228,9 @@ export default function Recipe() {
             dangerouslySetInnerHTML: react-markdown renders to elements, so a
             recipe scraped off a stranger's blog cannot inject script. */}
         <div className="prose-recipe min-w-0">
-          <Markdown remarkPlugins={[remarkGfm]}>{recipe.description}</Markdown>
+          {/* stripMentions: @onion is editor syntax, not something to read
+              while cooking. */}
+          <Markdown remarkPlugins={[remarkGfm]}>{stripMentions(recipe.description)}</Markdown>
         </div>
       </div>
     </article>
