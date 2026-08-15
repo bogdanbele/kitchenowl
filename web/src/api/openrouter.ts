@@ -5,6 +5,12 @@ import {
   toExtractedRecipe,
   type ExtractedRecipe,
 } from "../lib/recipeExtraction";
+import {
+  TAGGING_PROMPT,
+  describeForTagging,
+  parseTags,
+  type TaggableRecipe,
+} from "../lib/recipeTags";
 
 /**
  * OpenRouter, called straight from the browser.
@@ -250,6 +256,27 @@ Rules:
     // worth interrupting anybody over: matching still works on the names that
     // are already English.
     return {};
+  }
+}
+
+/**
+ * Tags for one recipe, from the fixed vocabulary.
+ *
+ * One recipe per call rather than a batch: a batch of forty asks the model to
+ * hold forty answers in order, and a single slip shifts every label onto the
+ * wrong dish. Forty small calls cost the same and fail one at a time.
+ */
+export async function suggestTags(
+  recipe: TaggableRecipe,
+  signal?: AbortSignal,
+): Promise<string[]> {
+  const reply = await complete(TAGGING_PROMPT, describeForTagging(recipe), signal);
+  const match = reply.match(/\[[\s\S]*\]/);
+  if (!match) return [];
+  try {
+    return parseTags(JSON.parse(match[0]));
+  } catch {
+    return [];
   }
 }
 

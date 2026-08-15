@@ -16,7 +16,8 @@ import {
   type Draft,
   type ScrapeResult,
 } from "../lib/scrape";
-import { extractRecipeFromImages, extractRecipeFromText, openRouter } from "../api/openrouter";
+import { extractRecipeFromImages, extractRecipeFromText, openRouter, suggestTags } from "../api/openrouter";
+import { derivedTags, mergeTags, type TaggableRecipe } from "../lib/recipeTags";
 import { toDraftFromExtraction } from "../lib/recipeExtraction";
 import { missingFromIngredients } from "../lib/mentions";
 import { dataUrlBytes, imageFromClipboard, toDownscaledDataUrl } from "../lib/image";
@@ -136,6 +137,25 @@ export default function RecipeEdit() {
       caught instanceof Error
         ? setError(caught.message)
         : setError("Could not read that photo."),
+  });
+
+  /**
+   * Tags from the draft as it stands, including one it earns from its own
+   * fields. Suggestions are merged, never substituted: a tag somebody typed is
+   * not overruled by a model that has read the ingredients once.
+   */
+  const suggest = useMutation({
+    mutationFn: (value: Draft) => suggestTags(value as TaggableRecipe),
+    onSuccess: (tags) => {
+      setError(null);
+      setDraft((current) =>
+        current
+          ? { ...current, tags: mergeTags(current.tags, [...tags, ...derivedTags(current)]) }
+          : current,
+      );
+    },
+    onError: (caught) =>
+      setError(caught instanceof Error ? caught.message : "Could not suggest tags."),
   });
 
   const save = useMutation({
@@ -599,7 +619,20 @@ export default function RecipeEdit() {
       </section>
 
       <section className="mb-10">
-        <p className="label mb-2">Tags</p>
+        <div className="mb-2 flex items-baseline justify-between gap-3">
+          <p className="label">Tags</p>
+          {openRouter.configured && (
+            <button
+              type="button"
+              onClick={() => suggest.mutate(draft)}
+              disabled={suggest.isPending || !draft.name.trim()}
+              className="label inline-flex items-center gap-1.5 transition hover:text-accent disabled:opacity-40"
+            >
+              <Sparkles size={12} />
+              {suggest.isPending ? "Reading…" : "Suggest with AI"}
+            </button>
+          )}
+        </div>
         <div className="mb-2 flex flex-wrap items-center gap-2">
           {draft.tags.map((tag) => (
             <span
