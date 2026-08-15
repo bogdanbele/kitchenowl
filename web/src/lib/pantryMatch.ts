@@ -90,6 +90,27 @@ function bestScore(ingredient: string, thing: PantryThing): MatchKind {
   return RANK[onAlias] > RANK[onName] ? onAlias : onName;
 }
 
+/**
+ * The cook's own substitutes, checked before anything is guessed at.
+ *
+ * If the recipe says pork belly may be bacon and there is bacon in the fridge,
+ * that is not a suggestion — it is a fact the person who wrote the recipe put
+ * there. So it outranks every heuristic below, and is reported as a swap rather
+ * than as "you have pork belly", which would be false.
+ */
+export function matchSubstitute(
+  substitutes: string[] | undefined,
+  inventory: PantryThing[],
+): { thing: PantryThing; substitute: string } | null {
+  for (const substitute of substitutes ?? []) {
+    const found = inventory.find(
+      (thing) => bestScore(substitute, thing) === "exact" || bestScore(substitute, thing) === "likely",
+    );
+    if (found) return { thing: found, substitute };
+  }
+  return null;
+}
+
 export function matchIngredient(ingredient: string, inventory: PantryThing[]): IngredientMatch {
   const scored = inventory
     .map((thing) => ({ thing, kind: bestScore(ingredient, thing) }))

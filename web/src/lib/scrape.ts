@@ -9,7 +9,7 @@ export interface Draft {
   cook_time: number;
   source: string;
   photo: string | null;
-  items: { name: string; description: string; optional: boolean }[];
+  items: { name: string; description: string; optional: boolean; substitutes: string[] }[];
   tags: string[];
   /** 0 private, 1 link-only, 2 public — ints, because that is what the API takes. */
   visibility: number;
@@ -49,6 +49,7 @@ export function toDraft(recipe: Recipe): Draft {
       name: item.name,
       description: item.description ?? "",
       optional: item.optional ?? false,
+      substitutes: item.substitutes ?? [],
     })),
     // Tags round-trip as names: the API answers with objects and takes strings.
     tags: (recipe.tags ?? []).map((tag) => tag.name),
@@ -81,11 +82,16 @@ export function fromScrape(result: ScrapeResult): Draft {
   const draft = toDraft(result.recipe);
   draft.items = Object.entries(result.items).map(([originalText, matched]) =>
     matched
-      ? { name: matched.name, description: matched.description ?? "", optional: false }
+      ? {
+          name: matched.name,
+          description: matched.description ?? "",
+          optional: false,
+          substitutes: [],
+        }
       : // No match: keep the site's own wording rather than dropping the line.
         // "2 lbs. pork belly" as a name is wrong, but it is visible and
         // editable, where a silently missing ingredient is neither.
-        { name: originalText, description: "", optional: false },
+        { name: originalText, description: "", optional: false, substitutes: [] },
   );
   return draft;
 }

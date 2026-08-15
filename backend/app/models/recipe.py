@@ -367,6 +367,11 @@ class RecipeItems(Model):
     )
     description: Mapped[str] = db.Column("description", db.String())
     optional: Mapped[bool] = db.Column("optional", db.Boolean)
+    # What the cook says may stand in for this ingredient *in this dish*, comma
+    # separated. Per recipe rather than per item on purpose: bacon works for
+    # pork belly in a sinigang and not in a roast, and the person writing the
+    # recipe is the one who knows which.
+    substitutes: Mapped[str | None] = db.Column("substitutes", db.String(), nullable=True)
 
     item: Mapped["Item"] = cast(
         Mapped["Item"],
@@ -392,6 +397,11 @@ class RecipeItems(Model):
         res = self.item.obj_to_dict()
         res["description"] = getattr(self, "description")
         res["optional"] = getattr(self, "optional")
+        # A list on the way out, a string in the column: the client should not
+        # have to know how this is stored, and splitting in one place beats
+        # splitting in three.
+        raw = getattr(self, "substitutes") or ""
+        res["substitutes"] = [part.strip() for part in raw.split(",") if part.strip()]
         res["created_at"] = getattr(self, "created_at")
         res["updated_at"] = getattr(self, "updated_at")
         return res

@@ -44,6 +44,8 @@ export interface Item {
 export interface RecipeItem extends Item {
   description: string;
   optional: boolean;
+  /** What the cook says can stand in for this, in this dish. */
+  substitutes?: string[];
 }
 
 /** An item on a shopping list: the item, plus how much you need. */

@@ -35,7 +35,7 @@ describe("fromScrape", () => {
         "1 bunch bok choy": { id: 7, name: "Bok choy", description: "1 bunch", optional: false },
       }),
     );
-    expect(draft.items).toEqual([{ name: "Bok choy", description: "1 bunch", optional: false }]);
+    expect(draft.items).toEqual([{ name: "Bok choy", description: "1 bunch", optional: false, substitutes: [] }]);
   });
 
   it("keeps the site's wording when nothing matched, rather than dropping the line", () => {
@@ -44,7 +44,12 @@ describe("fromScrape", () => {
     // arrived.
     const draft = fromScrape(result({ "2 pounds pork spare ribs, cut into 2-inch pieces": null }));
     expect(draft.items).toEqual([
-      { name: "2 pounds pork spare ribs, cut into 2-inch pieces", description: "", optional: false },
+      {
+        name: "2 pounds pork spare ribs, cut into 2-inch pieces",
+        description: "",
+        optional: false,
+        substitutes: [],
+      },
     ]);
   });
 

@@ -506,7 +506,7 @@ export default function RecipeEdit() {
             onClick={() =>
               update((current) => ({
                 ...current,
-                items: [...current.items, { name: "", description: "", optional: false }],
+                items: [...current.items, { name: "", description: "", optional: false, substitutes: [] }],
               }))
             }
             className="label transition hover:text-accent"
@@ -517,45 +517,67 @@ export default function RecipeEdit() {
 
         <ul className="rule">
           {draft.items.map((item, index) => (
-            <li key={index} className="flex items-center gap-3 border-b border-hairline py-2">
+            <li key={index} className="border-b border-hairline py-2">
+              <div className="flex items-center gap-3">
+                <input
+                  value={item.name}
+                  onChange={(e) => setItem(index, { name: e.target.value })}
+                  placeholder="Ingredient"
+                  aria-label={`Ingredient ${index + 1}`}
+                  className="flex-1 bg-transparent py-1 outline-none placeholder:text-faint"
+                />
+                <input
+                  value={item.description}
+                  onChange={(e) => setItem(index, { description: e.target.value })}
+                  placeholder="Amount"
+                  aria-label={`Amount for ingredient ${index + 1}`}
+                  className="w-36 bg-transparent py-1 text-right font-mono text-xs outline-none placeholder:text-faint"
+                />
+                <button
+                  type="button"
+                  onClick={() => setItem(index, { optional: !item.optional })}
+                  aria-pressed={item.optional}
+                  className={`label transition ${item.optional ? "text-accent" : "hover:text-muted"}`}
+                >
+                  opt
+                </button>
+                {/* Removal is its own control, never the row itself. In the
+                    Flutter editor a tap on the ingredient deleted it, which is
+                    the single easiest way to lose work in this app. */}
+                <button
+                  type="button"
+                  onClick={() =>
+                    update((current) => ({
+                      ...current,
+                      items: current.items.filter((_, i) => i !== index),
+                    }))
+                  }
+                  aria-label={`Remove ${item.name || "ingredient"}`}
+                  className="px-1 text-faint transition hover:text-accent"
+                >
+                  ×
+                </button>
+              </div>
+
+              {/* What you know can stand in for this, in this dish. Typed by
+                  the cook rather than guessed at: bacon works for pork belly in
+                  a sinigang and the person writing it down is the one who
+                  knows. Comma separated, because that is how anyone lists
+                  three things without being asked to. */}
               <input
-                value={item.name}
-                onChange={(e) => setItem(index, { name: e.target.value })}
-                placeholder="Ingredient"
-                aria-label={`Ingredient ${index + 1}`}
-                className="flex-1 bg-transparent py-1 outline-none placeholder:text-faint"
-              />
-              <input
-                value={item.description}
-                onChange={(e) => setItem(index, { description: e.target.value })}
-                placeholder="Amount"
-                aria-label={`Amount for ingredient ${index + 1}`}
-                className="w-36 bg-transparent py-1 text-right font-mono text-xs outline-none placeholder:text-faint"
-              />
-              <button
-                type="button"
-                onClick={() => setItem(index, { optional: !item.optional })}
-                aria-pressed={item.optional}
-                className={`label transition ${item.optional ? "text-accent" : "hover:text-muted"}`}
-              >
-                opt
-              </button>
-              {/* Removal is its own control, never the row itself. In the
-                  Flutter editor a tap on the ingredient deleted it, which is
-                  the single easiest way to lose work in this app. */}
-              <button
-                type="button"
-                onClick={() =>
-                  update((current) => ({
-                    ...current,
-                    items: current.items.filter((_, i) => i !== index),
-                  }))
+                value={item.substitutes.join(", ")}
+                onChange={(e) =>
+                  setItem(index, {
+                    substitutes: e.target.value
+                      .split(",")
+                      .map((name) => name.trim())
+                      .filter(Boolean),
+                  })
                 }
-                aria-label={`Remove ${item.name || "ingredient"}`}
-                className="px-1 text-faint transition hover:text-accent"
-              >
-                ×
-              </button>
+                placeholder="or…"
+                aria-label={`Substitutes for ${item.name || `ingredient ${index + 1}`}`}
+                className="w-full bg-transparent pb-1 text-xs text-muted outline-none placeholder:text-faint"
+              />
             </li>
           ))}
         </ul>
@@ -602,7 +624,7 @@ export default function RecipeEdit() {
                 onClick={() =>
                   update((current) => ({
                     ...current,
-                    items: [...current.items, { name, description: "", optional: false }],
+                    items: [...current.items, { name, description: "", optional: false, substitutes: [] }],
                   }))
                 }
                 className="rounded-full border border-hairline px-3 py-1 text-muted

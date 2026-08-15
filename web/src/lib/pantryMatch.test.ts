@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { contentWords, countMatched, matchIngredient, type PantryThing } from "./pantryMatch";
+import {
+  contentWords,
+  countMatched,
+  matchIngredient,
+  matchSubstitute,
+  type PantryThing,
+} from "./pantryMatch";
 
 const thing = (name: string): PantryThing => ({ name, quantity: 1 });
 
@@ -111,5 +117,30 @@ describe("countMatched", () => {
     );
     // exact + likely, but not the possible one and not the miss.
     expect(countMatched(matches)).toBe(2);
+  });
+});
+
+describe("the cook's own substitutes", () => {
+  const kitchen = [thing("Danish smoked bacon"), thing("Cherry tomatoes")];
+
+  it("finds a written substitute that is in the kitchen", () => {
+    // Not a guess: the person who wrote the recipe said bacon works here.
+    const found = matchSubstitute(["pork shoulder", "bacon"], kitchen);
+    expect(found?.thing.name).toBe("Danish smoked bacon");
+    expect(found?.substitute).toBe("bacon");
+  });
+
+  it("takes the first written substitute that is actually available", () => {
+    const found = matchSubstitute(["tomatoes", "bacon"], kitchen);
+    expect(found?.substitute).toBe("tomatoes");
+  });
+
+  it("says nothing when none of them are in the kitchen", () => {
+    expect(matchSubstitute(["pancetta", "guanciale"], kitchen)).toBeNull();
+  });
+
+  it("copes with a recipe that lists none", () => {
+    expect(matchSubstitute(undefined, kitchen)).toBeNull();
+    expect(matchSubstitute([], kitchen)).toBeNull();
   });
 });

@@ -9,6 +9,8 @@ class AddRecipe(Schema):
         name = fields.String(required=True, validate=lambda a: a and not a.isspace())
         description = fields.String(load_default="")
         optional = fields.Boolean(load_default=True)
+        # What the cook says may stand in for this, in this dish.
+        substitutes = fields.List(fields.String())
 
     name = fields.String(required=True, validate=lambda a: a and not a.isspace())
     description = fields.String(validate=lambda a: a is not None)
@@ -32,6 +34,7 @@ class UpdateRecipe(Schema):
         name = fields.String(required=True, validate=lambda a: a and not a.isspace())
         description = fields.String()
         optional = fields.Boolean(load_default=True)
+        substitutes = fields.List(fields.String())
 
     name = fields.String(validate=lambda a: a and not a.isspace())
     description = fields.String(validate=lambda a: a is not None)

@@ -10,11 +10,15 @@ import { ConfirmDialog } from "../components/Modal";
 import { formatTime, scaleAmount } from "../lib/amount";
 import { stripMentions } from "../lib/mentions";
 import { Check, ChefHat, Clock, HelpCircle, Link as LinkIcon, Minus, Sparkles, Users } from "lucide-react";
-import { countMatched, matchIngredient, type IngredientMatch } from "../lib/pantryMatch";
+import {
+  countMatched,
+  matchIngredient,
+  matchSubstitute,
+  type IngredientMatch,
+  type PantryThing,
+} from "../lib/pantryMatch";
 import { normaliseName } from "../lib/cookable";
 import { useInventory } from "../hooks/useInventory";
-import { openRouter, suggestSubstitutions } from "../api/openrouter";
-import type { Substitution } from "../lib/substitutions";
 
 /** "panlasangpinoy.com" from a URL, or the raw string if it is not one. */
 function sourceLabel(source: string): string {
@@ -41,7 +45,7 @@ function Ingredient({
   item: RecipeItem;
   factor: number;
   match?: IngredientMatch;
-  swap?: Substitution;
+  swap?: { thing: PantryThing; substitute: string } | null;
 }) {
   const amount = scaleAmount(item.description, factor);
   const have = match?.kind === "exact" || match?.kind === "likely";
@@ -88,13 +92,15 @@ function Ingredient({
         </p>
       )}
 
-      {swap && (
-        // Under the ingredient it replaces, because that is where the question
-        // gets asked. Marked as a suggestion: it changes the dish, and the note
-        // says how.
-        <p className="mt-1 pl-6 text-xs">
-          <span className="text-accent">Use {swap.use} instead</span>
-          {swap.note && <span className="text-muted"> — {swap.note}</span>}
+      {/* The cook's own substitutes, always listed — they are part of the
+          recipe, not advice about it. When one is in the kitchen it says so,
+          which is the whole reason for writing them down. */}
+      {item.substitutes && item.substitutes.length > 0 && (
+        <p className="mt-1 pl-6 text-xs text-muted">
+          or {item.substitutes.join(", ")}
+          {swap && (
+            <span className="text-done"> — {swap.thing.name} is in the kitchen</span>
+          )}
         </p>
       )}
     </li>
@@ -118,17 +124,6 @@ export default function Recipe() {
   const [servings, setServings] = useState<number | null>(null);
   const [added, setAdded] = useState(0);
   const [confirmDelete, setConfirmDelete] = useState(false);
-  const [swaps, setSwaps] = useState<Substitution[] | null>(null);
-
-  /**
-   * Nothing is saved. A substitution is advice at the moment of cooking, and
-   * editing the recipe to say bacon would be a lie about what the recipe is.
-   */
-  const findSwaps = useMutation({
-    mutationFn: ({ dish, gaps, kitchen }: { dish: string; gaps: string[]; kitchen: string[] }) =>
-      suggestSubstitutions(dish, gaps, kitchen),
-    onSuccess: setSwaps,
-  });
 
   // Shared with the inventory screen and Cook now, so opening a recipe after
   // either of those costs no request. Carries English aliases for anything the
@@ -201,17 +196,12 @@ export default function Recipe() {
     ? countMatched(required.map((item) => matches.get(item.id)!).filter(Boolean))
     : 0;
 
-  // What the kitchen cannot answer for. A "possible" match counts as missing
-  // here: if the app is only guessing, a swap is still worth offering.
-  const gaps = matches
-    ? required
-        .filter((item) => {
-          const kind = matches.get(item.id)?.kind;
-          return kind !== "exact" && kind !== "likely";
-        })
-        .map((item) => item.name)
-    : [];
-  const swapFor = new Map((swaps ?? []).map((swap) => [swap.missing, swap]));
+  // A substitute the cook wrote down, that the kitchen actually has. Checked
+  // for every ingredient, not only the missing ones, because knowing you could
+  // use the bacon is worth having even when the pork belly is in the freezer.
+  const swapFor = new Map(
+    recipe.items.map((item) => [item.id, matchSubstitute(item.substitutes, things)]),
+  );
 
   return (
     <article className="mx-auto max-w-6xl">
@@ -343,32 +333,7 @@ export default function Recipe() {
                   </>
                 )}
               </p>
-              {gaps.length > 0 && openRouter.configured && swaps === null && (
-                <button
-                  type="button"
-                  onClick={() =>
-                    findSwaps.mutate({
-                      dish: recipe.name,
-                      gaps,
-                      kitchen: things.map((thing) => thing.name),
-                    })
-                  }
-                  disabled={findSwaps.isPending}
-                  className="label inline-flex items-center gap-1.5 transition hover:text-accent disabled:opacity-50"
-                >
-                  <Sparkles size={12} />
-                  {findSwaps.isPending ? "Thinking…" : "What could I use instead?"}
-                </button>
-              )}
             </div>
-          )}
-
-          {swaps !== null && swaps.length === 0 && (
-            // Saying so plainly beats leaving the button looking broken. Most
-            // missing ingredients have no stand-in in a given kitchen.
-            <p className="mb-2 text-xs text-faint">
-              Nothing in the kitchen stands in for what is missing here.
-            </p>
           )}
 
           <ul className="rule pt-1">
@@ -378,7 +343,7 @@ export default function Recipe() {
                 item={item}
                 factor={factor}
                 match={matches?.get(item.id)}
-                swap={swapFor.get(item.name)}
+                swap={swapFor.get(item.id)}
               />
             ))}
           </ul>

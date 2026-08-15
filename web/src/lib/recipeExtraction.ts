@@ -157,7 +157,7 @@ export function toDraftFromExtraction(recipe: ExtractedRecipe, model: string): D
     cook_time: recipe.cook_time,
     source: `ai://${model}`,
     photo: null,
-    items: recipe.items,
+    items: recipe.items.map((item) => ({ ...item, substitutes: [] })),
     // Tagged as written by a model, and private, without anyone having to
     // remember to set either after reading what came back.
     tags: ["AI-written"],

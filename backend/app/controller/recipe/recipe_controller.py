@@ -25,6 +25,21 @@ recipe = Blueprint("recipe", __name__)
 recipeHousehold = Blueprint("recipe", __name__)
 
 
+def joinSubstitutes(recipeItem: dict) -> str | None:
+    """The substitutes list as the column stores it.
+
+    A comma-separated string rather than a table: this is a handful of names
+    typed by the person writing the recipe, read back as a list, and never
+    queried against. Commas inside a name would break it, which is why they are
+    stripped — an ingredient with a comma in its name is not a thing.
+    """
+    names = recipeItem.get("substitutes")
+    if not isinstance(names, list):
+        return None
+    cleaned = [str(name).replace(",", " ").strip() for name in names]
+    return ",".join([name for name in cleaned if name]) or None
+
+
 @recipeHousehold.route("", methods=["GET"])
 @jwt_required()
 @authorize_household()
@@ -113,7 +128,9 @@ def addRecipe(args, household_id):
             if not item:
                 item = Item.create_by_name(household_id, recipeItem["name"])
             con = RecipeItems(
-                description=recipeItem["description"], optional=recipeItem["optional"]
+                description=recipeItem["description"],
+                optional=recipeItem["optional"],
+                substitutes=joinSubstitutes(recipeItem),
             )
             con.item = item
             con.recipe = recipe
@@ -175,10 +192,13 @@ def updateRecipe(args, id):  # noqa: C901
                     con.description = recipeItem["description"]
                 if "optional" in recipeItem:
                     con.optional = recipeItem["optional"]
+                if "substitutes" in recipeItem:
+                    con.substitutes = joinSubstitutes(recipeItem)
             else:
                 con = RecipeItems(
                     description=recipeItem["description"],
                     optional=recipeItem["optional"],
+                    substitutes=joinSubstitutes(recipeItem),
                 )
             con.item = item
             con.recipe = recipe
