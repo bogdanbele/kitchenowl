@@ -1,11 +1,12 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { Link, useParams } from "react-router-dom";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { useRef, useState } from "react";
 import { api } from "../api/client";
 import type { Recipe as RecipeModel, RecipeItem, Shoppinglist } from "../api/types";
 import { Photo } from "../components/Photo";
+import { ConfirmDialog } from "../components/Modal";
 import { formatTime, scaleAmount } from "../lib/amount";
 import { stripMentions } from "../lib/mentions";
 import { ChefHat, Clock, Link as LinkIcon, Sparkles, Users } from "lucide-react";
@@ -34,6 +35,8 @@ function Ingredient({ item, factor }: { item: RecipeItem; factor: number }) {
 
 export default function Recipe() {
   const { householdId = "1", recipeId } = useParams();
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const factorRef = useRef(1);
   const {
     data: recipe,
@@ -46,6 +49,18 @@ export default function Recipe() {
 
   const [servings, setServings] = useState<number | null>(null);
   const [added, setAdded] = useState(0);
+  const [confirmDelete, setConfirmDelete] = useState(false);
+
+  const remove = useMutation({
+    mutationFn: () => api(`/recipe/${recipeId}`, { method: "DELETE" }),
+    onSuccess: () => {
+      // Drop the cached recipe as well as the list: navigating back to a
+      // deleted recipe from history would otherwise render it from cache.
+      queryClient.removeQueries({ queryKey: ["recipe", recipeId] });
+      void queryClient.invalidateQueries({ queryKey: ["recipes", householdId] });
+      navigate(`/household/${householdId}/recipes`, { replace: true });
+    },
+  });
 
   const { data: lists } = useQuery({
     queryKey: ["shoppinglists", householdId],
@@ -91,6 +106,10 @@ export default function Recipe() {
   // cooking is the wrong default.
   const aiGenerated = !!recipe.source?.startsWith("ai://");
 
+  // Optional ingredients are the ones you decide about at the shelf, so they
+  // are left out of both the count and what gets sent.
+  const required = recipe.items.filter((item) => !item.optional);
+
   return (
     <article className="mx-auto max-w-6xl">
       <div className="flex items-center justify-between">
@@ -115,8 +134,23 @@ export default function Recipe() {
           >
             Edit
           </Link>
+          <button
+            type="button"
+            onClick={() => setConfirmDelete(true)}
+            className="label transition hover:text-accent"
+          >
+            Delete
+          </button>
         </div>
       </div>
+
+      <ConfirmDialog
+        open={confirmDelete}
+        title="Delete this recipe"
+        message={`Delete “${recipe.name}”? Any planner entries for it go too, and there is no undo.`}
+        onConfirm={() => remove.mutate()}
+        onCancel={() => setConfirmDelete(false)}
+      />
 
       <header className="mt-6 mb-10">
         {/* A recipe title is the one thing on this page you read from two metres
@@ -201,11 +235,9 @@ export default function Recipe() {
             ))}
           </ul>
 
-          {list && recipe.items.some((item) => !item.optional) && (
+          {list && required.length > 0 && (
             <button
-              onClick={() =>
-                addToList.mutate(recipe.items.filter((item) => !item.optional))
-              }
+              onClick={() => addToList.mutate(required)}
               disabled={addToList.isPending || added > 0}
               className="btn-gradient mt-4 w-full rounded-card px-4 py-2.5 text-sm font-medium"
             >
@@ -213,7 +245,7 @@ export default function Recipe() {
                 ? `${added} added to the list`
                 : addToList.isPending
                   ? "Adding…"
-                  : `Add ${recipe.items.filter((item) => !item.optional).length} ingredients to the list`}
+                  : `Add ${required.length} ${required.length === 1 ? "ingredient" : "ingredients"} to the list`}
             </button>
           )}
           {addToList.isError && (

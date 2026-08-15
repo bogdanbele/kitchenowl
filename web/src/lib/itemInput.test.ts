@@ -49,8 +49,10 @@ describe("matchItems", () => {
     expect(matchItems(items, "sourdough").map((item) => item.id)).toEqual([2]);
   });
 
-  it("narrows rather than emptying when both halves are typed", () => {
-    expect(matchItems(items, "milk, semi").map((item) => item.id)).toEqual([1]);
+  it("filters on the name half only, since the rest is the amount being added", () => {
+    // "flour, 2 bags" once reported "nothing matching flour" directly under a
+    // field saying flour was already on the list.
+    expect(matchItems(items, "milk, 2 bags").map((item) => item.id)).toEqual([1, 3]);
   });
 
   it("returns everything for an empty query", () => {

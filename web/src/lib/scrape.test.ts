@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { fromScrape, toDraft, type ScrapeResult } from "./scrape";
+import { fromScrape, toBody, toDraft, type ScrapeResult } from "./scrape";
 import type { Recipe } from "../api/types";
 
 const recipe = (over: Partial<Recipe> = {}): Recipe => ({
@@ -66,5 +66,26 @@ describe("fromScrape", () => {
 
   it("survives a scrape that matched nothing at all", () => {
     expect(fromScrape(result({})).items).toEqual([]);
+  });
+});
+
+describe("toBody", () => {
+  const draft = () => toDraft(recipe());
+
+  it("never sends photo as null, which the API rejects outright", () => {
+    // AddRecipe's photo is a plain fields.String(): null answers 400 "Request
+    // invalid" naming no field, which is a long afternoon to diagnose.
+    const body = toBody({ ...draft(), photo: null });
+    expect(body.photo).toBe("");
+  });
+
+  it("keeps a real photo filename", () => {
+    expect(toBody({ ...draft(), photo: "abc.jpeg" }).photo).toBe("abc.jpeg");
+  });
+
+  it("carries the tags and visibility the editor sets", () => {
+    const body = toBody({ ...draft(), tags: ["Romanian"], visibility: 1 });
+    expect(body.tags).toEqual(["Romanian"]);
+    expect(body.visibility).toBe(1);
   });
 });

@@ -32,6 +32,12 @@ export default defineConfig({
         target: process.env.KITCHENOWL_API ?? "http://localhost:8088",
         changeOrigin: true,
         ws: true,
+        // Socket.IO checks the *Origin* header against FRONT_URL, and
+        // `changeOrigin` only rewrites Host. Without this the handshake POST
+        // answers 400 "Not an accepted origin", socket.io retries forever, and
+        // every failed reconnect invalidates the queries — so the symptom is
+        // not "live updates are missing" but a screen that refetches on a loop.
+        headers: { Origin: process.env.KITCHENOWL_API ?? "http://localhost:8088" },
       },
     },
   },

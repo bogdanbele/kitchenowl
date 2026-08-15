@@ -11,6 +11,7 @@ import {
   PRIVATE,
   PUBLIC,
   fromScrape,
+  toBody,
   toDraft,
   type Draft,
   type ScrapeResult,
@@ -111,8 +112,8 @@ export default function RecipeEdit() {
   const save = useMutation({
     mutationFn: (value: Draft) =>
       isNew
-        ? api<Recipe>(`/household/${householdId}/recipe`, { method: "POST", body: value })
-        : api<Recipe>(`/recipe/${recipeId}`, { method: "POST", body: value }),
+        ? api<Recipe>(`/household/${householdId}/recipe`, { method: "POST", body: toBody(value) })
+        : api<Recipe>(`/recipe/${recipeId}`, { method: "POST", body: toBody(value) }),
     onSuccess: (saved) => {
       queryClient.invalidateQueries({ queryKey: ["recipes", householdId] });
       queryClient.invalidateQueries({ queryKey: ["recipe", String(saved?.id ?? recipeId)] });
@@ -123,23 +124,36 @@ export default function RecipeEdit() {
 
   if (!draft) return <div className="h-96 animate-pulse rounded-card bg-paper-deep" />;
 
+  /**
+   * Every edit is a functional update.
+   *
+   * Reading `draft` from the closure loses writes whenever two changes land in
+   * one render — clicking two "mentioned ingredient" chips in quick succession
+   * added only the second, because both handlers spread the same stale draft.
+   */
   const set = <K extends keyof Draft>(key: K, value: Draft[K]) =>
-    setDraft({ ...draft, [key]: value });
+    setDraft((current) => (current ? { ...current, [key]: value } : current));
+
+  const update = (change: (current: Draft) => Draft) =>
+    setDraft((current) => (current ? change(current) : current));
 
   const setItem = (index: number, patch: Partial<Draft["items"][number]>) =>
-    setDraft({
-      ...draft,
-      items: draft.items.map((item, i) => (i === index ? { ...item, ...patch } : item)),
-    });
+    update((current) => ({
+      ...current,
+      items: current.items.map((item, i) => (i === index ? { ...item, ...patch } : item)),
+    }));
 
   const addTag = (name: string) => {
     const clean = name.trim();
     setTagDraft("");
     if (!clean) return;
-    // Case-insensitive, because "romanian" and "Romanian" as two tags is how a
-    // tag list stops being useful.
-    if (draft.tags.some((tag) => tag.toLowerCase() === clean.toLowerCase())) return;
-    set("tags", [...draft.tags, clean]);
+    update((current) =>
+      // Case-insensitive, because "romanian" and "Romanian" as two tags is how
+      // a tag list stops being useful.
+      current.tags.some((tag) => tag.toLowerCase() === clean.toLowerCase())
+        ? current
+        : { ...current, tags: [...current.tags, clean] },
+    );
   };
 
   const suggestedTags = (knownTags ?? [])
@@ -318,7 +332,12 @@ export default function RecipeEdit() {
           <p className="label">Ingredients</p>
           <button
             type="button"
-            onClick={() => set("items", [...draft.items, { name: "", description: "", optional: false }])}
+            onClick={() =>
+              update((current) => ({
+                ...current,
+                items: [...current.items, { name: "", description: "", optional: false }],
+              }))
+            }
             className="label transition hover:text-accent"
           >
             + Add
@@ -355,7 +374,12 @@ export default function RecipeEdit() {
                   the single easiest way to lose work in this app. */}
               <button
                 type="button"
-                onClick={() => set("items", draft.items.filter((_, i) => i !== index))}
+                onClick={() =>
+                  update((current) => ({
+                    ...current,
+                    items: current.items.filter((_, i) => i !== index),
+                  }))
+                }
                 aria-label={`Remove ${item.name || "ingredient"}`}
                 className="px-1 text-faint transition hover:text-accent"
               >
@@ -405,7 +429,10 @@ export default function RecipeEdit() {
                 key={name}
                 type="button"
                 onClick={() =>
-                  set("items", [...draft.items, { name, description: "", optional: false }])
+                  update((current) => ({
+                    ...current,
+                    items: [...current.items, { name, description: "", optional: false }],
+                  }))
                 }
                 className="rounded-full border border-hairline px-3 py-1 text-muted
                            transition hover:border-accent hover:text-accent"
@@ -431,7 +458,12 @@ export default function RecipeEdit() {
               {tag}
               <button
                 type="button"
-                onClick={() => set("tags", draft.tags.filter((other) => other !== tag))}
+                onClick={() =>
+                  update((current) => ({
+                    ...current,
+                    tags: current.tags.filter((other) => other !== tag),
+                  }))
+                }
                 aria-label={`Remove tag ${tag}`}
                 className="transition hover:text-ink"
               >

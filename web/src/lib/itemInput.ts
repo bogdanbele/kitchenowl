@@ -27,20 +27,21 @@ export function parseItemInput(raw: string): ItemInput {
 /**
  * Filter the list by what has been typed.
  *
- * Matching is on the name *and* the description, because "semi" is how you find
- * the milk you wrote "2 semi skimmed" against. The typed description is matched
- * too, so "milk, semi" narrows rather than finding nothing.
+ * Only the name half filters. What follows the comma is the amount you are
+ * about to add, not a search term — requiring it too made typing "flour, 2 bags"
+ * report "nothing matching flour" directly under a field saying flour was
+ * already on the list, which is the app arguing with itself.
+ *
+ * The item's own description is still searched, because "semi" is how you find
+ * the milk you wrote "2 semi skimmed" against.
  */
 export function matchItems(items: ShoppinglistItem[], raw: string): ShoppinglistItem[] {
-  const { name, description } = parseItemInput(raw.toLowerCase());
-  if (!name && !description) return items;
+  const { name } = parseItemInput(raw.toLowerCase());
+  if (!name) return items;
 
-  return items.filter((item) => {
-    const haystack = `${item.name} ${item.description}`.toLowerCase();
-    return (
-      haystack.includes(name) && (!description || haystack.includes(description))
-    );
-  });
+  return items.filter((item) =>
+    `${item.name} ${item.description}`.toLowerCase().includes(name),
+  );
 }
 
 /** True when what was typed already exists on the list, so adding would duplicate. */

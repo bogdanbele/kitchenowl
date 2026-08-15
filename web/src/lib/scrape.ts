@@ -56,6 +56,20 @@ export function toDraft(recipe: Recipe): Draft {
   };
 }
 
+/**
+ * The draft as the API will accept it.
+ *
+ * `photo` is a plain `fields.String()` in AddRecipe/UpdateRecipe — no
+ * `allow_none` — so posting `photo: null` is rejected with a bare "Request
+ * invalid" that names no field. A recipe without a photo has to omit the key
+ * entirely, and the same is true when clearing one: send an empty string, which
+ * the column accepts, rather than null.
+ */
+export function toBody(draft: Draft): Record<string, unknown> {
+  const { photo, ...rest } = draft;
+  return photo ? { ...rest, photo } : { ...rest, photo: "" };
+}
+
 /** What /recipe/scrape answers: the recipe, and each scraped ingredient line
  *  mapped to a known household item, or null when there was no match. */
 export interface ScrapeResult {
