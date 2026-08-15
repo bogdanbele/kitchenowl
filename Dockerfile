@@ -1,58 +1,10 @@
 # ------------
-# WEB BUILDER
-# ------------
-FROM --platform=$BUILDPLATFORM debian:latest AS app_builder
-
-# Install dependencies
-RUN apt-get update -y
-RUN apt-get upgrade -y
-# Install basics
-RUN apt-get install -y --no-install-recommends \
-  git \
-  wget \
-  curl \
-  zip \
-  unzip \
-  apt-transport-https \
-  ca-certificates \
-  gnupg \
-  python3 \
-  libstdc++6 \
-  libglu1-mesa
-RUN apt-get clean
-
-# Clone the flutter repo
-RUN git clone https://github.com/flutter/flutter.git -b stable /usr/local/src/flutter
-
-# Set flutter path
-ENV PATH="${PATH}:/usr/local/src/flutter/bin"
-
-# Enable flutter web
-RUN flutter config --enable-web
-RUN flutter config --no-analytics
-RUN flutter upgrade
-
-# Run flutter doctor
-RUN flutter doctor -v
-
-# Copy the app files to the container
-COPY kitchenowl/.metadata kitchenowl/l10n.yaml kitchenowl/pubspec.yaml kitchenowl/pubspec.lock /usr/local/src/app/
-COPY kitchenowl/lib /usr/local/src/app/lib
-COPY kitchenowl/web /usr/local/src/app/web
-COPY kitchenowl/assets /usr/local/src/app/assets
-COPY kitchenowl/fonts /usr/local/src/app/fonts
-
-# Set the working directory to the app files within the container
-WORKDIR /usr/local/src/app
-
-# Get App Dependencies
-RUN flutter packages get
-
-# Build the app for the web
-RUN flutter build web --release --no-web-resources-cdn
-
-# ------------
 # WEB CLIENT BUILDER (React)
+#
+# The Flutter builder that used to stand here is gone: it cloned the Flutter SDK
+# and compiled the app to a canvas on every build, which cost most of the build
+# time and produced the client this one replaced. `git log` has it if it is ever
+# wanted back.
 # ------------
 FROM --platform=$BUILDPLATFORM node:22-alpine AS web_client_builder
 
@@ -65,9 +17,8 @@ RUN npm ci
 
 COPY web/ ./
 
-# Served under /next, beside the Flutter build rather than instead of it, until
-# the React client is at parity.
-ENV VITE_BASE=/next/
+# Served at the root — this is the client now.
+ENV VITE_BASE=/
 RUN npm run build
 
 # ------------
@@ -110,10 +61,8 @@ COPY --from=backend_builder /opt/venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 # Setup Frontend
-RUN mkdir -p /var/www/web/kitchenowl
-COPY --from=app_builder /usr/local/src/app/build/web /var/www/web/kitchenowl
-RUN mkdir -p /var/www/web/next
-COPY --from=web_client_builder /usr/local/src/web/dist /var/www/web/next
+RUN mkdir -p /var/www/web/app
+COPY --from=web_client_builder /usr/local/src/web/dist /var/www/web/app
 
 # Setup KitchenOwl Backend
 COPY backend/wsgi.ini backend/wsgi.py backend/entrypoint.sh backend/manage.py backend/manage_default_items.py backend/upgrade_default_items.py /usr/src/kitchenowl/
