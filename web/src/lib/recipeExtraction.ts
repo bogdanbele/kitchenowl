@@ -1,7 +1,7 @@
 import { PRIVATE, type Draft } from "./scrape";
 
 /**
- * Turning a wall of pasted text into a recipe.
+ * Turning a wall of pasted text — or a photographed page — into a recipe.
  *
  * The prompt and the parsing live here, away from the network call, because
  * this is the part that can be tested: a model's reply is untrusted input, and
@@ -9,7 +9,7 @@ import { PRIVATE, type Draft } from "./scrape";
  * something plausible and wrong".
  */
 
-export const EXTRACTION_SYSTEM_PROMPT = `You convert pasted text into a structured recipe.
+export const EXTRACTION_SYSTEM_PROMPT = `You convert a recipe — pasted text, or a photograph of a page — into a structured recipe.
 
 Return ONLY a JSON object, no prose, no code fences, with this exact shape:
 {
