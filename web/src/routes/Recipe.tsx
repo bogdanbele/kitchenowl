@@ -9,7 +9,9 @@ import { Photo } from "../components/Photo";
 import { ConfirmDialog } from "../components/Modal";
 import { formatTime, scaleAmount } from "../lib/amount";
 import { stripMentions } from "../lib/mentions";
-import { ChefHat, Clock, Link as LinkIcon, Sparkles, Users } from "lucide-react";
+import { Check, ChefHat, Clock, HelpCircle, Link as LinkIcon, Minus, Sparkles, Users } from "lucide-react";
+import { spisoApi } from "../api/spiso";
+import { countMatched, matchIngredient, type IngredientMatch } from "../lib/pantryMatch";
 
 /** "panlasangpinoy.com" from a URL, or the raw string if it is not one. */
 function sourceLabel(source: string): string {
@@ -20,15 +22,62 @@ function sourceLabel(source: string): string {
   }
 }
 
-function Ingredient({ item, factor }: { item: RecipeItem; factor: number }) {
+/**
+ * One ingredient, and what is in the kitchen that could be it.
+ *
+ * The match is always named rather than reduced to a tick. "You have this" is
+ * only checkable if it says *what* it matched, and it does need checking —
+ * "Spring onions" answering for "Onion" is wrong in a way only a cook notices.
+ */
+function Ingredient({
+  item,
+  factor,
+  match,
+}: {
+  item: RecipeItem;
+  factor: number;
+  match?: IngredientMatch;
+}) {
   const amount = scaleAmount(item.description, factor);
+  const have = match?.kind === "exact" || match?.kind === "likely";
+  const maybe = match?.kind === "possible";
+
   return (
-    <li className="flex items-baseline justify-between gap-4 border-b border-hairline py-2.5 last:border-0">
-      <span>
-        {item.name}
-        {item.optional && <span className="label ml-2">optional</span>}
-      </span>
-      {amount && <span className="shrink-0 font-mono text-xs text-muted">{amount}</span>}
+    <li className="border-b border-hairline py-2.5 last:border-0">
+      <div className="flex items-baseline justify-between gap-4">
+        <span className="flex items-baseline gap-2">
+          {match && (
+            <span aria-hidden className={`shrink-0 ${have ? "text-done" : "text-faint"}`}>
+              {have ? <Check size={14} /> : maybe ? <HelpCircle size={14} /> : <Minus size={14} />}
+            </span>
+          )}
+          <span>
+            {item.name}
+            {item.optional && <span className="label ml-2">optional</span>}
+          </span>
+        </span>
+        {amount && <span className="shrink-0 font-mono text-xs text-muted">{amount}</span>}
+      </div>
+
+      {match && match.kind !== "none" && (
+        <p className="mt-1 pl-6 text-xs text-muted">
+          {match.kind === "exact" ? (
+            <span className="text-done">In the kitchen</span>
+          ) : match.kind === "likely" ? (
+            <>
+              <span className="text-done">In the kitchen</span> as {match.match?.name}
+            </>
+          ) : (
+            <>Maybe {match.match?.name}</>
+          )}
+          {match.alternatives.length > 0 && (
+            <span className="text-faint">
+              {" "}
+              · or {match.alternatives.map((thing) => thing.name).join(", ")}
+            </span>
+          )}
+        </p>
+      )}
     </li>
   );
 }
@@ -50,6 +99,15 @@ export default function Recipe() {
   const [servings, setServings] = useState<number | null>(null);
   const [added, setAdded] = useState(0);
   const [confirmDelete, setConfirmDelete] = useState(false);
+
+  // Shared with the inventory screen and Cook now, so opening a recipe after
+  // either of those costs no request.
+  const { data: inventory } = useQuery({
+    queryKey: ["spiso-inventory"],
+    queryFn: spisoApi.inventory,
+    staleTime: 60_000,
+    retry: false,
+  });
 
   const remove = useMutation({
     mutationFn: () => api(`/recipe/${recipeId}`, { method: "DELETE" }),
@@ -109,6 +167,14 @@ export default function Recipe() {
   // Optional ingredients are the ones you decide about at the shelf, so they
   // are left out of both the count and what gets sent.
   const required = recipe.items.filter((item) => !item.optional);
+
+  const things = inventory?.items ?? [];
+  const matches = things.length
+    ? new Map(recipe.items.map((item) => [item.id, matchIngredient(item.name, things)]))
+    : null;
+  const haveCount = matches
+    ? countMatched(required.map((item) => matches.get(item.id)!).filter(Boolean))
+    : 0;
 
   return (
     <article className="mx-auto max-w-6xl">
@@ -229,9 +295,26 @@ export default function Recipe() {
               </div>
             )}
           </div>
+          {matches && (
+            <p className="mb-2 text-xs text-muted">
+              {haveCount === required.length ? (
+                <span className="text-done">Everything for this is in the kitchen.</span>
+              ) : (
+                <>
+                  {haveCount} of {required.length} in the kitchen — matched against Foodminder.
+                </>
+              )}
+            </p>
+          )}
+
           <ul className="rule pt-1">
             {recipe.items.map((item) => (
-              <Ingredient key={item.id} item={item} factor={factor} />
+              <Ingredient
+                key={item.id}
+                item={item}
+                factor={factor}
+                match={matches?.get(item.id)}
+              />
             ))}
           </ul>
 
