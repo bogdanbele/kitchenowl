@@ -9,7 +9,7 @@ import { Photo } from "../components/Photo";
 import { ConfirmDialog } from "../components/Modal";
 import { formatTime, scaleAmount } from "../lib/amount";
 import { stripMentions } from "../lib/mentions";
-import { Check, ChefHat, Clock, HelpCircle, Link as LinkIcon, Minus, Sparkles, Users } from "lucide-react";
+import { ChefHat, Clock, Link as LinkIcon, Sparkles, Users } from "lucide-react";
 import {
   countMatched,
   matchIngredient,
@@ -19,6 +19,7 @@ import {
 } from "../lib/pantryMatch";
 import { normaliseName } from "../lib/cookable";
 import { useInventory } from "../hooks/useInventory";
+import { isHave, overridesFor, setOverride } from "../lib/haveList";
 
 /** "panlasangpinoy.com" from a URL, or the raw string if it is not one. */
 function sourceLabel(source: string): string {
@@ -41,30 +42,38 @@ function Ingredient({
   factor,
   match,
   swap,
+  have,
+  onHave,
 }: {
   item: RecipeItem;
   factor: number;
   match?: IngredientMatch;
   swap?: { thing: PantryThing; substitute: string } | null;
+  have: boolean;
+  onHave: (have: boolean) => void;
 }) {
   const amount = scaleAmount(item.description, factor);
-  const have = match?.kind === "exact" || match?.kind === "likely";
-  const maybe = match?.kind === "possible";
 
   return (
     <li className="border-b border-hairline py-2.5 last:border-0">
       <div className="flex items-baseline justify-between gap-4">
-        <span className="flex items-baseline gap-2">
-          {match && (
-            <span aria-hidden className={`shrink-0 ${have ? "text-done" : "text-faint"}`}>
-              {have ? <Check size={14} /> : maybe ? <HelpCircle size={14} /> : <Minus size={14} />}
-            </span>
-          )}
-          <span>
+        {/* A real checkbox, because this is a decision rather than a report. It
+            starts where the matcher put it and the cook moves it: ticking the
+            sinigang mix the app only guessed at, or ticking water, which no
+            inventory will ever list. */}
+        <label className="flex flex-1 cursor-pointer items-baseline gap-2">
+          <input
+            type="checkbox"
+            checked={have}
+            onChange={(event) => onHave(event.target.checked)}
+            aria-label={`I have ${item.name}`}
+            className="size-3.5 shrink-0 self-center accent-done"
+          />
+          <span className={have ? "text-muted line-through decoration-hairline" : ""}>
             {item.name}
             {item.optional && <span className="label ml-2">optional</span>}
           </span>
-        </span>
+        </label>
         {amount && <span className="shrink-0 font-mono text-xs text-muted">{amount}</span>}
       </div>
 
@@ -124,6 +133,9 @@ export default function Recipe() {
   const [servings, setServings] = useState<number | null>(null);
   const [added, setAdded] = useState(0);
   const [confirmDelete, setConfirmDelete] = useState(false);
+  // Only the disagreements with the matcher, kept in this browser. Whether
+  // there is water at your tap is not a fact about the recipe.
+  const [ticks, setTicks] = useState<Record<string, boolean>>(() => overridesFor(recipeId ?? ""));
 
   // Shared with the inventory screen and Cook now, so opening a recipe after
   // either of those costs no request. Carries English aliases for anything the
@@ -202,6 +214,23 @@ export default function Recipe() {
   const swapFor = new Map(
     recipe.items.map((item) => [item.id, matchSubstitute(item.substitutes, things)]),
   );
+
+  /**
+   * What the app found, before the cook has a say: a match in the kitchen, or a
+   * substitute they wrote down that is in the kitchen. The tick starts here.
+   */
+  const matched = (item: RecipeItem): boolean => {
+    const kind = matches?.get(item.id)?.kind;
+    return kind === "exact" || kind === "likely" || swapFor.get(item.id) != null;
+  };
+  const haveItem = (item: RecipeItem) => isHave(ticks, item.id, matched(item));
+
+  // The list is for what is not in the house. Everything ticked — matched,
+  // confirmed, or obvious like water — stays off it.
+  const toBuy = required.filter((item) => !haveItem(item));
+
+  const tick = (item: RecipeItem, have: boolean) =>
+    setTicks(setOverride(recipeId ?? "", item.id, have, matched(item)));
 
   return (
     <article className="mx-auto max-w-6xl">
@@ -325,11 +354,15 @@ export default function Recipe() {
           {matches && (
             <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
               <p className="text-xs text-muted">
-                {haveCount === required.length ? (
-                  <span className="text-done">Everything for this is in the kitchen.</span>
+                {toBuy.length === 0 ? (
+                  <span className="text-done">Nothing to buy for this.</span>
                 ) : (
                   <>
-                    {haveCount} of {required.length} in the kitchen — matched against Foodminder.
+                    {/* Counts what is ticked, not what matched: a mix the cook
+                        confirmed and the water they obviously have are both in
+                        the house, whatever Foodminder knows about them. */}
+                    {required.length - toBuy.length} of {required.length} in the kitchen
+                    {haveCount < required.length - toBuy.length && " — including what you ticked"}
                   </>
                 )}
               </p>
@@ -344,13 +377,15 @@ export default function Recipe() {
                 factor={factor}
                 match={matches?.get(item.id)}
                 swap={swapFor.get(item.id)}
+                have={haveItem(item)}
+                onHave={(value) => tick(item, value)}
               />
             ))}
           </ul>
 
-          {list && required.length > 0 && (
+          {list && toBuy.length > 0 && (
             <button
-              onClick={() => addToList.mutate(required)}
+              onClick={() => addToList.mutate(toBuy)}
               disabled={addToList.isPending || added > 0}
               className="btn-gradient mt-4 w-full rounded-card px-4 py-2.5 text-sm font-medium"
             >
@@ -358,7 +393,7 @@ export default function Recipe() {
                 ? `${added} added to the list`
                 : addToList.isPending
                   ? "Adding…"
-                  : `Add ${required.length} ${required.length === 1 ? "ingredient" : "ingredients"} to the list`}
+                  : `Add ${toBuy.length} ${toBuy.length === 1 ? "ingredient" : "ingredients"} to the list`}
             </button>
           )}
           {addToList.isError && (
