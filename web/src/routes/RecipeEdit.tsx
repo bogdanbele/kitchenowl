@@ -16,12 +16,13 @@ import {
   type Draft,
   type ScrapeResult,
 } from "../lib/scrape";
-import { extractRecipeFromText, openRouter } from "../api/openrouter";
+import { extractRecipeFromImages, extractRecipeFromText, openRouter } from "../api/openrouter";
 import { toDraftFromExtraction } from "../lib/recipeExtraction";
 import { missingFromIngredients } from "../lib/mentions";
+import { dataUrlBytes, imageFromClipboard, toDownscaledDataUrl } from "../lib/image";
 import { Photo } from "../components/Photo";
 import { Link as RouterLink } from "react-router-dom";
-import { ImagePlus, Link2, Sparkles, X } from "lucide-react";
+import { Camera, ImagePlus, Link2, Sparkles, X } from "lucide-react";
 
 export default function RecipeEdit() {
   const { householdId = "1", recipeId } = useParams();
@@ -32,7 +33,9 @@ export default function RecipeEdit() {
   const [draft, setDraft] = useState<Draft | null>(isNew ? EMPTY : null);
   const [url, setUrl] = useState("");
   const [pasted, setPasted] = useState("");
-  const [importMode, setImportMode] = useState<"link" | "text">("link");
+  const [importMode, setImportMode] = useState<"link" | "text" | "photo">("link");
+  const [pages, setPages] = useState<string[]>([]);
+  const [pageNote, setPageNote] = useState("");
   const [preview, setPreview] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [tagDraft, setTagDraft] = useState("");
@@ -107,6 +110,32 @@ export default function RecipeEdit() {
     },
     onError: (caught) =>
       setError(caught instanceof Error ? caught.message : "Could not upload that image."),
+  });
+
+  /**
+   * Photographs go in downscaled, and the same page can be added twice — a
+   * recipe that runs over a page turn is two photos, and the model needs both
+   * to see the method it starts on one and finishes on the other.
+   */
+  const addPage = useMutation({
+    mutationFn: (file: File) => toDownscaledDataUrl(file),
+    onSuccess: (dataUrl) => {
+      setError(null);
+      setPages((current) => [...current, dataUrl]);
+    },
+    onError: () => setError("Could not read that image file."),
+  });
+
+  const readPhotos = useMutation({
+    mutationFn: (images: string[]) => extractRecipeFromImages(images, pageNote),
+    onSuccess: (recipe) => {
+      setError(null);
+      setDraft(toDraftFromExtraction(recipe, openRouter.model));
+    },
+    onError: (caught) =>
+      caught instanceof Error
+        ? setError(caught.message)
+        : setError("Could not read that photo."),
   });
 
   const save = useMutation({
@@ -208,9 +237,120 @@ export default function RecipeEdit() {
             >
               <Sparkles size={13} /> From pasted text
             </button>
+            <button
+              type="button"
+              onClick={() => setImportMode("photo")}
+              aria-pressed={importMode === "photo"}
+              className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition ${
+                importMode === "photo" ? "bg-accent-soft text-accent" : "text-muted hover:text-ink"
+              }`}
+            >
+              <Camera size={13} /> From a photo
+            </button>
           </div>
 
-          {importMode === "link" ? (
+          {importMode === "photo" ? (
+            <div
+              // Photograph the page, paste it straight in. Saving the file and
+              // then finding it again is the slow half of that job.
+              onPaste={(event) => {
+                const file = imageFromClipboard(event.nativeEvent);
+                if (file) {
+                  event.preventDefault();
+                  addPage.mutate(file);
+                }
+              }}
+              tabIndex={0}
+              className="rounded-card outline-none focus-visible:ring-1 focus-visible:ring-accent"
+            >
+              {pages.length > 0 && (
+                <div className="mb-3 flex flex-wrap gap-2">
+                  {pages.map((page, index) => (
+                    <div key={index} className="relative">
+                      <img
+                        src={page}
+                        alt={`Page ${index + 1}`}
+                        className="size-24 rounded-card border border-hairline object-cover"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setPages(pages.filter((_, i) => i !== index))}
+                        aria-label={`Remove page ${index + 1}`}
+                        className="absolute -top-2 -right-2 rounded-full border border-hairline bg-paper p-1
+                                   text-faint transition hover:text-accent"
+                      >
+                        <X size={11} />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div className="mb-3 flex flex-wrap items-center gap-3">
+                <label className="cursor-pointer rounded-card border border-line px-4 py-2 text-sm transition hover:border-accent hover:text-accent">
+                  {addPage.isPending
+                    ? "Reading…"
+                    : pages.length
+                      ? "Add another page"
+                      : "Choose a photo"}
+                  <input
+                    type="file"
+                    accept="image/*"
+                    // capture asks a phone for the camera rather than the roll,
+                    // which is the whole point when the book is open in front of you.
+                    capture="environment"
+                    className="hidden"
+                    onChange={(event) => {
+                      const file = event.target.files?.[0];
+                      event.target.value = "";
+                      if (file) addPage.mutate(file);
+                    }}
+                  />
+                </label>
+                <span className="label">or paste one here</span>
+              </div>
+
+              {pages.length > 0 && (
+                <input
+                  value={pageNote}
+                  onChange={(e) => setPageNote(e.target.value)}
+                  placeholder="Anything the page does not say — “halve it”, “Mum's, from 1994”…"
+                  aria-label="Note for the reader"
+                  className="field mb-3"
+                />
+              )}
+
+              <div className="flex flex-wrap items-center gap-3">
+                <button
+                  type="button"
+                  disabled={pages.length === 0 || readPhotos.isPending || !openRouter.configured}
+                  onClick={() => readPhotos.mutate(pages)}
+                  className="btn-gradient rounded-card px-4 py-2 text-sm font-medium disabled:opacity-50"
+                >
+                  {readPhotos.isPending
+                    ? "Reading the page…"
+                    : `Read ${pages.length > 1 ? `${pages.length} pages` : "the page"}`}
+                </button>
+                {openRouter.configured ? (
+                  <span className="label">
+                    via {openRouter.model}
+                    {pages.length > 0 &&
+                      ` · ${Math.round(pages.reduce((total, page) => total + dataUrlBytes(page), 0) / 1024)} kB`}
+                  </span>
+                ) : (
+                  <RouterLink
+                    to={`/household/${householdId}/settings`}
+                    className="label transition hover:text-accent"
+                  >
+                    Add an OpenRouter key first →
+                  </RouterLink>
+                )}
+              </div>
+              <p className="mt-2 text-xs text-faint">
+                Needs a model that can see images — the picker in Settings marks them.
+              </p>
+            </div>
+          ) : importMode === "link" ? (
             <div className="flex gap-2">
               <input
                 value={url}

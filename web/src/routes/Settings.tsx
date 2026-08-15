@@ -126,16 +126,25 @@ export default function Settings() {
           {!visible.some((entry) => entry.id === model) && <option value={model}>{model}</option>}
           {visible.slice(0, 300).map((entry) => (
             <option key={entry.id} value={entry.id}>
+              {/* 👁 marks a model that can read a photographed page. Reading
+                  that requirement only after picking is how you find out by
+                  watching the request fail. */}
+              {entry.seesImages ? "👁 " : "   "}
               {entry.id}
             </option>
           ))}
         </select>
-        <p className="mb-6 text-xs text-muted">
+        <p className="mb-2 text-xs text-muted">
           {chosen
             ? `${chosen.name} · ${chosen.contextLength.toLocaleString()} token context${
                 chosen.promptPrice ? ` · $${(chosen.promptPrice * 1_000_000).toFixed(2)}/M tokens in` : " · free"
               }`
             : `Using ${model}${model === DEFAULT_MODEL ? " (default)" : ""}`}
+        </p>
+        <p className="mb-6 text-xs text-faint">
+          {chosen && !chosen.seesImages
+            ? "👁 marks models that can read a photograph. This one cannot, so “From a photo” will not work."
+            : "👁 marks models that can read a photographed page."}
         </p>
 
         <div className="flex flex-wrap gap-3">

@@ -91,25 +91,60 @@ async function readError(response: Response): Promise<string> {
  */
 let refreshing: Promise<void> | null = null;
 
+const REFRESH_LOCK = "kitchenowl.refresh";
+
+/**
+ * Serialise across tabs, not just within this page.
+ *
+ * The in-page promise below only ever covered one document. Two tabs open on
+ * the same household each hit a 401 when the access token ages out, each spends
+ * the *same* refresh token, and the second spend is exactly what reuse
+ * detection is looking for: the server invalidates the whole family and both
+ * tabs are signed out for good, with no way back but the login screen. That
+ * happened during this build with two tabs open.
+ *
+ * Web Locks are shared between same-origin tabs, which is the only coordination
+ * primitive that is. Where they are missing the behaviour is what it was.
+ */
+function withTabLock<T>(work: () => Promise<T>): Promise<T> {
+  if (!navigator.locks?.request) return work();
+  return navigator.locks.request(REFRESH_LOCK, work) as Promise<T>;
+}
+
 function refreshTokens(): Promise<void> {
   refreshing ??= (async () => {
-    const refresh = tokens.refresh;
-    if (!refresh) throw new SessionExpired(401, "Not signed in");
+    const stale = tokens.refresh;
+    if (!stale) throw new SessionExpired(401, "Not signed in");
 
-    const response = await fetch("/api/auth/refresh", {
-      headers: { Authorization: `Bearer ${refresh}` },
+    await withTabLock(async () => {
+      // Inside the lock, look again: whoever held it before us may have
+      // rotated the tokens already, and spending ours now is the reuse that
+      // logs the household out.
+      const current = tokens.refresh;
+      if (!current) throw new SessionExpired(401, "Not signed in");
+      if (current !== stale) return;
+
+      const response = await fetch("/api/auth/refresh", {
+        headers: { Authorization: `Bearer ${current}` },
+      });
+      if (!response.ok) {
+        tokens.clear();
+        throw new SessionExpired(response.status, "Session expired");
+      }
+      tokens.set((await response.json()) as AuthResponse);
     });
-    if (!response.ok) {
-      tokens.clear();
-      throw new SessionExpired(response.status, "Session expired");
-    }
-    tokens.set((await response.json()) as AuthResponse);
   })().finally(() => {
     refreshing = null;
   });
 
   return refreshing;
 }
+
+// A rotation in another tab is news here too: the socket holds a copy of the
+// access token and would go on using one that has been replaced.
+window.addEventListener("storage", (event) => {
+  if (event.key === ACCESS_KEY || event.key === REFRESH_KEY) announce();
+});
 
 /**
  * Every authenticated request goes through here, including image loads.

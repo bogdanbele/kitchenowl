@@ -191,3 +191,64 @@ describe("uploadFile", () => {
     await expect(uploadFile(file())).rejects.toThrow("missing file");
   });
 });
+
+describe("refreshing across tabs", () => {
+  /**
+   * The failure this guards against signed a real session out mid-build: two
+   * tabs open, both 401 when the access token ages out, both spend the same
+   * refresh token, and the second spend trips reuse detection — which does not
+   * expire the session, it destroys it.
+   */
+  it("takes a lock that other tabs share", async () => {
+    const request = vi.fn((_name: string, work: () => Promise<unknown>) => work());
+    vi.stubGlobal("navigator", { ...navigator, locks: { request } });
+
+    fetchMock.mockImplementationOnce(() => Promise.resolve(textResponse("nope", 401)));
+    fetchMock.mockImplementationOnce(() =>
+      Promise.resolve(jsonResponse({ access_token: "access-2", refresh_token: "refresh-2" })),
+    );
+    fetchMock.mockImplementationOnce(() => Promise.resolve(jsonResponse({ ok: true })));
+
+    await api("/household");
+    expect(request).toHaveBeenCalledWith("kitchenowl.refresh", expect.any(Function));
+  });
+
+  it("does not spend a refresh token another tab already rotated", async () => {
+    // The other tab wins the lock, refreshes, and stores new tokens while this
+    // one waits. Spending the token we came in with would be the reuse.
+    vi.stubGlobal("navigator", {
+      ...navigator,
+      locks: {
+        request: (_name: string, work: () => Promise<unknown>) => {
+          tokens.set({ access_token: "access-from-other-tab", refresh_token: "refresh-2" });
+          return work();
+        },
+      },
+    });
+
+    fetchMock.mockImplementationOnce(() => Promise.resolve(textResponse("nope", 401)));
+    fetchMock.mockImplementationOnce(() => Promise.resolve(jsonResponse({ ok: true })));
+
+    await expect(api("/household")).resolves.toEqual({ ok: true });
+
+    // Two calls: the 401 and the retry. No refresh request at all.
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(fetchMock.mock.calls.map((call) => call[0])).not.toContain("/api/auth/refresh");
+    // And the retry carries the token the other tab stored.
+    const retry = fetchMock.mock.calls[1][1] as { headers: Headers };
+    expect(new Headers(retry.headers).get("Authorization")).toBe("Bearer access-from-other-tab");
+  });
+
+  it("still refreshes normally where Web Locks are missing", async () => {
+    vi.stubGlobal("navigator", { ...navigator, locks: undefined });
+
+    fetchMock.mockImplementationOnce(() => Promise.resolve(textResponse("nope", 401)));
+    fetchMock.mockImplementationOnce(() =>
+      Promise.resolve(jsonResponse({ access_token: "access-2", refresh_token: "refresh-2" })),
+    );
+    fetchMock.mockImplementationOnce(() => Promise.resolve(jsonResponse({ ok: true })));
+
+    await expect(api("/household")).resolves.toEqual({ ok: true });
+    expect(tokens.access).toBe("access-2");
+  });
+});

@@ -49,6 +49,8 @@ export interface OpenRouterModel {
   /** Prompt price per token as a string, e.g. "0.0000008". */
   promptPrice: number;
   contextLength: number;
+  /** Whether the model can be shown a photograph. */
+  seesImages: boolean;
 }
 
 interface RawModel {
@@ -56,6 +58,18 @@ interface RawModel {
   name?: string;
   context_length?: number;
   pricing?: { prompt?: string };
+  architecture?: { input_modalities?: string[]; modality?: string };
+}
+
+/**
+ * Newer entries carry `architecture.input_modalities`; older ones only the
+ * legacy `modality` string like "text+image->text". Reading both means the
+ * picker does not quietly lose vision models on either side of that change.
+ */
+function readsImages(model: RawModel): boolean {
+  const modalities = model.architecture?.input_modalities;
+  if (modalities?.length) return modalities.includes("image");
+  return (model.architecture?.modality ?? "").split("->")[0]?.includes("image") ?? false;
 }
 
 /** The catalogue is public, so this works before a key is entered. */
@@ -70,6 +84,7 @@ export async function listModels(): Promise<OpenRouterModel[]> {
       name: model.name ?? model.id,
       promptPrice: parseFloat(model.pricing?.prompt ?? "0") || 0,
       contextLength: model.context_length ?? 0,
+      seesImages: readsImages(model),
     }))
     .sort((a, b) => a.name.localeCompare(b.name));
 }
@@ -78,7 +93,18 @@ interface CompletionChoice {
   message?: { content?: string };
 }
 
-async function complete(system: string, user: string, signal?: AbortSignal): Promise<string> {
+/** A user message is either plain text or text alongside images. */
+type UserContent = string | ({ type: "text"; text: string } | ImagePart)[];
+interface ImagePart {
+  type: "image_url";
+  image_url: { url: string };
+}
+
+async function complete(
+  system: string,
+  user: UserContent,
+  signal?: AbortSignal,
+): Promise<string> {
   const key = openRouter.key;
   if (!key) throw new ExtractionError("Add an OpenRouter key in Settings first.");
 
@@ -127,6 +153,43 @@ export async function extractRecipeFromText(
   signal?: AbortSignal,
 ): Promise<ExtractedRecipe> {
   const reply = await complete(EXTRACTION_SYSTEM_PROMPT, text, signal);
+  return toExtractedRecipe(extractJson(reply));
+}
+
+/**
+ * A photograph of a page — a cookbook, a card in someone's handwriting, a menu.
+ *
+ * This is the one source nothing else reaches: the scraper needs a page, the
+ * paste box needs text that already exists somewhere. Paper needs eyes.
+ *
+ * The reply goes through exactly the same parsing and the same `ai://` source
+ * marker as pasted text, so a photographed recipe is flagged as model-written
+ * for the same reason — it is a transcription nobody has checked yet.
+ */
+export async function extractRecipeFromImages(
+  dataUrls: string[],
+  note = "",
+  signal?: AbortSignal,
+): Promise<ExtractedRecipe> {
+  if (dataUrls.length === 0) throw new ExtractionError("No photo to read.");
+
+  const instruction = [
+    "Read the recipe in these photographs and return it as JSON.",
+    "Transcribe only what is printed or written. If the photograph cuts off a",
+    "line, leave that ingredient or step out rather than inventing the rest.",
+    note.trim() && `The person adds: ${note.trim()}`,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  const reply = await complete(
+    EXTRACTION_SYSTEM_PROMPT,
+    [
+      { type: "text", text: instruction },
+      ...dataUrls.map((url): ImagePart => ({ type: "image_url", image_url: { url } })),
+    ],
+    signal,
+  );
   return toExtractedRecipe(extractJson(reply));
 }
 
