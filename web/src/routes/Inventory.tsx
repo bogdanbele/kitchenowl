@@ -1,7 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
 import { Link, useParams } from "react-router-dom";
 import { useMemo, useState } from "react";
-import { byUrgency, daysUntil, expiryLabel, spisoApi, type SpisoItem } from "../api/spiso";
+import { byUrgency, daysUntil, expiryLabel } from "../api/spiso";
+import { useInventory, type KitchenThing } from "../hooks/useInventory";
 
 /**
  * What is actually in the kitchen, read from Spiso.
@@ -17,7 +17,7 @@ function urgencyTone(days: number | null): string {
   return "text-muted";
 }
 
-function ItemRow({ item }: { item: SpisoItem }) {
+function ItemRow({ item }: { item: KitchenThing }) {
   const days = daysUntil(item.expires_on);
   const label = expiryLabel(item.expires_on);
 
@@ -28,9 +28,18 @@ function ItemRow({ item }: { item: SpisoItem }) {
       </span>
       <span className="min-w-0 flex-1">
         <span className="block truncate">{item.name}</span>
-        {item.location && (
-          <span className="block font-mono text-[11px] text-faint">{item.location}</span>
-        )}
+        <span className="block font-mono text-[11px] text-faint">
+          {item.location}
+          {/* What recipes will match this by. Shown because a translation you
+              cannot see is one you cannot correct — and "Kefir Blabaer" is not
+              a word any recipe will ever ask for. */}
+          {item.alias && (
+            <span className="text-muted">
+              {item.location ? " · " : ""}
+              matched as {item.alias}
+            </span>
+          )}
+        </span>
       </span>
       {item.quantity > 1 && (
         <span className="shrink-0 font-mono text-xs text-muted">×{item.quantity}</span>
@@ -49,19 +58,20 @@ export default function Inventory() {
   const { householdId = "1" } = useParams();
   const [query, setQuery] = useState("");
 
-  const { data, isPending, error } = useQuery({
-    queryKey: ["spiso-inventory"],
-    queryFn: spisoApi.inventory,
-    // The phone writes a snapshot when the kitchen changes; a minute of
-    // staleness costs nothing and this is a proxied request to another server.
-    staleTime: 60_000,
-  });
+  const { items: all, homeName, needsHome, isPending, error } = useInventory();
 
   const items = useMemo(() => {
-    const all = [...(data?.items ?? [])].sort(byUrgency);
+    const sorted = [...all].sort(byUrgency);
     const needle = query.trim().toLowerCase();
-    return needle ? all.filter((item) => item.name.toLowerCase().includes(needle)) : all;
-  }, [data, query]);
+    return needle
+      ? sorted.filter(
+          (item) =>
+            item.name.toLowerCase().includes(needle) ||
+            // Searching "eggs" should find "Æg" for the same reason a recipe can.
+            item.alias?.toLowerCase().includes(needle),
+        )
+      : sorted;
+  }, [all, query]);
 
   const soon = items.filter((item) => {
     const days = daysUntil(item.expires_on);
@@ -85,7 +95,7 @@ export default function Inventory() {
 
   return (
     <div className="mx-auto max-w-2xl">
-      <p className="label">{data?.home_name ? `From ${data.home_name}` : "From Foodminder"}</p>
+      <p className="label">{homeName ? `From ${homeName}` : "From Foodminder"}</p>
       <h1 className="mt-1 mb-2 text-4xl font-semibold tracking-tight">In the kitchen</h1>
       <p className="mb-8 text-sm text-muted">
         {isPending
@@ -106,7 +116,7 @@ export default function Inventory() {
 
       {isPending ? (
         <div className="h-64 animate-pulse rounded-card bg-paper-deep" />
-      ) : data?.needs_home ? (
+      ) : needsHome ? (
         <p className="text-muted">
           Connected, but no home chosen yet —{" "}
           <Link

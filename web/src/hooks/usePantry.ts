@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { api } from "../api/client";
 import type { Shoppinglist, ShoppinglistItem } from "../api/types";
 import { pantryFrom, pantryNames } from "../lib/cookable";
-import { spisoApi } from "../api/spiso";
+import { useInventory } from "./useInventory";
 
 /**
  * A guess at what the kitchen holds.
@@ -39,17 +39,17 @@ export function usePantry(householdId: string) {
    * because you bought flour three weeks ago is exactly the wrong answer once
    * the app can see there is none.
    */
-  const { data: inventory } = useQuery({
-    queryKey: ["spiso-inventory"],
-    queryFn: spisoApi.inventory,
-    staleTime: 60_000,
-    // 404 is "not connected", which is the ordinary case, not an error worth
-    // retrying or shouting about.
-    retry: false,
-  });
+  const { items: kitchen } = useInventory();
 
-  const fromInventory = inventory?.items?.length
-    ? new Set(inventory.items.flatMap((item) => pantryNames(item.name)))
+  const fromInventory = kitchen.length
+    ? new Set(
+        // Both names: a recipe asking for eggs finds "Æg" through the alias,
+        // and one asking for citronfromage finds it by its own name.
+        kitchen.flatMap((item) => [
+          ...pantryNames(item.name),
+          ...(item.alias ? pantryNames(item.alias) : []),
+        ]),
+      )
     : null;
 
   return {
@@ -60,7 +60,7 @@ export function usePantry(householdId: string) {
     // name, so its size is close to double and "from 58 things in your kitchen"
     // would be a lie about a fridge holding thirty.
     knownCount: fromInventory
-      ? (inventory?.items?.length ?? 0)
+      ? kitchen.length
       : (onList?.length ?? 0) + (recent?.length ?? 0),
   };
 }

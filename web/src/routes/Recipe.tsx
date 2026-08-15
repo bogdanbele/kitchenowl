@@ -10,8 +10,9 @@ import { ConfirmDialog } from "../components/Modal";
 import { formatTime, scaleAmount } from "../lib/amount";
 import { stripMentions } from "../lib/mentions";
 import { Check, ChefHat, Clock, HelpCircle, Link as LinkIcon, Minus, Sparkles, Users } from "lucide-react";
-import { spisoApi } from "../api/spiso";
 import { countMatched, matchIngredient, type IngredientMatch } from "../lib/pantryMatch";
+import { normaliseName } from "../lib/cookable";
+import { useInventory } from "../hooks/useInventory";
 
 /** "panlasangpinoy.com" from a URL, or the raw string if it is not one. */
 function sourceLabel(source: string): string {
@@ -61,14 +62,18 @@ function Ingredient({
 
       {match && match.kind !== "none" && (
         <p className="mt-1 pl-6 text-xs text-muted">
-          {match.kind === "exact" ? (
+          {/* The thing is named unless it is spelled the same as the
+              ingredient. An exact match can still be a surprise: "Eggs" matches
+              "Æg" exactly once the alias is read, and "In the kitchen" alone
+              would hide the one thing worth seeing. */}
+          {match.kind === "possible" ? (
+            <>Maybe {match.match?.name}</>
+          ) : normaliseName(match.match?.name ?? "") === normaliseName(item.name) ? (
             <span className="text-done">In the kitchen</span>
-          ) : match.kind === "likely" ? (
+          ) : (
             <>
               <span className="text-done">In the kitchen</span> as {match.match?.name}
             </>
-          ) : (
-            <>Maybe {match.match?.name}</>
           )}
           {match.alternatives.length > 0 && (
             <span className="text-faint">
@@ -101,13 +106,9 @@ export default function Recipe() {
   const [confirmDelete, setConfirmDelete] = useState(false);
 
   // Shared with the inventory screen and Cook now, so opening a recipe after
-  // either of those costs no request.
-  const { data: inventory } = useQuery({
-    queryKey: ["spiso-inventory"],
-    queryFn: spisoApi.inventory,
-    staleTime: 60_000,
-    retry: false,
-  });
+  // either of those costs no request. Carries English aliases for anything the
+  // kitchen calls something else.
+  const { items: things } = useInventory();
 
   const remove = useMutation({
     mutationFn: () => api(`/recipe/${recipeId}`, { method: "DELETE" }),
@@ -168,7 +169,6 @@ export default function Recipe() {
   // are left out of both the count and what gets sent.
   const required = recipe.items.filter((item) => !item.optional);
 
-  const things = inventory?.items ?? [];
   const matches = things.length
     ? new Map(recipe.items.map((item) => [item.id, matchIngredient(item.name, things)]))
     : null;

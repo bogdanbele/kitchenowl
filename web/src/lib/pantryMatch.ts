@@ -19,6 +19,8 @@ export type MatchKind = "exact" | "likely" | "possible" | "none";
 
 export interface PantryThing {
   name: string;
+  /** English name, when the real one is not English. Matched on, never shown. */
+  alias?: string;
   quantity?: number;
   expires_on?: string | null;
 }
@@ -80,9 +82,17 @@ function score(ingredient: string, thing: string): MatchKind {
 
 const RANK: Record<MatchKind, number> = { exact: 3, likely: 2, possible: 1, none: 0 };
 
+/** The better of what the thing is called and what it is called in English. */
+function bestScore(ingredient: string, thing: PantryThing): MatchKind {
+  const onName = score(ingredient, thing.name);
+  if (!thing.alias) return onName;
+  const onAlias = score(ingredient, thing.alias);
+  return RANK[onAlias] > RANK[onName] ? onAlias : onName;
+}
+
 export function matchIngredient(ingredient: string, inventory: PantryThing[]): IngredientMatch {
   const scored = inventory
-    .map((thing) => ({ thing, kind: score(ingredient, thing.name) }))
+    .map((thing) => ({ thing, kind: bestScore(ingredient, thing) }))
     .filter((entry) => entry.kind !== "none")
     .sort((a, b) => RANK[b.kind] - RANK[a.kind] || a.thing.name.localeCompare(b.thing.name));
 

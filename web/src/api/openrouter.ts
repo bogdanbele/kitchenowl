@@ -207,6 +207,52 @@ export async function extractRecipeFromImages(
   return toExtractedRecipe(extractJson(reply));
 }
 
+/**
+ * English names for things in someone's kitchen.
+ *
+ * Cheap and rare: only names never seen before are sent, and the answers are
+ * cached forever, so a household converges to zero requests within a week or
+ * two of ordinary shopping. Sent as one batch rather than one call per item —
+ * a fridge is thirty things and thirty requests would be absurd.
+ *
+ * Nothing is written back to Spiso. This is a reading aid on this side of the
+ * bridge, which is why it returns a map and stores nothing itself.
+ */
+export async function translateToEnglish(
+  names: string[],
+  signal?: AbortSignal,
+): Promise<Record<string, string>> {
+  if (names.length === 0) return {};
+
+  const reply = await complete(
+    `You translate names of food and drink into English.
+
+Return ONLY a JSON object mapping each name exactly as given to its ordinary
+English shop name, lower case. "Citronfromage" -> "lemon mousse", "brânză de
+vaci" -> "cottage cheese", "Rugbrød" -> "rye bread".
+
+Rules:
+- A name already in English maps to itself, lower case.
+- Keep a name that English has no word for as it is: "gochujang", "borș".
+- A brand or a shop's own label maps to what the food is: "Kelloggs Corn
+  Flakes" -> "corn flakes".
+- Never explain, never add a name that was not given, never return a sentence.`,
+    JSON.stringify(names),
+    signal,
+  );
+
+  const match = reply.match(/\{[\s\S]*\}/);
+  if (!match) return {};
+  try {
+    return JSON.parse(match[0]) as Record<string, string>;
+  } catch {
+    // A reply that is not JSON means no translations this round, not an error
+    // worth interrupting anybody over: matching still works on the names that
+    // are already English.
+    return {};
+  }
+}
+
 /** Cheap round trip to prove a key works, without pretending to be a recipe. */
 export async function testKey(): Promise<string> {
   const reply = await complete(

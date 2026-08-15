@@ -71,6 +71,39 @@ describe("matchIngredient", () => {
   });
 });
 
+describe("matching through an English alias", () => {
+  // The kitchen is Danish; the recipes are not. Spiso is never written to, so
+  // the English name lives here and is used for matching only.
+  const danish = [
+    { name: "Æg", alias: "egg" },
+    { name: "Citronfromage", alias: "lemon mousse" },
+    { name: "Rugbrød", alias: "rye bread" },
+  ];
+
+  it("finds a thing by what it is in English", () => {
+    // "Eggs" folds to "egg", which is the alias exactly — so this is as certain
+    // as a match gets, even though the two written names share no letters.
+    const match = matchIngredient("Eggs", danish);
+    expect(match.kind).toBe("exact");
+    // Reported as what the tub says, not as the translation.
+    expect(match.match?.name).toBe("Æg");
+  });
+
+  it("matches on the head noun of an alias", () => {
+    expect(matchIngredient("Bread", danish).match?.name).toBe("Rugbrød");
+  });
+
+  it("still matches the real name when that is what the recipe used", () => {
+    expect(matchIngredient("Citronfromage", danish).kind).toBe("exact");
+  });
+
+  it("takes the stronger of the two readings", () => {
+    // Exact on the name beats possible on the alias.
+    const both = [{ name: "Rice", alias: "sushi rice" }];
+    expect(matchIngredient("Rice", both).kind).toBe("exact");
+  });
+});
+
 describe("countMatched", () => {
   it("counts what is in the kitchen, not what might be", () => {
     const matches = ["Potatoes", "Tomatoes", "1 teaspoon Oil for painting the dough", "Saffron"].map(
