@@ -61,13 +61,17 @@ function Ingredient({
             starts where the matcher put it and the cook moves it: ticking the
             sinigang mix the app only guessed at, or ticking water, which no
             inventory will ever list. */}
-        <label className="flex flex-1 cursor-pointer items-baseline gap-2">
+        {/* The whole row is the target and it clears 44px. This gets tapped
+            one-handed in a kitchen, where a 14px checkbox is something you miss
+            twice before hitting it. The negative margin keeps the taller hit
+            area from loosening the list's rhythm. */}
+        <label className="-my-1.5 flex min-h-11 flex-1 cursor-pointer items-center gap-3 py-1.5">
           <input
             type="checkbox"
             checked={have}
             onChange={(event) => onHave(event.target.checked)}
             aria-label={`I have ${item.name}`}
-            className="size-3.5 shrink-0 self-center accent-done"
+            className="size-5 shrink-0 accent-done"
           />
           <span className={have ? "text-muted line-through decoration-hairline" : ""}>
             {item.name}

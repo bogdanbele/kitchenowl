@@ -40,6 +40,7 @@ export default function RecipeEdit() {
   const [preview, setPreview] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [tagDraft, setTagDraft] = useState("");
+  const [photoUrl, setPhotoUrl] = useState("");
 
   // The household's existing tags, so a second "Weeknight" is a click rather
   // than a typo waiting to happen.
@@ -470,6 +471,22 @@ export default function RecipeEdit() {
               Remove
             </button>
           )}
+
+          {/* A pasted address is fetched by the server on save — its downloader
+              is hardened against being pointed at the network it lives on, and
+              the file ends up stored here rather than hotlinked, so the recipe
+              keeps its picture when the page it came from goes away. */}
+          <input
+            value={photoUrl}
+            onChange={(event) => {
+              setPhotoUrl(event.target.value);
+              const value = event.target.value.trim();
+              if (/^https?:\/\/\S+$/.test(value)) set("photo", value);
+            }}
+            placeholder="…or paste an image address"
+            aria-label="Image address"
+            className="field mt-2 text-sm"
+          />
         </div>
       </section>
 
