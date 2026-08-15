@@ -1,9 +1,10 @@
 import { Link, useParams } from "react-router-dom";
 import { useMemo, useState } from "react";
-import { byUrgency, daysUntil, expiryLabel } from "../api/spiso";
+import { byUrgency, daysUntil, timeLeft } from "../api/spiso";
 import { useInventory, type KitchenThing } from "../hooks/useInventory";
 import { groupByPlace, sliceShelf, useFirst } from "../lib/kitchenGroups";
 import { ChevronDown } from "lucide-react";
+import { Tabs, type Tab } from "../components/Tabs";
 
 const COLLAPSED_KEY = "kitchenowl.kitchen.collapsed";
 
@@ -28,9 +29,18 @@ function urgencyTone(days: number | null): string {
   return "text-muted";
 }
 
+/** The date behind the duration, for a hover or a screen reader. */
+function exactDate(iso: string | null | undefined): string | undefined {
+  if (!iso) return undefined;
+  const date = new Date(iso);
+  return Number.isNaN(date.getTime())
+    ? undefined
+    : date.toLocaleDateString(undefined, { day: "numeric", month: "long", year: "numeric" });
+}
+
 function ItemRow({ item, showPlace = true }: { item: KitchenThing; showPlace?: boolean }) {
   const days = daysUntil(item.expires_on);
-  const label = expiryLabel(item.expires_on);
+  const left = timeLeft(item.expires_on);
   // Under a "Fridge · Door shelf" heading, repeating it on every row is noise.
   const place = showPlace ? [item.location, item.space].filter(Boolean).join(" · ") : "";
 
@@ -59,10 +69,15 @@ function ItemRow({ item, showPlace = true }: { item: KitchenThing; showPlace?: b
       {item.quantity > 1 && (
         <span className="shrink-0 font-mono text-xs text-muted">×{item.quantity}</span>
       )}
-      {label && (
-        <span className={`shrink-0 text-right text-xs ${urgencyTone(days)}`}>
-          {days !== null && days < 0 ? "Went off " : ""}
-          {label}
+      {left && (
+        // How long is left, with the date itself on hover: "in 7 months" is the
+        // answer to the question being asked, and "17 March 2027" is the
+        // evidence for it.
+        <span
+          title={exactDate(item.expires_on)}
+          className={`shrink-0 text-right text-xs ${urgencyTone(days)}`}
+        >
+          {days !== null && days < 0 ? `Went off ${left}` : left}
         </span>
       )}
     </li>
@@ -89,6 +104,9 @@ export default function Inventory() {
   // question you had once. Which *places* you care about is a standing
   // preference; which shelf you opened last Tuesday is not.
   const [expandedShelves, setExpandedShelves] = useState<string[]>([]);
+  // Which shelf tab is open, per place. Same reasoning as the shelves above:
+  // a filter you chose once is not a preference worth outliving the visit.
+  const [openTab, setOpenTab] = useState<Record<string, string>>({});
   const toggleShelf = (key: string) =>
     setExpandedShelves((current) =>
       current.includes(key) ? current.filter((entry) => entry !== key) : [...current, key],
@@ -163,28 +181,67 @@ export default function Inventory() {
           </span>
         </button>
 
-        {open &&
-          place.spaces.map((space) => {
-            const shelfKey = `${key}::${space.space ?? ""}`;
-            const slice = sliceShelf(space.items, {
-              expanded: expandedShelves.includes(shelfKey),
-              searching: query.trim().length > 0,
-            });
-            const listId = `shelf-${shelfKey.replace(/\W+/g, "-")}`;
+        {open && (() => {
+          const idPrefix = `place-${key.replace(/\W+/g, "-")}`;
+          const hasShelves = place.spaces.length > 1;
+          // "All" first and selected by default, so tabs filter rather than
+          // hide: a pantry you can only read a third of at a time is worse than
+          // the list it replaced.
+          const tabs: Tab[] = hasShelves
+            ? [
+                { id: "all", label: "All", count: place.count, badge: place.soon },
+                ...place.spaces.map((space) => ({
+                  id: space.space ?? "unfiled",
+                  label: space.space ?? "Elsewhere",
+                  count: space.items.length,
+                  badge: space.items.filter((entry) => {
+                    const days = daysUntil(entry.expires_on);
+                    return days !== null && days <= 2;
+                  }).length,
+                })),
+              ]
+            : [];
 
-            return (
-              <div key={space.space ?? "unfiled"} className="mt-3">
-                {/* A shelf name is only worth a heading when the place has more
-                    than one — otherwise it is a label saying "here". */}
-                {space.space && place.spaces.length > 1 && (
-                  <p className="label mb-1 flex items-baseline justify-between gap-3">
-                    <span>{space.space}</span>
-                    <span className="text-faint">{space.items.length}</span>
-                  </p>
-                )}
-                <ul className="rule" id={listId}>
+          const selected = hasShelves ? (openTab[key] ?? "all") : "all";
+          const shelf =
+            selected === "all"
+              ? place.spaces.flatMap((space) => space.items)
+              : (place.spaces.find((space) => (space.space ?? "unfiled") === selected)?.items ?? []);
+
+          const shelfKey = `${key}::${selected}`;
+          const slice = sliceShelf(shelf, {
+            expanded: expandedShelves.includes(shelfKey),
+            searching: query.trim().length > 0,
+          });
+          const listId = `${idPrefix}-panel-${selected}`;
+
+          return (
+            <div className="mt-3">
+              {hasShelves && (
+                <Tabs
+                  tabs={tabs}
+                  selected={selected}
+                  onSelect={(id) => setOpenTab((current) => ({ ...current, [key]: id }))}
+                  label={`Shelves in the ${place.label.toLowerCase()}`}
+                  idPrefix={idPrefix}
+                />
+              )}
+
+              <div
+                role={hasShelves ? "tabpanel" : undefined}
+                id={hasShelves ? listId : undefined}
+                aria-labelledby={hasShelves ? `${idPrefix}-tab-${selected}` : undefined}
+                tabIndex={hasShelves ? 0 : undefined}
+              >
+                <ul className="rule">
                   {slice.shown.map((item) => (
-                    <ItemRow key={item.id || item.name} item={item} showPlace={false} />
+                    <ItemRow
+                      key={item.id || item.name}
+                      item={item}
+                      // On "All" the shelf is the one thing a row cannot say
+                      // for itself, so it says it.
+                      showPlace={selected === "all" && hasShelves}
+                    />
                   ))}
                 </ul>
 
@@ -203,14 +260,13 @@ export default function Inventory() {
                       size={13}
                       className={`transition ${slice.hidden === 0 ? "rotate-180" : ""}`}
                     />
-                    {slice.hidden === 0
-                      ? "Show fewer"
-                      : `Show ${slice.hidden} more${space.space ? ` in ${space.space}` : ""}`}
+                    {slice.hidden === 0 ? "Show fewer" : `Show ${slice.hidden} more`}
                   </button>
                 )}
               </div>
-            );
-          })}
+            </div>
+          );
+        })()}
       </section>
     );
   });
@@ -303,7 +359,7 @@ export default function Inventory() {
                   {item.name}{" "}
                   <span className="text-xs text-accent">
                     {(daysUntil(item.expires_on) ?? 0) < 0 ? "went off " : ""}
-                    {expiryLabel(item.expires_on)?.toLowerCase()}
+                    {timeLeft(item.expires_on)}
                   </span>
                 </li>
               ))}

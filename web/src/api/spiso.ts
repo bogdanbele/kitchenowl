@@ -79,6 +79,60 @@ export function expiryLabel(iso: string | null | undefined, now = new Date()): s
   return new Date(iso!).toLocaleDateString(undefined, { day: "numeric", month: "short" });
 }
 
+/**
+ * How long is left, said the way a person would.
+ *
+ * "17 Mar" is a date you then have to subtract today from. "3 months, 12 days"
+ * is the answer — and the difference matters most exactly where a date is least
+ * readable: a tin at the back of the pantry, where the question is not *when*
+ * it goes off but whether that is soon.
+ *
+ * Nearby days keep their words, because "tomorrow" beats "1 day" and nobody
+ * counts a month in days once it is one. Coarse at the far end on purpose: two
+ * units is a duration, three is a stopwatch reading.
+ */
+export function timeLeft(iso: string | null | undefined, now = new Date()): string | null {
+  const days = daysUntil(iso, now);
+  if (days === null) return null;
+
+  if (days === 0) return "today";
+  if (days === 1) return "tomorrow";
+  if (days === -1) return "yesterday";
+
+  const magnitude = Math.abs(days);
+  const past = days < 0;
+  const say = (value: string) => (past ? `${value} ago` : `in ${value}`);
+
+  if (magnitude < 14) return say(`${magnitude} days`);
+
+  if (magnitude < 60) {
+    const weeks = Math.floor(magnitude / 7);
+    const spare = magnitude % 7;
+    return say(spare ? `${weeks} weeks, ${spare} ${plural(spare, "day")}` : `${weeks} weeks`);
+  }
+
+  // Rough months of 30 days: this is a shelf life, not an appointment, and
+  // "3 months" is the useful answer whether or not February is involved.
+  const months = Math.floor(magnitude / 30);
+  const spare = magnitude % 30;
+
+  if (months < 12) {
+    return say(spare ? `${months} months, ${spare} ${plural(spare, "day")}` : `${months} months`);
+  }
+
+  const years = Math.floor(months / 12);
+  const spareMonths = months % 12;
+  return say(
+    spareMonths
+      ? `${years} ${plural(years, "year")}, ${spareMonths} ${plural(spareMonths, "month")}`
+      : `${years} ${plural(years, "year")}`,
+  );
+}
+
+function plural(count: number, word: string): string {
+  return count === 1 ? word : `${word}s`;
+}
+
 /** Sooner first, undated last — an item with no date cannot be urgent. */
 export function byUrgency(a: SpisoItem, b: SpisoItem): number {
   const left = daysUntil(a.expires_on);

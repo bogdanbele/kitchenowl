@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { byUrgency, daysUntil, expiryLabel, type SpisoItem } from "./spiso";
+import { byUrgency, daysUntil, expiryLabel, timeLeft, type SpisoItem } from "./spiso";
 
 const now = new Date("2026-08-15T09:00:00Z");
 const item = (name: string, expires_on: string | null): SpisoItem =>
@@ -45,6 +45,46 @@ describe("expiryLabel", () => {
 
   it("is null when nothing has a date", () => {
     expect(expiryLabel(null, now)).toBeNull();
+  });
+});
+
+describe("timeLeft", () => {
+  it.each([
+    ["2026-08-15T00:00:00Z", "today"],
+    ["2026-08-16T00:00:00Z", "tomorrow"],
+    ["2026-08-14T00:00:00Z", "yesterday"],
+    ["2026-08-20T00:00:00Z", "in 5 days"],
+    ["2026-08-10T00:00:00Z", "5 days ago"],
+  ])("says %s is %s", (iso, expected) => {
+    expect(timeLeft(iso, now)).toBe(expected);
+  });
+
+  it("counts in weeks once days stop being countable", () => {
+    expect(timeLeft("2026-09-01T00:00:00Z", now)).toBe("in 2 weeks, 3 days");
+  });
+
+  it("counts in months past two, which is what a pantry date means", () => {
+    // "17 Mar" is a date you subtract today from; this is the answer.
+    expect(timeLeft("2027-03-17T00:00:00Z", now)).toBe("in 7 months, 4 days");
+  });
+
+  it("drops to years when it gets that far, and never says three units", () => {
+    const label = timeLeft("2028-10-15T00:00:00Z", now)!;
+    expect(label).toMatch(/^in 2 years/);
+    expect(label.split(",")).toHaveLength(2);
+  });
+
+  it("says the round number without a stray zero", () => {
+    // 60 days exactly: "2 months", not "2 months, 0 days".
+    expect(timeLeft("2026-10-14T00:00:00Z", now)).toBe("in 2 months");
+  });
+
+  it("keeps a single unit singular", () => {
+    expect(timeLeft("2027-09-10T00:00:00Z", now)).toMatch(/^in 1 year, /);
+  });
+
+  it("has nothing to say about a thing with no date", () => {
+    expect(timeLeft(null, now)).toBeNull();
   });
 });
 
