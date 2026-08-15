@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { normaliseName, pantryFrom, rankCookable } from "./cookable";
+import { normaliseName, pantryFrom, pantryNames, rankCookable } from "./cookable";
 import type { Recipe, RecipeItem, ShoppinglistItem } from "../api/types";
 
 const ingredient = (name: string, optional = false): RecipeItem =>
@@ -31,6 +31,43 @@ describe("pantryFrom", () => {
     const pantry = pantryFrom([bought("Onion")], [bought("Tomatoes")]);
     expect(pantry.has("onion")).toBe(true);
     expect(pantry.has("tomato")).toBe(true);
+  });
+});
+
+describe("pantryNames", () => {
+  it("lets a qualified thing answer to what it is", () => {
+    // A real kitchen holds "Cherry tomatoes"; recipes ask for "Tomatoes".
+    // Exact matching found neither, and a connected inventory of thirty things
+    // produced an empty "Cook now".
+    expect(pantryNames("Cherry tomatoes")).toEqual(["cherry tomato", "tomato"]);
+    expect(pantryNames("Danish smoked bacon")).toContain("bacon");
+  });
+
+  it("does not invent a second name for a single word", () => {
+    expect(pantryNames("Butter")).toEqual(["butter"]);
+  });
+
+  it("ignores a two-letter tail, which is a preposition and not an ingredient", () => {
+    expect(pantryNames("Tin of ta")).toEqual(["tin of ta"]);
+  });
+
+  it("is empty for a blank name", () => {
+    expect(pantryNames("   ")).toEqual([]);
+  });
+});
+
+describe("qualified pantry items in ranking", () => {
+  it("matches a recipe's plain ingredient against the qualified thing you own", () => {
+    const soup = recipe("Soup", [ingredient("Tomatoes"), ingredient("Bacon")]);
+    const pantry = pantryFrom([bought("Cherry tomatoes"), bought("Danish smoked bacon")]);
+    const [ranked] = rankCookable([soup], pantry);
+    expect(ranked.missing).toHaveLength(0);
+  });
+
+  it("does not let a qualifier you lack pass as the thing itself", () => {
+    // Having "pork" is not having pork belly — the qualifier is the ingredient.
+    const dish = recipe("Sinigang", [ingredient("Pork belly")]);
+    expect(rankCookable([dish], pantryFrom([bought("Pork")]))).toEqual([]);
   });
 });
 

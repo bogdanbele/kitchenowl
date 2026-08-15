@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { api } from "../api/client";
 import type { Shoppinglist, ShoppinglistItem } from "../api/types";
-import { pantryFrom, normaliseName } from "../lib/cookable";
+import { pantryFrom, pantryNames } from "../lib/cookable";
 import { spisoApi } from "../api/spiso";
 
 /**
@@ -49,13 +49,18 @@ export function usePantry(householdId: string) {
   });
 
   const fromInventory = inventory?.items?.length
-    ? new Set(inventory.items.map((item) => normaliseName(item.name)).filter(Boolean))
+    ? new Set(inventory.items.flatMap((item) => pantryNames(item.name)))
     : null;
 
   return {
     pantry: fromInventory ?? pantryFrom(onList, recent),
     source: fromInventory ? ("inventory" as const) : ("history" as const),
     isPending: list != null && (onList == null || recent == null),
-    knownCount: fromInventory ? fromInventory.size : (onList?.length ?? 0) + (recent?.length ?? 0),
+    // Things, not names. The pantry set holds a head noun alongside each full
+    // name, so its size is close to double and "from 58 things in your kitchen"
+    // would be a lie about a fridge holding thirty.
+    knownCount: fromInventory
+      ? (inventory?.items?.length ?? 0)
+      : (onList?.length ?? 0) + (recent?.length ?? 0),
   };
 }

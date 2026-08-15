@@ -36,13 +36,38 @@ export function normaliseName(name: string): string {
     .replace(/(?:es|s)$/, "");
 }
 
+/**
+ * The names one real thing should answer to.
+ *
+ * A kitchen is stocked with "Cherry tomatoes", "Greek yoghurt", "Danish smoked
+ * bacon"; recipes ask for "Tomatoes", "Yoghurt", "Bacon". Matching those
+ * exactly finds nothing, which is how a connected inventory of thirty things
+ * produced an empty "Cook now".
+ *
+ * So a thing also answers to its head noun — the last word, which in English is
+ * what the thing actually is and everything before it is a qualifier. It runs
+ * one way only: "cherry tomatoes" satisfies a recipe wanting tomatoes, but
+ * having "pork" does not satisfy one wanting pork belly, because a qualifier
+ * you do not have is an ingredient you do not have.
+ *
+ * The known cost is a compound whose head noun lies — "ice cream" claiming to
+ * be cream. Rare in a fridge, visible on screen when it happens, and cheap
+ * against finding nothing at all.
+ */
+export function pantryNames(name: string): string[] {
+  const full = normaliseName(name);
+  if (!full) return [];
+  const words = full.split(/\s+/);
+  const head = words[words.length - 1];
+  // Two-letter heads are noise ("of", "no"), not ingredients.
+  return head !== full && head.length > 2 ? [full, head] : [full];
+}
+
 export function pantryFrom(
   onList: ShoppinglistItem[] = [],
   recentlyBought: ShoppinglistItem[] = [],
 ): Set<string> {
-  return new Set(
-    [...onList, ...recentlyBought].map((item) => normaliseName(item.name)).filter(Boolean),
-  );
+  return new Set([...onList, ...recentlyBought].flatMap((item) => pantryNames(item.name)));
 }
 
 export function rankCookable(recipes: Recipe[], pantry: Set<string>): CookableRecipe[] {
