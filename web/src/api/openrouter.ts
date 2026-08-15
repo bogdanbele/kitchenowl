@@ -11,6 +11,12 @@ import {
   parseTags,
   type TaggableRecipe,
 } from "../lib/recipeTags";
+import {
+  SUBSTITUTION_PROMPT,
+  buildSubstitutionRequest,
+  parseSubstitutions,
+  type Substitution,
+} from "../lib/substitutions";
 
 /**
  * OpenRouter, called straight from the browser.
@@ -275,6 +281,35 @@ export async function suggestTags(
   if (!match) return [];
   try {
     return parseTags(JSON.parse(match[0]));
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * What could stand in for the ingredients this kitchen is missing.
+ *
+ * One call for the whole recipe rather than one per gap: the model needs to see
+ * the dish to know that swapping the souring agent out of a sour soup is not a
+ * substitution, it is a different meal.
+ */
+export async function suggestSubstitutions(
+  dish: string,
+  missing: string[],
+  kitchen: string[],
+  signal?: AbortSignal,
+): Promise<Substitution[]> {
+  if (missing.length === 0 || kitchen.length === 0) return [];
+
+  const reply = await complete(
+    SUBSTITUTION_PROMPT,
+    buildSubstitutionRequest(dish, missing, kitchen),
+    signal,
+  );
+  const match = reply.match(/\[[\s\S]*\]/);
+  if (!match) return [];
+  try {
+    return parseSubstitutions(JSON.parse(match[0]), missing, kitchen);
   } catch {
     return [];
   }
