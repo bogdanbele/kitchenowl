@@ -35,12 +35,27 @@ export class ErrorBoundary extends Component<Props, State> {
     const { error } = this.state;
     if (!error) return this.props.children;
 
+    /**
+     * A chunk that will not load is almost always an old tab meeting a new
+     * build, not a fault in this screen. `lazyWithReload` already reloads once;
+     * getting here means that did not help, so name the likely cause instead of
+     * showing a stack trace about modules.
+     */
+    const staleBuild =
+      /dynamically imported module|Importing a module script failed|Loading chunk/i.test(
+        error.message,
+      );
+
     return (
       <div className="mx-auto max-w-lg py-16">
         <p className="label">Something broke</p>
-        <h1 className="mt-1 mb-4 text-3xl font-semibold tracking-tight">This screen crashed</h1>
+        <h1 className="mt-1 mb-4 text-3xl font-semibold tracking-tight">
+          {staleBuild ? "This tab is out of date" : "This screen crashed"}
+        </h1>
         <p className="mb-6 text-sm leading-relaxed text-muted">
-          The rest of the app is still fine — the message below is what went wrong here.
+          {staleBuild
+            ? "The app was rebuilt while this tab was open, so a piece of it that had not loaded yet no longer exists. Reloading fixes it. If it comes back after a reload, the server is missing files the page is asking for."
+            : "The rest of the app is still fine — the message below is what went wrong here."}
         </p>
         <pre className="mb-6 overflow-auto rounded-card border border-hairline bg-paper-deep p-4 font-mono text-xs">
           {error.message}

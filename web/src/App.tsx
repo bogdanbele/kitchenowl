@@ -1,5 +1,6 @@
 import { Navigate, NavLink, Outlet, Route, Routes, useParams } from "react-router-dom";
-import { Suspense, lazy } from "react";
+import { Suspense } from "react";
+import { lazyWithReload } from "./lib/lazyWithReload";
 import { useLocation } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "./api/client";
@@ -18,21 +19,21 @@ import Login from "./routes/Login";
  * Login stays eagerly imported: it is the first thing an unauthenticated
  * visitor sees, and a spinner before a login form is a worse trade.
  */
-const ShoppingList = lazy(() => import("./routes/ShoppingList"));
-const Recipes = lazy(() => import("./routes/Recipes"));
-const Recipe = lazy(() => import("./routes/Recipe"));
-const RecipeEdit = lazy(() => import("./routes/RecipeEdit"));
-const Planner = lazy(() => import("./routes/Planner"));
-const Expenses = lazy(() => import("./routes/Expenses"));
-const HouseholdSettings = lazy(() => import("./routes/HouseholdSettings"));
-const NotFound = lazy(() => import("./routes/NotFound"));
-const SettingsMenu = lazy(() => import("./routes/settings/SettingsMenu"));
-const AiSettings = lazy(() => import("./routes/settings/AiSettings"));
-const AppearanceSettings = lazy(() => import("./routes/settings/AppearanceSettings"));
-const AccountSettings = lazy(() => import("./routes/settings/AccountSettings"));
-const SpisoSettings = lazy(() => import("./routes/settings/SpisoSettings"));
-const Inventory = lazy(() => import("./routes/Inventory"));
-const Cooking = lazy(() => import("./routes/Cooking"));
+const ShoppingList = lazyWithReload(() => import("./routes/ShoppingList"));
+const Recipes = lazyWithReload(() => import("./routes/Recipes"));
+const Recipe = lazyWithReload(() => import("./routes/Recipe"));
+const RecipeEdit = lazyWithReload(() => import("./routes/RecipeEdit"));
+const Planner = lazyWithReload(() => import("./routes/Planner"));
+const Expenses = lazyWithReload(() => import("./routes/Expenses"));
+const HouseholdSettings = lazyWithReload(() => import("./routes/HouseholdSettings"));
+const NotFound = lazyWithReload(() => import("./routes/NotFound"));
+const SettingsMenu = lazyWithReload(() => import("./routes/settings/SettingsMenu"));
+const AiSettings = lazyWithReload(() => import("./routes/settings/AiSettings"));
+const AppearanceSettings = lazyWithReload(() => import("./routes/settings/AppearanceSettings"));
+const AccountSettings = lazyWithReload(() => import("./routes/settings/AccountSettings"));
+const SpisoSettings = lazyWithReload(() => import("./routes/settings/SpisoSettings"));
+const Inventory = lazyWithReload(() => import("./routes/Inventory"));
+const Cooking = lazyWithReload(() => import("./routes/Cooking"));
 import { ThemeToggle } from "./components/ThemeToggle";
 
 interface Section {

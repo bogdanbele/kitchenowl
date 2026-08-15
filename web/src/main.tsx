@@ -10,6 +10,7 @@ import {
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { AuthProvider } from "./auth";
+import { markAppLoaded } from "./lib/lazyWithReload";
 import { SessionExpired, tokens } from "./api/client";
 import { ToastProvider, notify, setExternalToast, useToast } from "./components/Toast";
 import { ErrorBoundary } from "./components/ErrorBoundary";
@@ -63,6 +64,10 @@ function ToastBridge() {
   useEffect(() => setExternalToast(toast), [toast]);
   return null;
 }
+
+// The app booted, so whatever chunk failed before is behind us. Clearing the
+// flag gives the *next* deploy its own single free reload.
+markAppLoaded();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
