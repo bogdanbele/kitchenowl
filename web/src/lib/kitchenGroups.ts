@@ -64,6 +64,45 @@ export function useFirst<T extends SpisoItem>(items: T[], limit = 6): T[] {
   return items.filter(goesOffSoon).sort(byUrgency).slice(0, limit);
 }
 
+export interface Slice<T> {
+  shown: T[];
+  hidden: number;
+  /** Whether a "show more" control is worth drawing at all. */
+  truncated: boolean;
+}
+
+/**
+ * How much of a shelf to show before asking.
+ *
+ * Progressive disclosure, with three rules that stop it becoming a nuisance:
+ *
+ * 1. **Nothing urgent is ever hidden.** The list is in date order, so the cut
+ *    is pushed past the last thing going off within two days. A fold that hides
+ *    the milk defeats the entire screen.
+ * 2. **Never hide one row.** Trading a row for a button costs the reader a
+ *    click and saves them nothing; below two hidden it just shows them.
+ * 3. **A search shows everything.** Hiding a match behind "show more" is how
+ *    someone concludes the thing they searched for is not there.
+ */
+export function sliceShelf<T extends SpisoItem>(
+  items: T[],
+  { limit = 5, expanded = false, searching = false }: {
+    limit?: number;
+    expanded?: boolean;
+    searching?: boolean;
+  } = {},
+): Slice<T> {
+  if (expanded || searching) return { shown: items, hidden: 0, truncated: items.length > limit };
+
+  const urgent = items.filter(goesOffSoon).length;
+  const cut = Math.max(limit, urgent);
+  const hidden = Math.max(0, items.length - cut);
+
+  // One hidden row is not worth a control.
+  if (hidden < 2) return { shown: items, hidden: 0, truncated: false };
+  return { shown: items.slice(0, cut), hidden, truncated: true };
+}
+
 export function groupByPlace<T extends SpisoItem>(items: T[]): KitchenPlace<T>[] {
   const places = new Map<string | null, Map<string | null, T[]>>();
 

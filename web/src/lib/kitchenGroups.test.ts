@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { groupByPlace, useFirst } from "./kitchenGroups";
+import { groupByPlace, sliceShelf, useFirst } from "./kitchenGroups";
 import type { SpisoItem } from "../api/spiso";
 
 const item = (
@@ -87,5 +87,53 @@ describe("useFirst", () => {
 
   it("is empty when nothing is urgent, so the strip disappears entirely", () => {
     expect(useFirst([item("Rice", "pantry", null, inDays(90))])).toEqual([]);
+  });
+});
+
+describe("sliceShelf", () => {
+  const day = 86_400_000;
+  const inDays = (n: number) => new Date(Date.now() + n * day).toISOString();
+  const many = (count: number, expires: string | null = null) =>
+    Array.from({ length: count }, (_, i) => item(`Thing ${i}`, "pantry", null, expires));
+
+  it("shows five and counts the rest", () => {
+    const slice = sliceShelf(many(12));
+    expect(slice.shown).toHaveLength(5);
+    expect(slice.hidden).toBe(7);
+    expect(slice.truncated).toBe(true);
+  });
+
+  it("never hides something going off, however many there are", () => {
+    // A fold that hides the milk defeats the entire screen.
+    const urgent = many(8, inDays(1));
+    const slice = sliceShelf([...urgent, ...many(6, inDays(200))]);
+    expect(slice.shown).toHaveLength(8);
+    expect(slice.hidden).toBe(6);
+  });
+
+  it("does not trade a row for a button", () => {
+    // Six items, one hidden: showing it costs nothing, hiding it costs a click.
+    const slice = sliceShelf(many(6));
+    expect(slice.shown).toHaveLength(6);
+    expect(slice.truncated).toBe(false);
+  });
+
+  it("shows everything while searching", () => {
+    // Hiding a match is how someone concludes it is not there.
+    const slice = sliceShelf(many(12), { searching: true });
+    expect(slice.shown).toHaveLength(12);
+    expect(slice.hidden).toBe(0);
+  });
+
+  it("shows everything once expanded, and still offers to fold back", () => {
+    const slice = sliceShelf(many(12), { expanded: true });
+    expect(slice.shown).toHaveLength(12);
+    expect(slice.truncated).toBe(true);
+  });
+
+  it("leaves a short shelf alone", () => {
+    const slice = sliceShelf(many(3));
+    expect(slice.shown).toHaveLength(3);
+    expect(slice.truncated).toBe(false);
   });
 });

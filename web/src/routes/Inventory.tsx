@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { useMemo, useState } from "react";
 import { byUrgency, daysUntil, expiryLabel } from "../api/spiso";
 import { useInventory, type KitchenThing } from "../hooks/useInventory";
-import { groupByPlace, useFirst } from "../lib/kitchenGroups";
+import { groupByPlace, sliceShelf, useFirst } from "../lib/kitchenGroups";
 import { ChevronDown } from "lucide-react";
 
 const COLLAPSED_KEY = "kitchenowl.kitchen.collapsed";
@@ -85,6 +85,15 @@ export default function Inventory() {
     }
   });
 
+  // Per-shelf, and deliberately not remembered: unfolding a shelf answers a
+  // question you had once. Which *places* you care about is a standing
+  // preference; which shelf you opened last Tuesday is not.
+  const [expandedShelves, setExpandedShelves] = useState<string[]>([]);
+  const toggleShelf = (key: string) =>
+    setExpandedShelves((current) =>
+      current.includes(key) ? current.filter((entry) => entry !== key) : [...current, key],
+    );
+
   const toggle = (key: string) =>
     setCollapsed((current) => {
       const next = current.includes(key)
@@ -155,23 +164,53 @@ export default function Inventory() {
         </button>
 
         {open &&
-          place.spaces.map((space) => (
-            <div key={space.space ?? "unfiled"} className="mt-3">
-              {/* A shelf name is only worth a heading when the place has more
-                  than one — otherwise it is a label saying "here". */}
-              {space.space && place.spaces.length > 1 && (
-                <p className="label mb-1 flex items-baseline justify-between gap-3">
-                  <span>{space.space}</span>
-                  <span className="text-faint">{space.items.length}</span>
-                </p>
-              )}
-              <ul className="rule">
-                {space.items.map((item) => (
-                  <ItemRow key={item.id || item.name} item={item} showPlace={false} />
-                ))}
-              </ul>
-            </div>
-          ))}
+          place.spaces.map((space) => {
+            const shelfKey = `${key}::${space.space ?? ""}`;
+            const slice = sliceShelf(space.items, {
+              expanded: expandedShelves.includes(shelfKey),
+              searching: query.trim().length > 0,
+            });
+            const listId = `shelf-${shelfKey.replace(/\W+/g, "-")}`;
+
+            return (
+              <div key={space.space ?? "unfiled"} className="mt-3">
+                {/* A shelf name is only worth a heading when the place has more
+                    than one — otherwise it is a label saying "here". */}
+                {space.space && place.spaces.length > 1 && (
+                  <p className="label mb-1 flex items-baseline justify-between gap-3">
+                    <span>{space.space}</span>
+                    <span className="text-faint">{space.items.length}</span>
+                  </p>
+                )}
+                <ul className="rule" id={listId}>
+                  {slice.shown.map((item) => (
+                    <ItemRow key={item.id || item.name} item={item} showPlace={false} />
+                  ))}
+                </ul>
+
+                {slice.truncated && (
+                  // Labelled with what happens and to how many, rather than a
+                  // bare chevron: "Show 7 more" is a decision, "⌄" is a guess.
+                  <button
+                    type="button"
+                    onClick={() => toggleShelf(shelfKey)}
+                    aria-expanded={slice.hidden === 0}
+                    aria-controls={listId}
+                    className="mt-2 inline-flex items-center gap-1.5 py-1 text-xs text-muted
+                               transition hover:text-accent"
+                  >
+                    <ChevronDown
+                      size={13}
+                      className={`transition ${slice.hidden === 0 ? "rotate-180" : ""}`}
+                    />
+                    {slice.hidden === 0
+                      ? "Show fewer"
+                      : `Show ${slice.hidden} more${space.space ? ` in ${space.space}` : ""}`}
+                  </button>
+                )}
+              </div>
+            );
+          })}
       </section>
     );
   });
