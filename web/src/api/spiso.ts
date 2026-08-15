@@ -30,7 +30,10 @@ export interface SpisoItem {
   quantity: number;
   category?: string | null;
   emoji?: string | null;
+  /** fridge, freezer or pantry. */
   location?: string | null;
+  /** The shelf or cupboard within that, as the kitchen names it. */
+  space?: string | null;
   /** ISO date — a day, not an instant. */
   expires_on?: string | null;
   opened_on?: string | null;

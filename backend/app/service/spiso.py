@@ -166,6 +166,10 @@ def normalise_item(item: dict[str, Any]) -> dict[str, Any]:
         "category": item.get("category"),
         "emoji": item.get("emoji"),
         "location": item.get("storageLocation"),
+        # The shelf within the fridge, or the cupboard within the pantry.
+        # Free text on Spiso's side — "Door shelf", "Snack cabinet" — so it is
+        # passed through as written and never parsed.
+        "space": item.get("storageSpace"),
         # ISO 8601 as Spiso writes it. Left as a string rather than parsed into
         # epoch millis like the rest of this API, because it is a *date* — the
         # day something goes off does not shift with a timezone.
