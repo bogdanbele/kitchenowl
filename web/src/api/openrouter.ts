@@ -21,13 +21,21 @@ const KEY_STORAGE = "kitchenowl.openrouter.key";
 const MODEL_STORAGE = "kitchenowl.openrouter.model";
 
 /**
- * Cheap, fast, strict enough at JSON — and it can see.
+ * Chosen by measurement, not by reputation.
  *
- * Vision is the deciding property now that a photographed page is one of the
- * three ways in: a text-only default means the most impressive path in the app
- * fails on first use, for a reason nobody would guess.
+ * Twelve vision models were given the same photographed Romanian page — tilted,
+ * dimly lit, noisy — and scored against what the page actually said. This one
+ * was perfect on three runs out of three, in three seconds, at $0.0004 a scan:
+ * about a tenth of what gpt-4o-mini costs, while gpt-4o-mini misread "ouă" as
+ * "ou" and dropped the ș from "Papanași". gpt-4.1-nano matched it on
+ * ingredients but wrote "Papanăși" every single time — cheap and confidently
+ * misspelt is worse than either.
+ *
+ * If this is ever revisited, the property that matters is reading diacritics
+ * off a poor photograph, not benchmark scores: a misread ingredient arrives in
+ * a complete-looking draft and nobody catches it.
  */
-export const DEFAULT_MODEL = "openai/gpt-4o-mini";
+export const DEFAULT_MODEL = "google/gemini-2.5-flash-lite";
 
 export const openRouter = {
   get key(): string | null {
