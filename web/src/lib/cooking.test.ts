@@ -17,6 +17,22 @@ describe("splitSteps", () => {
     ]);
   });
 
+  it("keeps a numbered step that wraps onto a second line as one step", () => {
+    // A photographed page transcribes with the printed line breaks intact, and
+    // the continuation was becoming a step of its own: a screen in cooking mode
+    // that says "about 1 minute a side" and nothing else.
+    const steps = splitSteps(
+      "1. Whisk the eggs.\n2. Fry thin in a hot pan,\n   about 1 minute a side, until golden.",
+    );
+    expect(steps).toHaveLength(2);
+    expect(steps[1].text).toBe("Fry thin in a hot pan, about 1 minute a side, until golden.");
+  });
+
+  it("still ends a step at a blank line", () => {
+    const steps = splitSteps("1. Whisk the eggs.\n\nServe warm.");
+    expect(steps.map((s) => s.text)).toEqual(["Whisk the eggs.", "Serve warm."]);
+  });
+
   it("treats a prose paragraph as a step, because plenty of recipes never number anything", () => {
     const steps = splitSteps("Heat the oil until it shimmers.\n\nAdd the onion and cook it slowly.");
     expect(steps).toHaveLength(2);

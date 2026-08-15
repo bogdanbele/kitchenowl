@@ -25,7 +25,10 @@ const Planner = lazy(() => import("./routes/Planner"));
 const Expenses = lazy(() => import("./routes/Expenses"));
 const HouseholdSettings = lazy(() => import("./routes/HouseholdSettings"));
 const NotFound = lazy(() => import("./routes/NotFound"));
-const Settings = lazy(() => import("./routes/Settings"));
+const SettingsMenu = lazy(() => import("./routes/settings/SettingsMenu"));
+const AiSettings = lazy(() => import("./routes/settings/AiSettings"));
+const AppearanceSettings = lazy(() => import("./routes/settings/AppearanceSettings"));
+const AccountSettings = lazy(() => import("./routes/settings/AccountSettings"));
 const Cooking = lazy(() => import("./routes/Cooking"));
 import { ThemeToggle } from "./components/ThemeToggle";
 
@@ -41,7 +44,7 @@ const ALL_SECTIONS: Section[] = [
   { path: "planner", label: "Meal planner", short: "Planner" },
   { path: "expenses", label: "Expenses", short: "Expenses" },
   { path: "household", label: "Household", short: "Home" },
-  { path: "settings", label: "Settings", short: "More" },
+  { path: "settings", label: "Settings", short: "Settings" },
 ];
 
 /**
@@ -213,7 +216,10 @@ export default function App() {
         <Route path="planner" element={<Planner />} />
         <Route path="expenses" element={<Expenses />} />
         <Route path="household" element={<HouseholdSettings />} />
-        <Route path="settings" element={<Settings />} />
+        <Route path="settings" element={<SettingsMenu />} />
+        <Route path="settings/ai" element={<AiSettings />} />
+        <Route path="settings/appearance" element={<AppearanceSettings />} />
+        <Route path="settings/account" element={<AccountSettings />} />
         <Route path="*" element={<NotFound />} />
       </Route>
       <Route path="*" element={<NotFound />} />

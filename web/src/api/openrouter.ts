@@ -20,8 +20,14 @@ const BASE = "https://openrouter.ai/api/v1";
 const KEY_STORAGE = "kitchenowl.openrouter.key";
 const MODEL_STORAGE = "kitchenowl.openrouter.model";
 
-/** Sensible default: cheap, fast, and good enough at strict JSON. */
-export const DEFAULT_MODEL = "anthropic/claude-3.5-haiku";
+/**
+ * Cheap, fast, strict enough at JSON — and it can see.
+ *
+ * Vision is the deciding property now that a photographed page is one of the
+ * three ways in: a text-only default means the most impressive path in the app
+ * fails on first use, for a reason nobody would guess.
+ */
+export const DEFAULT_MODEL = "openai/gpt-4o-mini";
 
 export const openRouter = {
   get key(): string | null {

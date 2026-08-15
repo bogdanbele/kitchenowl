@@ -86,8 +86,12 @@ export function splitSteps(markdown: string, items: RecipeItem[] = []): CookingS
     if (ORDERED.test(line) || BULLET.test(line)) {
       flush();
       seenStructure = true;
+      // Deliberately not flushed here: a step wrapped over two lines is one
+      // step. Ending it at the newline turned "5. Fry thin in a hot pan, /
+      // about a minute a side" into a sixth step reading "about a minute a
+      // side" — which in cooking mode is a screen telling you to do nothing.
+      // The next numbered line, heading or blank line closes it.
       buffer.push(line.replace(ORDERED, "").replace(BULLET, ""));
-      flush();
       continue;
     }
 
