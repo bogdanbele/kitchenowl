@@ -29,14 +29,21 @@ Rules:
 - "items" are ingredients. "name" is the ingredient alone, singular and without
   quantity ("pork belly", not "800g pork belly"). "description" is the quantity
   exactly as written in the source ("800 g", "2 tbsp", "a pinch").
+- **Ingredient names in English**, whatever language the recipe is in: "brânză
+  de vaci" becomes "cottage cheese", "griș" becomes "semolina", "făină" becomes
+  "flour". Use the ordinary shop name a British cook would write on a list. An
+  ingredient with no English name keeps its own ("borș", "gochujang").
+- "description", "name" (the recipe's title) and the whole method stay in the
+  source language. Only the ingredient names are translated: those are matched
+  against a kitchen and a shopping list, and a name that only matches recipes
+  written in the same language matches nothing.
 - "optional": true only when the text says optional, to taste, or garnish.
 - Times are whole minutes. "yields" is the number of servings. Use 0 when the
   text does not say — never guess a number. If only a total time is given, put
   it in "time" and leave "prep_time" and "cook_time" at 0; do not split it.
-- Keep the source's language for names and steps; do not translate.
-- Reproduce every diacritic exactly as printed — ș ț ă î â, ü ö, é è ç. A name
-  spelled without them is a different word, and this text is read back by
-  someone who wrote it.
+- Reproduce every diacritic exactly as printed — ș ț ă î â, ü ö, é è ç — in the
+  title and the method. A word spelled without them is a different word, and
+  this text is read back by someone who wrote it.
 - Never invent an ingredient or a step that is not in the text. If the text is
   not a recipe, return {"name": ""} and nothing else.`;
 
