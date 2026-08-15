@@ -1,5 +1,10 @@
 import { createContext, use, useCallback, useState, type ReactNode } from "react";
-import { api, login as apiLogin, tokens } from "./api/client";
+import {
+  api,
+  login as apiLogin,
+  loginWithSpiso as apiLoginWithSpiso,
+  tokens,
+} from "./api/client";
 import { disconnectLive } from "./api/live";
 import type { User } from "./api/types";
 
@@ -7,6 +12,7 @@ interface AuthState {
   user: User | null;
   ready: boolean;
   signIn: (username: string, password: string) => Promise<void>;
+  signInWithSpiso: (email: string, password: string) => Promise<void>;
   signOut: () => void;
 }
 
@@ -51,6 +57,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     [setUser],
   );
 
+  const signInWithSpiso = useCallback(
+    async (email: string, password: string) => {
+      const auth = await apiLoginWithSpiso(email, password);
+      setUser(auth.user);
+    },
+    [setUser],
+  );
+
   const signOut = useCallback(() => {
     // Deliberately local-only: the API's logout revokes the refresh token, but
     // failing to reach it must not leave you stuck in a session you asked to
@@ -60,7 +74,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(null);
   }, [setUser]);
 
-  return <AuthContext value={{ user, ready, signIn, signOut }}>{children}</AuthContext>;
+  return (
+    <AuthContext value={{ user, ready, signIn, signInWithSpiso, signOut }}>{children}</AuthContext>
+  );
 }
 
 export function useAuth(): AuthState {

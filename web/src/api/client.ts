@@ -248,6 +248,24 @@ export async function uploadFile(file: File): Promise<string> {
   return result.filename;
 }
 
+/**
+ * Sign in with a Spiso (Foodminder) password.
+ *
+ * The server works out which KitchenOwl account that is from the link made in
+ * settings; no server address is sent from here, because a login form that
+ * names the server it posts a password to is a login form that can be pointed
+ * somewhere else.
+ */
+export async function loginWithSpiso(email: string, password: string): Promise<AuthResponse> {
+  const auth = await api<AuthResponse>("/spiso/login", {
+    method: "POST",
+    anonymous: true,
+    body: { email, password, device: "KitchenOwl Web · Spiso" },
+  });
+  tokens.set(auth);
+  return auth;
+}
+
 export async function login(username: string, password: string): Promise<AuthResponse> {
   const auth = await api<AuthResponse>("/auth", {
     method: "POST",

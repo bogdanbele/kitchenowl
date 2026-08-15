@@ -2,11 +2,13 @@ from flask import Blueprint, jsonify
 from flask_jwt_extended import current_user, jwt_required
 
 from app import db
-from app.errors import NotFoundRequest, UnauthorizedRequest
+from app.errors import InvalidUsage, NotFoundRequest, UnauthorizedRequest, getClientIp
 from app.helpers import validate_args
+from app.models import Token, User
 from app.models.spiso_link import SpisoLink
 from app.service import spiso as spiso_service
-from .schemas import ChooseHome, Connect
+from app.service.spiso import SpisoError
+from .schemas import ChooseHome, Connect, SignIn
 
 """
 A window onto the signed-in person's Spiso (Foodminder) inventory.
@@ -43,12 +45,21 @@ def connect(args):
     base_url = spiso_service.normalise_base_url(args["base_url"])
     # The password lives exactly as long as this call. What is stored is the
     # session token it returns.
-    token = spiso_service.login(base_url, args["email"].strip(), args["password"])
+    token, identity = spiso_service.login(base_url, args["email"].strip(), args["password"])
+
+    # A Spiso address can only sign into one KitchenOwl account, and this is
+    # where that is decided. Refusing here is the difference between "your
+    # account" and "whichever account claimed your email first".
+    existing = SpisoLink.find_by_spiso_email(identity["email"])
+    if existing and existing.user_id != current_user.id:
+        raise InvalidUsage()
 
     link = SpisoLink.find_by_user(current_user.id) or SpisoLink()
     link.user_id = current_user.id
     link.base_url = base_url
     link.token = token
+    link.spiso_user_id = identity["id"] or None
+    link.spiso_email = identity["email"] or None
     link.invalid_since = None
     # A different account may have different homes, so a reconnect does not keep
     # a home id that may no longer exist.
@@ -107,6 +118,65 @@ def getInventory():
         raise
     link.mark_valid()
     return jsonify({"items": items, "home_name": link.home_name, "needs_home": False})
+
+
+@spiso.route("/login", methods=["POST"])
+@validate_args(SignIn)
+def loginWithSpiso(args):
+    """Sign in to KitchenOwl with a Spiso password.
+
+    No `base_url` is asked for and none is trusted from the request: the address
+    comes from the link that was made while signed in to both. Otherwise this
+    endpoint would happily send a password to whatever server a caller named.
+
+    Deliberately unauthenticated — it is a login — and deliberately vague about
+    why it failed. "No such account" and "wrong password" are the same answer
+    here, because the difference tells a stranger which addresses exist.
+    """
+    email = (args["email"] or "").strip().lower()
+    link = SpisoLink.find_by_spiso_email(email)
+    if not link:
+        raise UnauthorizedRequest(
+            message="Unauthorized: IP {} Spiso sign-in for an unlinked address".format(getClientIp())
+        )
+
+    try:
+        token, identity = spiso_service.login(link.base_url, email, args["password"])
+    except SpisoError:
+        # Spiso being unreachable and Spiso saying no are different things, but
+        # not to someone at a login screen holding a password.
+        raise UnauthorizedRequest(
+            message="Unauthorized: IP {} Spiso sign-in rejected".format(getClientIp())
+        )
+
+    # The account moved, or the email was reassigned on the Spiso side. Either
+    # way this is no longer the person the link was made for.
+    if link.spiso_user_id and identity["id"] and identity["id"] != link.spiso_user_id:
+        raise UnauthorizedRequest(
+            message="Unauthorized: IP {} Spiso identity changed for {}".format(getClientIp(), email)
+        )
+
+    user = User.find_by_id(link.user_id)
+    if not user:
+        raise UnauthorizedRequest()
+
+    # A successful sign-in is also a fresh Spiso session, so the inventory keeps
+    # working without a second trip through the settings screen.
+    link.token = token
+    link.invalid_since = None
+    link.save()
+
+    device = args.get("device") or "Spiso sign-in"
+    refreshToken, refreshModel = Token.create_refresh_token(user, device)
+    accessToken, _ = Token.create_access_token(user, refreshModel)
+
+    return jsonify(
+        {
+            "access_token": accessToken,
+            "refresh_token": refreshToken,
+            "user": user.obj_to_dict(),
+        }
+    )
 
 
 @spiso.route("", methods=["DELETE"])

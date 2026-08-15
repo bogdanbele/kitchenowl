@@ -91,14 +91,23 @@ def _request(
         raise SpisoError("Spiso returned something that was not JSON.")
 
 
-def login(base_url: str, email: str, password: str) -> str:
-    """Exchange a password for a session token. The password is not stored, here
-    or anywhere else — this function is the only thing that ever sees it."""
+def login(base_url: str, email: str, password: str) -> tuple[str, dict[str, Any]]:
+    """Exchange a password for a session token, and say who it belongs to.
+
+    The password is not stored, here or anywhere else — this function is the
+    only thing that ever sees it. The returned identity is what binds a Spiso
+    account to a KitchenOwl one.
+    """
     body = _request(base_url, "/auth/login", method="POST", json={"email": email, "password": password})
     token = (body or {}).get("token")
     if not isinstance(token, str) or not token:
         raise SpisoError("Spiso did not return a session.")
-    return token
+    user = (body or {}).get("user") or {}
+    return token, {
+        "id": str(user.get("id") or ""),
+        "email": str(user.get("email") or email).strip().lower(),
+        "name": user.get("displayName"),
+    }
 
 
 def homes(base_url: str, token: str) -> list[dict[str, Any]]:

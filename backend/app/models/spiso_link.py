@@ -46,6 +46,12 @@ class SpisoLink(Model):
     token: Mapped[str] = db.Column(db.String(), nullable=False)
     home_id: Mapped[Optional[str]] = db.Column(db.String(), nullable=True)
     home_name: Mapped[Optional[str]] = db.Column(db.String(), nullable=True)
+    # Who this is on the Spiso side. Recorded when the link is made, which is
+    # the only moment both accounts are proven at once: the request carries a
+    # KitchenOwl session *and* a Spiso password. That is what makes signing in
+    # with Spiso credentials afterwards a lookup rather than a claim.
+    spiso_user_id: Mapped[Optional[str]] = db.Column(db.String(), nullable=True, index=True)
+    spiso_email: Mapped[Optional[str]] = db.Column(db.String(), nullable=True, index=True)
     # Set when Spiso last rejected the token, so the UI can say "sign in again"
     # rather than showing an empty kitchen, which looks like lost data.
     invalid_since: Mapped[Optional[datetime]] = db.Column(db.DateTime, nullable=True)
@@ -57,6 +63,18 @@ class SpisoLink(Model):
     @classmethod
     def find_by_user(cls, user_id: int) -> Optional[Self]:
         return cls.query.filter(cls.user_id == user_id).first()
+
+    @classmethod
+    def find_by_spiso_email(cls, email: str) -> Optional[Self]:
+        """Which KitchenOwl account a Spiso address signs into.
+
+        Case-folded, because an email address is not case-sensitive in the half
+        that matters and people type it however their keyboard felt.
+        """
+        cleaned = (email or "").strip().lower()
+        if not cleaned:
+            return None
+        return cls.query.filter(cls.spiso_email == cleaned).first()
 
     def mark_invalid(self) -> None:
         self.invalid_since = datetime.now(timezone.utc)
@@ -77,4 +95,7 @@ class SpisoLink(Model):
             "home_id": self.home_id,
             "home_name": self.home_name,
             "needs_sign_in": self.invalid_since is not None,
+            "spiso_email": self.spiso_email,
+            # Whether this Spiso account can be used to sign in to KitchenOwl.
+            "sign_in_enabled": self.spiso_email is not None,
         }
