@@ -21,10 +21,21 @@ h3 {
   font-optical-sizing: auto;
 }
 
-/* The 10px caps label the other sites use to tag a section, down to the letter
-   spacing. It is the strongest single carrier of the house style. */
-.label {
-  @apply font-mono text-[10px] font-medium tracking-[0.14em] text-faint uppercase;
+/* The caps label the other sites use to tag a section. It is the strongest
+   single carrier of the house style, which is why it ended up on things that
+   are not tags at all — day headings, buttons, whole screens of the planner —
+   and at 10px in the faintest colour that made those screens unreadable.
+   11px in `muted` keeps the look and clears 4.5:1; the tracking comes in a
+   little because 0.14em at this size reads as spaced-out rather than crisp.
+
+   Inside `@layer components` deliberately: as a plain rule it sat *after*
+   Tailwind's utilities and won against them, so `class="label text-accent"`
+   silently rendered grey. The planner's "today" heading had been highlighted
+   in the markup and flat in the browser since the day it was written. */
+@layer components {
+  .label {
+    @apply font-mono text-[11px] font-medium tracking-[0.1em] text-muted uppercase;
+  }
 }
 
 .rule {

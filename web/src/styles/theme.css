@@ -19,17 +19,32 @@
      sit without turning grey-brown. */
   --color-paper: #f8f7fc;
   --color-paper-deep: #efedf7;
+  /* The three text tiers all clear 4.5:1 on both surfaces, including the deep
+     one. They were tuned by measuring, not by eye: `faint` was #948eae, which
+     is 2.92:1 here — and it was the colour on the *smallest* text in the app,
+     10px uppercase with wide tracking. Small text needs more contrast than
+     large, so that was exactly inverted, and the meal planner was unreadable
+     because every word on it was a label. */
   --color-ink: #17142a;
-  --color-muted: #635d7d;
-  --color-faint: #948eae;
-  --color-line: rgba(23, 20, 42, 0.26);
-  --color-hairline: rgba(23, 20, 42, 0.1);
+  --color-muted: #4f4968;
+  --color-faint: #655f80;
+  /* Borders that mean something — a checkbox, an input — clear 3:1. `line` was
+     1.76:1, which on a shopping list is a tick box you cannot find. */
+  --color-line: rgba(23, 20, 42, 0.5);
+  /* Hairlines are decoration: they separate, they do not inform. Deliberately
+     below the threshold, and nothing depends on seeing them. */
+  --color-hairline: rgba(23, 20, 42, 0.14);
 
   /* The ramp, and a flat accent for anything that carries meaning: links,
      errors, the active tab. A gradient cannot be a text colour. */
   --color-iris: #4f46e5;
   --color-purple: #9333ea;
   --color-fuchsia: #d946ef;
+  /* The same ramp, ended one step darker, for the gradients that carry white
+     text. White on #d946ef is 3.46:1 — and .btn-gradient slides the ramp
+     further into the fuchsia on hover, so the label got *less* readable at the
+     moment you were reaching for it. Decoration keeps the brighter end. */
+  --color-fuchsia-deep: #b524c5;
   --color-accent: #7c3aed;
   --color-accent-soft: rgba(147, 51, 234, 0.1);
 
@@ -53,9 +68,9 @@
     --color-paper-deep: #191527;
     --color-ink: #ece9f7;
     --color-muted: #a49dbd;
-    --color-faint: #6b6489;
-    --color-line: rgba(236, 233, 247, 0.22);
-    --color-hairline: rgba(236, 233, 247, 0.1);
+    --color-faint: #8b84ae;
+    --color-line: rgba(236, 233, 247, 0.4);
+    --color-hairline: rgba(236, 233, 247, 0.14);
     --color-accent: #c084fc;
     --color-accent-soft: rgba(192, 132, 252, 0.16);
     --color-done: #2dd4bf;
@@ -67,9 +82,9 @@
   --color-paper-deep: #191527;
   --color-ink: #ece9f7;
   --color-muted: #a49dbd;
-  --color-faint: #6b6489;
-  --color-line: rgba(236, 233, 247, 0.22);
-  --color-hairline: rgba(236, 233, 247, 0.1);
+  --color-faint: #8b84ae;
+  --color-line: rgba(236, 233, 247, 0.4);
+  --color-hairline: rgba(236, 233, 247, 0.14);
   --color-accent: #c084fc;
   --color-accent-soft: rgba(192, 132, 252, 0.16);
   --color-done: #2dd4bf;
@@ -98,12 +113,13 @@
      gets this treatment. */
 }
 
+/* Carries a letter or a label, so it ends on the deep stop. */
 @utility gradient-surface {
   background-image: linear-gradient(
     100deg,
     var(--color-iris),
     var(--color-purple) 50%,
-    var(--color-fuchsia)
+    var(--color-fuchsia-deep)
   );
 }
 
@@ -143,7 +159,7 @@
     100deg,
     var(--color-iris),
     var(--color-purple) 50%,
-    var(--color-fuchsia)
+    var(--color-fuchsia-deep)
   );
   background-size: 160% 100%;
   background-position: 0% 0%;
