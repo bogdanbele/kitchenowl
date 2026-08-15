@@ -2,7 +2,17 @@ import { Link, useParams } from "react-router-dom";
 import { useMemo, useState } from "react";
 import { byUrgency, daysUntil, expiryLabel } from "../api/spiso";
 import { useInventory, type KitchenThing } from "../hooks/useInventory";
-import { groupByPlace } from "../lib/kitchenGroups";
+import { groupByPlace, useFirst } from "../lib/kitchenGroups";
+import { ChevronDown } from "lucide-react";
+
+const COLLAPSED_KEY = "kitchenowl.kitchen.collapsed";
+
+/** A place is easier to find by its shape than by reading three headings. */
+const PLACE_EMOJI: Record<string, string> = {
+  fridge: "🧊",
+  freezer: "❄️",
+  pantry: "🥫",
+};
 
 /**
  * What is actually in the kitchen, read from Spiso.
@@ -63,6 +73,30 @@ export default function Inventory() {
   const { householdId = "1" } = useParams();
   const [query, setQuery] = useState("");
   const [grouping, setGrouping] = useState<"place" | "date">("place");
+  // Which places are folded away, remembered per browser. Storing the shut ones
+  // rather than the open ones means a new place — a freezer someone starts
+  // using — arrives open rather than hidden.
+  const [collapsed, setCollapsed] = useState<string[]>(() => {
+    try {
+      const raw = localStorage.getItem(COLLAPSED_KEY);
+      return raw ? (JSON.parse(raw) as string[]) : [];
+    } catch {
+      return [];
+    }
+  });
+
+  const toggle = (key: string) =>
+    setCollapsed((current) => {
+      const next = current.includes(key)
+        ? current.filter((entry) => entry !== key)
+        : [...current, key];
+      try {
+        localStorage.setItem(COLLAPSED_KEY, JSON.stringify(next));
+      } catch {
+        // Storage blocked: folding still works, it just forgets.
+      }
+      return next;
+    });
 
   const { items: all, homeName, needsHome, isPending, error } = useInventory();
 
@@ -82,6 +116,64 @@ export default function Inventory() {
   const soon = items.filter((item) => {
     const days = daysUntil(item.expires_on);
     return days !== null && days <= 2;
+  });
+  const urgent = useFirst(items);
+
+  /**
+   * A place can be folded away, and stays folded.
+   *
+   * A pantry of twenty-two things is most of a screen you scroll past to reach
+   * the fridge. Remembering which are shut means the second visit opens on the
+   * kitchen you actually look at.
+   */
+  const places = groupByPlace(items).map((place) => {
+    const key = place.location ?? "unfiled";
+    const open = !collapsed.includes(key);
+
+    return (
+      <section key={place.label} className="mb-8">
+        <button
+          type="button"
+          onClick={() => toggle(key)}
+          aria-expanded={open}
+          className="group mb-1 flex w-full items-baseline justify-between gap-3 text-left"
+        >
+          <span className="flex items-baseline gap-2">
+            <ChevronDown
+              size={14}
+              className={`shrink-0 self-center text-faint transition ${open ? "" : "-rotate-90"}`}
+            />
+            <span aria-hidden>{PLACE_EMOJI[place.location ?? ""] ?? "🍽"}</span>
+            <h2 className="font-display text-xl font-semibold tracking-tight transition group-hover:text-accent">
+              {place.label}
+            </h2>
+          </span>
+          <span className="font-mono text-[11px] text-muted">
+            {place.count}
+            {place.soon > 0 && <span className="text-accent"> · {place.soon} to use</span>}
+          </span>
+        </button>
+
+        {open &&
+          place.spaces.map((space) => (
+            <div key={space.space ?? "unfiled"} className="mt-3">
+              {/* A shelf name is only worth a heading when the place has more
+                  than one — otherwise it is a label saying "here". */}
+              {space.space && place.spaces.length > 1 && (
+                <p className="label mb-1 flex items-baseline justify-between gap-3">
+                  <span>{space.space}</span>
+                  <span className="text-faint">{space.items.length}</span>
+                </p>
+              )}
+              <ul className="rule">
+                {space.items.map((item) => (
+                  <ItemRow key={item.id || item.name} item={item} showPlace={false} />
+                ))}
+              </ul>
+            </div>
+          ))}
+      </section>
+    );
   });
 
   if (error) {
@@ -157,7 +249,32 @@ export default function Inventory() {
         </p>
       ) : items.length === 0 ? (
         <p className="text-muted">{query ? `Nothing matching “${query}”.` : "Nothing in yet."}</p>
-      ) : grouping === "date" ? (
+      ) : grouping === "place" && urgent.length > 0 ? (
+        <>
+          {/* The count in the header is a fact you then have to go and find.
+              These are the actual things, wherever they live — and they stay in
+              their place below as well, because the fridge list has to remain a
+              true account of the fridge. */}
+          <section className="mb-8 rounded-card border border-accent/40 bg-accent-soft/40 p-4">
+            <p className="label mb-2 text-accent">Use first</p>
+            <ul className="flex flex-wrap gap-x-4 gap-y-1">
+              {urgent.map((item) => (
+                <li key={`urgent-${item.id || item.name}`} className="text-sm">
+                  {item.emoji && <span aria-hidden>{item.emoji} </span>}
+                  {item.name}{" "}
+                  <span className="text-xs text-accent">
+                    {(daysUntil(item.expires_on) ?? 0) < 0 ? "went off " : ""}
+                    {expiryLabel(item.expires_on)?.toLowerCase()}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+          {places}
+        </>
+      ) : grouping === "place" ? (
+        places
+      ) : (
         <ul className="rule">
           {items.map((item) => (
             // Flat list: where a thing lives is worth knowing, since nothing
@@ -165,33 +282,6 @@ export default function Inventory() {
             <ItemRow key={item.id || item.name} item={item} />
           ))}
         </ul>
-      ) : (
-        groupByPlace(items).map((place) => (
-          <section key={place.label} className="mb-8">
-            <div className="mb-1 flex items-baseline justify-between gap-3">
-              <h2 className="font-display text-xl font-semibold tracking-tight">{place.label}</h2>
-              <p className="font-mono text-[11px] text-muted">
-                {place.count}
-                {place.soon > 0 && <span className="text-accent"> · {place.soon} to use</span>}
-              </p>
-            </div>
-
-            {place.spaces.map((space) => (
-              <div key={space.space ?? "unfiled"} className="mt-3">
-                {/* A shelf name is only worth a heading when the place has more
-                    than one — otherwise it is a label saying "here". */}
-                {space.space && place.spaces.length > 1 && (
-                  <p className="label mb-1">{space.space}</p>
-                )}
-                <ul className="rule">
-                  {space.items.map((item) => (
-                    <ItemRow key={item.id || item.name} item={item} showPlace={false} />
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </section>
-        ))
       )}
     </div>
   );

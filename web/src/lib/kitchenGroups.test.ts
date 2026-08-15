@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { groupByPlace } from "./kitchenGroups";
+import { groupByPlace, useFirst } from "./kitchenGroups";
 import type { SpisoItem } from "../api/spiso";
 
 const item = (
@@ -60,5 +60,32 @@ describe("groupByPlace", () => {
 
   it("is empty for an empty kitchen", () => {
     expect(groupByPlace([])).toEqual([]);
+  });
+});
+
+describe("useFirst", () => {
+  const day = 86_400_000;
+  const inDays = (n: number) => new Date(Date.now() + n * day).toISOString();
+
+  it("gathers what needs using from every place, soonest first", () => {
+    const picked = useFirst([
+      item("Rice", "pantry", null, inDays(400)),
+      item("Milk", "fridge", null, inDays(1)),
+      item("Cream", "fridge", null, inDays(-2)),
+    ]);
+    expect(picked.map((entry) => entry.name)).toEqual(["Cream", "Milk"]);
+  });
+
+  it("leaves out anything with no date, which cannot be urgent", () => {
+    expect(useFirst([item("Flour", "pantry")])).toEqual([]);
+  });
+
+  it("stops at a handful — a strip of twenty is another list to read", () => {
+    const many = Array.from({ length: 12 }, (_, i) => item(`Thing ${i}`, "fridge", null, inDays(1)));
+    expect(useFirst(many)).toHaveLength(6);
+  });
+
+  it("is empty when nothing is urgent, so the strip disappears entirely", () => {
+    expect(useFirst([item("Rice", "pantry", null, inDays(90))])).toEqual([]);
   });
 });

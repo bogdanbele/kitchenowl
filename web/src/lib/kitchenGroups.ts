@@ -51,6 +51,19 @@ function goesOffSoon(item: { expires_on?: string | null }): boolean {
   return days !== null && days <= 2;
 }
 
+/**
+ * The things that need dealing with, wherever they live.
+ *
+ * "3 to use in the next two days" is a fact you then have to go and find, which
+ * on thirty items across four shelves is a hunt. These are pulled to the top as
+ * a strip — deliberately *as well as* leaving them in their place, not instead:
+ * the fridge list must stay a true account of the fridge, and a summary that
+ * quietly removes rows from below it is a summary that lies twice.
+ */
+export function useFirst<T extends SpisoItem>(items: T[], limit = 6): T[] {
+  return items.filter(goesOffSoon).sort(byUrgency).slice(0, limit);
+}
+
 export function groupByPlace<T extends SpisoItem>(items: T[]): KitchenPlace<T>[] {
   const places = new Map<string | null, Map<string | null, T[]>>();
 
