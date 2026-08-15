@@ -40,7 +40,20 @@ export interface SpisoItem {
   status?: string | null;
 }
 
+export interface SpisoShoppingItem {
+  id: string;
+  name: string;
+  quantity: number;
+  /** Set when Spiso added this because something ran out. */
+  from_food_id?: string | null;
+  added_at?: string | null;
+}
+
 export const spisoApi = {
+  shopping: () =>
+    api<{ items: SpisoShoppingItem[]; home_name: string | null; needs_home: boolean }>(
+      "/spiso/shopping",
+    ),
   status: () => api<SpisoStatus>("/spiso"),
   connect: (body: { base_url: string; email: string; password: string }) =>
     api<SpisoStatus & { homes: SpisoHome[] }>("/spiso/connect", { method: "POST", body }),

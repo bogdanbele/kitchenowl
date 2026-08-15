@@ -120,6 +120,27 @@ def getInventory():
     return jsonify({"items": items, "home_name": link.home_name, "needs_home": False})
 
 
+@spiso.route("/shopping", methods=["GET"])
+@jwt_required()
+def getShopping():
+    """Spiso's shopping list, which is the one that counts.
+
+    Read-only, like the inventory: the phones write this list and KitchenOwl
+    shows it. A second writer with no merge protocol is how a list loses the
+    thing somebody added while walking to the shop.
+    """
+    link = _link_or_404()
+    if not link.home_id:
+        return jsonify({"items": [], "home_name": None, "needs_home": True})
+    try:
+        items = spiso_service.snapshot_shopping(link.base_url, link.token, link.home_id)
+    except UnauthorizedRequest:
+        link.mark_invalid()
+        raise
+    link.mark_valid()
+    return jsonify({"items": items, "home_name": link.home_name, "needs_home": False})
+
+
 @spiso.route("/login", methods=["POST"])
 @validate_args(SignIn)
 def loginWithSpiso(args):

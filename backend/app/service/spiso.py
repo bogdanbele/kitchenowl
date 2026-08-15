@@ -146,6 +146,51 @@ def snapshot_items(base_url: str, token: str, home_id: str) -> list[dict[str, An
     return [normalise_item(item) for item in items[:MAX_ITEMS] if _is_food(item)]
 
 
+def snapshot_shopping(base_url: str, token: str, home_id: str) -> list[dict[str, Any]]:
+    """The home's shopping list, out of the same snapshot as the inventory.
+
+    Spiso is the source of truth for this list, so nothing here writes: what
+    comes back is what the phones agreed on, and KitchenOwl shows it.
+
+    Two states are filtered out for the same reason as the inventory —
+    `removedAt` is a deletion travelling between devices, and `checkedAt` is
+    something already in the trolley. Both would otherwise reappear as things
+    still to buy.
+    """
+    body = _request(base_url, f"/homes/{home_id}/snapshot", token=token)
+    snapshot = (body or {}).get("snapshot")
+    if not snapshot:
+        return []
+    if snapshot.get("format") != "spiso-home-snapshot":
+        raise SpisoError(
+            "That home's snapshot is still end-to-end encrypted, so only the Spiso app can open it."
+        )
+
+    items = ((snapshot.get("backup") or {}).get("shoppingItems")) or []
+    if not isinstance(items, list):
+        return []
+
+    out: list[dict[str, Any]] = []
+    for item in items[:MAX_ITEMS]:
+        if not isinstance(item, dict) or not item.get("name"):
+            continue
+        if item.get("removedAt") or item.get("checkedAt"):
+            continue
+        quantity = item.get("quantity")
+        out.append(
+            {
+                "id": str(item.get("id") or ""),
+                "name": str(item.get("name") or "").strip(),
+                "quantity": quantity if isinstance(quantity, (int, float)) else 1,
+                # Set when the item came from something in the kitchen running
+                # out, which is worth knowing when deciding whether to buy it.
+                "from_food_id": item.get("sourceFoodId"),
+                "added_at": item.get("createdAt"),
+            }
+        )
+    return out
+
+
 def _is_food(item: Any) -> bool:
     if not isinstance(item, dict) or not item.get("name"):
         return False

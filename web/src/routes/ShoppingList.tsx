@@ -5,6 +5,7 @@ import { ArrowDownAZ, LayoutGrid, Pencil } from "lucide-react";
 import { api } from "../api/client";
 import type { Shoppinglist, ShoppinglistItem } from "../api/types";
 import { useLiveShoppingList } from "../hooks/useLiveShoppingList";
+import { spisoApi } from "../api/spiso";
 import { byCategory } from "../lib/group";
 import { alreadyListed, matchItems, parseItemInput } from "../lib/itemInput";
 import { ItemDetail } from "../components/ItemDetail";
@@ -37,6 +38,14 @@ export default function ShoppingList() {
   });
 
   useLiveShoppingList(list?.id);
+
+  const { data: spisoList } = useQuery({
+    queryKey: ["spiso-shopping"],
+    queryFn: spisoApi.shopping,
+    staleTime: 60_000,
+    // Not connected is the ordinary case, not an error worth retrying.
+    retry: false,
+  });
 
   const { data: suggestions } = useQuery({
     queryKey: ["recent-items", list?.id],
@@ -149,6 +158,46 @@ export default function ShoppingList() {
 
   return (
     <div className="mx-auto max-w-2xl">
+      {/* Spiso is the source of truth for shopping, so its list is the one at
+          the top and it is read-only here: the phones write it, and a second
+          writer with no merge protocol is how a list loses the thing somebody
+          added on the way to the shop. KitchenOwl's own list stays below,
+          because recipes still send ingredients to it. */}
+      {spisoList && spisoList.items.length > 0 && (
+        <section className="mb-10">
+          <p className="label">
+            {spisoList.home_name ? `Foodminder · ${spisoList.home_name}` : "Foodminder"}
+          </p>
+          <h1 className="mt-1 mb-1 text-4xl font-semibold tracking-tight">
+            {spisoList.items.length} to buy
+          </h1>
+          <p className="mb-5 text-sm text-muted">
+            The list your phones share. Tick things off in Spiso — this is a window on it, not a
+            second copy.
+          </p>
+          <ul className="rule">
+            {spisoList.items.map((item) => (
+              <li
+                key={item.id || item.name}
+                className="flex items-baseline justify-between gap-3 border-b border-hairline py-3"
+              >
+                <span>{item.name}</span>
+                <span className="flex shrink-0 items-baseline gap-3">
+                  {item.from_food_id && (
+                    <span className="label text-faint" title="Added because it ran out">
+                      ran out
+                    </span>
+                  )}
+                  {item.quantity > 1 && (
+                    <span className="font-mono text-xs text-muted">×{item.quantity}</span>
+                  )}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       <p className="label">Shopping · {list.name}</p>
       <h1 className="mt-1 mb-6 text-4xl font-semibold tracking-tight">
         {items?.length ? `${items.length} to buy` : "Nothing to buy"}
