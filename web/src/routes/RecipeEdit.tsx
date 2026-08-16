@@ -1,8 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useNavigate, useParams } from "react-router-dom";
-import { useState, type FormEvent } from "react";
-import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import { useRef, useState, type FormEvent } from "react";
 import { api, uploadFile } from "../api/client";
 import type { Recipe, Tag } from "../api/types";
 import {
@@ -22,8 +20,9 @@ import { toDraftFromExtraction } from "../lib/recipeExtraction";
 import { missingFromIngredients } from "../lib/mentions";
 import { dataUrlBytes, imageFromClipboard, toDownscaledDataUrl } from "../lib/image";
 import { Photo } from "../components/Photo";
+import { RecipeMarkdown } from "../components/RecipeMarkdown";
 import { Link as RouterLink } from "react-router-dom";
-import { Camera, ImagePlus, Link2, Sparkles, X } from "lucide-react";
+import { Camera, ImagePlus, Image, Link2, Sparkles, X } from "lucide-react";
 
 export default function RecipeEdit() {
   const { householdId = "1", recipeId } = useParams();
@@ -41,6 +40,7 @@ export default function RecipeEdit() {
   const [error, setError] = useState<string | null>(null);
   const [tagDraft, setTagDraft] = useState("");
   const [photoUrl, setPhotoUrl] = useState("");
+  const methodRef = useRef<HTMLTextAreaElement>(null);
 
   // The household's existing tags, so a second "Weeknight" is a click rather
   // than a typo waiting to happen.
@@ -109,6 +109,39 @@ export default function RecipeEdit() {
     onSuccess: (filename) => {
       setError(null);
       setDraft((current) => (current ? { ...current, photo: filename } : current));
+    },
+    onError: (caught) =>
+      setError(caught instanceof Error ? caught.message : "Could not upload that image."),
+  });
+
+  /**
+   * A step's photo goes in as markdown, at wherever the cursor was — the
+   * method is one textarea, not a field per step, so the cursor is the only
+   * way to say *which* step a photo belongs to. Cut ahead of a paragraph
+   * already in progress rather than mid-sentence, hence the blank line on
+   * both sides; then the cursor is put back where the photo landed, so
+   * inserting three in a row does not require re-finding the spot each time.
+   */
+  const uploadStepPhoto = useMutation({
+    mutationFn: (file: File) => uploadFile(file),
+    onSuccess: (filename) => {
+      setError(null);
+      const textarea = methodRef.current;
+      const markdown = `![](${filename})`;
+      const cursor = textarea?.selectionStart ?? draft?.description.length ?? 0;
+      const cursorEnd = textarea?.selectionEnd ?? cursor;
+      update((current) => {
+        const before = current.description.slice(0, cursor);
+        const after = current.description.slice(cursorEnd);
+        const needsLeadingBreak = before.length > 0 && !before.endsWith("\n\n");
+        const insert = `${needsLeadingBreak ? "\n\n" : ""}${markdown}\n\n`;
+        const newCursor = before.length + insert.length;
+        requestAnimationFrame(() => {
+          textarea?.focus();
+          textarea?.setSelectionRange(newCursor, newCursor);
+        });
+        return { ...current, description: before + insert + after };
+      });
     },
     onError: (caught) =>
       setError(caught instanceof Error ? caught.message : "Could not upload that image."),
@@ -615,10 +648,11 @@ export default function RecipeEdit() {
 
         {preview ? (
           <div className="prose-recipe min-h-64 rounded-card border border-hairline p-4">
-            <Markdown remarkPlugins={[remarkGfm]}>{draft.description}</Markdown>
+            <RecipeMarkdown>{draft.description}</RecipeMarkdown>
           </div>
         ) : (
           <textarea
+            ref={methodRef}
             value={draft.description}
             onChange={(e) => set("description", e.target.value)}
             rows={16}
@@ -628,6 +662,27 @@ export default function RecipeEdit() {
                        leading-relaxed outline-none placeholder:text-faint focus:border-accent"
           />
         )}
+
+        <div className="mt-2 flex items-center gap-3">
+          <label
+            className={`inline-flex cursor-pointer items-center gap-1.5 text-xs text-muted transition
+                        hover:text-accent ${preview ? "pointer-events-none opacity-40" : ""}`}
+          >
+            <Image size={13} />
+            {uploadStepPhoto.isPending ? "Uploading…" : "Insert a photo at the cursor"}
+            <input
+              type="file"
+              accept="image/*"
+              className="hidden"
+              disabled={preview}
+              onChange={(event) => {
+                const file = event.target.files?.[0];
+                event.target.value = "";
+                if (file) uploadStepPhoto.mutate(file);
+              }}
+            />
+          </label>
+        </div>
 
         {/* Nothing is added silently: a mistyped @onin stays a mistyped word
             rather than becoming an ingredient nobody notices. */}

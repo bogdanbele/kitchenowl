@@ -1,11 +1,10 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import { useRef, useState } from "react";
 import { api } from "../api/client";
 import type { Recipe as RecipeModel, RecipeItem, Shoppinglist } from "../api/types";
 import { Photo } from "../components/Photo";
+import { RecipeMarkdown } from "../components/RecipeMarkdown";
 import { ConfirmDialog } from "../components/Modal";
 import { formatTime, scaleAmount } from "../lib/amount";
 import { stripMentions } from "../lib/mentions";
@@ -424,7 +423,7 @@ export default function Recipe() {
         <div className="prose-recipe min-w-0">
           {/* stripMentions: @onion is editor syntax, not something to read
               while cooking. */}
-          <Markdown remarkPlugins={[remarkGfm]}>{stripMentions(recipe.description)}</Markdown>
+          <RecipeMarkdown>{stripMentions(recipe.description)}</RecipeMarkdown>
         </div>
       </div>
     </article>

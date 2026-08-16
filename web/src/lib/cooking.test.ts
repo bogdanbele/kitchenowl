@@ -142,6 +142,48 @@ describe("mentionedItems", () => {
   });
 });
 
+describe("splitSteps step photos", () => {
+  it("pulls a step's photo out of its markdown and strips the syntax from the text", () => {
+    const steps = splitSteps("1. Crush the biscuits.\n2. Press ![](crust.jpg) into the tin.");
+    expect(steps[0].image).toBeUndefined();
+    expect(steps[1].image).toBe("crust.jpg");
+    expect(steps[1].text).toBe("Press into the tin.");
+  });
+
+  it("takes an absolute URL the same as an uploaded filename", () => {
+    const steps = splitSteps("1. Chill for 4 hours. ![set](https://example.com/set.jpg)");
+    expect(steps[0].image).toBe("https://example.com/set.jpg");
+  });
+
+  it("leaves a step with no photo alone", () => {
+    const steps = splitSteps("1. Whisk the eggs.");
+    expect(steps[0].image).toBeUndefined();
+    expect(steps[0].text).toBe("Whisk the eggs.");
+  });
+
+  it("folds a photo inserted as its own paragraph into the step before it", () => {
+    // This is what the editor's "insert a photo at the cursor" button writes:
+    // a blank line on each side, so the recipe view gets a photo-sized
+    // paragraph rather than a thumbnail wedged mid-sentence. Split naively,
+    // that paragraph is a step of its own — text "", nothing to do.
+    const steps = splitSteps(
+      "1. Press the crumbs into the tin.\n\n![](crust.jpg)\n\n2. Chill for 20 minutes.",
+    );
+    expect(steps).toHaveLength(2);
+    expect(steps[0].text).toBe("Press the crumbs into the tin.");
+    expect(steps[0].image).toBe("crust.jpg");
+    expect(steps[1].text).toBe("Chill for 20 minutes.");
+    expect(steps[1].image).toBeUndefined();
+  });
+
+  it("keeps a photo as its own step when there is no step before it to fold into", () => {
+    const steps = splitSteps("## 1. Start\n\n![](before-anything.jpg)\n\n1. Whisk the eggs.");
+    expect(steps).toHaveLength(2);
+    expect(steps[0].image).toBe("before-anything.jpg");
+    expect(steps[1].text).toBe("Whisk the eggs.");
+  });
+});
+
 describe("formatCountdown", () => {
   it.each([
     [90, "1:30"],

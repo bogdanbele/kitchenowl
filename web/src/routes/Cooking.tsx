@@ -9,6 +9,7 @@ import { stripMentions } from "../lib/mentions";
 import { scaleAmount } from "../lib/amount";
 import { useWakeLock } from "../hooks/useWakeLock";
 import { useTimers } from "../hooks/useTimers";
+import { Photo } from "../components/Photo";
 
 /**
  * Cooking mode: one step at a time, set large, screen kept awake.
@@ -102,6 +103,19 @@ export default function Cooking() {
 
       <main className="flex-1 overflow-auto px-5 pb-40 md:px-8">
         <div className="mx-auto max-w-3xl">
+          {/* A photo per step, the way a printed recipe puts one beside the
+              paragraph it belongs to — proof of what "done" looks like right
+              here, not back on the recipe page. Keyed on the step index so a
+              slow-loading photo does not linger from the step just left. */}
+          {step.image && (
+            <Photo
+              key={index}
+              photo={step.image}
+              alt=""
+              className="mt-6 aspect-[4/3] w-full rounded-card object-cover"
+            />
+          )}
+
           {/* Set very large on purpose: this is read standing up, at arm's
               length, usually while holding something. */}
           <p className="mt-6 text-2xl leading-relaxed font-medium text-balance sm:text-3xl sm:leading-relaxed">

@@ -16,6 +16,9 @@ export interface CookingStep {
   timers: Timer[];
   /** Ids of ingredients this step mentions. */
   itemIds: number[];
+  /** A photo for this step, if the method embedded one — a filename to
+   *  upload, or an absolute URL. Same two shapes as a recipe's cover photo. */
+  image?: string;
 }
 
 export interface Timer {
@@ -26,6 +29,23 @@ export interface Timer {
 const HEADING = /^#{2,3}\s+(.*)$/;
 const ORDERED = /^\s*\d+[.)]\s+/;
 const BULLET = /^\s*[-*]\s+/;
+const IMAGE = /!\[[^\]]*\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g;
+
+/**
+ * Pull a step's photo out of its text, like allrecipes shows one per step.
+ *
+ * A step is markdown, so `![](filename)` is how a photo gets into it — same
+ * upload-or-URL shape as a recipe's cover photo, no separate field to add.
+ * Only the first image counts as *the* step photo; the syntax is stripped from
+ * what is displayed either way, since cooking mode shows the step as plain
+ * text and `![](x)` read aloud is worse than no image at all.
+ */
+function extractImage(text: string): { text: string; image?: string } {
+  const matches = [...text.matchAll(IMAGE)];
+  const image = matches[0]?.[1];
+  const stripped = text.replace(IMAGE, "").replace(/[ \t]+/g, " ").trim();
+  return image ? { text: stripped, image } : { text };
+}
 
 /**
  * Split markdown into steps.
@@ -53,16 +73,18 @@ export function splitSteps(markdown: string, items: RecipeItem[] = []): CookingS
   let seenStructure = false;
 
   const flush = () => {
-    const text = buffer.join(" ").trim();
+    const raw = buffer.join(" ").trim();
     buffer = [];
-    if (!text) return;
+    if (!raw) return;
     // Intro prose in a method that is otherwise structured.
     if (structured && !seenStructure) return;
+    const { text, image } = extractImage(raw);
     steps.push({
       section,
       text,
       timers: findTimers(text),
       itemIds: mentionedItems(text, items),
+      image,
     });
   };
 
@@ -99,7 +121,24 @@ export function splitSteps(markdown: string, items: RecipeItem[] = []): CookingS
   }
   flush();
 
-  return steps;
+  // A photo inserted at the cursor lands as its own paragraph — a blank line
+  // on each side, so it reads well in the recipe view and so an image is
+  // never accidentally welded onto the *next* step's opening line. That
+  // paragraph break also makes splitSteps flush it as a step of its own: text
+  // "", nothing to do. A step with nothing to do belongs to the photo of the
+  // step before it, not on a screen by itself in cooking mode.
+  const merged: CookingStep[] = [];
+  for (const step of steps) {
+    const previous = merged[merged.length - 1];
+    const isBareImage = !!step.image && !step.text;
+    if (isBareImage && previous && previous.section === step.section && !previous.image) {
+      previous.image = step.image;
+      continue;
+    }
+    merged.push(step);
+  }
+
+  return merged;
 }
 
 const UNITS: { pattern: string; seconds: number }[] = [
