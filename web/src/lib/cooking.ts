@@ -147,20 +147,34 @@ export function findTimers(text: string): Timer[] {
  * Matching is on whole words and on the singular, so "onion" is found in "add
  * the onions" without "oil" matching "boil". Deliberately conservative: a
  * missed highlight costs nothing, a wrong one sends someone to the fridge.
+ *
+ * A compound name also answers to its head noun — the last word — because a
+ * step reads "sift both flours" or "mix in the yeast", never "sift both plain
+ * flours" or "mix in the dried yeast": the qualifier is on the ingredients
+ * list already, repeating it in prose would be strange. Same rule and same
+ * direction as pantry matching in cookable.ts: "flour" finds "Plain flour",
+ * not the reverse.
  */
 export function mentionedItems(text: string, items: RecipeItem[]): number[] {
   const haystack = ` ${text.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, " ")} `;
 
+  const mentions = (word: string) => {
+    if (word.length < 3) return false;
+    const singular = word.replace(/(?:es|s)$/, "");
+    return (
+      haystack.includes(` ${word} `) ||
+      haystack.includes(` ${word}s `) ||
+      (singular.length >= 3 && haystack.includes(` ${singular} `))
+    );
+  };
+
   return items
     .filter((item) => {
       const name = item.name.toLowerCase().trim();
-      if (name.length < 3) return false;
-      const singular = name.replace(/(?:es|s)$/, "");
-      return (
-        haystack.includes(` ${name} `) ||
-        haystack.includes(` ${name}s `) ||
-        (singular.length >= 3 && haystack.includes(` ${singular} `))
-      );
+      if (mentions(name)) return true;
+      const words = name.split(/\s+/);
+      const head = words[words.length - 1];
+      return head !== name && mentions(head);
     })
     .map((item) => item.id);
 }

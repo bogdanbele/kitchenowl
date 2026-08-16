@@ -127,6 +127,19 @@ describe("mentionedItems", () => {
   it("copes with punctuation around the word", () => {
     expect(mentionedItems("Add the onion, then wait.", items)).toEqual([1]);
   });
+
+  it("finds a compound ingredient by its head noun, since a step says the noun and not the qualifier", () => {
+    const flours = [item(5, "Plain flour"), item(6, "strong bread flour"), item(7, "dried yeast")];
+    expect(mentionedItems("Sift both flours together, mix in the yeast and sugar.", flours)).toEqual([
+      5, 6, 7,
+    ]);
+  });
+
+  it("does not let a head noun match inside another word", () => {
+    // "flour" is the head of "Plain flour"; "flourish" must not count.
+    const plainFlour = [item(8, "Plain flour")];
+    expect(mentionedItems("Let the sauce flourish on low heat.", plainFlour)).toEqual([]);
+  });
 });
 
 describe("formatCountdown", () => {

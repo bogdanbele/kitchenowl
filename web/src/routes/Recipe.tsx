@@ -65,7 +65,7 @@ function Ingredient({
             one-handed in a kitchen, where a 14px checkbox is something you miss
             twice before hitting it. The negative margin keeps the taller hit
             area from loosening the list's rhythm. */}
-        <label className="-my-1.5 flex min-h-11 flex-1 cursor-pointer items-center gap-3 py-1.5">
+        <label className="-my-1.5 flex min-h-11 min-w-0 flex-1 cursor-pointer items-center gap-3 py-1.5">
           <input
             type="checkbox"
             checked={have}
@@ -78,7 +78,17 @@ function Ingredient({
             {item.optional && <span className="label ml-2">optional</span>}
           </span>
         </label>
-        {amount && <span className="shrink-0 font-mono text-xs text-muted">{amount}</span>}
+        {/* An amount is free text and some of it is a sentence — "for filling,
+            or 100 g prunes puréed with a lemon". Marked shrink-0 it could not
+            wrap and ran off the side of the column, taking the reader's trust
+            in the layout with it. It may now shrink and wrap, but never past
+            half the row, so a long amount cannot squeeze the name into a
+            single letter per line. */}
+        {amount && (
+          <span className="max-w-[55%] text-right font-mono text-xs break-words text-muted">
+            {amount}
+          </span>
+        )}
       </div>
 
       {match && match.kind !== "none" && (
