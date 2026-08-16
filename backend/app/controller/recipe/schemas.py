@@ -22,6 +22,7 @@ class AddRecipe(Schema):
     server_curated = fields.Boolean()
     photo = fields.String()
     visibility = fields.Integer(validate=lambda a: a >= 0)
+    videos = fields.List(fields.String())
     items = fields.List(fields.Nested(RecipeItem()))
     tags = fields.List(fields.String())
 
@@ -46,6 +47,7 @@ class UpdateRecipe(Schema):
     server_curated = fields.Boolean()
     photo = fields.String()
     visibility = fields.Integer(validate=lambda a: a >= 0)
+    videos = fields.List(fields.String())
     items = fields.List(fields.Nested(RecipeItem()))
     tags = fields.List(fields.String())
 

@@ -253,7 +253,11 @@ export default function RecipeEdit() {
     // The API rejects a blank or whitespace-only name with a validation error
     // that surfaces as a bare 400; catching it here says something useful.
     if (!draft.name.trim()) return setError("A recipe needs a name.");
-    save.mutate({ ...draft, items: draft.items.filter((item) => item.name.trim()) });
+    save.mutate({
+      ...draft,
+      items: draft.items.filter((item) => item.name.trim()),
+      videos: draft.videos.map((url) => url.trim()).filter(Boolean),
+    });
   }
 
   return (
@@ -779,6 +783,53 @@ export default function RecipeEdit() {
             ))}
           </div>
         )}
+      </section>
+
+      <section className="mb-10">
+        <div className="mb-2 flex items-center justify-between">
+          <p className="label">Videos</p>
+          <button
+            type="button"
+            onClick={() => update((current) => ({ ...current, videos: [...current.videos, ""] }))}
+            className="label transition hover:text-accent"
+          >
+            + Add
+          </button>
+        </div>
+        {/* Typed in, not scraped: a link the cook found worth keeping next to
+            the recipe, same trust level as pasting a photo address above. */}
+        <ul className="rule">
+          {draft.videos.map((url, index) => (
+            <li key={index} className="flex items-center gap-3 border-b border-hairline py-2">
+              <input
+                value={url}
+                onChange={(e) =>
+                  update((current) => ({
+                    ...current,
+                    videos: current.videos.map((v, i) => (i === index ? e.target.value : v)),
+                  }))
+                }
+                placeholder="https://…"
+                aria-label={`Video ${index + 1}`}
+                className="flex-1 bg-transparent py-1 font-mono text-sm outline-none placeholder:text-faint"
+              />
+              <button
+                type="button"
+                onClick={() =>
+                  update((current) => ({
+                    ...current,
+                    videos: current.videos.filter((_, i) => i !== index),
+                  }))
+                }
+                aria-label={`Remove video ${index + 1}`}
+                className="px-1 text-faint transition hover:text-accent"
+              >
+                ×
+              </button>
+            </li>
+          ))}
+        </ul>
+        {draft.videos.length === 0 && <p className="py-3 text-sm text-faint">No videos yet.</p>}
       </section>
 
       <section className="mb-10">

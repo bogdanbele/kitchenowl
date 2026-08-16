@@ -58,6 +58,12 @@ class Recipe(Model, DbModelAuthorizeMixin):
     visibility: Mapped[RecipeVisibility] = db.Column(
         db.Enum(RecipeVisibility), nullable=False, default=RecipeVisibility.PRIVATE
     )
+    # Links the cook found worth keeping next to the recipe — a video of the
+    # technique, someone else's take on it. Newline-separated like
+    # RecipeItems.substitutes is comma-separated: a handful of URLs typed in,
+    # read back as a list, never queried against. Newline rather than comma
+    # because a URL's query string can itself contain a comma.
+    videos: Mapped[str | None] = db.Column(db.String(), nullable=True)
 
     # Server suggestion metrics
     server_curated: Mapped[bool] = db.Column(db.Boolean, default=False)
@@ -132,12 +138,21 @@ class Recipe(Model, DbModelAuthorizeMixin):
         ),
     )
 
+    @property
+    def videos_list(self) -> list[str]:
+        return [line.strip() for line in (self.videos or "").split("\n") if line.strip()]
+
     def obj_to_dict(
         self,
         skip_columns: list[str] | None = None,
         include_columns: list[str] | None = None,
     ) -> dict[str, Any]:
         res = super().obj_to_dict(skip_columns, include_columns)
+        # A list on the way out, a string in the column — same reasoning as
+        # RecipeItems.substitutes: the client should not have to know how this
+        # is stored.
+        if "videos" in res:
+            res["videos"] = self.videos_list
         res["planned"] = len(self.plans) > 0
         res["planned_days"] = [
             transform_cooking_date_to_day(plan.cooking_date)
@@ -193,6 +208,7 @@ class Recipe(Model, DbModelAuthorizeMixin):
             "prep_time": self.prep_time,
             "yields": self.yields,
             "source": self.source,
+            "videos": self.videos_list,
             "items": [
                 {
                     "name": e.item.name,

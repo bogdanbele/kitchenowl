@@ -77,6 +77,9 @@ export interface Recipe {
   /** 0 private, 1 link-only, 2 public. An int, not a name: the API's JSON
    *  provider serialises every enum as `int(value)`. */
   visibility?: number;
+  /** Links the cook found worth keeping next to the recipe — a video of the
+   *  technique, someone else's take on it. Typed in by hand, never scraped. */
+  videos?: string[];
   items: RecipeItem[];
   tags: Tag[];
 }

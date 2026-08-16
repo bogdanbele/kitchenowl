@@ -29,6 +29,7 @@ class ImportSchema(Schema):
         yields = fields.Integer(allow_none=True)
         source = fields.String(allow_none=True)
         photo = fields.String(allow_none=True)
+        videos = fields.List(fields.String())
         items = fields.List(fields.Nested(RecipeItem))
         tags = fields.List(fields.String())
 

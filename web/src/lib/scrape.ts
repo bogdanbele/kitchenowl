@@ -13,6 +13,8 @@ export interface Draft {
   tags: string[];
   /** 0 private, 1 link-only, 2 public — ints, because that is what the API takes. */
   visibility: number;
+  /** Links the cook found worth keeping — typed in, never scraped. */
+  videos: string[];
 }
 
 export const PRIVATE = 0;
@@ -33,6 +35,7 @@ export const EMPTY: Draft = {
   // New recipes start private. Anything else would publish someone's cooking by
   // default, and the button to share is easier to find than the one to unshare.
   visibility: PRIVATE,
+  videos: [],
 };
 
 export function toDraft(recipe: Recipe): Draft {
@@ -54,6 +57,7 @@ export function toDraft(recipe: Recipe): Draft {
     // Tags round-trip as names: the API answers with objects and takes strings.
     tags: (recipe.tags ?? []).map((tag) => tag.name),
     visibility: recipe.visibility ?? PRIVATE,
+    videos: recipe.videos ?? [],
   };
 }
 

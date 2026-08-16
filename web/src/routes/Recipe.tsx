@@ -8,7 +8,7 @@ import { RecipeMarkdown } from "../components/RecipeMarkdown";
 import { ConfirmDialog } from "../components/Modal";
 import { formatTime, scaleAmount } from "../lib/amount";
 import { stripMentions } from "../lib/mentions";
-import { ChefHat, Clock, Link as LinkIcon, Sparkles, Users } from "lucide-react";
+import { ChefHat, Clock, Link as LinkIcon, Sparkles, Users, Video } from "lucide-react";
 import {
   countMatched,
   matchIngredient,
@@ -424,6 +424,28 @@ export default function Recipe() {
           {/* stripMentions: @onion is editor syntax, not something to read
               while cooking. */}
           <RecipeMarkdown>{stripMentions(recipe.description)}</RecipeMarkdown>
+
+          {recipe.videos && recipe.videos.length > 0 && (
+            <div className="mt-10 border-t border-hairline pt-6">
+              <p className="label mb-3">Videos</p>
+              <ul className="space-y-2">
+                {recipe.videos.map((url) => (
+                  <li key={url}>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="inline-flex items-center gap-1.5 text-sm underline underline-offset-2
+                                 transition hover:text-accent"
+                    >
+                      <Video size={14} />
+                      {sourceLabel(url)}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </article>

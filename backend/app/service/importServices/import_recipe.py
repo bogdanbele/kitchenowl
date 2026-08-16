@@ -31,6 +31,8 @@ def importRecipe(household_id: int, args: dict, overwrite: bool = False):
         recipe.yields = args["yields"]
     if "source" in args:
         recipe.source = args["source"]
+    if "videos" in args:
+        recipe.videos = "\n".join(v.strip() for v in args["videos"] if v.strip()) or None
     if "photo" in args:
         recipe.photo = file_has_access_or_download(args["photo"])
 

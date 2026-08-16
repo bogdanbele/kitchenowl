@@ -25,6 +25,14 @@ recipe = Blueprint("recipe", __name__)
 recipeHousehold = Blueprint("recipe", __name__)
 
 
+def joinVideos(urls: list) -> str | None:
+    """Recipe.videos as the column stores it: see joinSubstitutes below."""
+    if not isinstance(urls, list):
+        return None
+    cleaned = [str(url).strip() for url in urls]
+    return "\n".join([url for url in cleaned if url]) or None
+
+
 def joinSubstitutes(recipeItem: dict) -> str | None:
     """The substitutes list as the column stores it.
 
@@ -117,6 +125,8 @@ def addRecipe(args, household_id):
                 sourceRecipe.save()
     if "visibility" in args:
         recipe.visibility = RecipeVisibility(args["visibility"])
+    if "videos" in args:
+        recipe.videos = joinVideos(args["videos"])
     if "photo" in args and args["photo"] != recipe.photo:
         recipe.photo = file_has_access_or_download(args["photo"], recipe.photo)
     if "server_curated" in args and current_user.admin:
@@ -172,6 +182,8 @@ def updateRecipe(args, id):  # noqa: C901
         recipe.source = args["source"]
     if "visibility" in args:
         recipe.visibility = RecipeVisibility(args["visibility"])
+    if "videos" in args:
+        recipe.videos = joinVideos(args["videos"])
     if "photo" in args and args["photo"] != recipe.photo:
         recipe.photo = file_has_access_or_download(args["photo"], recipe.photo)
     if "server_curated" in args and current_user.admin:

@@ -162,5 +162,6 @@ export function toDraftFromExtraction(recipe: ExtractedRecipe, model: string): D
     // remember to set either after reading what came back.
     tags: ["AI-written"],
     visibility: PRIVATE,
+    videos: [],
   };
 }
