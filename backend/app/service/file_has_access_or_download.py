@@ -37,8 +37,25 @@ def file_has_access_or_download(
     if newPhoto is not None and "/" in newPhoto:
         from mimetypes import guess_extension
 
-        resp = request_manager.send_request("GET", newPhoto)
-        ext = guess_extension(resp.headers["content-type"])
+        # Say who is asking. Wikimedia refuses anonymous scripted requests with
+        # a 403 and 126 bytes of plain text, which then fails the extension
+        # check and surfaces as "that address does not work". Their policy is
+        # right: a server fetching files on someone's behalf should be
+        # identifiable.
+        resp = request_manager.send_request(
+            "GET",
+            newPhoto,
+            headers={
+                "User-Agent": (
+                    "KitchenOwl/1.0 (self-hosted recipe manager; "
+                    "+https://github.com/TomBursch/kitchenowl)"
+                ),
+                "Accept": "image/*",
+            },
+        )
+        # "image/jpeg; charset=utf-8" is not a mimetype guess_extension knows.
+        content_type = (resp.headers.get("content-type") or "").split(";")[0].strip()
+        ext = guess_extension(content_type)
         if ext and allowed_file("file" + ext):
             filename = secure_filename(str(uuid.uuid4()) + ext)
             with open(os.path.join(UPLOAD_FOLDER, filename), "wb") as o:

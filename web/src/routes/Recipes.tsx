@@ -23,43 +23,59 @@ function RecipeCard({
 }) {
   const time = formatTime(recipe.time);
 
-  // A tinted initial rather than a broken-image icon: most hand-typed recipes
-  // have no photo, and the row should still hold its shape.
+  // A tinted initial rather than a broken-image icon: a hand-typed recipe with
+  // no picture still has to hold the card's shape.
   const placeholder = (
-    <div className="gradient-surface grid size-20 shrink-0 place-items-center rounded-card opacity-90">
-      <span className="font-display text-xl text-white/90">{recipe.name.charAt(0)}</span>
+    <div className="gradient-surface grid h-full w-full place-items-center">
+      <span className="font-display text-4xl text-white/90">{recipe.name.charAt(0)}</span>
     </div>
   );
 
   return (
     <Link
       to={`/household/${householdId}/recipes/${recipe.id}`}
-      className="group block border-b border-hairline py-5 transition hover:border-accent"
+      className="group block overflow-hidden rounded-2xl border border-hairline bg-paper-deep
+                 transition hover:border-accent"
     >
-      <div className="flex items-start gap-5">
+      {/* The picture leads. A recipe is chosen by looking, and a list of names
+          with 80px thumbnails asks you to read where you would rather look —
+          which is the whole point of finding a photo for every one of them. */}
+      <div className="aspect-[16/10] w-full overflow-hidden">
         <Photo
           photo={recipe.photo}
-          className="size-20 shrink-0 rounded-card object-cover"
+          className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
           fallback={placeholder}
         />
+      </div>
 
-        <div className="min-w-0 flex-1">
-          <h2 className="font-display text-xl leading-tight font-semibold transition group-hover:text-accent">
-            {recipe.name}
-          </h2>
-          <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1">
-            {time && <span className="font-mono text-[11px] text-muted">{time}</span>}
-            {recipe.yields > 0 && (
-              <span className="font-mono text-[11px] text-muted">serves {recipe.yields}</span>
-            )}
-            {recipe.tags?.slice(0, 3).map((tag) => (
-              <span key={tag.id} className="label">
-                {tag.name}
-              </span>
-            ))}
-          </div>
-          {footer}
+      <div className="p-4">
+        <h2 className="font-display text-lg leading-tight font-semibold transition group-hover:text-accent">
+          {recipe.name}
+        </h2>
+
+        <div className="mt-2 flex flex-wrap items-center gap-1.5">
+          {time && (
+            <span className="rounded-full bg-paper px-2 py-0.5 font-mono text-[11px] text-muted">
+              {time}
+            </span>
+          )}
+          {recipe.yields > 0 && (
+            <span className="rounded-full bg-paper px-2 py-0.5 font-mono text-[11px] text-muted">
+              serves {recipe.yields}
+            </span>
+          )}
+          {/* Two tags, not five: the rest are for the filter above, and a card
+              wearing every label it owns stops being scannable. */}
+          {recipe.tags?.slice(0, 2).map((tag) => (
+            <span
+              key={tag.id}
+              className="rounded-full bg-accent-soft px-2 py-0.5 text-[11px] text-accent"
+            >
+              {tag.name}
+            </span>
+          ))}
         </div>
+        {footer}
       </div>
     </Link>
   );
@@ -218,7 +234,7 @@ export default function Recipes() {
   );
 
   return (
-    <div className="mx-auto max-w-3xl">
+    <div className="mx-auto max-w-5xl">
       {review}
       <div className="flex items-end justify-between">
         <div>
@@ -332,7 +348,7 @@ export default function Recipes() {
             what is on it and what you bought recently.
           </p>
         ) : (
-          <div>
+          <div className="grid gap-4 sm:grid-cols-2">
             {ranked.map(({ recipe, missing, readiness }) => (
               <RecipeCard
                 key={recipe.id}
@@ -371,7 +387,7 @@ export default function Recipes() {
           {query ? `Nothing matching “${query}”.` : "No recipes yet."}
         </p>
       ) : (
-        <div>
+        <div className="grid gap-4 sm:grid-cols-2">
           {visible.map((recipe) => (
             <RecipeCard key={recipe.id} recipe={recipe} householdId={householdId} />
           ))}
