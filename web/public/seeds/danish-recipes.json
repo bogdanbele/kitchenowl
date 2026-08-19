@@ -1,0 +1,2819 @@
+{
+  "note": "The 50 recipes Danish home cooking actually runs on, added to the household by Claude. Every recipe carries source ai://claude-fable-5 and the tag 'AI-written', because the app shows a badge for recipes a model wrote rather than a person cooked. Quantities are household-scale and follow the common versions; adjust to taste.",
+  "recipes": [
+    {
+      "name": "Frikadeller",
+      "yields": 4,
+      "prep_time": 20,
+      "cook_time": 25,
+      "time": 60,
+      "tags": [
+        "Danish",
+        "Main",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork mince",
+          "description": "500 g, not too lean — or half pork, half veal"
+        },
+        {
+          "name": "Onion",
+          "description": "1, finely grated"
+        },
+        {
+          "name": "Eggs",
+          "description": "1"
+        },
+        {
+          "name": "Plain flour",
+          "description": "3 tbsp (rolled oats in some families)"
+        },
+        {
+          "name": "Milk",
+          "description": "150 ml, cold"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1/2 tsp"
+        },
+        {
+          "name": "Butter",
+          "description": "25 g, for frying"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "2 tbsp, for frying"
+        },
+        {
+          "name": "Potatoes",
+          "description": "800 g, boiled, to serve",
+          "optional": true
+        },
+        {
+          "name": "Pickled red cabbage",
+          "description": "1 jar (rødkål), to serve",
+          "optional": true
+        }
+      ],
+      "description": "Every Danish family owns a frikadelle recipe and quietly considers all the others slightly wrong. What everyone agrees on: the farce is soft, the shape comes off a spoon, and a dense frikadelle is a failed frikadelle.\n\n## 1. Make the farce\n\n1. Stir the pork mince with the salt for a full minute until it turns sticky — this, not the egg, is what holds the frikadeller together.\n2. Add the grated onion, egg, flour and pepper, then work in the milk a splash at a time. The farce should be soft to the point of worrying you; a firm farce fries into rubber.\n3. Grandmothers stir in one direction only. The physics is doubtful, the results are not.\n\n## 2. Rest\n\n1. Rest the farce 15 minutes in the fridge so the flour swells and the shaping gets easier.\n\n## 3. Shape and fry\n\n1. Heat the butter and oil in a wide pan over medium heat until the foam subsides.\n2. Dip a tablespoon in the hot fat, scoop an egg-sized ball of farce and shape it against the side of the bowl into a plump oval, then lay it in the pan. Dip the spoon back in the fat between each one and nothing will stick.\n3. Fry 6-7 minutes per side to a deep even brown, in two batches rather than one crowd.\n4. The tilt test: tip one onto its edge and press gently with the spoon. Clear juice means done; pink means patience; no juice at all means you have already overshot.\n\n## 4. Serve\n\n1. Boiled potatoes, brun sovs and pickled red cabbage is the full Sunday rig.\n2. Save a few back — cold frikadeller on rye bread the next day are arguably the whole point."
+    },
+    {
+      "name": "Stegt flæsk med persillesovs",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 45,
+      "time": 60,
+      "tags": [
+        "Danish",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork belly",
+          "description": "800 g in 1 cm slices, rind on (stegeflæsk — ask the butcher to slice it)"
+        },
+        {
+          "name": "Potatoes",
+          "description": "1 kg, peeled"
+        },
+        {
+          "name": "Butter",
+          "description": "40 g"
+        },
+        {
+          "name": "Plain flour",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Milk",
+          "description": "500 ml"
+        },
+        {
+          "name": "Parsley",
+          "description": "75 g, about two large bunches, finely chopped"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Black pepper",
+          "description": "to taste"
+        }
+      ],
+      "description": "In 2014 a public vote crowned this Denmark's national dish, and it is easy to see what the country was voting for: crisp slices of pork belly, plain boiled potatoes, and a white sauce carrying an indecent amount of parsley. The pork must snap — bendy flæsk loses elections.\n\n## 1. Crisp the pork\n\n1. Heat the oven to 200°C. Lay the slices in one layer on a rack set over a deep tray and salt them on both sides.\n2. Roast 35-40 minutes, turning once halfway, until deep gold and blistered. The frying-pan method exists, but it spits at you and demands constant turning; the oven is the reliable lane.\n3. Test a slice: it should snap like crispbread, not fold. If it folds, give the batch 5 more minutes.\n\n## 2. Boil the potatoes\n\n1. Simmer the potatoes in salted water 18-20 minutes until a knife slides through, then drain and let them steam dry.\n\n## 3. Make the parsley sauce\n\n1. Melt the butter, stir in the flour and cook 2 minutes without letting it colour.\n2. Whisk in the milk a little at a time and simmer 5 minutes until it coats a spoon. Season with salt and pepper.\n3. Off the heat, stir in all the parsley — yes, all of it. The sauce should be green flecked with white, not the other way round.\n\n## 4. Serve\n\n1. Potatoes on the plate, sauce over the potatoes, pork stacked alongside — never under the sauce, or you lose the crispness you just spent 40 minutes on."
+    },
+    {
+      "name": "Flæskesteg med sprød svær",
+      "yields": 6,
+      "prep_time": 20,
+      "cook_time": 100,
+      "time": 135,
+      "tags": [
+        "Danish",
+        "Main",
+        "Gluten-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork loin",
+          "description": "1.5 kg boneless, rind on, scored at 5 mm intervals (flæskesteg)"
+        },
+        {
+          "name": "Salt",
+          "description": "2 tbsp, coarse"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "10"
+        },
+        {
+          "name": "Cloves",
+          "description": "8, whole",
+          "optional": true
+        },
+        {
+          "name": "Water",
+          "description": "500 ml, for the tray"
+        },
+        {
+          "name": "Potatoes",
+          "description": "1 kg, small"
+        },
+        {
+          "name": "Sugar",
+          "description": "100 g"
+        },
+        {
+          "name": "Butter",
+          "description": "50 g"
+        },
+        {
+          "name": "Pickled red cabbage",
+          "description": "1 jar (rødkål), warmed, to serve",
+          "optional": true
+        }
+      ],
+      "description": "This is Christmas Eve dinner in most Danish homes, and the crackling is a national anxiety: guests will forgive dry meat long before they forgive soft svær. The method is score, salt, level — and know the rescue move for the final minutes.\n\n## 1. Score and salt\n\n1. Check the scoring: cuts every 5 mm, down into the fat but never into the meat. Deepen any shallow ones with a sharp knife.\n2. Dry the rind thoroughly, then push the coarse salt down into every cut with your fingers — between the strips, not just scattered on top. Tuck the bay leaves, and the cloves if using, into the cuts.\n\n## 2. Level the roast\n\n1. Set the pork on a rack over a deep tray and pour the water into the tray.\n2. The rind must sit dead level, or the fat pools at one end and half the crackling stays soft — wedge crumpled balls of foil under the low side until the surface is flat.\n\n## 3. Roast\n\n1. Roast at 200°C for about 1 hour 20 minutes, until the centre reads 65-68°C. Top up the tray with water if it runs dry.\n\n## 4. Rescue the crackling\n\n1. If the rind has not blistered end to end, switch the oven to the grill on high and watch through the glass without blinking — it goes from pale to burnt in under a minute, and every Dane has kept this exact vigil on the 24th of December.\n2. Turn the tray as patches puff up, and pull it the moment the whole surface is bubbled.\n\n## 5. Brown the potatoes while it rests\n\n1. Rest the roast 20 minutes, uncovered — covering it steams the svær soft, which is the one unforgivable move.\n2. Meanwhile boil the small potatoes about 15 minutes until just tender, then peel them and let them dry.\n3. Melt the sugar in a dry pan to a quiet amber, add the butter, then the potatoes, and roll them 8-10 minutes until glazed and golden all over.\n\n## 6. Serve\n\n1. Slice between the cuts so every piece wears its own strip of crackling. Warm rødkål alongside, the brunede kartofler, and the skimmed tray juices as gravy."
+    },
+    {
+      "name": "Brændende kærlighed",
+      "yields": 4,
+      "prep_time": 20,
+      "cook_time": 30,
+      "time": 50,
+      "tags": [
+        "Danish",
+        "Main",
+        "Gluten-free",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Potatoes",
+          "description": "1.2 kg, floury"
+        },
+        {
+          "name": "Milk",
+          "description": "150 ml, warm"
+        },
+        {
+          "name": "Butter",
+          "description": "75 g"
+        },
+        {
+          "name": "Bacon",
+          "description": "300 g smoked, diced"
+        },
+        {
+          "name": "Onion",
+          "description": "3, halved and sliced"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Black pepper",
+          "description": "to taste"
+        },
+        {
+          "name": "Nutmeg",
+          "description": "a grating",
+          "optional": true
+        },
+        {
+          "name": "Pickled beetroot",
+          "description": "1 jar, to serve",
+          "optional": true
+        },
+        {
+          "name": "Chives",
+          "description": "snipped, to finish",
+          "optional": true
+        }
+      ],
+      "description": "The name means 'burning love' and no Dane can tell you why, which has never stopped anyone. It is mashed potato made properly — no shortcuts, no packet — crowned with crisp bacon and golden onions, with pickled beetroot standing by to cut through it all.\n\n## 1. Boil the potatoes\n\n1. Peel, cut into even chunks and start in cold salted water. Simmer 18-20 minutes until a knife meets no resistance.\n\n## 2. Fry the bacon and onions\n\n1. Start the bacon in a cold, dry pan and bring it up to medium heat so the fat renders; fry until crisp, 8-10 minutes, then lift it out.\n2. Slide the onions into the bacon fat and cook over medium heat about 10 minutes until golden and soft at the edges, then return the bacon. Keep every drop of fat — that fat is the sauce.\n\n## 3. Mash — no shortcuts\n\n1. Drain the potatoes and put them back over low heat for a minute to steam dry. A watery mash is where burning love goes to die.\n2. Mash with the butter first, then beat in the warm milk. Season with salt, pepper and a grating of nutmeg. No food processor, ever — it makes wallpaper paste.\n\n## 4. Crown it\n\n1. Pile the mash in a mound, press a shallow crater into the top, and spoon in the bacon, the onions and all their fat.\n2. Scatter with chives and put the pickled beetroot on the table. The sharpness is not a garnish; it is the counterweight."
+    },
+    {
+      "name": "Boller i karry",
+      "yields": 4,
+      "prep_time": 25,
+      "cook_time": 30,
+      "time": 70,
+      "tags": [
+        "Danish",
+        "Main",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork mince",
+          "description": "500 g"
+        },
+        {
+          "name": "Onion",
+          "description": "2 — one grated, one finely chopped"
+        },
+        {
+          "name": "Eggs",
+          "description": "1"
+        },
+        {
+          "name": "Plain flour",
+          "description": "4 tbsp, split"
+        },
+        {
+          "name": "Milk",
+          "description": "100 ml"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tsp, plus for the pot"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1/2 tsp"
+        },
+        {
+          "name": "Water",
+          "description": "about 1 L, for poaching — it becomes the sauce"
+        },
+        {
+          "name": "Butter",
+          "description": "40 g"
+        },
+        {
+          "name": "Curry powder",
+          "description": "2 tbsp, mild"
+        },
+        {
+          "name": "Apples",
+          "description": "1 tart apple, peeled and finely diced"
+        },
+        {
+          "name": "Double cream",
+          "description": "100 ml"
+        },
+        {
+          "name": "Rice",
+          "description": "300 g, long-grain"
+        }
+      ],
+      "description": "A 1960s home-economics classic that never left the weekly rotation: pale pork meatballs poached gently, then coated in a mild yellow curry sauce and served over rice. It is nobody's idea of Indian food and every Danish child's idea of a good Tuesday.\n\n## 1. Make the farce\n\n1. Stir the mince with the salt until sticky, then mix in the grated onion, the egg, 2 tbsp of the flour and the pepper. Work in the milk a little at a time until the farce is soft.\n2. Rest it in the fridge 15 minutes.\n\n## 2. Poach — and keep the water\n\n1. Bring the water to a bare simmer in a wide pot with a good pinch of salt.\n2. Shape walnut-sized balls with two spoons or wet hands and lower them in. Poach 8-10 minutes below a boil until they float and feel springy.\n3. Lift the boller out and do not pour the water away — it becomes the sauce, and that is the whole trick of the dish.\n\n## 3. Build the sauce\n\n1. Melt the butter in the same rinsed pot and soften the chopped onion and the apple for 5 minutes.\n2. Add the curry powder and let it bloom in the butter for a full minute — raw curry powder tastes of dust, and this minute is where the sauce is decided.\n3. Stir in the remaining 2 tbsp flour, then whisk in about 400 ml of the poaching liquid. Simmer 5 minutes, add the cream and season. The apple should be collapsing into the sauce; many homes insist on it, and they are right.\n\n## 4. Combine and serve\n\n1. Boil the rice in salted water while the sauce simmers.\n2. Return the boller to the sauce for 5 gentle minutes, then serve over the rice."
+    },
+    {
+      "name": "Millionbøf",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 30,
+      "time": 45,
+      "tags": [
+        "Danish",
+        "Main",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Beef mince",
+          "description": "500 g"
+        },
+        {
+          "name": "Onion",
+          "description": "2, finely chopped"
+        },
+        {
+          "name": "Butter",
+          "description": "75 g — 25 g for the pan, the rest for the mash"
+        },
+        {
+          "name": "Plain flour",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Beef stock",
+          "description": "400 ml"
+        },
+        {
+          "name": "Gravy browning",
+          "description": "a few drops (kulør)",
+          "optional": true
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Black pepper",
+          "description": "to taste"
+        },
+        {
+          "name": "Potatoes",
+          "description": "1 kg, floury"
+        },
+        {
+          "name": "Milk",
+          "description": "150 ml, warm"
+        }
+      ],
+      "description": "The name promises a million tiny steaks, and that is the joke — it is one pan of minced beef in brown gravy, ladled over mash, and every Dane grew up on it. Weeknight food with no pretensions and, usually, no leftovers.\n\n## 1. Brown the million steaks\n\n1. Melt 25 g of the butter over high heat, add the mince in one layer and leave it alone until it is properly browned underneath before you break it up. Grey mince makes grey gravy.\n2. Add the onion and soften 5 minutes. Season with salt and plenty of pepper.\n\n## 2. Make the gravy\n\n1. Dust the flour over and stir for a minute, then add the stock gradually and simmer 15 minutes to a loose gravy.\n2. Now the confession every Danish cook makes: the colour comes from a bottle. A few drops of kulør take it from beige to the mahogany it is supposed to be, and there is no shame in it — every kitchen in the country owns that bottle.\n3. Taste and season again; mince gravy drinks salt.\n\n## 3. Mash\n\n1. Boil the potatoes 18-20 minutes, drain, let them steam dry, and mash with the remaining butter and the warm milk. Salt it properly.\n\n## 4. Serve\n\n1. Gravy over mash, nothing green required. In many homes it goes over pasta instead, and the children consider that the superior lane."
+    },
+    {
+      "name": "Hakkebøf med bløde løg",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 45,
+      "time": 60,
+      "tags": [
+        "Danish",
+        "Main",
+        "Gluten-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Onion",
+          "description": "5 large, halved and thinly sliced"
+        },
+        {
+          "name": "Butter",
+          "description": "50 g, split"
+        },
+        {
+          "name": "Beef mince",
+          "description": "600 g, not too lean"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Black pepper",
+          "description": "to taste"
+        },
+        {
+          "name": "Potatoes",
+          "description": "800 g, peeled"
+        },
+        {
+          "name": "Beef stock",
+          "description": "200 ml (water at a pinch)"
+        },
+        {
+          "name": "Pickled beetroot",
+          "description": "1 jar, to serve",
+          "optional": true
+        }
+      ],
+      "description": "The recipe is hiding in the name: bløde løg, soft onions, and they take longer than everything else on the plate put together. Start them first, keep the heat low, and the rest — a seasoned beef patty and a pan of thin sky — more or less makes itself.\n\n## 1. Start the onions — they are the recipe\n\n1. Melt half the butter in a wide pan over low heat, add all the onions with a pinch of salt, and cook 35-40 minutes, stirring now and then, until golden, sweet and collapsing.\n2. If they brown at the edges before they soften, the heat is too high. Crisp onions belong on a hotdog, not a hakkebøf.\n\n## 2. Boil the potatoes\n\n1. Simmer the potatoes in salted water 18-20 minutes and keep them warm.\n\n## 3. Fry the bøffer\n\n1. Shape the mince into 4 loose patties about 2 cm thick, handling them as little as possible, and season the outsides generously with salt and pepper.\n2. Scrape the onions out into a bowl, raise the heat, add the remaining butter and fry the patties 3-4 minutes per side — a real brown crust, just cooked through.\n\n## 4. Make the sky\n\n1. Set the patties aside to rest. Pour the stock into the hot pan, scrape up every browned bit, let it bubble 2 minutes and season.\n2. Sky is thin by design — it is pan juice, not gravy. Do not thicken it.\n\n## 5. Serve\n\n1. Patty on the plate, onions piled on top, sky over the potatoes, pickled beetroot alongside. The beetroot is doing structural work; skip it and the plate goes flat."
+    },
+    {
+      "name": "Krebinetter",
+      "yields": 4,
+      "prep_time": 25,
+      "cook_time": 30,
+      "time": 65,
+      "tags": [
+        "Danish",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork mince",
+          "description": "600 g, coarsely minced if the butcher offers it"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tsp, plus for the vegetables"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1/2 tsp"
+        },
+        {
+          "name": "Plain flour",
+          "description": "4 tbsp — half for breading, half for the sauce"
+        },
+        {
+          "name": "Eggs",
+          "description": "2, beaten"
+        },
+        {
+          "name": "Breadcrumbs",
+          "description": "100 g, dried"
+        },
+        {
+          "name": "Butter",
+          "description": "75 g — 25 g for the sauce, 50 g for frying"
+        },
+        {
+          "name": "Carrots",
+          "description": "400 g, in small dice"
+        },
+        {
+          "name": "Peas",
+          "description": "300 g, frozen"
+        },
+        {
+          "name": "Milk",
+          "description": "300 ml"
+        },
+        {
+          "name": "Sugar",
+          "description": "a pinch, for the vegetables",
+          "optional": true
+        },
+        {
+          "name": "Nutmeg",
+          "description": "a grating",
+          "optional": true
+        }
+      ],
+      "description": "A krebinet is a pork patty sent through the full breading line — flour, egg, breadcrumbs — and fried in butter until the crust crackles. Its partner is non-negotiable: peas and carrots stewed in white sauce, and Danes who tell you the stuvning is half the dish are underselling it.\n\n## 1. Shape\n\n1. Season the mince with the salt and pepper, mix briefly, and shape 4 thick oval patties about 2 cm high. Handle them lightly — a krebinet is not a frikadelle, and working the mince sticky makes them dense.\n\n## 2. Run the breading line\n\n1. Set out three plates: 2 tbsp of the flour, the beaten eggs, the breadcrumbs. Keep one hand for wet and one for dry, or you end up breading your own fingers.\n2. Flour each patty and shake off the excess, drag it through the egg, then press it firmly into the crumbs. Rest the patties 10 minutes so the coating sets.\n\n## 3. Stew the peas and carrots — half the dish\n\n1. Simmer the diced carrots in a little salted water 8-10 minutes until just tender. Drain, keeping a cup of the cooking water.\n2. Melt 25 g of the butter, stir in the remaining 2 tbsp flour, cook a minute, then whisk in the milk and a splash of the carrot water. Simmer to the thickness of double cream.\n3. Add the carrots and the peas, warm through 3 minutes, and season with salt, the pinch of sugar and a grating of nutmeg. It should fall lazily off the spoon, not stand to attention.\n\n## 4. Fry\n\n1. Melt the remaining 50 g butter over medium heat and fry the krebinetter 6-7 minutes per side until deep golden and cooked through — the juices at the centre must run clear. Too high a flame burns the crumb before the pork is done.\n\n## 5. Serve\n\n1. A krebinet, a generous ladle of stuvede ærter og gulerødder over or beside it, and boiled potatoes if appetites demand. The soft sauce against the crisp crumb is the entire argument."
+    },
+    {
+      "name": "Mørbradbøf med champignonsovs",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 35,
+      "time": 55,
+      "tags": [
+        "Danish",
+        "Main",
+        "Gluten-free",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork tenderloin",
+          "description": "600 g, trimmed of silverskin"
+        },
+        {
+          "name": "Butter",
+          "description": "40 g"
+        },
+        {
+          "name": "Mushrooms",
+          "description": "400 g, quartered"
+        },
+        {
+          "name": "Onion",
+          "description": "1, finely chopped"
+        },
+        {
+          "name": "Chicken stock",
+          "description": "150 ml"
+        },
+        {
+          "name": "Double cream",
+          "description": "250 ml"
+        },
+        {
+          "name": "Paprika",
+          "description": "1 tsp",
+          "optional": true
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Black pepper",
+          "description": "to taste"
+        },
+        {
+          "name": "Potatoes",
+          "description": "800 g, to boil"
+        },
+        {
+          "name": "Parsley",
+          "description": "chopped, to finish",
+          "optional": true
+        }
+      ],
+      "description": "Pork tenderloin medallions in mushroom cream sauce: the dish Danish in-laws serve on Sundays when they have decided they like you. The whole recipe happens in one pan — brown hard, rest the meat, and build the sauce on what it left behind.\n\n## 1. Brown hard\n\n1. Cut the tenderloin into medallions 3-4 cm thick. Dry them well with paper — wet meat steams instead of browning — and season with salt and pepper.\n2. Get the butter properly hot and brown the medallions 2 minutes per side to a real crust, still underdone inside. Set them on a plate to rest and keep every drop of juice they release.\n\n## 2. Build the sauce in the same pan\n\n1. Do not wash the pan — the browned glaze on the bottom is the backbone of the sauce.\n2. Fry the mushrooms in the remaining fat over high heat 5-6 minutes until they have shed their water and taken colour, then add the onion for 2 more.\n3. Pour in the stock and scrape the bottom clean, reduce by half, then add the cream and the paprika, if using. Simmer 5-8 minutes until it coats a spoon. Boil the potatoes in salted water while it simmers.\n\n## 3. Return and finish gently\n\n1. Slide the medallions and all their resting juices back in and warm 4-5 minutes at a bare simmer — boiling now turns them to leather. A faint blush of pink at the centre is right, not wrong.\n2. Taste and season.\n\n## 4. Serve\n\n1. Medallions, plenty of sauce, the boiled potatoes, parsley over the top. Sunday achieved."
+    },
+    {
+      "name": "Medisterpølse",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 35,
+      "time": 50,
+      "tags": [
+        "Danish",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Fresh pork sausage",
+          "description": "800 g in one coil (medisterpølse), from a proper butcher"
+        },
+        {
+          "name": "Butter",
+          "description": "50 g, split"
+        },
+        {
+          "name": "Potatoes",
+          "description": "800 g, waxy"
+        },
+        {
+          "name": "Plain flour",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Milk",
+          "description": "400 ml"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Black pepper",
+          "description": "to taste"
+        },
+        {
+          "name": "Nutmeg",
+          "description": "a grating",
+          "optional": true
+        },
+        {
+          "name": "Parsley",
+          "description": "2 tbsp, chopped",
+          "optional": true
+        },
+        {
+          "name": "Mustard",
+          "description": "a sharp one, to serve",
+          "optional": true
+        }
+      ],
+      "description": "Medisterpølse is only as good as the butcher who stuffed it, so buy the coil from a proper one — fresh, pale and made that morning. Denmark is divided on whether to prick the skin before cooking; this recipe does not, and controls the heat instead so the juice stays where it belongs.\n\n## 1. Poach the coil\n\n1. Lay the coil in a wide pan, cover with cold water and bring to a bare simmer for 8-10 minutes. Never let it boil — bursting skins are what started the pricking debate, and gentle heat settles it without holes.\n2. Lift it out and pat it dry.\n\n## 2. Brown in butter\n\n1. Melt 25 g of the butter over medium heat and brown the sausage 12-15 minutes, turning carefully with two spatulas — or cut it into four lengths first if the coil fights you.\n2. It is done when mahogany all round and firm to a gentle squeeze.\n\n## 3. Stew the potatoes\n\n1. Boil the potatoes until tender, drain, and cut into bite-sized pieces.\n2. Melt the remaining butter, stir in the flour, cook a minute, then whisk in the milk and simmer to the thickness of double cream. Season with salt, pepper and a grating of nutmeg.\n3. Fold in the potatoes and the parsley and warm through — stuvede kartofler should slump on the plate, not sit to attention.\n\n## 4. Serve\n\n1. Thick slices of medister, the stewed potatoes alongside, and a sharp mustard on the table.\n2. Nearer Christmas, warm rødkål takes the potatoes' place and nobody complains."
+    },
+    {
+      "name": "Forloren hare",
+      "yields": 6,
+      "prep_time": 25,
+      "cook_time": 80,
+      "time": 115,
+      "tags": [
+        "Danish",
+        "Main",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork mince",
+          "description": "400 g, not too lean"
+        },
+        {
+          "name": "Beef mince",
+          "description": "400 g (or minced veal)"
+        },
+        {
+          "name": "Eggs",
+          "description": "2"
+        },
+        {
+          "name": "Plain flour",
+          "description": "3 tbsp for the farce, 2 tbsp for the gravy"
+        },
+        {
+          "name": "Milk",
+          "description": "100 ml"
+        },
+        {
+          "name": "Onion",
+          "description": "1, finely grated"
+        },
+        {
+          "name": "Salt",
+          "description": "1.5 tsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Bacon",
+          "description": "200 g streaky rashers"
+        },
+        {
+          "name": "Beef stock",
+          "description": "300 ml"
+        },
+        {
+          "name": "Potatoes",
+          "description": "1.2 kg, to serve"
+        },
+        {
+          "name": "Double cream",
+          "description": "250 ml"
+        },
+        {
+          "name": "Redcurrant jelly",
+          "description": "1 tbsp for the gravy, plus more to serve"
+        },
+        {
+          "name": "Gravy browning",
+          "description": "a few drops (madkulør)",
+          "optional": true
+        }
+      ],
+      "description": "Forloren hare — mock hare — is a joke from leaner times: a bacon-wrapped meatloaf for households that could not get the real thing, and never missed it much. What survives is the point of it all, a cream gravy built on the pan juices and poured generously over boiled potatoes.\n\n## 1. Mix the farce\n\n1. Mix the pork and beef mince with the eggs, 3 tbsp of the flour, the milk and the grated onion. Season with the salt and pepper and work it only until it holds together — overworking makes it dense, and forloren hare should slice soft.\n2. Shape it into a fat, smooth loaf in a roasting dish, patting out any cracks.\n\n## 2. Wrap and roast\n\n1. Drape the bacon rashers over the loaf, slightly overlapping, tucking the ends underneath. The bacon is not decoration; it bastes the loaf while it roasts.\n2. Roast at 200°C for 15 minutes, then pour the stock around the loaf, turn down to 180°C and give it another hour, basting a couple of times. It is done when the juices run clear when you pierce the middle.\n3. While it roasts, peel the potatoes and boil them in salted water until tender.\n\n## 3. Build the gravy\n\n1. Move the loaf to a board and let it rest under foil for 10 minutes. Pour everything from the roasting dish into a saucepan and skim off the worst of the fat.\n2. Whisk the remaining 2 tbsp flour with a splash of cold water, whisk it into the juices and simmer until thickened, then add the cream and 1 tbsp of the redcurrant jelly.\n3. Add a few drops of gravy browning if you have it — no Danish gravy is fully trusted until it is the right shade of brown. Season and taste.\n\n## 4. Slice and serve\n\n1. Slice thickly and serve with the boiled potatoes, plenty of gravy, and a spoonful of redcurrant jelly on the side of every plate."
+    },
+    {
+      "name": "Skipperlabskovs",
+      "yields": 6,
+      "prep_time": 25,
+      "cook_time": 95,
+      "time": 120,
+      "tags": [
+        "Danish",
+        "Main",
+        "One pot",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Braising beef",
+          "description": "800 g chuck or brisket, in 2 cm cubes"
+        },
+        {
+          "name": "Onion",
+          "description": "3, chopped, plus 1 more in thin raw rings to serve"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "4"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "12, whole"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tsp, plus more to taste"
+        },
+        {
+          "name": "Water",
+          "description": "about 1 L, to barely cover"
+        },
+        {
+          "name": "Potatoes",
+          "description": "1.5 kg, floury"
+        },
+        {
+          "name": "Butter",
+          "description": "50 g, cold, to finish"
+        },
+        {
+          "name": "Chives",
+          "description": "1 small bunch, snipped"
+        },
+        {
+          "name": "Rye bread",
+          "description": "to serve (rugbrød)",
+          "optional": true
+        },
+        {
+          "name": "Pickled beetroot",
+          "description": "to serve",
+          "optional": true
+        }
+      ],
+      "description": "Labskovs sailed with the merchant fleet and came ashore as national comfort food: beef simmered with bay and peppercorns, then potatoes cooked into the broth until the pot is half stew, half mash. The texture is the whole argument — some potatoes must collapse to thicken it and some must hold, and if they all survive you have made soup.\n\n## 1. Simmer the beef\n\n1. Put the beef cubes in a heavy pot with the chopped onions, bay leaves, peppercorns and 1 tsp salt. Pour in water to barely cover.\n2. Bring to a boil, skim off the grey foam, then turn right down and simmer with the lid ajar for about an hour, until the beef gives when pressed.\n\n## 2. Add the potatoes — two sizes\n\n1. Peel the potatoes. Cut half into 1 cm cubes and half into 3 cm chunks. The small ones will dissolve and thicken the broth; the big ones will hold and give you something to chew. Cutting them all the same size is how labskovs goes wrong.\n2. Add them to the pot, top up with water only if the potatoes are not nearly covered, and simmer for 25-30 minutes, stirring now and then so the small cubes break down.\n\n## 3. Judge the texture\n\n1. Stir firmly. Finished labskovs should fall lazily off a spoon — thick, but nowhere near mash. Simmer uncovered a few minutes longer if it is too loose.\n2. Season properly with salt. The whole peppercorns stay in the pot by tradition, so warn the table or fish them out, whichever kind of host you are.\n\n## 4. Ladle and top\n\n1. Ladle into deep plates and set a cold knob of butter on top of each to melt in. Shower generously with chives.\n2. Serve with rye bread, the raw onion rings and pickled beetroot alongside — the beetroot cuts the richness and the onion wakes the whole thing up."
+    },
+    {
+      "name": "Biksemad",
+      "yields": 4,
+      "prep_time": 20,
+      "cook_time": 25,
+      "time": 45,
+      "tags": [
+        "Danish",
+        "Main",
+        "One pot",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Potatoes",
+          "description": "800 g, boiled and cooled — yesterday's are ideal"
+        },
+        {
+          "name": "Leftover roast meat",
+          "description": "400 g roast pork, beef or sausage, in 1 cm cubes"
+        },
+        {
+          "name": "Onion",
+          "description": "2"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Butter",
+          "description": "50 g"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Black pepper",
+          "description": "to taste"
+        },
+        {
+          "name": "Eggs",
+          "description": "4"
+        },
+        {
+          "name": "Pickled beetroot",
+          "description": "1 jar"
+        }
+      ],
+      "description": "Biksemad is Monday's answer to Sunday's roast, and the only leftovers dish Denmark put on café menus and never took off: cold potatoes, onion and yesterday's meat, fried properly brown, with a fried egg on top.\n\n## 1. Cube everything\n\n1. Cut the cold boiled potatoes, the meat and the onions into rough 1 cm dice. Keep the three piles separate, and keep them dry — wet potatoes steam instead of crusting.\n\n## 2. Fry in shifts, not in a heap\n\n1. Get a large pan properly hot with the oil and half the butter. Add the potatoes in one layer and leave them alone for 3-4 minutes before the first turn. The urge to stir is the enemy of the crust.\n2. When the potatoes are browned all over, after 10-12 minutes, tip them out onto a plate and fry the onion in the same pan until golden.\n3. Turn the heat back up, add the meat and fry until the edges catch and caramelise. Return the potatoes and onion, season with salt and pepper, and keep warm.\n\n## 3. Fry the eggs\n\n1. Wipe the pan, melt the rest of the butter and fry the eggs so the whites are set and the yolks still loose — the yolk is the sauce, so keep it that way.\n\n## 4. Plate up\n\n1. Pile the hash onto warm plates, slide an egg on top of each and put pickled beetroot beside it. The beetroot is not a suggestion — biksemad without it is just fried potatoes."
+    },
+    {
+      "name": "Æggekage",
+      "yields": 4,
+      "prep_time": 10,
+      "cook_time": 30,
+      "time": 40,
+      "tags": [
+        "Danish",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Bacon",
+          "description": "300 g thick-cut rashers"
+        },
+        {
+          "name": "Plain flour",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Milk",
+          "description": "150 ml"
+        },
+        {
+          "name": "Eggs",
+          "description": "8"
+        },
+        {
+          "name": "Salt",
+          "description": "0.5 tsp"
+        },
+        {
+          "name": "Tomatoes",
+          "description": "2, in wedges"
+        },
+        {
+          "name": "Chives",
+          "description": "1 bunch, snipped"
+        },
+        {
+          "name": "Rye bread",
+          "description": "to serve (rugbrød)",
+          "optional": true
+        },
+        {
+          "name": "Mustard",
+          "description": "to serve",
+          "optional": true
+        }
+      ],
+      "description": "Æggekage is Funen's great communal lunch: a thick egg cake set slowly in the pan, dressed with crisp bacon, tomato and chives, and eaten straight from the pan in the middle of the table, with rye bread and mustard.\n\n## 1. Crisp the bacon\n\n1. Lay the rashers in a cold frying pan and render them slowly over medium heat until properly crisp. Drain on paper and pour off all but a tablespoon of the fat, leaving that in the pan.\n\n## 2. Mix the batter\n\n1. Whisk the flour with a little of the milk to a smooth paste, so the batter stays lump-free.\n2. Whisk in the eggs, the rest of the milk and the salt.\n\n## 3. Set it slowly\n\n1. Warm the bacon fat over the lowest heat your hob will do and pour in the batter. Put a lid on.\n2. Leave it for 15-20 minutes. Once the edges begin to set, stirring is forbidden: an æggekage that has been stirred is just scrambled eggs with ambitions.\n3. It is done when the middle is set with only the faintest tremble left.\n\n## 4. Dress and carry it in\n\n1. Arrange the bacon on top, then the tomato wedges, then a heavy fall of chives.\n2. Put the pan in the middle of the table on a trivet, with rye bread and mustard beside it, and let everyone eat from their own side."
+    },
+    {
+      "name": "Andesteg",
+      "yields": 6,
+      "prep_time": 40,
+      "cook_time": 180,
+      "time": 250,
+      "tags": [
+        "Danish",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Whole duck",
+          "description": "1, about 3 kg"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Apples",
+          "description": "3 tart, quartered and cored"
+        },
+        {
+          "name": "Prunes",
+          "description": "150 g, stoned"
+        },
+        {
+          "name": "Chicken stock",
+          "description": "400 ml (or duck giblet stock)"
+        },
+        {
+          "name": "Potatoes",
+          "description": "1 kg small, even-sized, for brunede kartofler"
+        },
+        {
+          "name": "Sugar",
+          "description": "100 g"
+        },
+        {
+          "name": "Butter",
+          "description": "50 g"
+        },
+        {
+          "name": "Plain flour",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Double cream",
+          "description": "200 ml"
+        },
+        {
+          "name": "Gravy browning",
+          "description": "a few drops (madkulør)",
+          "optional": true
+        },
+        {
+          "name": "Pickled red cabbage",
+          "description": "1 jar (rødkål), to serve"
+        }
+      ],
+      "description": "On the evening of 24 December, a large share of Denmark is roasting this exact duck. Apples and prunes go into the bird, the bird goes low into the oven, and the drippings become the cream-finished brown sauce the whole dinner secretly revolves around.\n\n## 1. Stuff the bird\n\n1. Dry the duck inside and out, trim loose fat at the cavity, and season it generously all over and inside with the salt and pepper.\n2. Fill the cavity with the apple quarters and the prunes, and close it with a skewer or a few stitches of kitchen string.\n\n## 2. Roast low and slow\n\n1. Set the duck breast-up on a rack over a deep roasting tray and pour half the stock into the tray so the drippings do not burn.\n2. Roast at 160°C for about 3 hours, spooning the fat out of the tray once or twice as it collects — save it in a jar, it is worth keeping. The duck is done when the legs wobble loosely and the juices run clear.\n3. If the skin needs colour, finish at 220°C for 10 minutes. Then rest the bird under foil for a good 30 minutes so the juices settle back.\n\n## 3. Lacquer the potatoes\n\n1. While the duck roasts, boil the small potatoes until just tender, peel them and let them cool completely — warm potatoes fall apart in the caramel.\n2. Melt the sugar in a dry frying pan until it turns amber, add the butter, then the potatoes, and roll them patiently over low heat for 8-10 minutes until glazed all over. Rushing the caramel makes it bitter; there is no shortcut.\n\n## 4. Build the sauce\n\n1. Skim the fat from the tray juices, then pour the juices into a saucepan with the rest of the stock and boil for a few minutes.\n2. Whisk the flour with a splash of cold water, whisk it in and simmer until the sauce coats a spoon, then add the cream. A few drops of gravy browning bring it to the colour tradition expects. Season and taste — this sauce carries the meal.\n\n## 5. Carve and serve\n\n1. Carve the legs and breasts, spoon the apples and prunes out of the cavity, and serve with the rødkål warmed through in a small pan, the brunede kartofler and a jug of sauce. Leftovers are not a problem; they are the julefrokost."
+    },
+    {
+      "name": "Æbleflæsk",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 40,
+      "time": 55,
+      "tags": [
+        "Danish",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork belly",
+          "description": "600 g, in 0.5 cm slices (stribet flæsk)"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Onion",
+          "description": "1 large, sliced"
+        },
+        {
+          "name": "Apples",
+          "description": "1 kg tart cooking apples, cored, in thick wedges"
+        },
+        {
+          "name": "Sugar",
+          "description": "1-2 tbsp, to taste"
+        },
+        {
+          "name": "Black pepper",
+          "description": "to taste"
+        },
+        {
+          "name": "Rye bread",
+          "description": "8 slices (rugbrød)"
+        }
+      ],
+      "description": "Æbleflæsk is among the oldest dishes Denmark still eats — pork belly with apples and onion softened in the fat, sweet-sharp, on rye — and after half a century of being unfashionable it has earned its place back on the winter lunch table.\n\n## 1. Crisp the pork\n\n1. Pat the pork slices dry and salt them lightly. Lay them in a cold frying pan, set it over medium heat and fry, in batches if needed, until deep gold and crisp on both sides, 4-5 minutes a side.\n2. Drain on paper and pour off all but 3 tbsp of the fat. Do not wash the pan; the fat is the flavour base for everything that follows.\n\n## 2. Soften the apples and onion\n\n1. Fry the sliced onion in the pork fat until soft and lightly golden.\n2. Add the apple wedges and 1 tbsp of the sugar, put a lid on and let them soften over low heat for 10-12 minutes, turning gently once or twice.\n3. Stop while the apples still hold some shape and still bite back with a little acid — æbleflæsk is not apple sauce with pork on it. Taste before adding more sugar; the apples decide, not the recipe.\n4. Season with pepper and a little salt.\n\n## 3. Assemble\n\n1. Spoon the warm apples onto the rye bread and lay the crisp pork on top. Some houses fold the pork through instead; on top is the mainstream lane, and it keeps the crackle.\n2. Eat it warm — this is winter lunch food and it does not hold."
+    },
+    {
+      "name": "Fiskefrikadeller",
+      "yields": 4,
+      "prep_time": 25,
+      "cook_time": 20,
+      "time": 75,
+      "tags": [
+        "Danish",
+        "Main",
+        "Pescatarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Cod fillets",
+          "description": "600 g, skinless, bones out"
+        },
+        {
+          "name": "Salt",
+          "description": "1.5 tsp"
+        },
+        {
+          "name": "Eggs",
+          "description": "1"
+        },
+        {
+          "name": "Plain flour",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "0.5 tsp"
+        },
+        {
+          "name": "Onion",
+          "description": "1 small, finely grated"
+        },
+        {
+          "name": "Milk",
+          "description": "150 ml, cold"
+        },
+        {
+          "name": "Dill",
+          "description": "2 tbsp, chopped",
+          "optional": true
+        },
+        {
+          "name": "Butter",
+          "description": "75 g, for frying"
+        },
+        {
+          "name": "Remoulade",
+          "description": "a generous bowl, to serve"
+        },
+        {
+          "name": "Lemon",
+          "description": "1, in wedges, to serve",
+          "optional": true
+        },
+        {
+          "name": "Rye bread",
+          "description": "to serve (or boiled potatoes instead)",
+          "optional": true
+        }
+      ],
+      "description": "Fiskefrikadeller are the test of a Danish harbour café, and every local knows it. A soft cod farce, rested until it binds, fried in butter to a deep gold, and served with remoulade — always with remoulade.\n\n## 1. Make the farce\n\n1. Pat the cod dry, check it for bones and chop it — or pulse it in a food processor — to a coarse mince with the salt. Salt first is not fussiness; it is what makes the fish bind.\n2. Beat in the egg, flour, pepper and grated onion, then the cold milk a little at a time, until you have a soft farce that only just holds its shape on a spoon. It should feel slightly too loose; that is correct.\n3. Fold in the dill if you are using it.\n\n## 2. Rest the farce — not optional\n\n1. Cover and rest the farce in the fridge for 30 minutes. The flour swells and the salt finishes its binding work; skip this and the cakes fall apart in the pan.\n2. Fry a teaspoon of the mixture and taste it for salt. This is your only chance to correct it.\n\n## 3. Fry in butter\n\n1. Melt the butter over medium heat until it foams. Shape the farce into plump ovals between a spoon and a wet hand, and lay them in without crowding the pan.\n2. Fry for 4-5 minutes a side until deep gold, working in two batches. Turn them only once; they are fragile until the crust forms.\n\n## 4. Serve — with remoulade\n\n1. Serve hot, on rye bread or with plain boiled potatoes, with the lemon wedges and a proper spoonful of remoulade. The remoulade is not a garnish; it is half the dish."
+    },
+    {
+      "name": "Stegt rødspætte",
+      "yields": 4,
+      "prep_time": 25,
+      "cook_time": 30,
+      "time": 55,
+      "tags": [
+        "Danish",
+        "Main",
+        "Pescatarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Potatoes",
+          "description": "1 kg, peeled"
+        },
+        {
+          "name": "Butter",
+          "description": "125 g — 50 g for the sauce, 75 g for frying"
+        },
+        {
+          "name": "Plain flour",
+          "description": "50 g for coating, plus 2 tbsp for the sauce"
+        },
+        {
+          "name": "Milk",
+          "description": "400 ml"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Black pepper",
+          "description": "to taste"
+        },
+        {
+          "name": "Parsley",
+          "description": "1 bunch, finely chopped"
+        },
+        {
+          "name": "Plaice",
+          "description": "4 small whole, gutted and trimmed, or 8 fillets"
+        },
+        {
+          "name": "Eggs",
+          "description": "2, beaten"
+        },
+        {
+          "name": "Breadcrumbs",
+          "description": "100 g, fine"
+        },
+        {
+          "name": "Lemon",
+          "description": "1, in wedges",
+          "optional": true
+        }
+      ],
+      "description": "A thin flatfish in a breadcrumb crust, fried in proper butter: stegt rødspætte gives the cook nowhere to hide. The fish is thin, so the timing is short and the courage must be high heat — a timid pan gives you a crumb that drinks butter instead of crisping in it.\n\n## 1. Start with the potatoes and the sauce\n\n1. Boil the potatoes in salted water until tender and keep them warm; the fish will not wait for them later.\n2. Make the persillesovs: melt 50 g of the butter, stir in 2 tbsp of the flour and cook it for a minute, then whisk in the milk gradually and simmer for 5 minutes until it coats a spoon. Season with salt and pepper.\n3. Stir the parsley in off the heat, just before serving, so the sauce stays green and fresh instead of stewed.\n\n## 2. Bread the fish\n\n1. Season the plaice with salt and pepper. Set out three plates: the remaining flour, the beaten eggs, the breadcrumbs.\n2. Coat each fish — flour, then egg, then crumbs — pressing the crumbs on firmly. Keep one hand for wet and one for dry, or accept breaded fingers.\n\n## 3. Fry hot and briefly\n\n1. Melt the rest of the butter over confident medium-high heat until the foam starts to subside.\n2. Fry the fish until deep gold: 3-4 minutes a side for whole fish, barely 2 for fillets. When the crust is done, the fish is done — that is the entire timing method for a fish this thin.\n\n## 4. Serve at once\n\n1. Serve immediately with the potatoes and either the lemon wedges or the persillesovs. Pour the sauce over the potatoes, never over the crust, which should stay crisp to the last bite."
+    },
+    {
+      "name": "Marinerede sild",
+      "yields": 8,
+      "prep_time": 30,
+      "cook_time": 5,
+      "time": 4360,
+      "tags": [
+        "Danish",
+        "Preserve",
+        "Pescatarian",
+        "Gluten-free",
+        "Dairy-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Salt herring fillets",
+          "description": "8 (spegesild), about 600 g"
+        },
+        {
+          "name": "Water",
+          "description": "plenty for desalting, plus 200 ml for the brine"
+        },
+        {
+          "name": "Vinegar",
+          "description": "300 ml clear distilled (lagereddike)"
+        },
+        {
+          "name": "Sugar",
+          "description": "250 g"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "3"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "1 tbsp, whole"
+        },
+        {
+          "name": "Allspice berries",
+          "description": "1 tbsp, whole (allehånde)"
+        },
+        {
+          "name": "Onion",
+          "description": "2, in thin rings"
+        },
+        {
+          "name": "Carrots",
+          "description": "1, in thin rounds",
+          "optional": true
+        },
+        {
+          "name": "Rye bread",
+          "description": "to serve (rugbrød)",
+          "optional": true
+        },
+        {
+          "name": "Butter",
+          "description": "to serve, on the bread",
+          "optional": true
+        }
+      ],
+      "description": "The jar of marinerede sild opens the julefrokost and then quietly feeds the household from the fridge shelf for weeks afterwards. It begins with properly salt-cured herring, and the craft is mostly patience: a day of desalting, a cold sweet-sharp bath, and the restraint not to open the jar early.\n\n## 1. Desalt the herring\n\n1. Rinse the salt herring fillets and put them in a bowl with plenty of cold water. Refrigerate for 12-24 hours, changing the water once or twice.\n2. Taste a corner of a fillet: it should be pleasantly seasoned, not punishing. Too short and the sugar cannot win against the salt; too long and the fish goes flabby and flat.\n\n## 2. Boil the bath\n\n1. Bring the vinegar, sugar and 200 ml water to a boil with the bay leaves, peppercorns and allspice, stirring until the sugar dissolves.\n2. Let the brine cool completely. Pouring it hot half-cooks the fish and clouds the jar.\n\n## 3. Jar it\n\n1. Cut the fillets across into 2 cm pieces and layer them in a clean jar with the onion rings, and the carrot if you are using it.\n2. Pour over the cold brine so everything is fully submerged — the brine does the preserving, so the fish must live under it, not beside it.\n3. Lid on and into the fridge. Two days is the minimum, four or five is better, and the jar then keeps for a good three weeks.\n\n## 4. Serve\n\n1. Serve plainly on buttered rugbrød with the onion rings from the jar on top — the everyday way — or set it out as the opening herring of the julefrokost, with karrysild beside it and a cold snaps within reach."
+    },
+    {
+      "name": "Karrysild",
+      "yields": 6,
+      "prep_time": 20,
+      "cook_time": 10,
+      "time": 90,
+      "tags": [
+        "Danish",
+        "Side",
+        "Pescatarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Mayonnaise",
+          "description": "100 g"
+        },
+        {
+          "name": "Crème fraîche",
+          "description": "150 g"
+        },
+        {
+          "name": "Curry powder",
+          "description": "1.5 tbsp"
+        },
+        {
+          "name": "Apples",
+          "description": "1 tart, in small dice"
+        },
+        {
+          "name": "Gherkins",
+          "description": "4, in small dice"
+        },
+        {
+          "name": "Onion",
+          "description": "1 small, finely chopped (or a shallot)"
+        },
+        {
+          "name": "Pickled herring",
+          "description": "400 g marinated herring pieces, well drained (marinerede sild)"
+        },
+        {
+          "name": "Eggs",
+          "description": "3, hard-boiled, to serve"
+        },
+        {
+          "name": "Rye bread",
+          "description": "to serve (rugbrød)",
+          "optional": true
+        },
+        {
+          "name": "Chives",
+          "description": "to garnish",
+          "optional": true
+        }
+      ],
+      "description": "No julefrokost serves only one herring, and karrysild is always the second: pickled herring folded into a yellow curry cream with apple and gherkin, a boiled egg on top. It is the marinerede sild jar's second act, and at most tables the more popular one.\n\n## 1. Make the dressing\n\n1. Whisk the mayonnaise and crème fraîche together. Houses split on the curry powder: some stir it in raw for a sharper edge, others warm it for 30 seconds in a dry pan until fragrant, which is the rounder, safer lane.\n2. Stir in the curry powder, then fold in the diced apple, the gherkins and the onion.\n3. Taste it: the dressing should be confidently curried, verging on too much, because the herring will mute it.\n\n## 2. Fold in the herring\n\n1. Drain the herring pieces properly in a sieve so they do not water the dressing down, and cut any large pieces to bite size.\n2. Fold the herring gently through the dressing.\n3. Refrigerate for at least an hour. Freshly mixed it tastes like ingredients; rested, it tastes like karrysild.\n\n## 3. Serve\n\n1. Boil the eggs for 9 minutes, cool them in cold water and peel.\n2. Serve the karrysild on rugbrød with halved or sliced egg on top and a scatter of chives.\n3. At the julefrokost it stands next to the plain marinerede sild and usually empties first. It keeps for three days in the fridge, in theory."
+    },
+    {
+      "name": "Stjerneskud",
+      "yields": 4,
+      "prep_time": 40,
+      "cook_time": 20,
+      "time": 60,
+      "tags": [
+        "Danish",
+        "Main",
+        "Pescatarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Plaice fillets",
+          "description": "8 small skinless fillets (about 700 g)"
+        },
+        {
+          "name": "White bread",
+          "description": "4 thick slices, for toasting (franskbrød)"
+        },
+        {
+          "name": "Butter",
+          "description": "75 g, soft, for the toast and the pans"
+        },
+        {
+          "name": "Prawns",
+          "description": "200 g cooked and peeled, small cold-water ones"
+        },
+        {
+          "name": "White asparagus",
+          "description": "1 jar (about 330 g), drained"
+        },
+        {
+          "name": "Lettuce",
+          "description": "4 leaves"
+        },
+        {
+          "name": "Mayonnaise",
+          "description": "4 tbsp"
+        },
+        {
+          "name": "Tomato ketchup",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Double cream",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Eggs",
+          "description": "1, beaten"
+        },
+        {
+          "name": "Breadcrumbs",
+          "description": "80 g"
+        },
+        {
+          "name": "Lemon",
+          "description": "1: a squeeze for the dressing, wedges to serve"
+        },
+        {
+          "name": "Dill",
+          "description": "a few sprigs"
+        },
+        {
+          "name": "Lumpfish roe",
+          "description": "4 tsp (stenbiderrogn)",
+          "optional": true
+        }
+      ],
+      "description": "The grand smørrebrød of Danish harbour restaurants: one fried and one steamed plaice fillet stacked on buttered toast under prawns, asparagus and dressing. Nothing about it is difficult except the timing — the skill is having every element ready before you build, because a shooting star waits for nobody.\n\n## 1. Make the dressing\n\n1. Whip the cream to soft peaks and fold in the mayonnaise, the ketchup and a good squeeze of lemon. It should be pale pink and just hold its shape. Chill it.\n\n## 2. Steam half the fillets\n\n1. Season four of the fillets, fold them in half and lay them in a wide pan with a knob of the butter and 3 tbsp of water. Lid on, lowest heat, 4-5 minutes until just opaque. Leave them in the covered pan off the heat.\n\n## 3. Fry the other half\n\n1. Dip the remaining four fillets in the beaten egg, then press them into the breadcrumbs on both sides.\n2. Fry them in a generous knob of butter over medium-high heat, 2-3 minutes a side, until deep golden and audibly crisp. Drain on paper.\n\n## 4. Stack\n\n1. Toast the bread and butter it to the edges. A lettuce leaf on each slice.\n2. Fried fillet on the lettuce, steamed fillet on top of the fried — crisp below, soft above.\n3. Crown with the prawns, lay the asparagus spears alongside, spoon over the dressing, and finish with the lumpfish roe if you have it, the dill and a lemon wedge.\n4. Serve immediately, with knife and fork. The contrast between the crackling fillet and the soft one is the whole point, and it lasts about ten minutes."
+    },
+    {
+      "name": "Smørrebrød med æg og rejer",
+      "yields": 4,
+      "prep_time": 20,
+      "cook_time": 10,
+      "time": 40,
+      "tags": [
+        "Danish",
+        "Main",
+        "Pescatarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Rye bread",
+          "description": "4 slices of dark rye (rugbrød)"
+        },
+        {
+          "name": "Butter",
+          "description": "40 g, soft"
+        },
+        {
+          "name": "Eggs",
+          "description": "4"
+        },
+        {
+          "name": "Prawns",
+          "description": "300 g cooked and peeled, small cold-water ones"
+        },
+        {
+          "name": "Mayonnaise",
+          "description": "4 tbsp"
+        },
+        {
+          "name": "Lettuce",
+          "description": "4 small leaves"
+        },
+        {
+          "name": "Dill",
+          "description": "small bunch"
+        },
+        {
+          "name": "Lemon",
+          "description": "1, in thin slices"
+        }
+      ],
+      "description": "Smørrebrød is not a sandwich; it is a discipline. Butter to the edges, toppings overlapping in strict order, and the finished thing eaten with knife and fork — egg and prawn is the gentlest of the classics and the right one to learn the rules on.\n\n## 1. Boil the eggs\n\n1. Lower the eggs into boiling water and give them exactly 9 minutes — a set yolk that has not gone chalky and grey at the rim.\n2. Straight into cold water and leave them until properly cold. A warm egg will not slice cleanly, and ragged slices ruin the geometry.\n\n## 2. Butter the bread\n\n1. Butter each slice of rye all the way to the edges. This is not decoration: the butter waterproofs the bread against the wet toppings, and skimping on it is the fastest way to be spotted as a foreigner.\n2. Lay a small lettuce leaf on each slice.\n\n## 3. Build in order\n\n1. Peel and slice the eggs and lay the slices overlapping in a neat row down each slice of bread.\n2. Pile the prawns generously over one side of the egg. Meanness with the prawns is noticed.\n\n## 4. Finish\n\n1. A rosette or generous dollop of mayonnaise on the prawns, sprigs of dill, and a thin twist of lemon on top.\n2. Serve within the half hour, with knife and fork, and a cold beer if it is after noon."
+    },
+    {
+      "name": "Kartoffelmad",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 20,
+      "time": 60,
+      "tags": [
+        "Danish",
+        "Main",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "New potatoes",
+          "description": "400 g, small and firm"
+        },
+        {
+          "name": "Rye bread",
+          "description": "4 slices of dark rye (rugbrød)"
+        },
+        {
+          "name": "Butter",
+          "description": "40 g, soft"
+        },
+        {
+          "name": "Mayonnaise",
+          "description": "4 tbsp"
+        },
+        {
+          "name": "Crispy fried onions",
+          "description": "4 tbsp (ristede løg)"
+        },
+        {
+          "name": "Chives",
+          "description": "small bunch, finely snipped"
+        },
+        {
+          "name": "Salt",
+          "description": "flaky for the top, fine for the pot"
+        }
+      ],
+      "description": "Poverty food promoted to classic: cold new potatoes on buttered rye with mayonnaise, crisp fried onions, chives and coarse salt. The vegetarian smørrebrød now outsells plenty of the herring it once stood in for, and the whole argument is texture.\n\n## 1. Boil the potatoes — ahead\n\n1. Boil the new potatoes in their skins in well-salted water until just tender, 15-18 minutes. Drain and cool them completely; the day before is ideal.\n2. Cold matters. A warm potato tears when sliced and slides off the bread; a cold one cuts into clean, firm coins.\n\n## 2. Butter the rye\n\n1. Butter each slice of rye all the way to the edges. The rule does not relax just because the topping is a potato.\n\n## 3. Slice and shingle\n\n1. Slice the potatoes about 5 mm thick and lay them overlapping so the bread is completely covered. No rye should show through.\n\n## 4. Finish\n\n1. Dot or stripe the mayonnaise over the potatoes, scatter the fried onions generously, then the chives, then a pinch of flaky salt over everything.\n2. Eat within the hour, with knife and fork. The fried onions go soft waiting, and they are the point."
+    },
+    {
+      "name": "Hjemmelavet leverpostej",
+      "yields": 8,
+      "prep_time": 25,
+      "cook_time": 85,
+      "time": 125,
+      "tags": [
+        "Danish",
+        "Side",
+        "Freezer-friendly",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork liver",
+          "description": "500 g"
+        },
+        {
+          "name": "Pork back fat",
+          "description": "250 g (spæk); ask the butcher"
+        },
+        {
+          "name": "Onion",
+          "description": "1, roughly chopped"
+        },
+        {
+          "name": "Anchovy fillets",
+          "description": "4"
+        },
+        {
+          "name": "Eggs",
+          "description": "2"
+        },
+        {
+          "name": "Double cream",
+          "description": "200 ml"
+        },
+        {
+          "name": "Plain flour",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Salt",
+          "description": "1½ tsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Ground allspice",
+          "description": "½ tsp"
+        },
+        {
+          "name": "Bacon",
+          "description": "8 rashers, to serve",
+          "optional": true
+        },
+        {
+          "name": "Mushrooms",
+          "description": "250 g, to serve",
+          "optional": true
+        },
+        {
+          "name": "Rye bread",
+          "description": "to serve",
+          "optional": true
+        }
+      ],
+      "description": "Bake leverpostej once and the smell of it warm from the oven settles the question of why anyone bothers when every supermarket sells it. This is the engine of Danish lunch, and the home-baked version is not a close contest.\n\n## 1. Blitz the base\n\n1. Blitz the back fat in a food processor until nearly smooth, then add the liver in pieces, the onion and the anchovy fillets and blitz to a loose, even paste. How fine is house style — silky and slightly coarse both have their defenders.\n\n## 2. Season and bind\n\n1. Add the eggs, cream, flour, salt, pepper and allspice and pulse just until combined. The mixture will be alarmingly liquid; that is correct.\n2. Fry a teaspoon of it in a dry pan and taste it — raw liver farce tells you nothing, and this is the only chance to fix the seasoning.\n\n## 3. Bake in a water bath\n\n1. Pour into a loaf tin, or several small foil tins if you mean to freeze some. Set in a deep roasting tray and pour boiling water halfway up the sides.\n2. Bake at 160°C for about 75 minutes (small tins take 45-50) until just set with a slight tremble in the centre and greyish-brown on top.\n3. Rest for at least 15 minutes. It slices neatly tomorrow, but it is served warm today.\n\n## 4. Serve it warm\n\n1. While it rests, fry the bacon crisp, then fry the mushrooms hard in the bacon fat.\n2. Thick warm slabs on rye bread, bacon and mushrooms on top — this is lun leverpostej, and it is the argument for making your own.\n3. The rest keeps a week in the fridge and freezes beautifully in its small tins."
+    },
+    {
+      "name": "Tarteletter med høns i asparges",
+      "yields": 4,
+      "prep_time": 25,
+      "cook_time": 35,
+      "time": 60,
+      "tags": [
+        "Danish",
+        "Main",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Tartlet shells",
+          "description": "12 ready-made (tarteletter)"
+        },
+        {
+          "name": "Chicken breast",
+          "description": "400 g"
+        },
+        {
+          "name": "Chicken stock",
+          "description": "600 ml"
+        },
+        {
+          "name": "White asparagus",
+          "description": "1 jar (about 330 g); keep the liquid"
+        },
+        {
+          "name": "Butter",
+          "description": "40 g"
+        },
+        {
+          "name": "Plain flour",
+          "description": "40 g"
+        },
+        {
+          "name": "Double cream",
+          "description": "100 ml"
+        },
+        {
+          "name": "Lemon",
+          "description": "half, juiced"
+        },
+        {
+          "name": "White pepper",
+          "description": "a good pinch"
+        },
+        {
+          "name": "Parsley",
+          "description": "chopped, to serve",
+          "optional": true
+        }
+      ],
+      "description": "The retro party dish that refuses to die: crisp pastry shells, chicken and white asparagus in a proper cream sauce. Danes under forty serve it with irony and eat it with none.\n\n## 1. Poach the chicken\n\n1. Bring the stock to a bare simmer and poach the chicken breasts for 12-14 minutes until just cooked through. Let them rest in the liquid for 10 minutes, then tear into bite-sized pieces. Keep every drop of the stock.\n\n## 2. Make the sauce\n\n1. Melt the butter in a saucepan, stir in the flour and cook the roux for a minute or two without letting it colour.\n2. Whisk in 400 ml of the poaching stock and about 100 ml of the liquid from the asparagus jar, a little at a time. Simmer 5 minutes so it stops tasting of flour, then stir in the cream.\n3. Make it thicker than feels right — the asparagus will weep into it, and a watery filling is the one unforgivable failure. It should coat a spoon heavily.\n4. Sharpen with the lemon juice and the white pepper. Taste before adding any salt; the stock and the jar have brought their own.\n\n## 3. Crisp the shells\n\n1. Give the empty shells 5-6 minutes at 180°C. Straight from the box they taste of the box; hot and crisped they taste of butter. Do not skip this.\n\n## 4. Fill and serve\n\n1. Fold the chicken and the drained asparagus, cut into short lengths, into the sauce and heat through gently — no hard boiling now.\n2. Fill the hot shells at the table, because a filled shell starts going soft immediately, and scatter with parsley. Count three per person and be wrong."
+    },
+    {
+      "name": "Gule ærter",
+      "yields": 6,
+      "prep_time": 20,
+      "cook_time": 120,
+      "time": 140,
+      "tags": [
+        "Danish",
+        "Soup",
+        "Comfort food",
+        "Freezer-friendly",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Yellow split peas",
+          "description": "500 g"
+        },
+        {
+          "name": "Pork belly",
+          "description": "500 g in one piece, lightly salted if you can get it (sprængt)"
+        },
+        {
+          "name": "Smoked sausage",
+          "description": "1 ring, about 350 g"
+        },
+        {
+          "name": "Onion",
+          "description": "2, diced"
+        },
+        {
+          "name": "Leeks",
+          "description": "2, sliced"
+        },
+        {
+          "name": "Carrots",
+          "description": "3, diced"
+        },
+        {
+          "name": "Celeriac",
+          "description": "a quarter, diced (about 200 g)"
+        },
+        {
+          "name": "Dried thyme",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Water",
+          "description": "2 L"
+        },
+        {
+          "name": "Rye bread",
+          "description": "to serve",
+          "optional": true
+        },
+        {
+          "name": "Mustard",
+          "description": "strong, to serve",
+          "optional": true
+        }
+      ],
+      "description": "The February institution: yellow split peas cooked until they collapse into something halfway between soup and porridge, with the pork lifted out and served on rye with strong mustard — alongside, never drowned in the pot. It is famously better the day after, which is why sensible people make it the day before.\n\n## 1. Start the peas\n\n1. Rinse the split peas well and put them in a large pot with the water. Bring slowly to a simmer and skim off the grey foam honestly — this is where the soup earns a clean flavour. Split peas need no soaking; whole dried peas are another project.\n\n## 2. Add the pork\n\n1. Lower in the pork belly with the thyme and bay leaves. Simmer gently, lid ajar, for an hour, skimming now and then.\n\n## 3. Vegetables and collapse\n\n1. Add the onion, leeks, carrots and celeriac. Simmer another 45-60 minutes until the peas have collapsed completely and the pork is tender.\n2. Stir the bottom regularly from here on — split peas catch and scorch the moment you trust them.\n3. Warm the sausage in the pot for the last 10 minutes, then lift out both meats and keep them warm.\n\n## 4. Season\n\n1. Taste before you salt anything; the pork has been salting the pot all along.\n2. The right thickness is house pride — a spoon should stand for a moment before falling over. Loosen with a little water if it has gone to full porridge.\n\n## 5. Serve the Danish way\n\n1. Soup in bowls. The pork and sausage sliced on a board, eaten alongside on rye bread with a sharp smear of mustard.\n2. On day two it will have set solid; loosen it with water as you reheat, and accept that it is better now than it was."
+    },
+    {
+      "name": "Hønsekødssuppe",
+      "yields": 6,
+      "prep_time": 45,
+      "cook_time": 150,
+      "time": 195,
+      "tags": [
+        "Danish",
+        "Soup",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Whole chicken",
+          "description": "1, about 1.5 kg — an older boiling hen if you can find one"
+        },
+        {
+          "name": "Water",
+          "description": "2.5 L, plus 150 ml for the melboller"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tbsp for the pot, plus for the dumplings"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "10"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Onion",
+          "description": "1, halved"
+        },
+        {
+          "name": "Parsley",
+          "description": "1 bunch, stalks and leaves separated"
+        },
+        {
+          "name": "Carrots",
+          "description": "4, in thick coins"
+        },
+        {
+          "name": "Leeks",
+          "description": "2, in rings"
+        },
+        {
+          "name": "Celeriac",
+          "description": "a quarter, in small batons (about 200 g)"
+        },
+        {
+          "name": "Butter",
+          "description": "75 g, for the melboller"
+        },
+        {
+          "name": "Plain flour",
+          "description": "100 g, plus 2 tbsp for the meatballs"
+        },
+        {
+          "name": "Eggs",
+          "description": "3"
+        },
+        {
+          "name": "Pork mince",
+          "description": "250 g"
+        }
+      ],
+      "description": "The soup Danish grandmothers are judged on: a whole hen, a golden broth kept honestly clear, and two kinds of dumplings — flour melboller and tiny kødboller — poached separately so they never cloud the pot. No shortcut survives the comparison.\n\n## 1. Start the hen\n\n1. Put the chicken in a large pot, cover with the 2.5 L of cold water and add the salt. Bring it up slowly.\n2. Skim seriously for the first quarter of an hour — every grey raft. A clear broth is won here and cannot be fixed later.\n3. Add the peppercorns, bay leaves, halved onion and the parsley stalks. Simmer at a bare shudder — never a boil, a boil clouds it — for 2 to 2½ hours, until a leg wiggles loose. An old hen takes longer and is worth it.\n\n## 2. Vegetables in late\n\n1. For the last 30 minutes, add the carrots, leeks and celeriac in neat, even pieces. In late means they hold their shape and still taste of themselves.\n\n## 3. Melboller\n\n1. Bring the 150 ml water and the butter to the boil in a small pan. Off the heat, beat in the 100 g of flour to a smooth ball, then back on low heat for a minute to dry it out.\n2. Beat in two of the eggs, one at a time, until thick and glossy.\n3. With two teaspoons, drop small dumplings into a separate pan of barely simmering salted water. Poach 5 minutes until puffed and floating. They wait happily in a bowl of cold water.\n\n## 4. Kødboller\n\n1. Beat the pork mince with the last egg, the 2 tbsp of flour and a good pinch of salt until sticky.\n2. Roll hazelnut-sized balls with wet hands and poach them in the same water, about 5 minutes. Tiny is traditional; walnut-sized is showing off.\n\n## 5. Assemble\n\n1. Lift out the hen and strain the broth. Taste and salt it properly — an undersalted clear broth tastes of nothing at all.\n2. Return the vegetables, warm both kinds of dumplings through in the broth and scatter with the chopped parsley leaves. Serve very hot.\n3. The meat is not wasted: it becomes tomorrow's tarteletter, or chicken salad for rye bread."
+    },
+    {
+      "name": "Kartoffel-porresuppe",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 30,
+      "time": 45,
+      "tags": [
+        "Danish",
+        "Soup",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Leeks",
+          "description": "3 large, sliced"
+        },
+        {
+          "name": "Potatoes",
+          "description": "800 g floury, in chunks"
+        },
+        {
+          "name": "Butter",
+          "description": "40 g"
+        },
+        {
+          "name": "Vegetable stock",
+          "description": "1.2 L"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "1"
+        },
+        {
+          "name": "Double cream",
+          "description": "100 ml"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Black pepper",
+          "description": "to taste"
+        },
+        {
+          "name": "Rye bread",
+          "description": "2 slices, for croutons",
+          "optional": true
+        },
+        {
+          "name": "Bacon",
+          "description": "100 g, for the unprincipled",
+          "optional": true
+        },
+        {
+          "name": "Chives",
+          "description": "snipped, to serve",
+          "optional": true
+        }
+      ],
+      "description": "Everyday Danish autumn food, made from what the garden and the cellar had anyway. The only firm rule is that the leeks are sweated, never browned; whether the finished soup is blended silky or left rough is house style and not worth arguing about.\n\n## 1. Sweat the leeks\n\n1. Split the leeks lengthwise, rinse the grit out and slice them. Melt the butter in a heavy pot over low heat and sweat the leeks with a pinch of salt for 8-10 minutes until soft and sweet. No colour at all — browned leeks turn the whole pot bitter.\n\n## 2. Simmer\n\n1. Add the potatoes, the stock and the bay leaf. Simmer about 20 minutes, until a piece of potato crushes readily against the side of the pot.\n\n## 3. Blend — or don't\n\n1. Fish out the bay leaf. Blend until silky, or mash it roughly in the pot with a few strokes; both camps are certain they are right.\n2. Stir in the cream and season with salt and black pepper. Loosen with a splash more stock if it stands too thick.\n\n## 4. Top it\n\n1. Cube the rye bread and crisp the cubes in a dry pan for croutons.\n2. For the unprincipled: bacon fried crisp and crumbled over instead, or as well.\n3. Chives over the top, and serve hot."
+    },
+    {
+      "name": "Rødkål",
+      "yields": 8,
+      "prep_time": 20,
+      "cook_time": 90,
+      "time": 110,
+      "tags": [
+        "Danish",
+        "Side",
+        "Vegan",
+        "Freezer-friendly",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Red cabbage",
+          "description": "1 head, about 1.5 kg"
+        },
+        {
+          "name": "Vinegar",
+          "description": "150 ml"
+        },
+        {
+          "name": "Redcurrant juice",
+          "description": "200 ml (ribssaft); blackcurrant works too"
+        },
+        {
+          "name": "Sugar",
+          "description": "100 g"
+        },
+        {
+          "name": "Salt",
+          "description": "1½ tsp"
+        },
+        {
+          "name": "Apples",
+          "description": "1, coarsely grated",
+          "optional": true
+        },
+        {
+          "name": "Cinnamon",
+          "description": "1 stick",
+          "optional": true
+        }
+      ],
+      "description": "No Danish Christmas stands without it: red cabbage shredded fine and braised long with vinegar, sugar and redcurrant juice until it turns glossy, soft and sweet-sour. It is made in quantity, it is better tomorrow, and jars of it carry December.\n\n## 1. Shred fine\n\n1. Quarter the cabbage, cut out the core and shred it as finely as your knife allows — 2-3 mm. Coarse ribbons never go silky, however long you cook them.\n\n## 2. Braise long\n\n1. Pack the cabbage into a heavy pot with the vinegar, redcurrant juice, sugar and salt — and the grated apple and the cinnamon stick, if your house is one of those houses.\n2. It will look impossibly dry. Lid on, lowest heat, and within ten minutes the cabbage starts releasing its own liquid.\n3. Braise for 60-90 minutes, stirring down from the sides now and then, until it has collapsed to half its volume, deep purple and completely tender.\n\n## 3. Balance\n\n1. Taste at the end and adjust by the spoonful: sweet and sour in proper argument, neither winning. More vinegar lifts it, more sugar rounds it.\n2. If it stands in liquid, take the lid off and let it cook away for a few minutes. Rødkål should be glossy, not swimming.\n\n## 4. Rest and store\n\n1. It is honestly better after a night in the fridge, so make it ahead if you can. Spoon it into clean jars while hot if you are storing; it keeps two weeks chilled and freezes without complaint.\n2. Reheat gently and serve beside flæskesteg, duck or frikadeller — and next to brunede kartofler at Christmas, where it belongs."
+    },
+    {
+      "name": "Brunede kartofler",
+      "yields": 6,
+      "prep_time": 15,
+      "cook_time": 35,
+      "time": 180,
+      "tags": [
+        "Danish",
+        "Side",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Potatoes",
+          "description": "1 kg small, even-sized (or two jars of small peeled potatoes)"
+        },
+        {
+          "name": "Sugar",
+          "description": "100 g"
+        },
+        {
+          "name": "Butter",
+          "description": "75 g"
+        },
+        {
+          "name": "Salt",
+          "description": "for the boiling water"
+        },
+        {
+          "name": "Water",
+          "description": "2 tbsp, only if the caramel clumps",
+          "optional": true
+        }
+      ],
+      "description": "The caramelised potatoes without which a Danish Christmas dinner is just dinner. Three ingredients and one commandment: the sugar must go properly amber before the butter goes in, and the potatoes must be cold and dry. Patience or ruin.\n\n## 1. Boil ahead\n\n1. Boil the potatoes in salted water until just tender, 15-18 minutes, then drain and peel them while still warm.\n2. Cool them completely — ideally uncovered in the fridge overnight, so the surfaces dry out. This is not fussiness: warm, wet potatoes make the caramel seize into sugar lumps. Jarred small potatoes are common and perfectly legal; drain and dry them well.\n\n## 2. Melt the sugar\n\n1. Scatter the sugar evenly over a wide, heavy pan on medium heat and leave it alone. Tilt and swirl the pan as it melts — a spoon at this stage makes lumps.\n2. Wait for true amber, the colour of dark honey. Pale caramel tastes of nothing but sweet; mahogany is bitter. This minute of nerve is the entire dish, so do not walk away.\n\n## 3. Butter in\n\n1. Add the butter — it will foam dramatically — and swirl until you have a smooth, glossy caramel. Turn the heat down. If it clumps, a spoonful of water and low, patient heat brings it back.\n\n## 4. Roll\n\n1. Add the potatoes in a single layer and turn them gently for 8-10 minutes until every one is lacquered amber on all sides.\n2. Any caramel that hardens into threads will re-melt if you keep the heat low and keep rolling; raising the heat to hurry it is how the batch is lost.\n3. Serve hot, next to the duck or the flæskesteg and the rødkål. Brunede kartofler wait for no one, and nobody has ever left them over."
+    },
+    {
+      "name": "Dansk kartoffelsalat",
+      "yields": 6,
+      "prep_time": 20,
+      "cook_time": 20,
+      "time": 90,
+      "tags": [
+        "Danish",
+        "Salad",
+        "Vegetarian",
+        "Gluten-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Potatoes",
+          "description": "1 kg, small and waxy"
+        },
+        {
+          "name": "Crème fraîche",
+          "description": "250 g"
+        },
+        {
+          "name": "Mayonnaise",
+          "description": "100 g"
+        },
+        {
+          "name": "Mustard",
+          "description": "2 tsp"
+        },
+        {
+          "name": "Vinegar",
+          "description": "1½ tbsp, clear (lagereddike)"
+        },
+        {
+          "name": "Chives",
+          "description": "1 bunch, finely snipped"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Black pepper",
+          "description": "to taste"
+        },
+        {
+          "name": "Radishes",
+          "description": "5-6, thinly sliced, by house style",
+          "optional": true
+        },
+        {
+          "name": "Gherkins",
+          "description": "3-4, chopped — the other house style",
+          "optional": true
+        }
+      ],
+      "description": "From the first garden grill in April to the last one squeezed out of September, this bowl sits beside everything Denmark chars. It is creamy, mustardy and green with chives — and never sweet; sweet potato salad is a German affliction the border was built to stop.\n\n## 1. Boil\n\n1. Scrub the potatoes and boil them whole in well-salted water for 15-18 minutes, until a knife slips out without lifting the potato. Small waxy ones hold their shape; floury ones collapse into soup, so choose properly.\n2. Drain and let them steam dry in the colander for five minutes, then peel any with thick skins.\n\n## 2. Season them warm\n\n1. While they are still warm — cool enough to handle, no cooler — cut them into halves or quarters and toss with the vinegar, a good pinch of salt and some black pepper.\n2. Warm potatoes drink the vinegar in; cold ones just wear it. Then let them cool completely, because folding warm potatoes into the cream turns the whole bowl thin and greasy.\n\n## 3. Stir the dressing\n\n1. Stir the crème fraîche, mayonnaise and mustard together with plenty of black pepper.\n2. Snip in most of the chives and taste: it should be a touch sharper than seems right, because the potatoes will mute it.\n\n## 4. Fold and wait\n\n1. Fold the cooled potatoes gently through the dressing — turn, do not stir, or you make mash.\n2. Add the sliced radishes or the chopped gherkins if that is your house style; either is traditional, and most families are firmly one or the other.\n3. Rest in the fridge for at least an hour, scatter the last chives over, and serve beside frikadeller, sausages or anything off the grill."
+    },
+    {
+      "name": "Agurkesalat",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 0,
+      "time": 105,
+      "tags": [
+        "Danish",
+        "Salad",
+        "Vegan",
+        "Gluten-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Cucumber",
+          "description": "1 large"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tbsp, for drawing the water"
+        },
+        {
+          "name": "Vinegar",
+          "description": "150 ml, clear (lagereddike)"
+        },
+        {
+          "name": "Sugar",
+          "description": "4 tbsp"
+        },
+        {
+          "name": "Water",
+          "description": "50 ml"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "½ tsp"
+        },
+        {
+          "name": "Dill",
+          "description": "a few fronds, snipped",
+          "optional": true
+        }
+      ],
+      "description": "No frikadelle, roast chicken or flæskesteg is fully dressed in Denmark without a sharp heap of agurkesalat beside it. It exists to cut through fat, it costs ten minutes of actual work, and the fridge does the rest.\n\n## 1. Slice thin\n\n1. Slice the cucumber on a mandolin into rounds you can almost read through — 1-2 mm. A sharp knife and patience will do it too, but thick slices stay watery and never turn silky.\n\n## 2. Salt out the water\n\n1. Toss the slices with the salt in a colander and leave them over the sink for 30 minutes.\n2. Squeeze them firmly, a fistful at a time. It feels wrong; do it anyway — this step is the difference between a crisp pickle and a watery one.\n\n## 3. Brine\n\n1. Stir the sugar into the vinegar and water until it has fully dissolved. No heat is needed.\n2. Add the peppercorns and the cucumber, and press the slices under the surface of the brine.\n\n## 4. Wait — an hour, better three\n\n1. Refrigerate for at least an hour; it is ready then, better after three, and better still tomorrow.\n2. Lift the slices out of the brine with a fork to serve, with a little dill over if you like it. Put it beside frikadeller, roast pork or anything else that needs a sharp edge."
+    },
+    {
+      "name": "Hjemmerørt remoulade",
+      "yields": 8,
+      "prep_time": 15,
+      "cook_time": 5,
+      "time": 50,
+      "tags": [
+        "Danish",
+        "Sauce",
+        "Vegetarian",
+        "Gluten-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Mayonnaise",
+          "description": "250 g"
+        },
+        {
+          "name": "Gherkins",
+          "description": "100 g, or pickled asier"
+        },
+        {
+          "name": "Capers",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Onion",
+          "description": "½ small"
+        },
+        {
+          "name": "Carrots",
+          "description": "1 small"
+        },
+        {
+          "name": "Curry powder",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Turmeric",
+          "description": "½ tsp, ground — this is the colour"
+        },
+        {
+          "name": "Mustard",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Lemon",
+          "description": "juice of ½"
+        },
+        {
+          "name": "Sugar",
+          "description": "1 pinch"
+        }
+      ],
+      "description": "Remoulade is the yellow constant of Danish eating — on fiskefrikadeller, fried fish, hotdogs and roast beef smørrebrød. The jar from the supermarket is perfectly respectable, which is exactly why stirring your own converts people.\n\n## 1. Chop everything small\n\n1. The texture target is rice grains: chop the gherkins, capers and onion until nothing is bigger than one.\n2. Chop the carrot just as fine and blanch it in boiling water for one minute, then cool it. Raw carrot fights the sauce; briefly cooked, it disappears into it.\n3. Squeeze the chopped gherkins dry in your fist, or their brine will have thinned the sauce by tomorrow.\n\n## 2. Turn the base yellow\n\n1. Stir the curry powder, turmeric, mustard and sugar into the mayonnaise. The colour should be unapologetic — pale remoulade convinces nobody.\n\n## 3. Fold and rest\n\n1. Fold in the chopped vegetables and capers, then sharpen with lemon juice to taste.\n2. Rest it in the fridge for at least 30 minutes so the curry powder stops tasting raw; it is better again after a few hours.\n3. It keeps a week in a clean jar. Spoon it onto fiskefrikadeller, a hotdog, or thickly over roast beef smørrebrød."
+    },
+    {
+      "name": "Brun sovs",
+      "yields": 6,
+      "prep_time": 5,
+      "cook_time": 25,
+      "time": 30,
+      "tags": [
+        "Danish",
+        "Sauce",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Butter",
+          "description": "50 g"
+        },
+        {
+          "name": "Plain flour",
+          "description": "50 g"
+        },
+        {
+          "name": "Beef stock",
+          "description": "600 ml, warm — or the roast's own juices made up with stock"
+        },
+        {
+          "name": "Gravy browning",
+          "description": "a few drops (kulør)"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Black pepper",
+          "description": "to taste"
+        },
+        {
+          "name": "Double cream",
+          "description": "a splash, by house style",
+          "optional": true
+        }
+      ],
+      "description": "Brun sovs is the national sauce, and no dish wearing it is improved by irony. It goes over frikadeller, over roast pork, and above all over boiled potatoes, which it must coat convincingly or the whole dinner fails.\n\n## 1. Brown the roux honestly\n\n1. Melt the butter in a saucepan over medium heat, whisk in the flour, and keep whisking for 5-8 minutes until the roux is the colour of dark sand and smells of toasted nuts.\n2. This browning is the flavour. The colour can be faked later; the taste cannot, so do not stop at blond.\n\n## 2. Feed in the stock\n\n1. Add the warm stock a splash at a time, whisking each addition completely smooth before the next. Lumps made now are permanent residents.\n2. Simmer gently for 10-15 minutes, stirring now and then, while it thickens and loses any floury taste.\n\n## 3. Season — and confess\n\n1. Season with salt and plenty of black pepper, and stir in a splash of double cream if that is how your family does it.\n2. Now the kulør: add the gravy browning one drop at a time until the sauce is the colour of a mahogany sideboard. Every Danish kitchen does this and no Danish kitchen admits it. You are among friends.\n\n## 4. Pass the potato test\n\n1. The sauce must coat the back of a spoon and cling to a boiled potato without sliding off. Too thin, simmer it a few minutes more; too thick, whisk in a little more stock.\n2. Serve it hot over frikadeller or roast pork with boiled potatoes, and make more than you think you need."
+    },
+    {
+      "name": "Rugbrød",
+      "yields": 8,
+      "prep_time": 30,
+      "cook_time": 100,
+      "time": 2880,
+      "tags": [
+        "Danish",
+        "Baking",
+        "Vegan",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Rye sourdough starter",
+          "description": "75 g, active — or raise one from scratch, see step 1"
+        },
+        {
+          "name": "Rye flour",
+          "description": "500 g wholegrain, plus feeds for the starter"
+        },
+        {
+          "name": "Cracked rye",
+          "description": "400 g (rugkerner)"
+        },
+        {
+          "name": "Sunflower seeds",
+          "description": "100 g"
+        },
+        {
+          "name": "Flaxseeds",
+          "description": "100 g (hørfrø)"
+        },
+        {
+          "name": "Pumpkin seeds",
+          "description": "75 g",
+          "optional": true
+        },
+        {
+          "name": "Salt",
+          "description": "20 g"
+        },
+        {
+          "name": "Water",
+          "description": "900 ml for the soak, plus feeds for the starter"
+        },
+        {
+          "name": "Malt syrup",
+          "description": "2 tbsp (maltsirup), for colour and depth",
+          "optional": true
+        }
+      ],
+      "description": "Rugbrød is not so much a recipe as infrastructure: Danish lunch is built on top of it, and without it smørrebrød is just cold toppings with nowhere to live. A loaf wants about two days of mostly waiting — and the very first time, a week, which is the price of raising the starter. You pay it once.\n\n## 1. Raise a starter — first time only\n\n1. Stir 50 g of rye flour with 50 ml of water in a jar, cover loosely and leave it on the counter.\n2. Every day for 5-7 days, discard half and stir in another 50 g rye flour and 50 ml water. It is ready when it bubbles within hours of a feed and smells sour and faintly of fruit.\n3. From then on it lives in the fridge and gets fed once a week. It will outlast most of your houseplants.\n\n## 2. Soak overnight\n\n1. The evening before baking day, stir the starter into the water in a large bowl, then add the cracked rye, sunflower seeds, flaxseeds and pumpkin seeds.\n2. Cover and leave at room temperature for 8-12 hours. The kernels soften and the souring begins.\n\n## 3. Mix a dough that looks wrong\n\n1. Next morning, add the rye flour, salt and malt syrup if you are using it, and mix thoroughly with a strong spoon or a wet hand.\n2. It will be a thick, sticky porridge, nothing like bread dough. This is correct — rye has no useful gluten, so there is nothing to knead.\n3. Take 3 tbsp of the dough out into a clean jar and refrigerate it: that is the starter for your next loaf, already fed.\n4. Scrape the rest into a greased 3-litre loaf tin, press it down with wet hands and smooth the top. The tin should be about two-thirds full.\n\n## 4. Proof long and cold\n\n1. Cover the tin and put it in the fridge for 12-18 hours. Slow and cold builds the deep sour that fast and warm cannot.\n2. It is ready when it has risen a couple of centimetres and the surface shows fine cracks and pinholes.\n\n## 5. Bake, then wait again\n\n1. Bake at 180°C for 90-100 minutes, until a skewer meets no wet dough and the loaf sounds hollow underneath — about 96°C in the middle if you own a thermometer. Cover the top with foil if it darkens too fast.\n2. Turn it out and cool it completely, then wrap it and leave it until the next day. Cutting warm rugbrød gums the knife and collapses the crumb, so wait.\n3. Slice it thin. It keeps a week wrapped, improving for the first few days, and it is the floor under every piece of smørrebrød you will now make."
+    },
+    {
+      "name": "Æbleskiver",
+      "yields": 6,
+      "prep_time": 30,
+      "cook_time": 30,
+      "time": 90,
+      "tags": [
+        "Danish",
+        "Dessert",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Eggs",
+          "description": "3, separated"
+        },
+        {
+          "name": "Buttermilk",
+          "description": "400 ml (kærnemælk)"
+        },
+        {
+          "name": "Plain flour",
+          "description": "250 g"
+        },
+        {
+          "name": "Sugar",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Salt",
+          "description": "½ tsp"
+        },
+        {
+          "name": "Bicarbonate of soda",
+          "description": "½ tsp"
+        },
+        {
+          "name": "Cardamom",
+          "description": "½ tsp, ground"
+        },
+        {
+          "name": "Lemon zest",
+          "description": "of ½ lemon",
+          "optional": true
+        },
+        {
+          "name": "Butter",
+          "description": "50 g, for the pan"
+        },
+        {
+          "name": "Strawberry jam",
+          "description": "to serve, for dipping",
+          "optional": true
+        },
+        {
+          "name": "Icing sugar",
+          "description": "to serve, for dipping",
+          "optional": true
+        }
+      ],
+      "description": "There is no apple in æbleskiver any more and nobody misses it. These are December's spheres — pancake balls turned in the dimpled cast-iron pan, dipped in jam and icing sugar — and frying a batch in July would feel vaguely illegal.\n\n## 1. Mix the batter\n\n1. Separate the eggs and whisk the yolks with the buttermilk.\n2. Whisk the flour, sugar, salt, bicarbonate of soda, cardamom and lemon zest together, then combine with the buttermilk mixture until just smooth.\n3. Rest the batter for 30 minutes; the buttermilk and bicarbonate need the time to organise the lift.\n\n## 2. Fold in the whites\n\n1. Whip the egg whites to soft peaks and fold them in, in three additions, keeping as much air as you can.\n2. The whites are the whole difference between a sphere that is light in the middle and a solid doughball, so fold gently and stop early.\n\n## 3. Turn the spheres\n\n1. Heat the æbleskive pan over medium heat and drop a little butter into each hollow; it should foam, not brown.\n2. Fill each hollow three-quarters full. After about two minutes the edges set: give each ball a quarter turn with a knitting needle — the traditional tool, and still the best one — so the raw batter runs down into the hollow.\n3. Keep quarter-turning every minute or two until each ball is a closed, deep golden sphere and the needle comes out clean, 5-6 minutes per panful.\n\n## 4. Dip and eat\n\n1. Serve them hot in waves as they come off the pan, with a bowl of strawberry jam and a bowl of icing sugar for dipping: jam first, then sugar.\n2. Gløgg alongside completes it — æbleskiver and gløgg are a fixed pair on a December afternoon."
+    },
+    {
+      "name": "Drømmekage",
+      "yields": 8,
+      "prep_time": 20,
+      "cook_time": 30,
+      "time": 90,
+      "tags": [
+        "Danish",
+        "Baking",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Eggs",
+          "description": "3"
+        },
+        {
+          "name": "Sugar",
+          "description": "225 g"
+        },
+        {
+          "name": "Plain flour",
+          "description": "225 g"
+        },
+        {
+          "name": "Baking powder",
+          "description": "3 tsp"
+        },
+        {
+          "name": "Milk",
+          "description": "150 ml for the cake, plus 3 tbsp for the topping"
+        },
+        {
+          "name": "Butter",
+          "description": "75 g for the cake, plus 125 g for the topping"
+        },
+        {
+          "name": "Vanilla extract",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Brown sugar",
+          "description": "200 g, dark"
+        },
+        {
+          "name": "Desiccated coconut",
+          "description": "100 g"
+        }
+      ],
+      "description": "Drømmekage came out of Brovst in north Jutland, where a family recipe entered a 1960s baking competition and ended up belonging to the whole country. It is a light sponge under a broiled lid of coconut, brown sugar and butter, and the lid is the point.\n\n## 1. Whisk the sponge\n\n1. Heat the oven to 200°C and line a 20 x 30 cm tin.\n2. Whisk the eggs and sugar for a good 3-4 minutes, until pale, thick and doubled in volume. This air is half the cake's lift, so do not shortcut it.\n3. Warm the 150 ml milk with the 75 g butter until just melted, and stir in the vanilla.\n4. Fold the flour and baking powder into the egg foam, then fold in the warm milk mixture. The batter is thin; that is correct.\n\n## 2. Bake it most of the way\n\n1. Pour the batter into the tin and bake for about 20 minutes, until just set in the middle. A slight wobble is fine — it is going back in.\n\n## 3. Melt the lid\n\n1. While it bakes, warm the remaining 125 g butter with the brown sugar, coconut and 3 tbsp milk in a saucepan, stirring, just until it slackens into a thick, spreadable paste. Do not let it boil hard.\n\n## 4. Crown it and finish hot\n\n1. Take the cake out, turn the oven up to 225°C, and spread the topping gently over the whole surface.\n2. Put it back in for 5-8 minutes, until the topping bubbles at the edges and darkens a shade. This second bake is what turns a sponge with paste on it into drømmekage.\n3. Cool it in the tin before cutting into squares — cutting it warm is understandable and wrong. Serve with coffee."
+    },
+    {
+      "name": "Kanelsnegle",
+      "yields": 8,
+      "prep_time": 40,
+      "cook_time": 15,
+      "time": 180,
+      "tags": [
+        "Danish",
+        "Baking",
+        "Vegetarian",
+        "Freezer-friendly",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Plain flour",
+          "description": "500 g"
+        },
+        {
+          "name": "Fresh yeast",
+          "description": "25 g"
+        },
+        {
+          "name": "Milk",
+          "description": "250 ml, lukewarm"
+        },
+        {
+          "name": "Butter",
+          "description": "75 g soft for the dough, plus 100 g for the filling"
+        },
+        {
+          "name": "Sugar",
+          "description": "50 g"
+        },
+        {
+          "name": "Cardamom",
+          "description": "1 tsp, ground"
+        },
+        {
+          "name": "Salt",
+          "description": "½ tsp"
+        },
+        {
+          "name": "Eggs",
+          "description": "1 for the dough, plus 1 beaten to glaze"
+        },
+        {
+          "name": "Brown sugar",
+          "description": "100 g, for the filling"
+        },
+        {
+          "name": "Cinnamon",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Icing sugar",
+          "description": "100 g, for icing — or leave them bare",
+          "optional": true
+        }
+      ],
+      "description": "Kanelsnegle are the smell Danish bakeries lead with at seven in the morning, and still the bake most often done at home from scratch. Cardamom in the dough, cinnamon butter in the spiral, and patience required in two instalments.\n\n## 1. Knead an enriched dough\n\n1. Crumble the fresh yeast into the lukewarm milk and stir to dissolve. Lukewarm means finger-warm; hot milk kills the yeast and nothing will rise.\n2. Add the flour, sugar, cardamom, salt, one egg and the 75 g soft butter, and knead for a good 10 minutes to a smooth, elastic, slightly sticky dough. Resist adding flour — soft dough makes soft snegle.\n\n## 2. Let it double\n\n1. Cover the bowl and leave it somewhere warm for about an hour, until the dough has doubled.\n\n## 3. Fill and roll\n\n1. Beat the 100 g soft butter with the brown sugar and cinnamon into a spreadable filling (remonce).\n2. Roll the dough out to roughly 30 x 40 cm and spread the filling right to the edges, leaving a bare strip along one long side to seal.\n3. Roll it up from the other long side into a snug log and cut 16 slices — a length of thread pulled around the log cuts cleaner than any knife.\n\n## 4. Proof again — the part people skip\n\n1. Lay the slices flat on two lined trays, cover, and give them 40 minutes to puff. Skip this and they bake up dense; the second proof is where the softness comes from.\n\n## 5. Bake, then choose your camp\n\n1. Brush with the beaten egg and bake at 200°C for 12-14 minutes until deep gold, watching the bottoms — the sugar wants to catch.\n2. Ice them with the icing sugar stirred to a thick paste with a few drops of water, or leave them bare. Denmark has never settled which is correct and will not settle it for you.\n3. They freeze well once cool; thaw and give them five minutes in a warm oven, and serve with coffee."
+    },
+    {
+      "name": "Brunsviger",
+      "yields": 8,
+      "prep_time": 25,
+      "cook_time": 20,
+      "time": 165,
+      "tags": [
+        "Danish",
+        "Baking",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Plain flour",
+          "description": "400 g"
+        },
+        {
+          "name": "Fresh yeast",
+          "description": "25 g"
+        },
+        {
+          "name": "Milk",
+          "description": "200 ml, lukewarm"
+        },
+        {
+          "name": "Sugar",
+          "description": "40 g"
+        },
+        {
+          "name": "Salt",
+          "description": "½ tsp"
+        },
+        {
+          "name": "Eggs",
+          "description": "1"
+        },
+        {
+          "name": "Butter",
+          "description": "75 g soft for the dough, plus 125 g for the topping"
+        },
+        {
+          "name": "Brown sugar",
+          "description": "225 g, dark, for the topping"
+        }
+      ],
+      "description": "On Funen a birthday morning has not started until brunsviger is on the table: soft yeast dough under a flood of brown-sugar butter, sometimes cut out as a brunsvigermand for the birthday child. The rest of Denmark has adopted it; Funen kept the passport.\n\n## 1. Make a soft dough\n\n1. Crumble the yeast into the lukewarm milk and stir until dissolved.\n2. Add the flour, sugar, salt, egg and the 75 g soft butter and knead to a smooth, slightly sticky dough — noticeably softer than bread dough. Do not add extra flour; softness is the whole point.\n\n## 2. Let it rise\n\n1. Cover and leave for about an hour, until doubled.\n\n## 3. Press and dimple deep\n\n1. Press the dough out into a greased high-sided tin, about 25 x 35 cm, to an even 1.5 cm.\n2. Cover and let it puff again for 30 minutes.\n3. Now dimple: press your fingertips deep into the dough, nearly to the bottom, all over. Shallow dents let the topping slide off and burn on the tin; deep pools are what make it brunsviger.\n\n## 4. Flood with topping\n\n1. Melt the 125 g butter with the brown sugar over low heat, stirring just until it comes together into a thick, grainy caramel. Do not boil it — taken too far it sets like toffee instead of soaking in.\n2. Spoon it over the dough so it fills the dimples first, then covers the rest.\n\n## 5. Bake and eat it warm\n\n1. Bake at 200°C for 18-20 minutes, until the dough is baked through and the topping is bubbling darkly at the edges.\n2. Cool for 15-20 minutes only: brunsviger is eaten slightly warm or not at all. Cut generous squares and pour the coffee."
+    },
+    {
+      "name": "Hindbærsnitter",
+      "yields": 8,
+      "prep_time": 35,
+      "cook_time": 15,
+      "time": 150,
+      "tags": [
+        "Danish",
+        "Baking",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Plain flour",
+          "description": "300 g"
+        },
+        {
+          "name": "Butter",
+          "description": "200 g, cold, cubed"
+        },
+        {
+          "name": "Icing sugar",
+          "description": "100 g for the pastry, plus 200 g for the icing"
+        },
+        {
+          "name": "Eggs",
+          "description": "1"
+        },
+        {
+          "name": "Vanilla extract",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Raspberry jam",
+          "description": "300 g, good and sharp"
+        },
+        {
+          "name": "Lemon",
+          "description": "a squeeze, for the icing"
+        },
+        {
+          "name": "Red food colouring",
+          "description": "1 drop, for the pink",
+          "optional": true
+        },
+        {
+          "name": "Sprinkles",
+          "description": "to finish (krymmel)",
+          "optional": true
+        }
+      ],
+      "description": "Every Danish bakery sells hindbærsnitter and every Dane has a ranking: pastry too soft here, jam too mean there, icing laid on with a trowel somewhere else. The homemade one wins because you control all three.\n\n## 1. Make the pastry\n\n1. Rub the cold butter into the flour and the 100 g icing sugar until it looks like damp sand, then add the egg and vanilla and bring it together quickly. Do not knead it — worked shortcrust bakes tough, and this pastry must stay crisp against the jam.\n2. Divide into two flat squares, wrap, and chill for at least 30 minutes; warm dough tears and shrinks.\n\n## 2. Bake the sheets flat\n\n1. Roll each piece out on baking paper into a thin sheet, 3-4 mm and roughly 25 x 35 cm, and prick it all over with a fork so it bakes flat.\n2. Bake at 190°C for 12-14 minutes, until pale gold at the edges. Cool the sheets completely — jam on a warm sheet is the fast route to sog.\n\n## 3. Sandwich with jam\n\n1. Choose the handsomer sheet for the lid. Spread the jam thickly and evenly over the other, right to the edges.\n2. Lay the lid on and press it down gently with flat hands.\n\n## 4. Ice it pink\n\n1. Stir the 200 g icing sugar with a squeeze of lemon juice to a thick icing that falls in a slow ribbon, and tint it pale pink with a single drop of colouring — or leave it white; the bakeries do both.\n2. Spread it over the lid and scatter the sprinkles on before it sets, if using.\n\n## 5. Freeze, then cut\n\n1. Put the whole thing in the freezer for 15-20 minutes, until the icing is set and the pastry firm.\n2. Trim the edges with a long sharp knife wiped between cuts — the trimmings are the baker's wage — then cut bars about 4 x 8 cm. The freezer step is what buys the clean edges; skip it and the jam smears every cut.\n3. They are best the same day, while the pastry still snaps against the jam, with afternoon coffee."
+    },
+    {
+      "name": "Vaniljekranse",
+      "yields": 8,
+      "prep_time": 40,
+      "cook_time": 25,
+      "time": 90,
+      "tags": [
+        "Danish",
+        "Baking",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Butter",
+          "description": "200 g, soft"
+        },
+        {
+          "name": "Sugar",
+          "description": "125 g"
+        },
+        {
+          "name": "Vanilla pod",
+          "description": "1, a real one"
+        },
+        {
+          "name": "Eggs",
+          "description": "1"
+        },
+        {
+          "name": "Plain flour",
+          "description": "250 g"
+        },
+        {
+          "name": "Almonds",
+          "description": "100 g, blanched and finely ground"
+        }
+      ],
+      "description": "Every Danish Christmas tin is a truce between two factions: vaniljekranse and pebernødder, each with partisans who count the other side's biscuits. This is the wreath camp's case — a real vanilla pod, ground almonds for the snap, and a dough stiff enough that piping it is the actual recipe.\n\n## 1. Make real vanilla sugar\n\n1. Split the vanilla pod lengthways, scrape out every seed, and rub the seeds into the sugar with your fingertips until no black clumps remain. Extract does not survive the comparison; the pod is the point.\n\n## 2. Make the dough\n\n1. Beat the soft butter with the vanilla sugar until smooth and even — creamy, not whipped fluffy.\n2. Beat in the egg.\n3. Add the flour and the ground almonds and mix to a firm, even dough. The almonds must be finely ground: coarse bits will block the nozzle at the worst possible moment.\n\n## 3. Pipe — the fight\n\n1. Fit a piping bag with the widest star nozzle you own — nothing under 1 cm — and fill it no more than half full.\n2. Pipe rings about 5 cm across onto lined trays, joining the ends of each. The dough will resist, and that resistance is exactly what gives ridges sharp enough to survive the oven. If it truly refuses, warm the bag between your hands for a minute, but never loosen the dough itself: soft dough pipes sweetly and bakes into flat, featureless rings.\n3. Chill the piped trays for 20 minutes so the ridges set.\n\n## 4. Bake\n\n1. Bake at 200°C for 8-10 minutes per tray, until pale gold with slightly darker edges. Brown wreaths taste of toast, not vanilla.\n2. Cool them completely on the tray. The snap — the ground almonds' contribution — only appears once they are fully cold.\n\n## 5. Tin them\n\n1. Store in a tin with a tight lid, where they keep for weeks in theory. December is not theory."
+    },
+    {
+      "name": "Fastelavnsboller",
+      "yields": 8,
+      "prep_time": 45,
+      "cook_time": 25,
+      "time": 195,
+      "tags": [
+        "Danish",
+        "Baking",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Plain flour",
+          "description": "400 g, plus more for shaping"
+        },
+        {
+          "name": "Fresh yeast",
+          "description": "25 g"
+        },
+        {
+          "name": "Milk",
+          "description": "200 ml lukewarm for the dough, plus 250 ml for the cream"
+        },
+        {
+          "name": "Butter",
+          "description": "60 g, very soft"
+        },
+        {
+          "name": "Sugar",
+          "description": "50 g for the dough, plus 40 g for the cream"
+        },
+        {
+          "name": "Eggs",
+          "description": "3 — 1 whole for the dough, 2 separated for the cream (save a white for brushing)"
+        },
+        {
+          "name": "Cardamom",
+          "description": "1 tsp, ground"
+        },
+        {
+          "name": "Salt",
+          "description": "½ tsp"
+        },
+        {
+          "name": "Cornflour",
+          "description": "25 g"
+        },
+        {
+          "name": "Vanilla extract",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Icing sugar",
+          "description": "150 g"
+        },
+        {
+          "name": "Cocoa powder",
+          "description": "2 tbsp"
+        }
+      ],
+      "description": "When fastelavnsboller fill the bakery windows, February is official. The home classic is a cardamom yeast bun with vanilla cream baked inside and a chocolate-glazed lid — the whipped-cream camp splits theirs open after cooling instead, and both camps turn up at the same table.\n\n## 1. Make the cream first\n\n1. Whisk the two egg yolks with 40 g of the sugar, the cornflour, the vanilla and a splash of the cream's 250 ml of milk into a smooth paste, and bring the rest of that milk to steaming in a small pan.\n2. Pour the hot milk over the paste while whisking, return everything to the pan and whisk over medium heat until it thickens properly and just bubbles.\n3. Scrape into a bowl, press film onto the surface and chill completely, about an hour. Warm cream melts its way straight out of the dough.\n\n## 2. Make the dough\n\n1. Dissolve the yeast in the lukewarm dough milk, then add the whole egg, 50 g sugar, the cardamom, salt and flour, and knead until it gathers.\n2. Work in the soft butter and keep kneading 8-10 minutes until smooth and elastic.\n3. Cover and prove about 1 hour, until doubled.\n\n## 3. Fill and shape\n\n1. Divide the dough into 8 and press or roll each piece to a square roughly 12 cm across.\n2. Put a generous spoonful of cold cream in the centre of each, gather the corners over it and pinch every seam firmly shut — a leak now is a lake in the oven — then set them seam down on a lined tray.\n3. Prove 30 minutes, then brush with the saved egg white, lightly beaten.\n\n## 4. Bake and cool\n\n1. Bake at 200°C for 12-14 minutes until deep golden, then cool completely on a rack. Glaze on a warm bun slides straight off.\n\n## 5. Glaze\n\n1. Stir the icing sugar and cocoa with hot water added a teaspoon at a time until you have a thick, spreadable chocolate glaze.\n2. Glaze the tops and let them set. Traditionally eaten around Fastelavn, ideally by children in costume who have just beaten the sweets out of a barrel."
+    },
+    {
+      "name": "Koldskål med kammerjunkere",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 0,
+      "time": 45,
+      "tags": [
+        "Danish",
+        "Dessert",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Buttermilk",
+          "description": "1 L, straight from the fridge"
+        },
+        {
+          "name": "Skyr",
+          "description": "250 g (or ymer — anything thick and soured, for body)"
+        },
+        {
+          "name": "Sugar",
+          "description": "3 tbsp, or to taste"
+        },
+        {
+          "name": "Vanilla pod",
+          "description": "½, seeds scraped (or 2 tsp vanilla sugar)"
+        },
+        {
+          "name": "Lemon",
+          "description": "1 — finely grated zest and half the juice"
+        },
+        {
+          "name": "Vanilla rusk biscuits",
+          "description": "1 bag (kammerjunkere — shop-bought is the norm, even for purists)"
+        },
+        {
+          "name": "Strawberries",
+          "description": "400 g, hulled and halved",
+          "optional": true
+        }
+      ],
+      "description": "Denmark's summer thermometer: the first real heatwave, and buttermilk sells out nationwide by lunchtime. The old lane whisks raw eggs and sugar into it, and grandparents still defend that version; this is the eggless lane the supermarket era made standard — cold, sharp and drinkable enough to explain the empty shelves.\n\n## 1. Whisk\n\n1. Rub the vanilla seeds into the sugar so they separate instead of clumping.\n2. Whisk the skyr with the vanilla sugar, the lemon zest and the lemon juice until completely smooth — lumps of skyr never whisk out once the buttermilk is in.\n3. Whisk in the buttermilk. Taste and adjust the sugar: it should stay lemon-sharp and fresh, not pudding-sweet.\n\n## 2. Chill\n\n1. Refrigerate at least 30 minutes. Koldskål is meant to be almost painfully cold; at room temperature it is just confused dairy.\n\n## 3. Serve\n\n1. Pour into bowls — or glasses, since it is drunk as much as eaten — and top with the halved strawberries.\n2. Add a handful of kammerjunkere (the little vanilla rusks) at the very last second, so the first ones are still crisp while the rest soak soft. Both textures are the point, which is why the bag stays on the table."
+    },
+    {
+      "name": "Risengrød",
+      "yields": 4,
+      "prep_time": 5,
+      "cook_time": 45,
+      "time": 60,
+      "tags": [
+        "Danish",
+        "Main",
+        "Vegetarian",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Rice",
+          "description": "250 g pudding rice (grødris)"
+        },
+        {
+          "name": "Water",
+          "description": "150 ml"
+        },
+        {
+          "name": "Milk",
+          "description": "1.2 L whole"
+        },
+        {
+          "name": "Salt",
+          "description": "1 small pinch"
+        },
+        {
+          "name": "Butter",
+          "description": "1 cold pat per bowl — non-negotiable"
+        },
+        {
+          "name": "Sugar",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Cinnamon",
+          "description": "1 tbsp"
+        }
+      ],
+      "description": "Dinner, not dessert: a bowl of rice porridge with a melting pat of butter is what many Danish families eat on the 23rd of December — lillejuleaften — while the duck waits for the real evening. Make the full pot on purpose, because tomorrow half of it becomes risalamande, and on the 24th one bowl is owed to the nisse.\n\n## 1. Start in water\n\n1. Bring the rice and the water to the boil in a heavy-bottomed pan and let it bubble for 2 minutes, stirring, until the water is nearly absorbed. This little water start is the old trick that helps keep the rice off the bottom later.\n\n## 2. Milk in, heat down\n\n1. Pour in the milk and bring it just barely to a simmer, stirring.\n2. Drop the heat to the absolute lowest, cover, and cook 35-40 minutes, stirring right along the bottom every five minutes. A scorched pot is the classic lillejuleaften disaster and the burnt taste goes all the way through — low heat and a flat-edged spoon are the whole defence.\n3. Add the pinch of salt near the end. You want a soft porridge that slumps lazily off the spoon; stir in a splash more milk if it tightens.\n\n## 3. Rest\n\n1. Take the pan off the heat, keep the lid on, and leave it 10 minutes. It thickens as it stands.\n\n## 4. Serve — and pay the nisse\n\n1. Ladle into bowls, press a crater into the middle of each and set a cold pat of butter in it to melt. Mix the sugar and cinnamon and scatter it generously over everything.\n2. Hold back a good half of the pot, plain and unbuttered, and refrigerate it: that is tomorrow's risalamande, planned rather than leftover.\n3. On the 24th, tradition sends one bowl — extra butter — up to the loft or out to the barn for the nisse. Skip it and he sours the milk and hides your keys all year; the butter is cheap insurance."
+    },
+    {
+      "name": "Risalamande",
+      "yields": 8,
+      "prep_time": 25,
+      "cook_time": 5,
+      "time": 30,
+      "tags": [
+        "Danish",
+        "Dessert",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Rice porridge",
+          "description": "700 g, cold — yesterday's risengrød, held back plain"
+        },
+        {
+          "name": "Double cream",
+          "description": "500 ml"
+        },
+        {
+          "name": "Sugar",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Vanilla pod",
+          "description": "1"
+        },
+        {
+          "name": "Almonds",
+          "description": "150 g blanched, roughly chopped — plus exactly 1 kept whole"
+        },
+        {
+          "name": "Cherry sauce",
+          "description": "1 jar, about 500 g (kirsebærsauce)"
+        }
+      ],
+      "description": "Christmas Eve's dessert and its only sanctioned gambling. Yesterday's rice porridge is folded with whipped cream, real vanilla and chopped almonds, one single whole almond is hidden in the bowl, and whoever finds it wins the mandelgave — the almond present — provided they can keep a straight face long enough.\n\n## 1. Loosen and flavour\n\n1. Stir the cold porridge in a large bowl to break it up.\n2. Split the vanilla pod, scrape the seeds and rub them into the sugar, then stir the vanilla sugar and the chopped almonds through the porridge. The almonds should be roughly chopped, not ground — every spoonful needs a little crunch, because that is what lets the whole almond hide.\n\n## 2. Fold in the cream\n\n1. Whip the cream to soft peaks only; stiff cream makes a heavy risalamande.\n2. Fold it in a third at a time, keeping the whole thing loose and cloud-like. Taste — gently sweet, with the vanilla obvious.\n\n## 3. Hide the almond\n\n1. Drop in the single whole almond and give one blind stir to bury it. Chill until serving.\n\n## 4. The game\n\n1. Warm the cherry sauce gently in a small pan.\n2. Serve the cold pudding with the warm sauce poured over — that temperature contrast is the dish.\n3. The rules: everyone eats, everyone watches everyone else, and the finder's correct move is to park the almond in a cheek and keep eating, deadpan, until the bowl is scraped clean. The suspense is not a side effect; it is the dessert."
+    },
+    {
+      "name": "Gammeldags æblekage",
+      "yields": 6,
+      "prep_time": 25,
+      "cook_time": 25,
+      "time": 110,
+      "tags": [
+        "Danish",
+        "Dessert",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Apples",
+          "description": "1 kg sharp ones (Bramley or Belle de Boskoop), peeled, cored and chopped"
+        },
+        {
+          "name": "Sugar",
+          "description": "150 g — half for the apples, half for the crumbs"
+        },
+        {
+          "name": "Vanilla pod",
+          "description": "½, split"
+        },
+        {
+          "name": "Breadcrumbs",
+          "description": "150 g fine dried breadcrumbs"
+        },
+        {
+          "name": "Butter",
+          "description": "75 g"
+        },
+        {
+          "name": "Double cream",
+          "description": "250 ml"
+        },
+        {
+          "name": "Redcurrant jelly",
+          "description": "a few teaspoons, for the top",
+          "optional": true
+        }
+      ],
+      "description": "No oven comes anywhere near this cake. Gammeldags æblekage is stewed apples and butter-toasted crumbs layered cold in a glass bowl under whipped cream, and it stands or falls on one thing: crumbs toasted properly crisp. Skimp there and you have made apple porridge with ambitions.\n\n## 1. Stew the apples\n\n1. Put the chopped apples in a pan with a splash of water and the split vanilla pod, cover, and stew over low heat for about 15 minutes until they collapse.\n2. Stir in half the sugar and taste: it should stay bright and slightly sharp, because it lives under sweet crumbs. Leave a little texture — coarse mash, not baby food — then fish out the pod and cool completely.\n\n## 2. Toast the crumbs — the actual recipe\n\n1. Melt the butter in your widest pan, add the breadcrumbs and the rest of the sugar, and toast over medium heat, stirring the whole time, for 8-10 minutes.\n2. They are done when deep golden and audibly dry against the spoon, and they go from perfect to burnt in under a minute once the sugar starts caramelising, so do not leave the pan. Undertoasted crumbs drink the apple and the whole dish turns to porridge.\n3. Spread them out on a plate; they finish crisping as they cool.\n\n## 3. Cool everything\n\n1. Both apples and crumbs must be completely cold before they meet. Anything warm makes steam, and steam makes sog. This step is not optional.\n\n## 4. Layer and crown\n\n1. In a glass bowl — the strata should be visible — layer apples and crumbs, starting with apples and ending with crumbs.\n2. Whip the cream to soft peaks and spread it on top, then dot with redcurrant jelly if you have it.\n3. Serve within an hour or two, while crisp against soft is still the whole experience. Some families assemble it the night before so it softens into one melded whole; that is a real school, but the crisp school is bigger."
+    },
+    {
+      "name": "Citronfromage",
+      "yields": 6,
+      "prep_time": 30,
+      "cook_time": 5,
+      "time": 275,
+      "tags": [
+        "Danish",
+        "Dessert",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Gelatine sheets",
+          "description": "5 (husblas)"
+        },
+        {
+          "name": "Eggs",
+          "description": "3, separated — they stay raw, so buy fresh ones you trust"
+        },
+        {
+          "name": "Sugar",
+          "description": "150 g"
+        },
+        {
+          "name": "Lemon",
+          "description": "2, juiced (about 100 ml)"
+        },
+        {
+          "name": "Lemon zest",
+          "description": "of 1 of the lemons, finely grated"
+        },
+        {
+          "name": "Double cream",
+          "description": "400 ml — 250 ml folded in, the rest for the top"
+        }
+      ],
+      "description": "The dessert that outlived every food fashion because Danish grandmothers simply refused to stop making it. Citronfromage is 1950s dinner-party engineering — raw eggs, real lemon, gelatine and air — and made properly it is still one of the best things you can do to a lemon.\n\n## 1. Soak\n\n1. Put the gelatine sheets in plenty of cold water and leave them 10 minutes while you work. They should go completely limp.\n\n## 2. Whisk the yolks\n\n1. Whisk the egg yolks with the sugar until pale, thick and ribbon-like — a good few minutes, and worth every one, because this is where the sugar dissolves and the fromage gets its body.\n2. Whisk in the lemon juice and the lemon zest.\n\n## 3. Marry the gelatine — where it lives or dies\n\n1. Lift out the sheets, squeeze them, and melt them in a small bowl set over hot water; they need barely a minute.\n2. Whisk two or three spoonfuls of the lemon mixture into the warm gelatine first, then pour that back into the bowl in a thin stream, whisking constantly. Hot gelatine poured straight into a cold mixture sets on contact into rubbery threads, and no amount of whisking brings it back.\n\n## 4. Fold\n\n1. Whip the egg whites to soft peaks in a spotless bowl, and separately whip 250 ml of the cream to soft peaks.\n2. When the lemon base has just started to thicken, fold in the whites, then the cream, keeping as much air as you can. Fold too early and it separates into a jelly layer under a foam layer — some families insist they prefer the layers, and you may believe them or not.\n\n## 5. Set and crown\n\n1. Pour into a glass bowl or individual glasses and refrigerate at least 4 hours, better overnight.\n2. Just before serving, whip the remaining cream and spread it over the top. The cream lid is not decoration; citronfromage without it is simply not served, and every grandmother agrees on this one."
+    },
+    {
+      "name": "Rødgrød med fløde",
+      "yields": 6,
+      "prep_time": 15,
+      "cook_time": 10,
+      "time": 145,
+      "tags": [
+        "Danish",
+        "Dessert",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Redcurrants",
+          "description": "500 g, stripped from their stalks (fresh or frozen)"
+        },
+        {
+          "name": "Strawberries",
+          "description": "400 g, hulled, halved if large"
+        },
+        {
+          "name": "Raspberries",
+          "description": "200 g",
+          "optional": true
+        },
+        {
+          "name": "Sugar",
+          "description": "150 g, plus a spoonful for the surface"
+        },
+        {
+          "name": "Water",
+          "description": "200 ml, plus 3 tbsp cold for the starch"
+        },
+        {
+          "name": "Potato starch",
+          "description": "3 tbsp (kartoffelmel)"
+        },
+        {
+          "name": "Double cream",
+          "description": "250 ml, cold and unwhipped, for the table"
+        }
+      ],
+      "description": "The dish Danes hand to foreigners as a pronunciation test, then happily eat while the guest is still trying. However you manage the name, rødgrød med fløde is red summer berries thickened with potato starch to a soft wobble — never glue — with cold cream poured over at the table.\n\n## 1. Simmer the fruit\n\n1. Bring the redcurrants and the 200 ml of water to the boil and simmer 3-4 minutes until the berries burst.\n2. Add the strawberries, the raspberries if using, and the sugar, and simmer 3-4 minutes more. The fruit should be soft but still recognisably fruit, not jam.\n\n## 2. Thicken — wobble, not glue\n\n1. Stir the potato starch smooth with the 3 tbsp of cold water.\n2. Take the pan off the heat, stir the slurry in, then return it to the lowest heat just until the grød thickens and turns glossy and translucent — a matter of moments. Potato starch that is allowed to boil turns ropey and gluey, and everyone at the table will know exactly what happened.\n3. Pour into a serving bowl and sprinkle the spoonful of sugar over the surface so it does not form a skin.\n\n## 3. Chill\n\n1. Cool to room temperature, then refrigerate at least 2 hours. It should set to a spoonable wobble, not a jelly.\n\n## 4. Med fløde\n\n1. Serve cold with the cream — cold, unwhipped, in a jug — poured over by each person at the table, never stirred in beforehand.\n2. Having made it, you have earned the right to ask a foreign guest to say the name before they get the jug."
+    },
+    {
+      "name": "Pandekager",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 25,
+      "time": 70,
+      "tags": [
+        "Danish",
+        "Dessert",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Plain flour",
+          "description": "250 g"
+        },
+        {
+          "name": "Milk",
+          "description": "500 ml, plus a splash if needed"
+        },
+        {
+          "name": "Eggs",
+          "description": "3"
+        },
+        {
+          "name": "Sugar",
+          "description": "2 tbsp for the batter, plus plenty for rolling"
+        },
+        {
+          "name": "Salt",
+          "description": "1 pinch"
+        },
+        {
+          "name": "Vanilla extract",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Butter",
+          "description": "50 g — half melted into the batter, half for the pan"
+        },
+        {
+          "name": "Strawberry jam",
+          "description": "to serve",
+          "optional": true
+        },
+        {
+          "name": "Vanilla ice cream",
+          "description": "to serve",
+          "optional": true
+        }
+      ],
+      "description": "Thinner than an American pancake, a shade sturdier than a French crêpe, and rolled around plain sugar. Two laws apply: the batter rests, and the first pancake — always wrong, always — belongs to the cook, eaten standing at the stove.\n\n## 1. Make the batter\n\n1. Whisk the flour, sugar and salt with half the milk to a thick, completely lump-free paste; lumps get caught now or never.\n2. Whisk in the eggs, then the rest of the milk, the vanilla and half the butter, melted. The batter should be thin, like single cream.\n\n## 2. Rest — the part people skip\n\n1. Leave it 30 minutes at room temperature. The flour swells, the bubbles settle, and the pancakes stop tearing when you flip them. Skipping the rest is why the first three fail instead of just the first.\n\n## 3. Fry thin\n\n1. Heat a good frying pan over medium-high and brush it with a little of the remaining butter.\n2. Pour in a small ladleful and immediately tilt and swirl so it just coats the base. If it will not swirl thin, loosen the batter with a splash of milk.\n3. Cook 1-2 minutes until the underside is lacy gold and the top has set, flip, and give it 30 seconds more. Re-butter the pan every two or three pancakes.\n4. The first one goes to the cook, per law. Stack the rest on a plate, where they keep each other warm and soft.\n\n## 4. Roll\n\n1. Lay a line of sugar across each pancake and roll it into a tube. Purists stop exactly there.\n2. For the ambitious: a stripe of strawberry jam before rolling, or a scoop of vanilla ice cream folded inside while the pancake is still warm. Count on more per person than seems reasonable."
+    },
+    {
+      "name": "Øllebrød",
+      "yields": 4,
+      "prep_time": 10,
+      "cook_time": 15,
+      "time": 505,
+      "tags": [
+        "Danish",
+        "Breakfast",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Rye bread",
+          "description": "300 g stale dark rye (rugbrød), torn or cubed"
+        },
+        {
+          "name": "Malt beer",
+          "description": "330 ml non-alcoholic malt beer (hvidtøl)"
+        },
+        {
+          "name": "Water",
+          "description": "500 ml"
+        },
+        {
+          "name": "Sugar",
+          "description": "3-4 tbsp, to taste"
+        },
+        {
+          "name": "Lemon zest",
+          "description": "of 1 lemon, finely grated"
+        },
+        {
+          "name": "Double cream",
+          "description": "150 ml, softly whipped, to serve"
+        },
+        {
+          "name": "Milk",
+          "description": "cold, the weekday alternative to the cream",
+          "optional": true
+        }
+      ],
+      "description": "The most Danish instruction in food: do not throw out the rugbrød. Stale rye simmered with malt beer into a dark porridge sounds like a punishment and tastes — genuinely, ask anyone who grew up on it — closer to warm chocolate, which is why restaurants with tasting menus now serve what frugal households never stopped making.\n\n## 1. Soak overnight\n\n1. Tear or cube the bread into the pan it will cook in, pour over the water and the malt beer, and press it under the surface.\n2. Cover and leave it overnight on the counter. A few hours will do at a pinch, but overnight is both the tradition and the texture.\n\n## 2. Simmer smooth\n\n1. Set the pan over low heat and simmer 10-15 minutes, whisking often, until the bread collapses into a thick, glossy, dark porridge. It catches on the bottom like every porridge, so keep the whisk moving along it.\n2. Whisk hard for a rustic texture, or blend and sieve it if you want the silk the restaurants sell.\n3. Sweeten with the sugar to taste and stir in the lemon zest. It should land malty, dark and gently sweet-sour; loosen with a splash of water if it stands too stiff.\n\n## 3. Serve\n\n1. Ladle it hot into bowls and top with the softly whipped cream — or pour cold milk around it, which is the honest weekday version.\n2. Eat it while it is hot, and be quietly surprised, like everyone before you."
+    }
+  ]
+}

@@ -1,0 +1,3060 @@
+{
+  "note": "The 50 recipes Filipino home cooking actually runs on, added to the household by Claude. Every recipe carries source ai://claude-fable-5 and the tag 'AI-written', because the app shows a badge for recipes a model wrote rather than a person cooked. Quantities are household-scale and follow the common versions; adjust to taste — especially the sourness and the chillies, which are personal.",
+  "recipes": [
+    {
+      "name": "Adobong manok",
+      "yields": 4,
+      "prep_time": 10,
+      "cook_time": 45,
+      "time": 85,
+      "tags": [
+        "Filipino",
+        "Main",
+        "Dairy-free",
+        "One pot",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Chicken thighs",
+          "description": "1 kg, bone-in, skin on"
+        },
+        {
+          "name": "Soy sauce",
+          "description": "80 ml"
+        },
+        {
+          "name": "Vinegar",
+          "description": "120 ml cane or white vinegar (sukang maasim)"
+        },
+        {
+          "name": "Garlic",
+          "description": "1 whole head, cloves peeled and lightly crushed"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "3"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "1 tbsp, whole"
+        },
+        {
+          "name": "Water",
+          "description": "120 ml"
+        },
+        {
+          "name": "Brown sugar",
+          "description": "1 tsp",
+          "optional": true
+        },
+        {
+          "name": "Jasmine rice",
+          "description": "steamed, to serve",
+          "optional": true
+        }
+      ],
+      "description": "Adobong manok is the default answer to \"what is Filipino food\": chicken braised in soy sauce, cane vinegar and a whole head of garlic until the sauce turns dark and glossy. Every family's ratio is correct and everyone else's is wrong; this one is a fair place to start the argument.\n\n## 1. Marinate\n\n1. Toss the chicken with the soy sauce and crushed garlic and leave it for 30 minutes at room temperature, or overnight in the fridge if you are organised.\n\n## 2. Braise — and do not stir\n\n1. Tip the chicken and its marinade into a heavy pot with the vinegar, water, bay leaves and peppercorns, and bring to a boil uncovered.\n2. Now the one rule of adobo: do not stir until the vinegar has boiled for a good 10 minutes and lost its raw edge. Stir too soon and the whole dish tastes sharp and unfinished. The steam stops stinging your nose when it is ready.\n3. Lower the heat, cover and simmer for 25 minutes, turning the pieces once, until the chicken is tender.\n\n## 3. Reduce to a glaze\n\n1. Uncover, raise the heat and reduce the sauce, spooning it over the chicken, until it is glossy and just coats the meat, 8-10 minutes. The fat should begin to separate and shine.\n2. Taste: more soy sauce for salt, a splash more vinegar for edge, and the brown sugar if yours is a sweet-adobo household.\n\n## 4. Serve\n\n1. Rest for 5 minutes off the heat and serve over steamed jasmine rice with plenty of sauce. Adobo reheats into an even better dish tomorrow — vinegar was preserving Filipino food long before refrigerators."
+    },
+    {
+      "name": "Adobong baboy",
+      "yields": 4,
+      "prep_time": 10,
+      "cook_time": 80,
+      "time": 90,
+      "tags": [
+        "Filipino",
+        "Main",
+        "Dairy-free",
+        "One pot",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork belly",
+          "description": "1 kg, skin on, in 4 cm cubes"
+        },
+        {
+          "name": "Soy sauce",
+          "description": "100 ml"
+        },
+        {
+          "name": "Vinegar",
+          "description": "120 ml cane or white vinegar (sukang maasim)"
+        },
+        {
+          "name": "Garlic",
+          "description": "1 whole head, cloves peeled and crushed"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "3"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "1 tbsp, whole"
+        },
+        {
+          "name": "Water",
+          "description": "250 ml"
+        },
+        {
+          "name": "Brown sugar",
+          "description": "1 tbsp",
+          "optional": true
+        },
+        {
+          "name": "Jasmine rice",
+          "description": "steamed, to serve",
+          "optional": true
+        }
+      ],
+      "description": "Adobong baboy is the richer, Sunday version of the national dish: pork belly braised in soy sauce and vinegar until the fat renders and turns the sauce glossy. The pot forgives almost everything except impatience.\n\n## 1. Straight into the pot\n\n1. Put the pork, soy sauce, vinegar, water, garlic, bay leaves and peppercorns into a heavy pot and bring to a boil uncovered. Do not stir for the first 10 minutes — the vinegar must boil off its raw edge, the same rule as every adobo.\n2. Cover and simmer gently for about 1 hour, until a knife slides into the belly without resistance.\n\n## 2. Fry it in its own fat\n\n1. Lift the pork out and pour the braising liquid into a jug; skim the fat from the top of the jug back into the pot.\n2. Set the pot over medium-high heat and fry the pork cubes in that rendered fat, turning, until the edges catch and crisp, 5-6 minutes. Plenty of families stop after the braise and that adobo is complete too — but this is the version people remember.\n\n## 3. Reduce and glaze\n\n1. Pour the braising liquid back over the pork and boil hard until it reduces to a dark, glossy sauce that clings rather than pools, about 10 minutes. Add the brown sugar here if your household leans sweet.\n\n## 4. Serve\n\n1. Serve over steamed jasmine rice, sauce spooned on top. It is even better tomorrow, once the vinegar and the fat have settled their differences."
+    },
+    {
+      "name": "Sinigang na baboy",
+      "yields": 6,
+      "prep_time": 20,
+      "cook_time": 95,
+      "time": 115,
+      "tags": [
+        "Filipino",
+        "Soup",
+        "Gluten-free",
+        "Dairy-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork ribs",
+          "description": "1 kg, meaty, cut between the bones (pork belly in big chunks works the same way)"
+        },
+        {
+          "name": "Water",
+          "description": "2.5 L"
+        },
+        {
+          "name": "Onion",
+          "description": "1 large, quartered"
+        },
+        {
+          "name": "Tomatoes",
+          "description": "2, quartered"
+        },
+        {
+          "name": "Taro",
+          "description": "3 small, peeled and halved (gabi)"
+        },
+        {
+          "name": "Mooli",
+          "description": "1, peeled, in thick half-moons (labanos)"
+        },
+        {
+          "name": "Tamarind paste",
+          "description": "4 tbsp, from a block or jar (sampalok)"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "3 tbsp (patis), plus more at the table"
+        },
+        {
+          "name": "Long beans",
+          "description": "200 g, in 5 cm lengths (sitaw)"
+        },
+        {
+          "name": "Green chillies",
+          "description": "2 long ones, left whole (siling haba)",
+          "optional": true
+        },
+        {
+          "name": "Water spinach",
+          "description": "1 large bunch, leaves and tender stems (kangkong)"
+        },
+        {
+          "name": "Jasmine rice",
+          "description": "steamed, to serve",
+          "optional": true
+        }
+      ],
+      "description": "Sinigang is sourness with a soup attached, and how sour you take it is a personality test: done properly it should make you sit up. Pork ribs, tamarind and whatever vegetables the market had — the everyday Filipino table at its best.\n\n## 1. Build the broth\n\n1. Put the pork and water in a large pot, bring to a boil and skim the grey foam honestly — the broth's clarity is decided in these first 10 minutes.\n2. Add the onion and tomatoes, lower the heat and simmer for about 1 hour, until the pork is tender and loosening from the bone.\n\n## 2. Give it body\n\n1. Add the taro and simmer for 15 minutes: the edges should begin to dissolve and quietly thicken the broth — that is their job.\n2. Add the mooli and simmer for 10 minutes more.\n\n## 3. Sour it\n\n1. Stir in the tamarind paste and fish sauce and simmer for 5 minutes.\n2. Taste. It should be assertively sour; if nobody at the table would sit up, add more tamarind. Season only with fish sauce, never salt alone — patis carries the savoury depth the sourness leans on.\n\n## 4. Greens last\n\n1. Add the long beans and the whole green chillies and cook for 4 minutes.\n2. Turn off the heat and push the water spinach into the broth; it wilts in the time it takes to find the ladle.\n3. Serve steaming, with rice alongside and more fish sauce at the table."
+    },
+    {
+      "name": "Kare-kare",
+      "yields": 6,
+      "prep_time": 30,
+      "cook_time": 210,
+      "time": 240,
+      "tags": [
+        "Filipino",
+        "Main",
+        "Gluten-free",
+        "Dairy-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Oxtail",
+          "description": "1.5 kg, cut into thick rounds"
+        },
+        {
+          "name": "Ox tripe",
+          "description": "300 g, cleaned (twalya)",
+          "optional": true
+        },
+        {
+          "name": "Water",
+          "description": "3 L"
+        },
+        {
+          "name": "Onion",
+          "description": "2 large: one halved for the braise, one chopped for the sauce"
+        },
+        {
+          "name": "Garlic",
+          "description": "6 cloves, minced"
+        },
+        {
+          "name": "Annatto seeds",
+          "description": "2 tbsp (atsuete)"
+        },
+        {
+          "name": "Peanut butter",
+          "description": "250 g, smooth and unsweetened"
+        },
+        {
+          "name": "Rice",
+          "description": "50 g, for toasting and grinding — the traditional thickener"
+        },
+        {
+          "name": "Aubergine",
+          "description": "2, in thick diagonal slices"
+        },
+        {
+          "name": "Long beans",
+          "description": "200 g, in 6 cm lengths (sitaw)"
+        },
+        {
+          "name": "Banana blossom",
+          "description": "1, quartered, tough outer leaves removed (puso ng saging; tinned is fine)"
+        },
+        {
+          "name": "Pak choi",
+          "description": "3 heads, halved lengthways (pechay)"
+        },
+        {
+          "name": "Shrimp paste",
+          "description": "150 g, sautéed (bagoong alamang) — the seasoning lives here, not in the pot"
+        },
+        {
+          "name": "Jasmine rice",
+          "description": "steamed, to serve",
+          "optional": true
+        }
+      ],
+      "description": "Kare-kare is celebration food: oxtail braised to a wobble under a thick peanut sauce dyed sunset-orange with annatto. The stew is mild on purpose — the salt lives in the sautéed shrimp paste served alongside, and skipping the bagoong is not eating kare-kare.\n\n## 1. Braise the oxtail\n\n1. Put the oxtail, and the tripe if using, into a large pot with the water and the halved onion. Bring to a boil, skim thoroughly, then simmer partly covered for about 3 hours, until the meat wobbles on the bone.\n2. Skim the fat as it collects, keeping 2 tbsp of it. Lift out the meat, strain and keep the broth, and discard the onion halves.\n\n## 2. Toast the thickeners\n\n1. While the pot works, toast the rice in a dry pan, shaking often, until deep gold, then grind it to a coarse flour. This, as much as the peanut butter, is what gives kare-kare its body.\n2. Steep the annatto seeds in a ladleful of hot broth for 10 minutes, then strain, pressing out every drop of colour.\n\n## 3. Make the sauce\n\n1. Sauté the chopped onion and the garlic in the reserved fat in the rinsed-out pot until soft.\n2. Add 1.5 L of the broth, the annatto liquid, the peanut butter and the ground rice, and simmer, stirring, for 10-15 minutes, until the sauce coats a spoon heavily.\n3. Return the meat to warm through — and resist seasoning the pot to taste. A correct kare-kare tastes underpowered on its own; that is the design.\n\n## 4. Vegetables\n\n1. Add the banana blossom and simmer for 5 minutes, then the aubergine and long beans for 6-8 minutes, until just tender.\n2. Lay the pak choi on top, cover, and give it 2 final minutes.\n\n## 5. Serve — the bagoong does the talking\n\n1. Bring the pot to the table with steamed rice and the sautéed shrimp paste in its own bowl. Everyone seasons spoonful by spoonful; the meeting of mild peanut and salty-funky bagoong is the entire dish."
+    },
+    {
+      "name": "Tinolang manok",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 45,
+      "time": 60,
+      "tags": [
+        "Filipino",
+        "Soup",
+        "Gluten-free",
+        "Dairy-free",
+        "Healthy",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Whole chicken",
+          "description": "1 small (about 1.2 kg), cut into serving pieces"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Ginger",
+          "description": "60 g, peeled and cut into matchsticks"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, crushed"
+        },
+        {
+          "name": "Onion",
+          "description": "1, sliced"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "2 tbsp (patis), plus more to season"
+        },
+        {
+          "name": "Water",
+          "description": "1.5 L; the water from rinsing tonight's rice (hugas-bigas) is the traditional choice"
+        },
+        {
+          "name": "Green papaya",
+          "description": "1 small, peeled, deseeded and cut into wedges"
+        },
+        {
+          "name": "Chilli leaves",
+          "description": "2 handfuls (dahon ng sili); moringa leaves (malunggay) are the other classic"
+        },
+        {
+          "name": "Jasmine rice",
+          "description": "steamed, to serve",
+          "optional": true
+        }
+      ],
+      "description": "Tinola is the everyday restorative: the soup Filipino households make for rainy evenings, new mothers and anyone who so much as sniffles. Ginger does the heavy lifting, so be generous with it.\n\n## 1. Sauté the trinity\n\n1. Heat the oil in a soup pot and fry the ginger until fragrant and golden at the edges, then add the garlic and onion and cook until soft. This base, not the simmering, is where tinola's flavour is made.\n\n## 2. Seal the chicken\n\n1. Add the chicken pieces and turn them in the aromatics until the outsides lose their pink.\n2. Pour the fish sauce directly onto the chicken and let it sizzle down for a minute before any liquid goes in — it seasons the meat, not just the soup.\n\n## 3. Simmer\n\n1. Add the water — traditionally the water from rinsing tonight's rice, which lends the broth a faint silkiness — and simmer, covered, for 25 minutes.\n\n## 4. Papaya, then leaves\n\n1. Add the green papaya and simmer for 10 minutes, until just tender but holding its shape.\n2. Turn off the heat, stir in the chilli leaves and let them wilt for a minute. Adjust with more fish sauce.\n3. Serve hot with steamed rice — broth first, and plenty of it, if anyone is actually ill."
+    },
+    {
+      "name": "Bulalo",
+      "yields": 6,
+      "prep_time": 15,
+      "cook_time": 225,
+      "time": 240,
+      "tags": [
+        "Filipino",
+        "Soup",
+        "Gluten-free",
+        "Dairy-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Beef shin",
+          "description": "1.5 kg, bone-in, sawn into thick rounds with the marrow showing — ask for the bulalo cut"
+        },
+        {
+          "name": "Water",
+          "description": "3.5 L, plus more for topping up"
+        },
+        {
+          "name": "Onion",
+          "description": "1 large, halved"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "1 tbsp, whole"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "3 tbsp (patis), plus more at the table"
+        },
+        {
+          "name": "Sweetcorn",
+          "description": "2 cobs, husked and cut into thirds"
+        },
+        {
+          "name": "Cabbage",
+          "description": "half a head, in wedges through the core"
+        },
+        {
+          "name": "Spring onions",
+          "description": "2, sliced",
+          "optional": true
+        },
+        {
+          "name": "Jasmine rice",
+          "description": "steamed, to serve",
+          "optional": true
+        }
+      ],
+      "description": "Bulalo comes from the cool cattle country of Batangas: beef shin and marrow bones simmered until the broth is clear, sweet and quietly rich. The marrow is the prize, and every family has etiquette about who gets it.\n\n## 1. Boil, then skim honestly\n\n1. Cover the beef shin with the water in your largest pot and bring to a boil. Skim relentlessly for the first 15 minutes — every bit of grey foam removed now is clarity kept for the next three hours.\n2. Add the onion and peppercorns and lower the heat until the surface barely shivers.\n\n## 2. The long simmer\n\n1. Simmer, partly covered, for about 3 hours, topping up with hot water to keep the bones submerged. Never let it gallop: a rolling boil makes a cloudy bulalo, and there is no way back.\n2. It is ready when the meat gives to a spoon and the sinew has turned silky.\n\n## 3. Vegetables\n\n1. Season the broth with the fish sauce, add the sweetcorn and simmer for 10 minutes.\n2. Add the cabbage for the last 5 minutes; it should keep a little squeak.\n\n## 4. Serve with ceremony\n\n1. Give every bowl broth, meat and vegetables, scatter with spring onions, and put rice and extra fish sauce on the table.\n2. The marrow bone stands upright in the bowl of the eldest or the guest of honour — that is the etiquette — to be knocked out onto hot rice, where marrow belongs."
+    },
+    {
+      "name": "Nilagang baka",
+      "yields": 6,
+      "prep_time": 15,
+      "cook_time": 110,
+      "time": 125,
+      "tags": [
+        "Filipino",
+        "Soup",
+        "Gluten-free",
+        "Dairy-free",
+        "One pot",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Beef brisket",
+          "description": "1 kg, in large chunks"
+        },
+        {
+          "name": "Water",
+          "description": "2.5 L"
+        },
+        {
+          "name": "Onion",
+          "description": "1, quartered"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "1 tsp, whole"
+        },
+        {
+          "name": "Potatoes",
+          "description": "3, peeled and halved"
+        },
+        {
+          "name": "Green beans",
+          "description": "200 g, topped and tailed (Baguio beans)"
+        },
+        {
+          "name": "Cabbage",
+          "description": "half a head, in wedges"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "2 tbsp (patis), plus more for the dip"
+        },
+        {
+          "name": "Calamansi",
+          "description": "4, halved, for the dip (kalamansi)",
+          "optional": true
+        },
+        {
+          "name": "Jasmine rice",
+          "description": "steamed, to serve",
+          "optional": true
+        }
+      ],
+      "description": "Nilagang baka is bulalo's gentler weeknight cousin: beef boiled quietly with vegetables until the kitchen smells like being looked after. One pot, few decisions, no drama.\n\n## 1. Boil and skim\n\n1. Put the beef and water in a large pot, bring to a boil and skim until the surface is clean.\n2. Add the onion and peppercorns and simmer, covered, for about 90 minutes, until the beef is fork-tender.\n\n## 2. Potatoes\n\n1. Add the potatoes and simmer for 12 minutes, until tender.\n\n## 3. Greens, briefly\n\n1. Add the green beans for 4 minutes, then the cabbage for 3 more. The vegetables should arrive bright, not surrendered.\n\n## 4. The dip is the seasoning\n\n1. Season the broth lightly with the fish sauce and stop there — the real seasoning happens at the table, in a saucer of fish sauce sharpened with squeezed calamansi.\n2. Serve with steamed rice and drag each piece of beef through that sawsawan; the little dish is what separates nilaga from plain boiled beef."
+    },
+    {
+      "name": "Arroz caldo",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 50,
+      "time": 65,
+      "tags": [
+        "Filipino",
+        "Main",
+        "Gluten-free",
+        "Dairy-free",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Chicken thighs",
+          "description": "600 g, bone-in, chopped into chunks"
+        },
+        {
+          "name": "Jasmine rice",
+          "description": "200 g, rinsed"
+        },
+        {
+          "name": "Ginger",
+          "description": "60 g, peeled and julienned"
+        },
+        {
+          "name": "Garlic",
+          "description": "2 heads: one thinly sliced for frying, 6 cloves minced for the pot"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "80 ml"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "3 tbsp (patis)"
+        },
+        {
+          "name": "Safflower",
+          "description": "1 tsp dried petals (kasubha); 1/4 tsp ground turmeric gives the same sunrise yellow"
+        },
+        {
+          "name": "Water",
+          "description": "1.6 L, plus more as the porridge drinks it"
+        },
+        {
+          "name": "Eggs",
+          "description": "4, for soft-boiling"
+        },
+        {
+          "name": "Spring onions",
+          "description": "3, finely sliced"
+        },
+        {
+          "name": "Calamansi",
+          "description": "4, halved (kalamansi)"
+        },
+        {
+          "name": "Black pepper",
+          "description": "to finish"
+        }
+      ],
+      "description": "Arroz caldo is what a Filipino household cooks when someone claims to be ill, and the claim is never audited: rice porridge heavy with ginger, wearing its toppings like a roof. The toppings are not garnish — they are the architecture.\n\n## 1. Garlic twice\n\n1. Fry the sliced garlic in the oil over low heat, stirring, until pale gold, then lift it straight onto kitchen paper — it keeps darkening off the heat, and burnt garlic means starting again. Keep the oil.\n\n## 2. Build the pot\n\n1. Spoon 3 tbsp of the garlic oil into a heavy pot and sauté the ginger and the minced garlic until fragrant.\n2. Add the chicken and the fish sauce and let them sizzle together for 2-3 minutes.\n\n## 3. Porridge\n\n1. Add the rice, water and safflower. Simmer for 30-35 minutes, stirring occasionally at first and often near the end, until the grains burst into a loose porridge. Add water whenever it tightens; it drinks more than you expect.\n2. Meanwhile, soft-boil the eggs for 6-7 minutes, then peel and halve them.\n\n## 4. Architecture\n\n1. Ladle into bowls and build upwards: fried garlic, spring onions, half an egg, black pepper and a thread of the remaining garlic oil.\n2. Calamansi is squeezed in at the table, last, so the brightness stays loud. A bare bowl is a different and lesser dish."
+    },
+    {
+      "name": "Champorado",
+      "yields": 4,
+      "prep_time": 5,
+      "cook_time": 30,
+      "time": 35,
+      "tags": [
+        "Filipino",
+        "Breakfast",
+        "Vegetarian",
+        "Gluten-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Glutinous rice",
+          "description": "200 g (malagkit), rinsed"
+        },
+        {
+          "name": "Water",
+          "description": "1.2 L"
+        },
+        {
+          "name": "Cacao tablets",
+          "description": "50 g, about 4 discs (tablea); 40 g of cocoa powder stands in"
+        },
+        {
+          "name": "Sugar",
+          "description": "60 g, plus more to taste"
+        },
+        {
+          "name": "Salt",
+          "description": "1 pinch"
+        },
+        {
+          "name": "Condensed milk",
+          "description": "to swirl on top; evaporated milk if you like it less sweet"
+        },
+        {
+          "name": "Salted dried fish",
+          "description": "4 small (tuyo), for frying crisp",
+          "optional": true
+        }
+      ],
+      "description": "Chocolate rice porridge for breakfast sounds like a child's negotiation, but champorado predates the child: glutinous rice stained dark with tablea, on Filipino tables since the galleons carried cacao to Manila. Despite the name, glutinous rice contains no gluten.\n\n## 1. Cook the rice\n\n1. Bring the water to a boil, stir in the glutinous rice and simmer over low heat for 15 minutes, stirring often — glutinous rice is enthusiastic about sticking.\n\n## 2. Chocolate it\n\n1. Add the cacao tablets and stir until completely dissolved, then simmer for 10 minutes more, until a spoon leaves a brief trail across the surface.\n2. Stir in the sugar and the pinch of salt, and taste: just sweet is right, because the condensed milk is still coming.\n\n## 3. The swirl, and the fish\n\n1. If serving the tuyo, fry it in a dry pan until crisp while the pot finishes.\n2. Ladle into bowls and swirl the condensed milk generously on top, for everyone to stir in themselves.\n3. The salty dried fish on the side is optional, but one bite explains it: salt and smoke against sweet chocolate — the salted-caramel argument, made a century early."
+    },
+    {
+      "name": "Sinangag",
+      "yields": 4,
+      "prep_time": 10,
+      "cook_time": 15,
+      "time": 25,
+      "tags": [
+        "Filipino",
+        "Side",
+        "Vegan",
+        "Gluten-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Jasmine rice",
+          "description": "700 g cooked, day-old and fridge-cold (about 300 g raw, cooked yesterday)"
+        },
+        {
+          "name": "Garlic",
+          "description": "1 whole head, peeled and chopped small — more is not a mistake"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "60 ml"
+        },
+        {
+          "name": "Salt",
+          "description": "1/2 tsp, or to taste"
+        },
+        {
+          "name": "Spring onions",
+          "description": "1, thinly sliced",
+          "optional": true
+        },
+        {
+          "name": "Eggs",
+          "description": "fried, one per person, to make it a silog",
+          "optional": true
+        }
+      ],
+      "description": "Sinangag is the foundation of every -silog breakfast and the best reason to cook too much rice on purpose. Only day-old rice works: a night in the fridge dries the grains and firms their starch so they separate and fry, where fresh rice steams itself into mush.\n\n## 1. Break the rice\n\n1. With wet hands, break the cold rice apart until no clump is bigger than a marble. Do this before it meets the pan, not after.\n\n## 2. Garlic, slowly\n\n1. Put the garlic and oil into a cold wok or wide pan, then set it over low heat. Stir as it comes up: the garlic should fizz gently and turn pale gold over 6-8 minutes.\n2. Scoop half the garlic out onto kitchen paper for the topping. Gold is the target — brown is bitter, and the difference is about thirty seconds.\n\n## 3. Fry\n\n1. Turn the heat to high, add the rice and toss it through the garlic oil. Fry for 5-6 minutes, pressing it flat and tossing again, until every grain is hot, loose and lightly coated.\n2. Season with the salt and toss once more.\n\n## 4. Serve under something\n\n1. Top with the reserved garlic and the spring onions.\n2. Add a fried egg and you are one cured meat away from a full -silog — tapsilog, tocilog, longsilog: sinangag is the \"si\" in all of them."
+    },
+    {
+      "name": "Beef tapa",
+      "yields": 4,
+      "prep_time": 25,
+      "cook_time": 30,
+      "time": 540,
+      "tags": [
+        "Filipino",
+        "Breakfast",
+        "Dairy-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Beef sirloin",
+          "description": "700 g, sliced very thin"
+        },
+        {
+          "name": "Soy sauce",
+          "description": "100 ml"
+        },
+        {
+          "name": "Calamansi",
+          "description": "juice of 10, about 60 ml (lemon juice works at a pinch)"
+        },
+        {
+          "name": "Garlic",
+          "description": "1 head: 8 cloves for the cure, the rest for the sinangag and dip"
+        },
+        {
+          "name": "Sugar",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp, coarsely ground"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "5 tbsp"
+        },
+        {
+          "name": "Jasmine rice",
+          "description": "450 g cooked, day-old and cold"
+        },
+        {
+          "name": "Eggs",
+          "description": "4"
+        },
+        {
+          "name": "Vinegar",
+          "description": "60 ml cane or white (sukang maasim), for the dip"
+        },
+        {
+          "name": "Red chillies",
+          "description": "1-2, chopped into the dip",
+          "optional": true
+        }
+      ],
+      "description": "Tapa is the ta- in tapsilog — cured beef with sinangag (garlic fried rice) and itlog (fried egg), the breakfast the Philippines runs on. The cure does its work overnight; the morning shift takes twenty minutes.\n\n## 1. Slice and cure\n\n1. Slice the sirloin across the grain into thin 3-5 mm pieces. Twenty minutes in the freezer first makes thin slicing much easier.\n2. Mix the soy sauce, calamansi juice, 8 minced garlic cloves, sugar and pepper, and massage it into the beef.\n3. Cover and refrigerate overnight — at least 8 hours. A quick marinade makes soy-flavoured beef; only time makes tapa.\n\n## 2. Fry the tapa\n\n1. Drain the slices and keep the marinade. Fry in 2 tbsp of the oil over medium-high heat in a single layer, in batches, 1-2 minutes a side.\n2. Return everything to the pan with a splash of the reserved marinade and let it reduce to a sticky glaze. The sugar means some dark edges — that char is flavour, but black is bitter, so keep it moving.\n\n## 3. Make the sinangag\n\n1. Wipe the pan, add the remaining oil and the rest of the garlic, chopped, and cook over low heat until pale gold. Pull it early — garlic keeps cooking after you stop.\n2. Add the cold day-old rice, breaking up the clumps, and toss until every grain is coated and hot. Season lightly with salt. Freshly cooked rice turns to mush here; day-old is not a suggestion.\n\n## 4. Build the plate\n\n1. Fry the eggs sunny side up, yolks still loose.\n2. Stir the vinegar with the chopped chilli and a little of the garlic for the sawsawan dip.\n3. Rice, tapa, egg on top, dip on the side. Breaking the yolk over the rice is the whole point of the arrangement."
+    },
+    {
+      "name": "Pork tocino",
+      "yields": 6,
+      "prep_time": 20,
+      "cook_time": 25,
+      "time": 1485,
+      "tags": [
+        "Filipino",
+        "Breakfast",
+        "Gluten-free",
+        "Dairy-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork shoulder",
+          "description": "1 kg, sliced 5 mm thin"
+        },
+        {
+          "name": "Sugar",
+          "description": "100 g"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tbsp fine"
+        },
+        {
+          "name": "Garlic",
+          "description": "6 cloves, minced fine"
+        },
+        {
+          "name": "Annatto powder",
+          "description": "1 tsp (atsuete), for the red tint"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1/2 tsp"
+        },
+        {
+          "name": "Pineapple juice",
+          "description": "60 ml, tenderises and feeds the cure",
+          "optional": true
+        },
+        {
+          "name": "Water",
+          "description": "120 ml, for the pan"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "1 tbsp"
+        }
+      ],
+      "description": "Tocino is breakfast candy — pork cured sweet with sugar, salt and garlic, stained red the traditional way with annatto. Pampanga invented it; the rest of the country adopted it wholesale.\n\n## 1. Slice and cure\n\n1. Slice the pork shoulder across the grain into thin 5 mm pieces; slightly frozen meat slices cleaner.\n2. Mix the sugar, salt, minced garlic, annatto powder, pepper and the pineapple juice if using, and massage it into the pork until every slice is coated and faintly sticky.\n3. Pack into a container or zip bag and refrigerate for at least 24 hours, turning once a day. Three days is where tocino really lives — the cure needs time to go all the way in.\n\n## 2. Cook it gently — water first\n\n1. Lay the slices in a cold frying pan with the 120 ml water and set it over medium heat, uncovered.\n2. Let the water simmer away for 10-12 minutes, turning the pork now and then; it cooks through while the water lasts. Do not skip straight to frying — the sugar in the cure burns long before the pork cooks.\n\n## 3. Caramelise\n\n1. When the water is gone, add the oil and drop the heat to medium-low.\n2. Turn often as the fat renders and the cure caramelises, 5-8 minutes, until the edges are sticky, lacquered mahogany. Sweet smoke is progress; acrid smoke means the pan is too hot.\n\n## 4. Serve\n\n1. With garlic fried rice and a fried egg this becomes tosilog. A saucer of spiced vinegar on the side is the correct counterweight to all that sugar."
+    },
+    {
+      "name": "Skinless longganisa",
+      "yields": 6,
+      "prep_time": 25,
+      "cook_time": 15,
+      "time": 160,
+      "tags": [
+        "Filipino",
+        "Breakfast",
+        "Dairy-free",
+        "Freezer-friendly",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork mince",
+          "description": "1 kg, about 20% fat"
+        },
+        {
+          "name": "Garlic",
+          "description": "1 whole head, minced"
+        },
+        {
+          "name": "Brown sugar",
+          "description": "80 g"
+        },
+        {
+          "name": "Soy sauce",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Vinegar",
+          "description": "2 tbsp cane vinegar (sukang maasim)"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Paprika",
+          "description": "1 tsp, for the traditional reddish tint",
+          "optional": true
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "3 tbsp, for frying"
+        }
+      ],
+      "description": "Longganisa splits the country into sweet (hamonado) and garlicky (de recado) camps; the skinless home version refuses to choose. No casings, no equipment — just wax paper, a cold fridge, and a quantity of garlic that should worry you slightly.\n\n## 1. Mix\n\n1. Mix the pork mince with the minced garlic, brown sugar, soy sauce, vinegar, salt, pepper and paprika.\n2. Knead for 2-3 minutes until the mixture turns tacky and drags against the bowl — that stickiness is what holds the patties together without a casing.\n3. Fry a teaspoon of the mixture and taste it. This is your only chance to correct the seasoning.\n\n## 2. Roll and chill\n\n1. Shape 2 tbsp portions into stubby logs about 8 cm long and roll each in a square of wax paper, twisting the ends like a sweet.\n2. Chill for at least 2 hours, overnight if you can — the sugar dissolves, the logs firm up and the garlic settles in.\n3. This is also the freezing point: lay them flat in a bag and they keep for months. Fry from frozen, adding a few minutes.\n\n## 3. Fry\n\n1. Unwrap and fry in the oil over medium-low heat, rolling the logs every couple of minutes, 8-10 minutes in all. All that sugar burns before pork cooks if the pan is hot, so low and patient wins.\n2. They are done when caramelised deep brown all over and firm to the touch.\n\n## 4. Serve\n\n1. With sinangag and a fried egg this is longsilog, and the day starts properly. A vinegar dip on the side is customary."
+    },
+    {
+      "name": "Bistek Tagalog",
+      "yields": 4,
+      "prep_time": 20,
+      "cook_time": 30,
+      "time": 90,
+      "tags": [
+        "Filipino",
+        "Main",
+        "Dairy-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Beef sirloin",
+          "description": "600 g, sliced thin"
+        },
+        {
+          "name": "Soy sauce",
+          "description": "80 ml"
+        },
+        {
+          "name": "Calamansi",
+          "description": "juice of 8, about 50 ml (or 3 tbsp lemon juice)"
+        },
+        {
+          "name": "Onion",
+          "description": "3 large, sliced into rings"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, minced"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "3 tbsp"
+        }
+      ],
+      "description": "Bistek is beefsteak passed through a Filipino kitchen: thin sirloin braised in soy and calamansi, buried under onions and aimed directly at rice. The onions work two shifts — half melt into the sauce, half land on top barely cooked, sweet and crunchy.\n\n## 1. Pound and marinate\n\n1. Slice the sirloin thinly across the grain, then pound the slices gently between cling film until about 5 mm thin.\n2. Marinate in the soy sauce, calamansi juice, half the garlic and the pepper for 30 minutes to an hour. Not longer — the citrus starts cooking the surface and turns it grey.\n\n## 2. Sear\n\n1. Drain the beef well, reserving every drop of the marinade.\n2. Sear in hot oil in batches, about a minute a side, just taking colour. Crowd the pan and the beef boils now instead of braising later.\n\n## 3. First shift of onions\n\n1. In the same pan, soften half the onion rings over medium heat for 6-8 minutes until sweet and collapsing, adding the rest of the garlic for the last minute.\n2. Return the beef with the reserved marinade and a splash of water. Simmer gently, covered, for 15-20 minutes until the beef is tender and the sauce is a loose, dark gravy. Taste — if it has gone flat, a fresh squeeze of calamansi wakes it up.\n\n## 4. Second shift\n\n1. Lay the remaining onion rings on top, cover, and give them 2 minutes — warmed through, still with bite. They are garnish and vegetable at once.\n2. Serve over rice with the sauce spooned generously. The sauce is the reason the rice is there."
+    },
+    {
+      "name": "Pork menudo",
+      "yields": 6,
+      "prep_time": 25,
+      "cook_time": 50,
+      "time": 110,
+      "tags": [
+        "Filipino",
+        "Main",
+        "Dairy-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork shoulder",
+          "description": "700 g, in 2 cm dice"
+        },
+        {
+          "name": "Pork liver",
+          "description": "200 g, in 1 cm dice"
+        },
+        {
+          "name": "Soy sauce",
+          "description": "2 tbsp, for the marinade"
+        },
+        {
+          "name": "Calamansi",
+          "description": "juice of 3, about 1 tbsp (or lemon)"
+        },
+        {
+          "name": "Passata",
+          "description": "250 ml (or Filipino-style tomato sauce)"
+        },
+        {
+          "name": "Potatoes",
+          "description": "2 medium, in small dice"
+        },
+        {
+          "name": "Carrots",
+          "description": "2, in small dice"
+        },
+        {
+          "name": "Red peppers",
+          "description": "1, in small dice"
+        },
+        {
+          "name": "Onion",
+          "description": "1 large, chopped"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, minced"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "1-2 tbsp (patis)"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Raisins",
+          "description": "40 g",
+          "optional": true
+        },
+        {
+          "name": "Hot dogs",
+          "description": "2, sliced into coins",
+          "optional": true
+        }
+      ],
+      "description": "Menudo is the tidy stew: pork and liver in tomato sauce, everything diced small and equal, potatoes and carrots included. Households differ on raisins and hotdogs; no serious household differs on the liver.\n\n## 1. Marinate and dice\n\n1. Dice the pork into 2 cm pieces and marinate in the soy sauce and calamansi juice for 30 minutes.\n2. Meanwhile dice the potatoes, carrots and red pepper to match. The neat, even dice is what makes it menudo and not just stew.\n\n## 2. Build the stew\n\n1. Soften the garlic and onion in the oil, then add the drained pork — keep the marinade — and sear until the edges take colour.\n2. Add the passata, the reserved marinade and a splash of water. Cover and simmer for 25-30 minutes until the pork is tender.\n\n## 3. Vegetables\n\n1. Add the potatoes and carrots and cook 10-12 minutes until just tender.\n2. Add the red pepper — and the raisins or hotdog coins if yours is that kind of household. Both have partisans, both are optional, neither is wrong.\n\n## 4. The liver, late\n\n1. Stir in the diced liver and give it 3-4 minutes, no more. Long-cooked liver turns grainy and bitter, which is exactly how liver got its reputation.\n2. Season with the fish sauce, rest 5 minutes off the heat, and serve over rice."
+    },
+    {
+      "name": "Chicken afritada",
+      "yields": 5,
+      "prep_time": 15,
+      "cook_time": 45,
+      "time": 65,
+      "tags": [
+        "Filipino",
+        "Main",
+        "Gluten-free",
+        "Dairy-free",
+        "One pot",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Chicken thighs",
+          "description": "1 kg, bone-in, skin-on"
+        },
+        {
+          "name": "Passata",
+          "description": "400 ml (or Filipino-style tomato sauce)"
+        },
+        {
+          "name": "Potatoes",
+          "description": "3 medium, quartered"
+        },
+        {
+          "name": "Carrots",
+          "description": "2, in thick coins"
+        },
+        {
+          "name": "Red peppers",
+          "description": "1 large, in strips"
+        },
+        {
+          "name": "Onion",
+          "description": "1 large, chopped"
+        },
+        {
+          "name": "Garlic",
+          "description": "5 cloves, minced"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "2 tbsp (patis)"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1/2 tsp"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Peas",
+          "description": "100 g",
+          "optional": true
+        }
+      ],
+      "description": "Every Filipino kitchen runs a rotation of tomato braises, and afritada is the weeknight one: chicken, potatoes and red peppers in a single pot, seasoned with fish sauce rather than ceremony.\n\n## 1. Brown\n\n1. Brown the chicken thighs well in the oil, 3-4 minutes a side, and set aside. That colour is most of the flavour of the finished sauce.\n2. Soften the garlic and onion in the same fat.\n\n## 2. Braise\n\n1. Return the chicken with the passata, 250 ml of water, the bay leaves and the pepper. Cover and simmer gently for 20 minutes.\n\n## 3. Vegetables\n\n1. Add the potatoes and carrots and cook 12-15 minutes until tender.\n2. Add the red pepper strips for the last 5 minutes so they keep their colour and a little bite; the peas, if using, go in for the final 2.\n\n## 4. Season and serve\n\n1. Season with the fish sauce, a tablespoon at a time, tasting as you go. It seasons deeper than salt — it is what makes the pot taste of a Filipino kitchen and not an Italian one.\n2. Rest for a few minutes and serve with plenty of rice; the sauce should be loose enough to flood it."
+    },
+    {
+      "name": "Beef kaldereta",
+      "yields": 8,
+      "prep_time": 25,
+      "cook_time": 130,
+      "time": 165,
+      "tags": [
+        "Filipino",
+        "Main",
+        "Dairy-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Stewing beef",
+          "description": "1 kg chuck or shin, in 4 cm cubes"
+        },
+        {
+          "name": "Liver spread",
+          "description": "1 tin, about 85 g — the whole tin"
+        },
+        {
+          "name": "Passata",
+          "description": "400 ml (or Filipino-style tomato sauce)"
+        },
+        {
+          "name": "Potatoes",
+          "description": "3, in large chunks"
+        },
+        {
+          "name": "Carrots",
+          "description": "2, in large chunks"
+        },
+        {
+          "name": "Red peppers",
+          "description": "1, in strips"
+        },
+        {
+          "name": "Green olives",
+          "description": "80 g, pitted"
+        },
+        {
+          "name": "Red chillies",
+          "description": "2-3 bird's eye (siling labuyo)"
+        },
+        {
+          "name": "Onion",
+          "description": "1 large, chopped"
+        },
+        {
+          "name": "Garlic",
+          "description": "6 cloves, minced"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "2 tbsp (patis)"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "3 tbsp"
+        }
+      ],
+      "description": "Kaldereta is what the tomato braise becomes when there is something to celebrate — the fiesta pot. Goat is the festive original; beef is the lane most households actually drive. The signature move is a whole tin of liver spread stirred in near the end, which thickens the sauce and gives it a dark, savoury depth nothing else can fake.\n\n## 1. Sear\n\n1. Pat the beef dry and sear it hard in the oil, in batches, until properly crusted. Set aside.\n2. Soften the garlic and onion in the same pot.\n\n## 2. Stew until it gives\n\n1. Return the beef with the passata, enough water to nearly cover, the bay leaves and the pepper. Cover and simmer on the lowest heat for 1.5-2 hours, until a fork slides in without argument. The clock is a suggestion; the fork is the law.\n2. Check occasionally and top up with hot water if it threatens to catch.\n\n## 3. Vegetables\n\n1. Add the potatoes and carrots and cook 15 minutes.\n2. Add the red pepper for 5 more.\n\n## 4. The liver spread\n\n1. Stir in the whole tin of liver spread and watch the sauce change within a minute — thicker, darker, deeper. This is the moment it stops being afritada with ambitions and becomes kaldereta.\n2. Add the olives and chillies and simmer 3-4 minutes, then season with the fish sauce. The heat should prickle, not punish — scale the chillies to your table.\n3. Rest 10 minutes and serve at the centre of the table with rice, which is where it expects to be."
+    },
+    {
+      "name": "Giniling na baboy",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 30,
+      "time": 45,
+      "tags": [
+        "Filipino",
+        "Main",
+        "Gluten-free",
+        "Dairy-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork mince",
+          "description": "500 g"
+        },
+        {
+          "name": "Passata",
+          "description": "250 ml (or Filipino-style tomato sauce)"
+        },
+        {
+          "name": "Potatoes",
+          "description": "2 medium, in 1 cm dice"
+        },
+        {
+          "name": "Carrots",
+          "description": "1 large, in 1 cm dice"
+        },
+        {
+          "name": "Peas",
+          "description": "100 g"
+        },
+        {
+          "name": "Onion",
+          "description": "1, chopped"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, minced"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "2 tbsp (patis)"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1/2 tsp"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Quail eggs",
+          "description": "8, boiled and peeled",
+          "optional": true
+        },
+        {
+          "name": "Raisins",
+          "description": "40 g",
+          "optional": true
+        }
+      ],
+      "description": "Giniling is the weekday answer: pork mince and small-diced vegetables in a quick tomato sauce, over rice inside 45 minutes. It also comes with a plan — tomorrow it becomes tortang giniling.\n\n## 1. Sauté\n\n1. Soften the garlic and onion in the oil.\n2. Add the pork mince, breaking it up, and cook until no longer pink. Pour the fish sauce straight onto the meat and let it sizzle for a minute — it seasons from the inside instead of sitting on top.\n\n## 2. Simmer\n\n1. Add the passata and a splash of water and simmer for 10 minutes over medium-low heat.\n\n## 3. Vegetables\n\n1. Add the potatoes and carrots — 1 cm dice, no bigger — and cook 10-12 minutes until tender and the sauce clings rather than pools.\n2. The peas go in for the last 2 minutes. Boiled quail eggs or raisins go in now too, if your household holds with either; both are optional and both are defensible.\n\n## 4. Serve — twice\n\n1. Season with the pepper and spoon over rice so the sauce soaks in.\n2. Leftovers have a destiny: folded into a thick omelette tomorrow they become tortang giniling, the rare leftover people plan for."
+    },
+    {
+      "name": "Filipino spaghetti",
+      "yields": 8,
+      "prep_time": 15,
+      "cook_time": 45,
+      "time": 60,
+      "tags": [
+        "Filipino",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Spaghetti",
+          "description": "500 g"
+        },
+        {
+          "name": "Pork mince",
+          "description": "400 g (the giniling)"
+        },
+        {
+          "name": "Hot dogs",
+          "description": "6, sliced into coins — the red Filipino kind if you can get them"
+        },
+        {
+          "name": "Banana ketchup",
+          "description": "1 bottle, about 320 g (Jufran or UFC)"
+        },
+        {
+          "name": "Passata",
+          "description": "250 ml"
+        },
+        {
+          "name": "Sugar",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Onion",
+          "description": "1, chopped"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, minced"
+        },
+        {
+          "name": "Processed cheese",
+          "description": "150 g, grated (Eden; a mild cheddar also works)"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "2 tbsp"
+        }
+      ],
+      "description": "Filipino spaghetti is sweet, scattered with hotdog coins, roofed in cheese, and unembarrassed about all of it. It is birthday law — no children's party is legitimate without a red mountain of it — and banana ketchup is not standing in for tomato sauce. It is the ingredient.\n\n## 1. Make the sauce\n\n1. Soften the garlic and onion in the oil, then brown the pork mince, breaking it up as it cooks.\n2. Add the hotdog coins and fry for 2 minutes until the edges curl.\n3. Add the banana ketchup, passata and sugar. Simmer gently for 20-25 minutes. Taste it: it should be sweeter than your instincts allow. Trust the birthday, not your instincts.\n\n## 2. Boil the spaghetti\n\n1. Cook the spaghetti a good 2 minutes past the packet time. Filipino spaghetti is soft on purpose; al dente is an Italian concern, and this dish has none.\n\n## 3. Combine\n\n1. Toss the drained spaghetti through the sauce until every strand is red. The sauce should coat generously and keep soaking in as it sits — a dry Filipino spaghetti is a failed one.\n\n## 4. The roof\n\n1. Shower the grated cheese over the hot spaghetti so it half-melts into the top.\n2. Serve immediately, ideally beside fried chicken, ideally at a birthday. It reheats well the next day."
+    },
+    {
+      "name": "Chicken sopas",
+      "yields": 6,
+      "prep_time": 15,
+      "cook_time": 45,
+      "time": 60,
+      "tags": [
+        "Filipino",
+        "Soup",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Chicken thighs",
+          "description": "500 g, bone-in"
+        },
+        {
+          "name": "Water",
+          "description": "2 L"
+        },
+        {
+          "name": "Macaroni",
+          "description": "250 g elbow"
+        },
+        {
+          "name": "Evaporated milk",
+          "description": "1 tin, about 400 ml"
+        },
+        {
+          "name": "Cabbage",
+          "description": "1/4 small head, shredded"
+        },
+        {
+          "name": "Carrots",
+          "description": "1, diced"
+        },
+        {
+          "name": "Celery",
+          "description": "1 stick, finely sliced"
+        },
+        {
+          "name": "Onion",
+          "description": "1, chopped"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, minced"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "2 tbsp (patis)"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1/2 tsp"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Hot dogs",
+          "description": "2, sliced into coins",
+          "optional": true
+        }
+      ],
+      "description": "Sopas is the pot that goes on when it rains or when somebody is ill: elbow macaroni and shredded chicken in a broth turned creamy with evaporated milk. Nobody has proven it cures a cold; nobody in the Philippines needs it proven.\n\n## 1. Poach and shred\n\n1. Simmer the chicken thighs in the water for 20-25 minutes, skimming any foam.\n2. Lift the chicken out, shred the meat, discard skin and bones — and keep every drop of the broth.\n\n## 2. Sauté\n\n1. In the emptied pot, soften the garlic, onion and celery in the oil. Add the hotdog coins now if using — plenty of households do.\n\n## 3. Cook the macaroni in the broth\n\n1. Return the broth, bring it to a boil, and add the macaroni and carrots. Cook 8-10 minutes until just tender.\n2. Know that sopas drinks its own broth as it sits — soup at dinner, stew by breakfast. Loosen leftovers with water and nobody will mind.\n\n## 4. Milk and cabbage\n\n1. Return the shredded chicken, pour in the evaporated milk and add the cabbage. Keep it below a boil from here — 3-4 gentle minutes, so the cabbage wilts and the milk does not curdle.\n2. Season with the fish sauce and the pepper.\n\n## 5. Serve\n\n1. Serve steaming, in a bowl — or a mug, if it is for the patient."
+    },
+    {
+      "name": "Lechon kawali",
+      "yields": 6,
+      "prep_time": 15,
+      "cook_time": 65,
+      "time": 560,
+      "tags": [
+        "Filipino",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork belly",
+          "description": "1.2 kg, one thick slab, skin on"
+        },
+        {
+          "name": "Garlic",
+          "description": "1 head halved crossways for the pot, plus 2 cloves chopped for the dip"
+        },
+        {
+          "name": "Onion",
+          "description": "1 large, quartered"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "3"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Salt",
+          "description": "3 tbsp for the pot, 1 tsp for the skin, a pinch for the dip"
+        },
+        {
+          "name": "Water",
+          "description": "enough to cover the pork"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "1 L, for deep-frying"
+        },
+        {
+          "name": "Vinegar",
+          "description": "100 ml cane or white, for the dip"
+        },
+        {
+          "name": "Bird's eye chillies",
+          "description": "2-3, sliced, for the dip"
+        },
+        {
+          "name": "Lechon sauce",
+          "description": "1 small bottle (all-purpose liver sauce), to serve",
+          "optional": true
+        }
+      ],
+      "description": "Lechon for households without a spit, a whole pig or a Sunday to lose. The entire recipe is three verbs — boil, dry, fry — and the middle one, the only one that asks nothing of you but patience, decides whether you get glassy crackling or chewy regret.\n\n## 1. Boil it tender\n\n1. Put the pork belly in a pot with the garlic head, onion, bay leaves, peppercorns and 3 tbsp of salt, and cover it with water. Bring to the boil, skim off the grey foam, then simmer gently for 45-60 minutes, until a knife slides into the skin with only slight resistance. Tender, not collapsing — it still has a frying to survive.\n2. Lift the belly out and drain it well. The broth is worth keeping for rice or soup.\n3. Prick the skin all over with a fork and rub it with the teaspoon of salt.\n\n## 2. Dry — the stage that decides everything\n\n1. Set the belly skin-side up on a rack over a tray and leave it in the fridge, uncovered, overnight; 4 hours is the absolute minimum. The skin must turn dry, tight and leathery to the touch.\n2. Do not cover it and do not skip it. Wet skin steams in the oil; dry skin blisters into crackling. No frying technique rescues a skipped drying.\n\n## 3. Fry hot\n\n1. Heat the oil to 180°C in a deep, heavy pot or wok — at least 5 cm of oil, the pot no more than half full.\n2. Lower the belly in away from you, skin-side down, and shield yourself with a lid held ajar or a splatter screen; it will pop and spit for the first minute. Fry for 12-15 minutes, turning once, until the skin is deep gold and blistered all over.\n3. Drain on a rack and rest for 10 minutes so the juices settle and the crackling sets.\n\n## 4. Chop and serve\n\n1. Chop through the crackling into bite-sized pieces with a heavy knife — you should hear it protest.\n2. Stir the vinegar with the chopped garlic, the chillies and a pinch of salt for a spiced vinegar dip, and put the bottled lechon sauce out for the liver-sauce camp — households divide firmly into one or the other. Serve with plain rice."
+    },
+    {
+      "name": "Crispy pata",
+      "yields": 6,
+      "prep_time": 15,
+      "cook_time": 115,
+      "time": 610,
+      "tags": [
+        "Filipino",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork hock",
+          "description": "1 whole, 1.2-1.5 kg, skin on (pata — ask the butcher for a whole hock)"
+        },
+        {
+          "name": "Garlic",
+          "description": "1 head, halved crossways"
+        },
+        {
+          "name": "Onion",
+          "description": "2 — one quartered for the pot, one finely chopped for the dip"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "4"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "3 tbsp (patis), for the pot"
+        },
+        {
+          "name": "Salt",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Water",
+          "description": "to cover"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "1.5 L, for deep-frying"
+        },
+        {
+          "name": "Soy sauce",
+          "description": "80 ml, for the dip"
+        },
+        {
+          "name": "Vinegar",
+          "description": "80 ml cane or white, for the dip"
+        },
+        {
+          "name": "Bird's eye chillies",
+          "description": "2-3, sliced, for the dip"
+        },
+        {
+          "name": "Sugar",
+          "description": "1 tsp, for the dip"
+        }
+      ],
+      "description": "Crispy pata is what a Filipino table serves when it has something to celebrate or someone to impress — a whole pork hock in crackling armour, carried out to actual applause. It is lechon kawali scaled up to trophy size, and it obeys the same three-verb law: boil, dry, fry.\n\n## 1. Boil until nearly tender\n\n1. Put the hock in a large pot with the garlic, the quartered onion, bay leaves, peppercorns, salt and fish sauce, and cover with water. Bring to the boil, skim, then simmer for about 90 minutes, until a skewer slides in easily near the bone but the skin is intact and the meat has not yet left the bone. It must hold together — it has a hot bath ahead of it.\n2. Lift it out gently, drain, and pat it thoroughly dry. Prick the skin all over with a fork.\n\n## 2. Dry overnight\n\n1. Sit the hock on a rack over a tray and refrigerate it uncovered overnight, turning once if you remember. Every hour of drying is repaid in blisters; skin that goes into the oil damp comes out leathery.\n\n## 3. Fry — and stand back\n\n1. Heat the oil to 180°C in a deep pot that holds the hock with room to spare, filled no more than halfway.\n2. Lower the hock in away from you and cover loosely with a lid or splatter screen. Fair warning: the moisture trapped around the joints makes crispy pata spit harder than anything else you will ever fry — long sleeves and a calm distance are part of the recipe.\n3. Fry for 20-25 minutes, turning carefully once or twice with tongs, until the whole hock is deep mahogany and blistered all over. Drain on a rack and rest for 10 minutes.\n\n## 4. The dip and the ceremony\n\n1. Stir together the soy sauce, vinegar, chopped onion, chillies and sugar, and give the dip 10 minutes for the onion to soften into it.\n2. Bring the pata to the table whole and let people pull it apart with two forks — the crackling shatters, the meat underneath is soft and rich. Rice is not optional."
+    },
+    {
+      "name": "Sizzling pork sisig",
+      "yields": 4,
+      "prep_time": 30,
+      "cook_time": 65,
+      "time": 110,
+      "tags": [
+        "Filipino",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork belly",
+          "description": "700 g, skin on (face and ears — maskara — if your butcher obliges)"
+        },
+        {
+          "name": "Chicken livers",
+          "description": "150 g"
+        },
+        {
+          "name": "Onion",
+          "description": "2 red, finely chopped"
+        },
+        {
+          "name": "Bird's eye chillies",
+          "description": "3-4, finely chopped"
+        },
+        {
+          "name": "Calamansi",
+          "description": "8 — 6 juiced (about 60 ml), 2 halved to serve"
+        },
+        {
+          "name": "Soy sauce",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, smashed, for the boil"
+        },
+        {
+          "name": "Ginger",
+          "description": "thumb-sized piece, sliced, for the boil"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tbsp, for the boil"
+        },
+        {
+          "name": "Eggs",
+          "description": "1, very fresh — it goes on raw"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Mayonnaise",
+          "description": "2 tbsp, for the creamy bar-style version",
+          "optional": true
+        }
+      ],
+      "description": "Sisig is Pampanga's masterpiece, born in Angeles City from the pig parts nobody else wanted, and Kapampangans accept compliments but not amendments. At home it is made with pork belly instead of the traditional face and ears — chopped fine, sharpened with calamansi and chilli, and delivered on a plate hot enough to keep cooking at the table.\n\n## 1. Boil\n\n1. Simmer the pork belly with the garlic, ginger, bay leaves, peppercorns and salt in water to cover for about 45 minutes, until tender. Drop the chicken livers in for the last 10 minutes.\n2. Drain everything and let it cool enough to handle.\n\n## 2. Char\n\n1. Grill the boiled pork over hot coals or under your oven grill at full blast for 10-12 minutes, turning, until the edges are properly charred and the skin blisters. The char is not decoration — it is half the flavour of sisig.\n\n## 3. Chop\n\n1. Chop the pork small and deliberately uneven — some crisp bits, some soft. Mash the livers roughly with a fork.\n\n## 4. Sizzle\n\n1. Get a cast-iron sizzling plate or heavy frying pan smoking hot and film it with the oil.\n2. Tip on the pork, most of the onion and the chillies; hit it with the soy sauce, the calamansi juice and the mashed liver, and toss for a minute while it roars. If you like the creamy bar-style sisig, stir in the mayonnaise now — the shortcut is modern and common, and purists enjoy disapproving of it.\n3. Crack the raw egg on top, scatter over the rest of the onion, and carry the pan to the table still sizzling. Whoever sits down first stirs the egg through — the plate cooks it.\n4. Squeeze the halved calamansi over, serve with rice, and a cold beer if there is any justice."
+    },
+    {
+      "name": "Filipino pork barbecue",
+      "yields": 6,
+      "prep_time": 30,
+      "cook_time": 20,
+      "time": 770,
+      "tags": [
+        "Filipino",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork shoulder",
+          "description": "1 kg, sliced into thin 3-4 cm squares"
+        },
+        {
+          "name": "Soy sauce",
+          "description": "120 ml"
+        },
+        {
+          "name": "Banana ketchup",
+          "description": "120 ml (the red Filipino bottle — tomato ketchup is not the same thing)"
+        },
+        {
+          "name": "Brown sugar",
+          "description": "60 g"
+        },
+        {
+          "name": "Calamansi",
+          "description": "6, juiced (about 45 ml)"
+        },
+        {
+          "name": "Garlic",
+          "description": "1 head, minced"
+        },
+        {
+          "name": "Lemonade",
+          "description": "250 ml lemon-lime fizz (7-Up or Sprite)"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp, coarsely ground"
+        },
+        {
+          "name": "Bird's eye chillies",
+          "description": "2, finely chopped",
+          "optional": true
+        },
+        {
+          "name": "Bamboo skewers",
+          "description": "about 20, soaked in water for 30 minutes"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "2 tbsp, whisked into the baste"
+        }
+      ],
+      "description": "This is the smell of dusk on every Filipino street corner and the centrepiece of every birthday, christening and fiesta in living memory: pork on bamboo sticks, marinated sweet and salty, charred over coals and basted until it lacquers. The bottle of 7-Up in the marinade is folk canon, and the folk are right — it tenderises and it glosses.\n\n## 1. Marinate — overnight, no negotiation\n\n1. Slice the pork into thin squares about 3-4 cm wide and barely 1 cm thick; half an hour in the freezer first makes the slicing easier. Thin is the point — street barbecue cooks in minutes.\n2. Whisk together the soy sauce, banana ketchup, brown sugar, calamansi juice, garlic, lemonade, pepper and the chillies if you want heat. Pour 150 ml of it into a jar and refrigerate — that is tomorrow's baste, kept clean of raw pork.\n3. Turn the pork through the rest, cover, and marinate in the fridge overnight — 12 hours or so. Four hours is the emergency minimum, and it shows.\n\n## 2. Skewer\n\n1. Thread 5-6 pieces onto each soaked skewer, snug but flat, leaving a bare handle of bamboo at the bottom.\n\n## 3. Grill and baste\n\n1. Grill over medium-hot charcoal, or a ferociously hot griddle pan, for 3-4 minutes a side, brushing with the reserved marinade whisked with the oil at every turn.\n2. All that sugar and ketchup means the line between caramelised and carbonised is about forty seconds wide — stay by the fire. Charred edges are correct; black throughout means you answered your phone.\n\n## 4. Serve\n\n1. Pile the sticks high and serve with plain rice, and a glass of the same fizzy lemonade that went into the marinade — it is only fair."
+    },
+    {
+      "name": "Inihaw na liempo",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 25,
+      "time": 280,
+      "tags": [
+        "Filipino",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork belly",
+          "description": "1 kg, cut into slabs 1.5 cm thick, skin on"
+        },
+        {
+          "name": "Soy sauce",
+          "description": "100 ml for the marinade, plus 4 tbsp for the dip"
+        },
+        {
+          "name": "Calamansi",
+          "description": "8 — 6 juiced for the marinade, 2 for the dip"
+        },
+        {
+          "name": "Garlic",
+          "description": "1 head, crushed"
+        },
+        {
+          "name": "Brown sugar",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp, coarsely ground"
+        },
+        {
+          "name": "Bird's eye chillies",
+          "description": "2, sliced, for the dip"
+        }
+      ],
+      "description": "Inihaw na liempo is the Filipino weekend distilled: slabs of pork belly in a soy, calamansi and garlic marinade, grilled over charcoal that is actually hot, sliced and eaten with toyomansi. There is no technique to hide behind — just good belly, real fire and a dip.\n\n## 1. Marinate\n\n1. Mix the 100 ml of soy sauce, the juice of six calamansi, the garlic, brown sugar and pepper. Turn the pork slabs through it, cover, and marinate in the fridge for at least 4 hours — overnight if dinner can wait.\n\n## 2. Grill over real heat\n\n1. Light proper charcoal and let it burn down to fierce grey embers; a timid fire steams pork instead of grilling it. Drain the slabs well — wet meat will not char.\n2. Grill for 5-6 minutes a side. The dripping fat will flare; let it. Charred edges and blistered fat are flavour, not failure — pale, politely grilled liempo is a different and sadder dish.\n3. Brush once or twice with the leftover marinade early in the grilling, never in the last minutes — it has raw pork in its past and needs the fire.\n\n## 3. Slice and dip\n\n1. Rest the slabs for 5 minutes, then slice across into finger-width pieces.\n2. Make the toyomansi: the reserved soy sauce, the remaining calamansi squeezed in, the chillies scattered on top. Serve with an unreasonable amount of rice."
+    },
+    {
+      "name": "Chicken inasal",
+      "yields": 4,
+      "prep_time": 30,
+      "cook_time": 45,
+      "time": 315,
+      "tags": [
+        "Filipino",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Chicken thighs",
+          "description": "1.2 kg bone-in, skin-on thighs and drumsticks"
+        },
+        {
+          "name": "Vinegar",
+          "description": "120 ml, cane vinegar if you can get it (sukang maasim)"
+        },
+        {
+          "name": "Calamansi",
+          "description": "8 — 6 juiced for the marinade, 2 to serve"
+        },
+        {
+          "name": "Lemongrass",
+          "description": "3 stalks, tough outer leaves removed, finely chopped (tanglad)"
+        },
+        {
+          "name": "Ginger",
+          "description": "50 g, grated"
+        },
+        {
+          "name": "Garlic",
+          "description": "8 cloves — 6 minced for the marinade, 2 for the garlic rice"
+        },
+        {
+          "name": "Brown sugar",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Annatto seeds",
+          "description": "3 tbsp (atsuete)"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "150 ml, for the annatto oil"
+        },
+        {
+          "name": "Butter",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Jasmine rice",
+          "description": "cooked, to serve as garlic rice (sinangag)",
+          "optional": true
+        }
+      ],
+      "description": "Bacolod does not claim to grill the best chicken in the Philippines; it simply knows, and inasal is the evidence — chicken soured with cane vinegar and calamansi, perfumed with lemongrass and ginger, painted orange with annatto oil. The oil is not garnish: it goes over the chicken while it grills and over your rice when you eat.\n\n## 1. Marinate\n\n1. Slash each chicken piece twice to the bone so the marinade can get in. Mix the vinegar, calamansi juice, lemongrass, ginger, minced garlic, brown sugar, salt and pepper, and massage it into the chicken.\n2. Cover and marinate in the fridge for at least 4 hours. The vinegar needs the time — an hour gives you seasoned chicken, four gives you inasal.\n\n## 2. Make the annatto oil\n\n1. Warm the oil with the annatto seeds over the lowest heat for 5-8 minutes, until it turns a deep orange-red. Do not let the seeds sizzle hard — scorched annatto is bitter. Strain, then stir the butter into the warm oil until melted. This is both the baste and the table sauce.\n\n## 3. Grill\n\n1. Grill the chicken over medium charcoal, not a roaring fire — bone-in pieces need 30-40 minutes — turning every 5 minutes.\n2. Baste with annatto oil at every turn. The vinegar makes the skin colour fast, so shift pieces to the cooler edge if they brown ahead of the bone. It is done when the juices at the bone run clear.\n\n## 4. Eat like a Bacolodnon\n\n1. While the chicken rests, fry the cooked jasmine rice with the remaining garlic and a spoonful of annatto oil for sinangag.\n2. Serve the chicken over the garlic rice and spoon more warm annatto oil over everything — this is not optional in Bacolod, and it should not be at your table either. The last calamansi go alongside for squeezing."
+    },
+    {
+      "name": "Dinuguan",
+      "yields": 4,
+      "prep_time": 20,
+      "cook_time": 65,
+      "time": 85,
+      "tags": [
+        "Filipino",
+        "Main",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork shoulder",
+          "description": "700 g, cut into 2 cm cubes (the brave add snout and ears)"
+        },
+        {
+          "name": "Pork blood",
+          "description": "500 ml, fresh or thawed frozen (Filipino and Chinese butchers sell it)"
+        },
+        {
+          "name": "Vinegar",
+          "description": "120 ml, cane or white"
+        },
+        {
+          "name": "Garlic",
+          "description": "5 cloves, minced"
+        },
+        {
+          "name": "Onion",
+          "description": "1 large, chopped"
+        },
+        {
+          "name": "Ginger",
+          "description": "thumb-sized piece, minced"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "2 tbsp (patis)"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Green chillies",
+          "description": "3 long ones (siling haba), left whole"
+        },
+        {
+          "name": "Sugar",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1/2 tsp"
+        },
+        {
+          "name": "Water",
+          "description": "250 ml"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Steamed rice cakes",
+          "description": "to serve (puto)",
+          "optional": true
+        }
+      ],
+      "description": "Generations of Filipino children were told this was chocolate stew — and generations wisely asked no follow-up questions. Dinuguan is pork simmered in vinegar and fresh pork blood until dark and glossy: savoury, sharp, faintly mineral, and much better than any honest description of it.\n\n## 1. Build the base\n\n1. Heat the oil in a heavy pot and soften the onion, garlic and ginger for about 5 minutes.\n2. Add the pork and brown it lightly all over, then season with the fish sauce and black pepper.\n\n## 2. Sour it\n\n1. Pour in the vinegar and — the old rule — do not stir until it comes back to the boil, so the raw edge cooks off.\n2. Add the water and bay leaves and simmer, partly covered, for 30-35 minutes, until the pork is tender.\n\n## 3. The blood, slowly\n\n1. Strain the blood into a bowl and whisk it briefly. Turn the pot down to the gentlest simmer.\n2. Pour the blood in a thin stream, stirring the whole time, and keep stirring often as it thickens over the next 10-15 minutes. It must never come to a hard boil — boiled blood curdles into grainy crumbs, and there is no coming back. Held at a murmur, it turns dark and glossy and coats the spoon like chocolate custard, which is exactly how the euphemism got away with it.\n3. Add the sugar and lay the whole green chillies on top; give it 5 more minutes. Taste — the sourness should lead, with the salt just behind.\n\n## 4. Serve\n\n1. Serve hot with puto, the little steamed rice cakes that are this dish's oldest partner — dinuguan at puto is a set phrase, not a suggestion. Plain rice works on weekdays."
+    },
+    {
+      "name": "Bicol express",
+      "yields": 4,
+      "prep_time": 20,
+      "cook_time": 50,
+      "time": 75,
+      "tags": [
+        "Filipino",
+        "Main",
+        "One pot",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork belly",
+          "description": "700 g, cut into thin strips"
+        },
+        {
+          "name": "Coconut milk",
+          "description": "400 ml"
+        },
+        {
+          "name": "Coconut cream",
+          "description": "200 ml (kakang gata)"
+        },
+        {
+          "name": "Shrimp paste",
+          "description": "2 tbsp sautéed shrimp paste (ginisang bagoong alamang)"
+        },
+        {
+          "name": "Garlic",
+          "description": "5 cloves, minced"
+        },
+        {
+          "name": "Onion",
+          "description": "1, chopped"
+        },
+        {
+          "name": "Ginger",
+          "description": "thumb-sized piece, cut into matchsticks"
+        },
+        {
+          "name": "Green chillies",
+          "description": "8-10 long ones (siling haba), sliced diagonally"
+        },
+        {
+          "name": "Bird's eye chillies",
+          "description": "3-6, to your courage (siling labuyo)"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1/2 tsp"
+        }
+      ],
+      "description": "Despite the name and the chillies, Bicol express was invented in Manila — at a Malate canteen in the 1960s, christened after the overnight train to Bicol — and Bicol adopted it without complaint, since pork, coconut milk, shrimp paste and too many chillies is exactly how Bicol cooks anyway.\n\n## 1. Render and fry\n\n1. Put the pork strips in a cold, wide pan and cook over medium heat until their fat runs and the edges brown lightly, about 8 minutes.\n2. Push the pork aside and fry the garlic, onion and ginger in the pork fat until soft. Add the shrimp paste and fry it for 2 minutes — it should smell loudly of itself.\n\n## 2. Simmer until the oil rises\n\n1. Pour in the coconut milk, add the black pepper, and simmer gently, uncovered, for 25-30 minutes, stirring now and then, until the pork is tender and the sauce has reduced and started to slick with oil at the edges. The oil rising is not a fault — it is the destination; gata that never oils out is soup.\n\n## 3. Chillies and cream\n\n1. Add the green chillies, the bird's eye chillies and the coconut cream. Simmer 10 minutes more, until the sauce is thick and the oil unmistakable, tinted faintly pink by the shrimp paste.\n2. As written this is hot in the way Bicol means it. Deseed the green chillies and halve the bird's eyes to bring it down to visitor level — but it must still bite, or it is just pork in gata.\n\n## 4. Serve\n\n1. Rest for 5 minutes and serve with a great deal of plain rice, which is both the accompaniment and the fire brigade."
+    },
+    {
+      "name": "Laing",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 65,
+      "time": 110,
+      "tags": [
+        "Filipino",
+        "Main",
+        "One pot",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Taro leaves",
+          "description": "50 g dried (dahon ng gabi — Filipino shops sell them bagged)"
+        },
+        {
+          "name": "Coconut milk",
+          "description": "800 ml"
+        },
+        {
+          "name": "Coconut cream",
+          "description": "200 ml (kakang gata)"
+        },
+        {
+          "name": "Pork belly",
+          "description": "200 g, cut into small dice"
+        },
+        {
+          "name": "Shrimp paste",
+          "description": "2 tbsp (bagoong alamang)"
+        },
+        {
+          "name": "Garlic",
+          "description": "6 cloves, sliced"
+        },
+        {
+          "name": "Onion",
+          "description": "1, sliced"
+        },
+        {
+          "name": "Ginger",
+          "description": "60 g, cut into fat matchsticks"
+        },
+        {
+          "name": "Lemongrass",
+          "description": "1 stalk, bruised and knotted",
+          "optional": true
+        },
+        {
+          "name": "Bird's eye chillies",
+          "description": "4-6, whole or split (siling labuyo)"
+        }
+      ],
+      "description": "Laing is Bicol's quiet proof that a dried leaf can carry a whole dish: taro leaves cooked down in coconut milk with shrimp paste, pork and chilli until the milk turns to oil. The famous rule — do not stir the leaves early or the dish will itch — is not superstition, and this recipe takes it seriously.\n\n## 1. Start the pot\n\n1. Put the coconut milk, garlic, onion, ginger, pork, shrimp paste and the knotted lemongrass, if using, into a wide pot. Bring to a gentle simmer and give it 10 minutes for the pork to begin softening.\n\n## 2. The leaves — hands off\n\n1. Lay the dried taro leaves on top in loose layers and press them down gently with the back of a spoon, just until moistened. Then leave them alone.\n2. Simmer, covered, on low for 30-40 minutes without stirring. The rule is real: taro leaves carry microscopic needles of calcium oxalate that make the mouth and throat itch, and only long, undisturbed cooking breaks them down. Stirring half-cooked leaves tears them apart before the heat has done its work — the itch, when people meet it, is almost always impatience.\n3. When the leaves have collapsed completely into the milk and turned soft, dark and silky, fold them through. Now stirring is allowed.\n\n## 3. Oil it out\n\n1. Add the coconut cream and the chillies and simmer, uncovered, for another 15-20 minutes, stirring occasionally, until the milk has reduced past creamy and clear coconut oil pools at the edges. Laing is done when it glistens, not before.\n2. Taste before you reach for salt — the shrimp paste usually got there first.\n\n## 4. Serve\n\n1. Rest it for 30 minutes if you can bear to; like most of Bicol's cooking it improves as it sits and is famously better the next day. Serve with rice, and expect any Bicolano present to add more chilli."
+    },
+    {
+      "name": "Ginataang kalabasa at sitaw",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 25,
+      "time": 40,
+      "tags": [
+        "Filipino",
+        "Main",
+        "Healthy",
+        "One pot",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Butternut squash",
+          "description": "600 g, peeled, deseeded, cut into 3 cm chunks (standing in for kalabasa)"
+        },
+        {
+          "name": "Yardlong beans",
+          "description": "200 g, cut into 5 cm lengths (sitaw)"
+        },
+        {
+          "name": "Coconut milk",
+          "description": "800 ml"
+        },
+        {
+          "name": "Shrimp paste",
+          "description": "1 1/2 tbsp (bagoong alamang)"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, minced"
+        },
+        {
+          "name": "Onion",
+          "description": "1, chopped"
+        },
+        {
+          "name": "Ginger",
+          "description": "thumb-sized piece, sliced"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "1 tbsp (patis)"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Prawns",
+          "description": "150 g raw, peeled",
+          "optional": true
+        },
+        {
+          "name": "Pork belly",
+          "description": "150 g, cut into small dice",
+          "optional": true
+        },
+        {
+          "name": "Green chillies",
+          "description": "1 long one (siling haba), sliced",
+          "optional": true
+        }
+      ],
+      "description": "This is the everyday ginataan — the one that turns up on a Tuesday, not at a fiesta: squash going sweet and soft-edged, long beans keeping their snap, coconut milk making a sauce of itself. The spoonful of shrimp paste is what stops it being polite; leave it out and the dish goes beige.\n\n## 1. Sauté\n\n1. Heat the oil in a wide pot and soften the onion, garlic and ginger for 4-5 minutes. If you are using the pork, brown it now and let it render.\n2. Add the shrimp paste and fry it for a minute, until it smells emphatically of the sea.\n\n## 2. Simmer the squash\n\n1. Pour in the coconut milk, add the squash, and simmer gently, partly covered, for 12-15 minutes, until the chunks are just tender to a knife.\n2. Mash two or three chunks against the side of the pot — squash thickening its own sauce is half the charm of this dish.\n\n## 3. Beans last\n\n1. Add the yardlong beans and the chilli, if using, and simmer for 5-6 minutes so the beans stay green and snappy. If you are using the prawns, slip them in for the final 3 minutes, just until pink.\n2. Season with the fish sauce. The sauce should be creamy and lightly thickened — unlike its Bicol cousins, this ginataan stops at creamy and never oils out.\n\n## 4. Serve\n\n1. Serve over rice as the main event. It reheats gently the next day, when the squash has thickened the sauce even further."
+    },
+    {
+      "name": "Pancit canton",
+      "yields": 6,
+      "prep_time": 25,
+      "cook_time": 20,
+      "time": 45,
+      "tags": [
+        "Filipino",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Egg noodles",
+          "description": "450 g dried flour-stick noodles (pancit canton)"
+        },
+        {
+          "name": "Pork belly",
+          "description": "250 g, thinly sliced"
+        },
+        {
+          "name": "Prawns",
+          "description": "200 g, peeled"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, minced"
+        },
+        {
+          "name": "Onion",
+          "description": "1, sliced"
+        },
+        {
+          "name": "Carrots",
+          "description": "2, cut into matchsticks"
+        },
+        {
+          "name": "Cabbage",
+          "description": "300 g, shredded"
+        },
+        {
+          "name": "Green beans",
+          "description": "150 g, sliced on the diagonal"
+        },
+        {
+          "name": "Soy sauce",
+          "description": "4 tbsp"
+        },
+        {
+          "name": "Oyster sauce",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Chicken stock",
+          "description": "600 ml"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Calamansi",
+          "description": "6, halved, to serve (or lemon wedges at a push)"
+        }
+      ],
+      "description": "The birthday noodle. Long noodles promise long life, which is why you never cut them — not in the pan, not on the plate — and why no Filipino birthday table is complete without a platter of pancit canton.\n\n## 1. Line everything up\n\n1. Slice the pork belly thin, peel the prawns, cut the carrots into matchsticks, shred the cabbage and slice the green beans. Stir the soy sauce and oyster sauce into the chicken stock.\n2. Once the pan is hot this dish moves fast; there is no time to chop midway.\n\n## 2. Build the base\n\n1. Heat the oil in a wok or your widest pan and fry the pork belly over medium-high heat until the fat renders and the edges brown, about 5 minutes.\n2. Add the garlic and onion and cook until fragrant, then the prawns, just until they turn pink. Lift the prawns out and set them aside — they will overcook if they stay.\n\n## 3. Vegetables, briefly\n\n1. Stir-fry the carrots and green beans for 2 minutes, then the cabbage for 1 minute more. Everything should still be bright; it all cooks again with the noodles.\n\n## 4. Let the noodles drink\n\n1. Pour in the seasoned stock and bring it to a proper boil.\n2. Lay the noodles on top whole. Do not snap them to fit the pan — cutting the birthday noodle is considered roughly as lucky as breaking a mirror. Press them gently under the liquid with tongs as they soften.\n3. Toss and fold for 4-6 minutes until the noodles have drunk nearly all the sauce. Return the prawns and season with the black pepper.\n\n## 5. Serve with the calamansi ritual\n\n1. Pile onto a platter and ring it with the calamansi halves. Everyone squeezes their own over before the first bite — this is not optional; it is part of the recipe."
+    },
+    {
+      "name": "Pancit bihon guisado",
+      "yields": 6,
+      "prep_time": 20,
+      "cook_time": 20,
+      "time": 45,
+      "tags": [
+        "Filipino",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Rice noodles",
+          "description": "400 g thin dried vermicelli (bihon)"
+        },
+        {
+          "name": "Chicken thighs",
+          "description": "300 g boneless, thinly sliced"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, minced"
+        },
+        {
+          "name": "Onion",
+          "description": "1, sliced"
+        },
+        {
+          "name": "Carrots",
+          "description": "2, cut into matchsticks"
+        },
+        {
+          "name": "Cabbage",
+          "description": "300 g, shredded"
+        },
+        {
+          "name": "Green beans",
+          "description": "150 g, thinly sliced on the diagonal"
+        },
+        {
+          "name": "Soy sauce",
+          "description": "4 tbsp"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "1 tbsp (patis)"
+        },
+        {
+          "name": "Chicken stock",
+          "description": "500 ml"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Calamansi",
+          "description": "4, halved, to serve (or lemon wedges)"
+        }
+      ],
+      "description": "If pancit canton is for birthdays, bihon is for everything else: the noodle that turns up at every fiesta, every graduation and every four o'clock merienda without being asked. The whole dish is won or lost at the soaking bowl.\n\n## 1. Soak — just until pliable\n\n1. Soak the rice noodles in lukewarm water for about 10 minutes, until they bend without snapping but still feel firm at the core. They finish cooking in the pan.\n2. Drain them the moment they are pliable. Left to soak soft, they collapse later — soggy bihon is the most common way this dish dies.\n\n## 2. Start the guisado\n\n1. Heat the oil and sauté the garlic until golden, then the onion until soft. Guisado means sautéed, and this garlic-and-onion start is what the name is promising.\n2. Add the chicken and cook until no longer pink, then splash in the fish sauce and let it sizzle against the pan for a few seconds.\n\n## 3. Vegetables\n\n1. Add the carrots and green beans and stir-fry for 2 minutes, then the cabbage for 1 minute. Keep everything a shade underdone.\n\n## 4. Noodles\n\n1. Pour in the chicken stock and soy sauce and bring to a boil.\n2. Add the drained noodles and toss with two spatulas, lifting like a salad rather than stirring, until the liquid is absorbed, 3-4 minutes.\n3. Season with the black pepper and taste — it should be savoury enough to eat on its own, because it will be eaten on its own.\n\n## 5. Serve\n\n1. Serve hot with the calamansi halves to squeeze over; that sour lift at the end is the difference between good and correct.\n2. At merienda it is entirely acceptable to eat it stuffed into a bread roll, carbs on carbs, and nobody apologises."
+    },
+    {
+      "name": "Pancit palabok",
+      "yields": 6,
+      "prep_time": 30,
+      "cook_time": 30,
+      "time": 60,
+      "tags": [
+        "Filipino",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Rice noodles",
+          "description": "400 g thin dried vermicelli (bihon)"
+        },
+        {
+          "name": "Prawns",
+          "description": "300 g, shell on"
+        },
+        {
+          "name": "Water",
+          "description": "1 L for the shell stock, plus 4 tbsp cold for the slurry"
+        },
+        {
+          "name": "Annatto seeds",
+          "description": "2 tbsp (atsuete), or 2 tsp annatto powder"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, minced"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "3 tbsp (patis)"
+        },
+        {
+          "name": "Cornflour",
+          "description": "4 tbsp"
+        },
+        {
+          "name": "Eggs",
+          "description": "4, hard-boiled and quartered"
+        },
+        {
+          "name": "Pork scratchings",
+          "description": "80 g, crushed (chicharon)"
+        },
+        {
+          "name": "Smoked mackerel",
+          "description": "150 g, flaked (stands in for tinapa)"
+        },
+        {
+          "name": "Spring onions",
+          "description": "4, finely sliced"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Calamansi",
+          "description": "4, halved, to serve",
+          "optional": true
+        }
+      ],
+      "description": "White noodles, orange gravy, and a strict census on top: crushed chicharon, boiled egg, prawns, smoked fish, spring onions. Palabok is judged less on the sauce than on whether everything that belongs up there actually made it — skip one and it will be noticed.\n\n## 1. Make the shrimp stock\n\n1. Peel the prawns and keep the meat aside. Simmer the shells and heads in the litre of water for 15 minutes, pressing the heads against the pot — that is where the flavour lives.\n2. Strain and keep the stock.\n\n## 2. Stain it orange\n\n1. Warm the oil in the rinsed-out pan over low heat, add the annatto seeds and steep for 2-3 minutes until the oil turns deep brick-orange, then scoop the seeds out. If you are using powder, stir it straight into the stock instead.\n2. Fry the garlic in the orange oil until pale gold.\n\n## 3. Thicken the gravy\n\n1. Pour in the shrimp stock and the fish sauce and bring to a simmer.\n2. Whisk the cornflour with the 4 tbsp of cold water, then whisk it in. Simmer, stirring, until the gravy thickly coats a spoon — a finger dragged across the back should leave a clean trail.\n3. Poach the peeled prawns in the gravy for the last 2 minutes, then lift them out; they are a topping, not a filling.\n\n## 4. Cook the noodles\n\n1. Soak the noodles in lukewarm water for 10 minutes, then blanch in boiling water for 1-2 minutes until tender. Drain seriously well — wet noodles thin the gravy you just worked to thicken.\n\n## 5. Assemble the census\n\n1. Spread the noodles on a platter and pour the gravy over every strand.\n2. Top in this order: crushed pork scratchings, quartered eggs, the prawns, flaked smoked mackerel, spring onions — spread so every serving spoon catches some of everything.\n3. Serve with calamansi to squeeze over. Palabok scooped from a bare corner is just noodles with regret."
+    },
+    {
+      "name": "Lumpiang Shanghai",
+      "yields": 8,
+      "prep_time": 45,
+      "cook_time": 20,
+      "time": 65,
+      "tags": [
+        "Filipino",
+        "Snack",
+        "Freezer-friendly",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork mince",
+          "description": "500 g, not too lean"
+        },
+        {
+          "name": "Spring roll wrappers",
+          "description": "40 small squares (lumpia wrappers), thawed under a damp cloth"
+        },
+        {
+          "name": "Carrots",
+          "description": "2, finely grated"
+        },
+        {
+          "name": "Onion",
+          "description": "1 small, minced"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, minced"
+        },
+        {
+          "name": "Spring onions",
+          "description": "4, finely sliced"
+        },
+        {
+          "name": "Eggs",
+          "description": "2 — one into the filling, one beaten to seal"
+        },
+        {
+          "name": "Soy sauce",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "1 L, for deep-frying"
+        },
+        {
+          "name": "Sweet chilli sauce",
+          "description": "to serve",
+          "optional": true
+        },
+        {
+          "name": "Vinegar",
+          "description": "100 ml, for the sour dipping camp",
+          "optional": true
+        }
+      ],
+      "description": "Party maths: one guest eats five, doubling the batch changes nothing, and the platter is empty before the rice reaches the table. There are never enough lumpiang Shanghai — the recipe scales, but the appetite scales faster.\n\n## 1. Mix the filling\n\n1. Mix the pork mince, carrots, onion, garlic, spring onions, one egg, the soy sauce and the black pepper until the mixture turns sticky.\n2. Fry a teaspoon of it, taste, and correct the seasoning. This is your only chance — after rolling, it is sealed evidence.\n\n## 2. Roll — thin as a finger\n\n1. Lay a wrapper with a corner towards you and spoon a thin line of filling across the near third. Roll once tightly, fold in the sides, roll to the end and seal the tip with beaten egg.\n2. Thin as a finger is the rule. A fat roll browns outside while the pork inside is still raw; a thin one cooks through exactly when the wrapper turns deep gold.\n\n## 3. Fry\n\n1. Heat 5 cm of oil to 170°C. Fry in batches without crowding, turning, for 4-5 minutes until deeply golden and blistered.\n2. Drain upright in a colander or on paper, and cut the rolls in half on the diagonal if you are being formal.\n\n## 4. The freezer play\n\n1. To build a stash, fry the rolls only to pale blond, about 2 minutes, cool completely and freeze flat on a tray before bagging.\n2. Fry from frozen at 180°C until deep gold. Twice-fried lumpia are crunchier than once-fried, so the freezer is an upgrade, not a compromise.\n\n## 5. Serve\n\n1. Serve hot with sweet chilli sauce, or with the vinegar spiked with a little minced garlic and black pepper for the sour camp. Households contain both camps; put out both."
+    },
+    {
+      "name": "Filipino chicken curry",
+      "yields": 6,
+      "prep_time": 20,
+      "cook_time": 40,
+      "time": 60,
+      "tags": [
+        "Filipino",
+        "Main",
+        "Dairy-free",
+        "One pot",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Chicken thighs",
+          "description": "1 kg, bone-in, skin on"
+        },
+        {
+          "name": "Coconut milk",
+          "description": "400 ml (1 tin)"
+        },
+        {
+          "name": "Curry powder",
+          "description": "2 tbsp, mild"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "2 tbsp (patis)"
+        },
+        {
+          "name": "Potatoes",
+          "description": "3 medium, quartered"
+        },
+        {
+          "name": "Carrots",
+          "description": "2, in thick diagonal chunks"
+        },
+        {
+          "name": "Red peppers",
+          "description": "1 large, in wide strips"
+        },
+        {
+          "name": "Onion",
+          "description": "1, chopped"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, minced"
+        },
+        {
+          "name": "Ginger",
+          "description": "1 thumb, sliced into coins"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Water",
+          "description": "250 ml"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Jasmine rice",
+          "description": "to serve",
+          "optional": true
+        }
+      ],
+      "description": "Curry powder, coconut milk and fish sauce: the Filipino curry is mild, golden and entirely its own thing — it is not an Indian curry and it has never tried to be one. This is the lane where adobo instincts bend towards the ginataan pot.\n\n## 1. Fry the vegetables first\n\n1. Heat the oil in a wide, heavy pot and fry the potatoes until the edges take colour, about 5 minutes; lift them out.\n2. Give the red pepper strips 1 minute in the same oil and lift them out too. Frying first is what keeps both whole instead of dissolving into the sauce.\n\n## 2. Build the pot\n\n1. In the same oil, sauté the garlic, onion and ginger until fragrant.\n2. Add the chicken and cook until no longer pink, then sprinkle the curry powder over the meat and stir for a minute so it toasts on the chicken rather than burning in the oil.\n3. Add the fish sauce and let it sizzle.\n\n## 3. Simmer\n\n1. Pour in the water, add the bay leaves, cover and simmer gently for 20 minutes.\n2. Add the coconut milk, potatoes and carrots and simmer uncovered for 10-12 minutes. Keep it at a murmur — coconut milk that boils hard splits into grease and curds.\n\n## 4. Bring it together\n\n1. Return the peppers for the last 2-3 minutes. The sauce should be golden and pourable, not thick; it is destined for rice.\n2. Taste and correct with more fish sauce — that is the salt of this dish.\n\n## 5. Serve\n\n1. Serve over jasmine rice with plenty of sauce, mild enough for the youngest person at the table — which is not an accident, it is the design."
+    },
+    {
+      "name": "Pinakbet",
+      "yields": 4,
+      "prep_time": 20,
+      "cook_time": 30,
+      "time": 55,
+      "tags": [
+        "Filipino",
+        "Main",
+        "Healthy",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Squash",
+          "description": "400 g, peeled and cubed (kalabasa; butternut is the right stand-in)"
+        },
+        {
+          "name": "Bitter melon",
+          "description": "1, halved, deseeded and sliced (ampalaya)"
+        },
+        {
+          "name": "Aubergine",
+          "description": "2 small, in chunks"
+        },
+        {
+          "name": "Okra",
+          "description": "150 g, topped and left whole"
+        },
+        {
+          "name": "Tomatoes",
+          "description": "3, quartered"
+        },
+        {
+          "name": "Pork belly",
+          "description": "150 g, in small pieces"
+        },
+        {
+          "name": "Shrimp paste",
+          "description": "2 tbsp (bagoong alamang; Ilocanos reach for bagoong isda)"
+        },
+        {
+          "name": "Onion",
+          "description": "1, sliced"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, crushed"
+        },
+        {
+          "name": "Ginger",
+          "description": "1 thumb, sliced"
+        },
+        {
+          "name": "Water",
+          "description": "150 ml"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "1 tbsp"
+        }
+      ],
+      "description": "The name is Ilocano, from pinakebbet — shrivelled — and that is the finish line: vegetables collapsed a little but intact, glossed in pork fat and shrimp paste. The bagoong is the backbone of the dish; there is no polite version and no point looking for one.\n\n## 1. Render the pork\n\n1. Heat the oil in a heavy pot and fry the pork belly pieces over medium heat until the fat runs and the bits are brown and crisp, about 8 minutes.\n\n## 2. Wake the bagoong\n\n1. Sauté the garlic, onion and ginger in the pork fat until soft, then add the tomatoes and crush them against the pot as they collapse.\n2. Add the shrimp paste and fry it for 1-2 minutes until it smells loudly of itself. Open a window if you must; that smell is the dish.\n\n## 3. Layer, don't stir\n\n1. Layer the vegetables on top without mixing: squash first so it sits closest to the heat, then bitter melon, then aubergine, then okra.\n2. Pour the water down the side of the pot and cover. A spoon does not enter this pot again — stirring smashes the okra and aubergine to mush.\n\n## 4. Shake\n\n1. Simmer over medium-low heat for 15-20 minutes. Every 5 minutes, grip the lid and shake the whole pot to move the juices around — the traditional stir that is not a stir.\n2. It is done when the squash yields to a fork and everything has shrivelled slightly while holding its shape.\n\n## 5. Rest and serve\n\n1. Rest off the heat for 5 minutes so the juices settle, then bring the pot to the table with rice. Fried fish alongside makes it a proper Ilocano lunch."
+    },
+    {
+      "name": "Chopsuey",
+      "yields": 6,
+      "prep_time": 25,
+      "cook_time": 15,
+      "time": 40,
+      "tags": [
+        "Filipino",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Chicken breast",
+          "description": "250 g, thinly sliced"
+        },
+        {
+          "name": "Quail eggs",
+          "description": "12, boiled and peeled (tinned are fine)"
+        },
+        {
+          "name": "Cauliflower",
+          "description": "½ small head, in florets"
+        },
+        {
+          "name": "Carrots",
+          "description": "2, thinly sliced on the diagonal"
+        },
+        {
+          "name": "Mangetout",
+          "description": "100 g (chicharo)"
+        },
+        {
+          "name": "Red peppers",
+          "description": "1, in squares"
+        },
+        {
+          "name": "Onion",
+          "description": "1, sliced"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, minced"
+        },
+        {
+          "name": "Chicken stock",
+          "description": "250 ml"
+        },
+        {
+          "name": "Oyster sauce",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Soy sauce",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Cornflour",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "½ tsp"
+        }
+      ],
+      "description": "Every fiesta table carries one vegetable dish, and this is it: glossy, loud with colour, and present — someone will insist — for health, sitting directly beside the lechon. The sauce should shine, and the vegetables must still argue back when bitten.\n\n## 1. Get organised\n\n1. Slice everything before any heat goes on; stir-fry does not wait. Stir the chicken stock, oyster sauce, soy sauce and cornflour together in a jug.\n\n## 2. Sear the chicken\n\n1. Heat 2 tbsp of the oil in a wok over high heat and stir-fry the chicken until just cooked through, about 3 minutes. Lift it out.\n\n## 3. Vegetables in order of stubbornness\n\n1. Add the last of the oil, then the garlic and onion for 30 seconds.\n2. Cauliflower and carrots first, 3 minutes; red pepper next, 1 minute; mangetout last, 30 seconds. Underdone in the pan is perfect on the plate.\n\n## 4. Gloss\n\n1. Return the chicken, stir the sauce again — cornflour settles the moment it is left alone — and pour it in. Let it bubble for a minute until it turns glossy and clings to everything.\n2. Fold in the quail eggs gently so they stay whole and warm through, and finish with the black pepper.\n\n## 5. Serve at once\n\n1. Straight to the table with rice. Chopsuey does not hold: the vegetables keep cooking in the hot sauce, and the bite is the entire point."
+    },
+    {
+      "name": "Ginisang monggo",
+      "yields": 6,
+      "prep_time": 15,
+      "cook_time": 55,
+      "time": 70,
+      "tags": [
+        "Filipino",
+        "Main",
+        "Healthy",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Mung beans",
+          "description": "300 g dried (monggo)"
+        },
+        {
+          "name": "Water",
+          "description": "1.5 L"
+        },
+        {
+          "name": "Garlic",
+          "description": "5 cloves, minced"
+        },
+        {
+          "name": "Onion",
+          "description": "1, chopped"
+        },
+        {
+          "name": "Tomatoes",
+          "description": "3, chopped"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "2 tbsp (patis)"
+        },
+        {
+          "name": "Spinach",
+          "description": "150 g (or bitter melon leaves — dahon ng ampalaya)"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "½ tsp"
+        },
+        {
+          "name": "Pork belly",
+          "description": "150 g, diced",
+          "optional": true
+        },
+        {
+          "name": "Prawns",
+          "description": "150 g, peeled",
+          "optional": true
+        },
+        {
+          "name": "Pork scratchings",
+          "description": "40 g, crushed, for the top (chicharon)",
+          "optional": true
+        }
+      ],
+      "description": "Friday food. In Catholic households monggo is what Friday tastes like — the old meatless-Friday habit that outlived the obligation because the dish deserved to — and it is finished, without any felt contradiction, with a fistful of crushed chicharon on top.\n\n## 1. Boil the beans\n\n1. Rinse the mung beans and simmer them in the water for 35-45 minutes, until the skins split and the beans burst soft. Top up with hot water if they threaten to go dry.\n\n## 2. Make the guisa\n\n1. While the beans cook, heat the oil in a frying pan and sauté the garlic until golden, then the onion until soft, then the tomatoes until they collapse into a rough sauce.\n2. If you are adding pork belly, render it in the pan before the garlic goes in; if prawns, stir them in at the end of the sauté just until pink.\n\n## 3. Marry the two\n\n1. Tip the sauté into the beans and simmer for 10 minutes, mashing a few beans against the side of the pot. Aim for a loose porridge — thicker than soup, nowhere near paste.\n2. Season with the fish sauce and black pepper.\n\n## 4. Greens off the heat\n\n1. Turn off the heat and stir in the spinach, or bitter melon leaves if you found them, and let the residual heat wilt it. Cooked any further, the leaves go slimy and the colour goes army.\n\n## 5. Serve\n\n1. Ladle over rice and crown each bowl with crushed pork scratchings at the table, so they land crisp and stay that way for at least three spoonfuls."
+    },
+    {
+      "name": "Adobong kangkong",
+      "yields": 4,
+      "prep_time": 10,
+      "cook_time": 8,
+      "time": 18,
+      "tags": [
+        "Filipino",
+        "Side",
+        "Vegan",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Water spinach",
+          "description": "1 large bunch, about 400 g (kangkong)"
+        },
+        {
+          "name": "Garlic",
+          "description": "6 cloves, sliced"
+        },
+        {
+          "name": "Onion",
+          "description": "1 small, sliced"
+        },
+        {
+          "name": "Soy sauce",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Vinegar",
+          "description": "3 tbsp (cane vinegar if you have it)"
+        },
+        {
+          "name": "Sugar",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "½ tsp, coarsely ground"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "2 tbsp"
+        }
+      ],
+      "description": "Kangkong costs almost nothing, which has never once stopped anyone craving it. Give the cheapest green in the market the adobo treatment — garlic, soy, vinegar — and watch it vanish before dishes that cost ten times as much.\n\n## 1. Take the bunch apart\n\n1. Separate the stems from the leaves and wash both thoroughly — kangkong grows in water and remembers it. Cut the stems into 5 cm lengths and keep the two piles apart; they cook at different speeds.\n\n## 2. Fry the garlic\n\n1. Heat the oil over medium heat and fry the garlic to pale gold. Spoon a few crisp slices out to scatter over at the end.\n2. Add the onion and cook until soft.\n\n## 3. Adobo it\n\n1. Pour in the soy sauce, vinegar and sugar, then obey the adobo rule: let the vinegar bubble for a full minute without stirring, so its raw edge cooks off.\n2. Add the stems and cook for 2 minutes — they should stay squeaky and crisp.\n\n## 4. Leaves, barely\n\n1. Add the leaves and fold for 30-60 seconds, until only just wilted, then kill the heat — they finish cooking on the walk to the table. Overcooked kangkong is dark and slimy; barely wilted is the entire game.\n2. Season with the black pepper and scatter the reserved garlic on top.\n\n## 5. Serve\n\n1. Serve immediately, with rice and beside anything grilled or fried. The pan juices belong spooned over the rice."
+    },
+    {
+      "name": "Tortang talong",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 25,
+      "time": 50,
+      "tags": [
+        "Filipino",
+        "Main",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Aubergine",
+          "description": "4 long, slim ones (Asian aubergines by preference)"
+        },
+        {
+          "name": "Eggs",
+          "description": "6"
+        },
+        {
+          "name": "Salt",
+          "description": "½ tsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "½ tsp"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "4 tbsp, for shallow frying"
+        },
+        {
+          "name": "Banana ketchup",
+          "description": "to serve",
+          "optional": true
+        },
+        {
+          "name": "Jasmine rice",
+          "description": "to serve",
+          "optional": true
+        }
+      ],
+      "description": "The aubergine is cooked twice: first burnt whole over a flame until it tastes of smoke, then flattened into beaten egg and fried into an omelette that keeps its own stem. The smoke is not a garnish note — it is the dish.\n\n## 1. Burn the skins\n\n1. Grill the aubergines whole over a direct gas flame or under the hottest grill, turning, until the skin is blackened on all sides and the flesh has collapsed, 8-10 minutes. Charred means charred; timid grilling gives you skin that will not peel and no smoke to speak of.\n2. Shut them in a covered bowl for 10 minutes so the steam loosens the skin.\n\n## 2. Peel — keep the handle\n\n1. Peel away the burnt skin with your fingers. A few dark flecks left behind are seasoning, not failure.\n2. Keep the stem attached on every one. It is the handle, and the handle is half the charm of the dish.\n\n## 3. Fan it flat\n\n1. Beat the eggs with the salt and black pepper in a wide, shallow dish.\n2. Lay an aubergine in the egg, hold it by the stem, and press it flat with the back of a fork so the flesh fans out wide. Spoon egg over until it is coated through.\n\n## 4. Fry\n\n1. Heat the oil in a frying pan over medium-high heat. Slide the fan in with its clinging egg, spoon a little extra egg on top, and fry for 2-3 minutes per side until set and golden brown.\n2. Turn it with a spatula from underneath, not by the stem — the handle is for eating with, not lifting with. Repeat with the rest.\n\n## 5. Serve\n\n1. Serve hot with jasmine rice and banana ketchup on the side — the sweet red sauce invented when tomatoes were scarce, and the correct one here."
+    },
+    {
+      "name": "Paksiw na bangus",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 30,
+      "time": 60,
+      "tags": [
+        "Filipino",
+        "Main",
+        "Pescatarian",
+        "Gluten-free",
+        "One pot",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Milkfish",
+          "description": "1 whole, about 800 g, cleaned and cut into 4-5 thick steaks (bangus)"
+        },
+        {
+          "name": "Vinegar",
+          "description": "180 ml cane or white vinegar (sukang maasim)"
+        },
+        {
+          "name": "Water",
+          "description": "120 ml"
+        },
+        {
+          "name": "Ginger",
+          "description": "50 g, sliced into coins"
+        },
+        {
+          "name": "Garlic",
+          "description": "6 cloves, lightly crushed"
+        },
+        {
+          "name": "Onion",
+          "description": "1, thickly sliced"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "1 tsp, whole"
+        },
+        {
+          "name": "Bitter melon",
+          "description": "1 small, seeded and cut into thick half-moons (ampalaya)"
+        },
+        {
+          "name": "Aubergine",
+          "description": "1 small, in thick rounds, instead of or alongside the ampalaya",
+          "optional": true
+        },
+        {
+          "name": "Long green chillies",
+          "description": "2, left whole (siling haba)"
+        },
+        {
+          "name": "Fish sauce",
+          "description": "1 tbsp (patis)"
+        }
+      ],
+      "description": "Paksiw is cooking as preservation: milkfish simmered in vinegar until the sourness mellows into something savoury, built to sit out safely for days and to taste better at every reheating. Your main job is to leave the pot alone.\n\n## 1. Layer the pot\n\n1. Scatter half the ginger, garlic and onion and all the peppercorns over the bottom of a clay pot or a wide non-reactive pan — enamel or stainless steel, never bare aluminium, because the vinegar will find it.\n2. Lay the bangus steaks on top in a single layer and cover with the remaining aromatics.\n3. Tuck the ampalaya, the aubergine if you are using it, and the whole chillies around and over the fish.\n\n## 2. Boil off the raw vinegar — without stirring\n\n1. Pour the vinegar and water down the side of the pan. From this point do not stir: stirring breaks the fish and folds the raw vinegar back through the pot instead of letting it steam off.\n2. Bring to a boil and let it bubble uncovered for 5 minutes. You will smell the vinegar change from sharp to appetising — that is the signal.\n3. Lower the heat, cover, and simmer gently for 15-20 minutes, until the fish is cooked and the vegetables are tender. If something needs moving, shake the pot by its handles.\n\n## 3. Season and settle\n\n1. Add the fish sauce, tilt the pan and taste the broth: sour first, then savoury, with gentle heat from the ginger. Simmer 2 minutes more and turn off the heat.\n2. Let it rest at least 15 minutes. Paksiw is better warm than boiling; the flavour settles as it cools.\n\n## 4. Today, or better, tomorrow\n\n1. Serve warm or at room temperature with plenty of rice, spooning the sour broth over everything.\n2. The pot keeps for days — that is the entire point of paksiw. Before refrigerators it was simply boiled up briefly once a day and left on the stove; do that, or refrigerate and reheat gently, and notice it improves each time."
+    },
+    {
+      "name": "Ginisang ampalaya",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 10,
+      "time": 40,
+      "tags": [
+        "Filipino",
+        "Side",
+        "Vegetarian",
+        "Gluten-free",
+        "Healthy",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Bitter melon",
+          "description": "2 medium (ampalaya)"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tbsp, for drawing out the juice, plus more to season"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, sliced"
+        },
+        {
+          "name": "Onion",
+          "description": "1, sliced"
+        },
+        {
+          "name": "Tomatoes",
+          "description": "2, chopped"
+        },
+        {
+          "name": "Eggs",
+          "description": "3, beaten"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "to taste"
+        }
+      ],
+      "description": "Nobody's favourite dish at seven, half the country's at forty. Ampalaya is bitter on purpose: you tame the edge with salt and a hard squeeze, but you never chase it out entirely, because the bitterness is what you came for.\n\n## 1. Salt and squeeze\n\n1. Halve the ampalaya lengthways and scrape out the seeds and the white pith with a spoon — the pith is the harshest part.\n2. Slice into thin half-moons, toss with the salt and leave for 15 minutes to weep.\n3. Squeeze the slices hard in your fists, a handful at a time, and discard the dark juice. Rinse quickly, squeeze once more, and taste a piece: still clearly bitter, no longer punishing. Stop there — soaking it bland defeats the dish.\n\n## 2. Sauté\n\n1. Heat the oil in a wide pan over medium heat and fry the garlic to pale gold, then the onion until soft.\n2. Add the tomatoes and cook until they slump and stain the oil orange.\n\n## 3. Ampalaya, then egg\n\n1. Raise the heat, add the ampalaya and stir-fry for 3-4 minutes. It should stay bright green with a little bite; grey and floppy is overcooked.\n2. Push everything to one side, pour the beaten eggs into the gap, let them half-set, then fold through the vegetables.\n3. Season with black pepper and a little more salt if it needs it.\n\n## 4. Serve\n\n1. Serve hot with rice, ideally next to something fried. This is the dish Filipinos are made to eat for its virtues and grow up to order for its taste."
+    },
+    {
+      "name": "Atchara",
+      "yields": 12,
+      "prep_time": 40,
+      "cook_time": 10,
+      "time": 115,
+      "tags": [
+        "Filipino",
+        "Preserve",
+        "Vegan",
+        "Gluten-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Green papaya",
+          "description": "1 kg, unripe and hard"
+        },
+        {
+          "name": "Salt",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Carrots",
+          "description": "2, in fine strips"
+        },
+        {
+          "name": "Red peppers",
+          "description": "1, in fine strips"
+        },
+        {
+          "name": "Ginger",
+          "description": "40 g, julienned"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, sliced"
+        },
+        {
+          "name": "Onion",
+          "description": "1 small, thinly sliced, or 2 shallots"
+        },
+        {
+          "name": "Raisins",
+          "description": "50 g"
+        },
+        {
+          "name": "Vinegar",
+          "description": "500 ml cane vinegar (sukang maasim)"
+        },
+        {
+          "name": "Sugar",
+          "description": "200 g"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "1 tsp"
+        }
+      ],
+      "description": "Wherever something fried or grilled lands on a Filipino table, atchara stands next to it — the sweet-sharp shredded pickle that resets your mouth between rich bites. It is made in batches, given away in jars, and judged after a week.\n\n## 1. Shred and salt\n\n1. Peel the papaya, halve it, scrape out the seeds and shred the flesh into long fine threads on a coarse grater or mandoline.\n2. Toss the shreds with the salt in a colander and leave them to weep for 1 hour.\n\n## 2. Squeeze it dry — the whole game\n\n1. Squeeze the papaya hard, a fistful at a time, then squeeze it again. Water left in the shreds thins the syrup and the pickle will not keep; properly wrung papaya feels barely damp.\n2. Fluff the shreds into a bowl and mix with the carrots, red pepper, ginger, garlic, onion and raisins.\n\n## 3. The syrup\n\n1. Bring the vinegar, sugar and peppercorns to a boil, stirring just until the sugar dissolves, then simmer for 3 minutes. It stays thin — this is a brine with ambitions, not a caramel.\n\n## 4. Jar and wait\n\n1. Pack the vegetables into clean jars and pour the boiling syrup over to cover completely, poking out trapped air with a chopstick.\n2. Seal, cool and refrigerate. You can eat it tomorrow, but it becomes atchara after a week in the jar, when the papaya has turned glassy and the flavours have settled into each other.\n3. Serve cold beside fried fish, longganisa, tapa or anything from the grill."
+    },
+    {
+      "name": "Leche flan",
+      "yields": 8,
+      "prep_time": 25,
+      "cook_time": 40,
+      "time": 250,
+      "tags": [
+        "Filipino",
+        "Dessert",
+        "Vegetarian",
+        "Gluten-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Eggs",
+          "description": "10, yolks only"
+        },
+        {
+          "name": "Condensed milk",
+          "description": "1 tin (397 g)"
+        },
+        {
+          "name": "Evaporated milk",
+          "description": "1 tin (370 ml)"
+        },
+        {
+          "name": "Sugar",
+          "description": "150 g, for the caramel"
+        },
+        {
+          "name": "Vanilla extract",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Lime zest",
+          "description": "½ lime (dayap), instead of or with the vanilla",
+          "optional": true
+        }
+      ],
+      "description": "The Spaniards brought flan; the Philippines made it denser. Leche flan is yolks and tinned milk only — closer to velvet than to wobble — steamed in oval llanera tins and flipped gold side up at every fiesta and Noche Buena.\n\n## 1. Caramel in the llanera\n\n1. Divide the sugar between two llanera tins (a loaf tin works) and hold each over low heat with tongs, tilting, until the sugar melts to clear amber. Set aside; it hardens with a crack, which is correct.\n2. If open flame on a thin tin alarms you, melt the sugar in a small pan instead and pour it in, working fast — it sets quickly.\n\n## 2. Stir the custard — never whisk\n\n1. Separate the eggs. Only the yolks go in; the whites go to the neighbour or into tomorrow's omelette, as they always have.\n2. Stir the yolks gently with a fork, then stir in the condensed milk, evaporated milk and vanilla, or lime zest if you prefer the old flavouring. No whisking, no foam — bubbles now are holes in the finished flan.\n\n## 3. Strain twice\n\n1. Pour the custard through a fine sieve into a jug, then sieve it again as it goes into the tins. Once catches the bits; twice makes silk. This is the step that separates flans.\n2. Cover each tin tightly with foil.\n\n## 4. Steam low\n\n1. Steam over the gentlest possible simmer for 30-40 minutes — fierce steam curdles the edges. In the oven instead: a water bath at 160°C for about 45 minutes.\n2. It is done when the centre trembles slightly but a knife at the edge comes out clean.\n\n## 5. Chill, then commit\n\n1. Cool, then refrigerate for at least 3 hours; a warm flan will not survive unmoulding.\n2. Loosen the edge with a thin knife, put a lipped plate over the tin, and flip in one confident motion. The caramel comes down as its own sauce."
+    },
+    {
+      "name": "Halo-halo",
+      "yields": 4,
+      "prep_time": 20,
+      "cook_time": 0,
+      "time": 20,
+      "tags": [
+        "Filipino",
+        "Dessert",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Ice",
+          "description": "1.5 kg, shaved fine"
+        },
+        {
+          "name": "Evaporated milk",
+          "description": "1 tin (370 ml), well chilled"
+        },
+        {
+          "name": "Sweetened red beans",
+          "description": "8 tbsp, jarred (minatamis na munggo)"
+        },
+        {
+          "name": "Sweetened banana",
+          "description": "8 tbsp, jarred (minatamis na saba)"
+        },
+        {
+          "name": "Sweetened jackfruit",
+          "description": "8 tbsp, jarred (langka)"
+        },
+        {
+          "name": "Sugar palm fruit",
+          "description": "8 tbsp, jarred (kaong)",
+          "optional": true
+        },
+        {
+          "name": "Coconut sport",
+          "description": "8 tbsp, jarred (macapuno)",
+          "optional": true
+        },
+        {
+          "name": "Nata de coco",
+          "description": "8 tbsp, drained",
+          "optional": true
+        },
+        {
+          "name": "Leche flan",
+          "description": "4 small slices, homemade or shop-bought"
+        },
+        {
+          "name": "Ube halaya",
+          "description": "4 tbsp (purple yam jam)"
+        },
+        {
+          "name": "Ube ice cream",
+          "description": "4 scoops",
+          "optional": true
+        },
+        {
+          "name": "Toasted rice flakes",
+          "description": "4 tbsp (pinipig)",
+          "optional": true
+        }
+      ],
+      "description": "Halo-halo means mix-mix, and it is an instruction to the eater, not the cook. The kitchen only stacks cold sweet things in the right order; the person holding the long spoon finishes the dish.\n\n## 1. Get everything properly cold\n\n1. Chill the glasses, the evaporated milk and every jar. Warm components melt the ice to soup before the mixing even begins.\n2. Drain the red beans, banana and jackfruit well, along with any kaong, macapuno and nata de coco — you want fruit, not a glass of syrup.\n\n## 2. Sweet things below\n\n1. Layer the bottom of each tall glass with red beans, sweet banana and jackfruit, plus the kaong, macapuno and nata de coco if you have them. Families argue about the order every single time; everything-under-the-ice is the mainstream position, and it wins because the spoon has to be able to pull it all up through the ice.\n\n## 3. Ice, then milk\n\n1. Pack the glasses with finely shaved ice, mounded over the rim. You want snow, not gravel — coarse ice wrecks the texture.\n2. Pour the cold evaporated milk generously over the mound so it soaks down through.\n\n## 4. The crown\n\n1. Top each glass with a slice of leche flan and a spoonful of ube halaya, and add a scoop of ube ice cream and a scatter of pinipig if you are doing it in full.\n\n## 5. Mix-mix\n\n1. Serve immediately with a long spoon and let each eater dig to the bottom and churn the whole glass into a pale purple slush. That is not ruining it; that is the dish."
+    },
+    {
+      "name": "Biko",
+      "yields": 8,
+      "prep_time": 15,
+      "cook_time": 75,
+      "time": 120,
+      "tags": [
+        "Filipino",
+        "Dessert",
+        "Vegan",
+        "Gluten-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Glutinous rice",
+          "description": "500 g (malagkit)"
+        },
+        {
+          "name": "Water",
+          "description": "300 ml"
+        },
+        {
+          "name": "Coconut milk",
+          "description": "800 ml (2 tins)"
+        },
+        {
+          "name": "Coconut cream",
+          "description": "400 ml (1 tin), for the latik"
+        },
+        {
+          "name": "Brown sugar",
+          "description": "300 g, the darker the better"
+        },
+        {
+          "name": "Salt",
+          "description": "½ tsp"
+        },
+        {
+          "name": "Banana leaves",
+          "description": "1 piece, to line the tray",
+          "optional": true
+        }
+      ],
+      "description": "Biko is the kakanin that appears wherever Filipinos gather in numbers: a dense, chewy tray of glutinous rice folded through coconut caramel and crowned with latik. Learn latik once and you hold the key to half of Filipino sweets.\n\n## 1. Make the latik\n\n1. Simmer the coconut cream in a small pan over medium heat, stirring occasionally, for 15-20 minutes. It thickens, then splits into clear oil and white solids. Keep going — past the point that looks finished.\n2. Let the solids fry in their own oil, stirring, until they turn into nutty golden-brown curds. That is latik. Strain, keeping both the curds and the fragrant oil.\n\n## 2. Par-cook the rice\n\n1. Rinse the glutinous rice, then cook it with the water and half the coconut milk, covered, over low heat until the liquid is absorbed and the grains are only just tender. Slightly underdone is right — the rice finishes cooking in the syrup.\n\n## 3. Make the caramel\n\n1. In a wide heavy pan, boil the remaining coconut milk with the brown sugar and salt, stirring, for 10-15 minutes until thick, glossy and dark. It should coat the spoon like warm honey.\n\n## 4. Marry them\n\n1. Add the rice and fold it through the syrup over medium-low heat with a sturdy spoon for 15-20 minutes, until the mass darkens to deep caramel and pulls cleanly away from the sides of the pan. Stopping early makes biko that weeps syrup; this stage rewards stubbornness.\n\n## 5. Press and crown\n\n1. Brush a 23 cm tray with the latik oil, or line it with banana leaves, and press the biko in about 3 cm thick, smoothing the top with the back of an oiled spoon.\n2. Scatter the latik curds over the whole surface. Rest for 30 minutes, cut into squares, and serve at room temperature with strong coffee."
+    },
+    {
+      "name": "Bibingka",
+      "yields": 6,
+      "prep_time": 20,
+      "cook_time": 25,
+      "time": 45,
+      "tags": [
+        "Filipino",
+        "Baking",
+        "Vegetarian",
+        "Gluten-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Rice flour",
+          "description": "250 g"
+        },
+        {
+          "name": "Sugar",
+          "description": "120 g, plus 2 tbsp to finish"
+        },
+        {
+          "name": "Baking powder",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Salt",
+          "description": "½ tsp"
+        },
+        {
+          "name": "Eggs",
+          "description": "3"
+        },
+        {
+          "name": "Coconut milk",
+          "description": "300 ml"
+        },
+        {
+          "name": "Butter",
+          "description": "60 g, melted, plus more for brushing"
+        },
+        {
+          "name": "Banana leaves",
+          "description": "2 large pieces, thawed if frozen"
+        },
+        {
+          "name": "Salted duck eggs",
+          "description": "2, sliced (itlog na maalat)"
+        },
+        {
+          "name": "Edam cheese",
+          "description": "60 g, grated (queso de bola)"
+        },
+        {
+          "name": "Grated coconut",
+          "description": "fresh, to serve (niyog)",
+          "optional": true
+        }
+      ],
+      "description": "Bibingka belongs to December mornings: sold blistering hot outside church after simbang gabi, the nine dawn masses before Christmas, eaten standing up while the sky lightens. At home, an oven stands in for the traditional charcoal.\n\n## 1. Line the tin with banana leaf\n\n1. Pass the banana leaves briefly over a flame until glossy and pliable, then line a 20 cm round tin, letting the edges stand proud. The singed leaf is not wrapping — it is an ingredient, and half the smell of the finished cake.\n\n## 2. Mix the batter\n\n1. Whisk the rice flour, sugar, baking powder and salt together.\n2. Whisk in the eggs, coconut milk and melted butter until smooth; it should pour like double cream.\n\n## 3. Bake — coals above and below, or 200°C\n\n1. The traditional bibingkahan is a clay dish over live coals with a sheet of embers resting on the lid, so the heat comes from both directions. At home, pour the batter into the lined tin and bake at 200°C for 12 minutes, until half set.\n2. Lay the salted egg slices and the grated cheese on top — added now so they sit on the surface instead of sinking — and bake for 10-12 minutes more, until puffed, golden and a skewer comes out clean.\n3. If the top is pale, give it a minute under a hot grill: that is your upper charcoal.\n\n## 4. Finish hot, serve hotter\n\n1. Brush the top generously with butter and sprinkle with sugar while it still steams.\n2. Serve at once in its leaf, with grated coconut alongside. Cold bibingka is merely cake; hot, it is Christmas."
+    },
+    {
+      "name": "Puto",
+      "yields": 6,
+      "prep_time": 15,
+      "cook_time": 30,
+      "time": 75,
+      "tags": [
+        "Filipino",
+        "Snack",
+        "Vegetarian",
+        "Gluten-free",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Rice flour",
+          "description": "250 g"
+        },
+        {
+          "name": "Sugar",
+          "description": "150 g"
+        },
+        {
+          "name": "Baking powder",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Salt",
+          "description": "¼ tsp"
+        },
+        {
+          "name": "Coconut milk",
+          "description": "250 ml"
+        },
+        {
+          "name": "Water",
+          "description": "150 ml"
+        },
+        {
+          "name": "Cheddar cheese",
+          "description": "60 g, in small flat strips for the caps"
+        },
+        {
+          "name": "Salted duck eggs",
+          "description": "1, sliced, for some of the caps",
+          "optional": true
+        }
+      ],
+      "description": "Puto appear beside dinuguan as if by law: little white steamed cakes whose sweetness answers the dark, savoury stew. They ask only two things of you — a rested batter and a steamer lid that does not drip.\n\n## 1. Mix, then rest\n\n1. Whisk the rice flour, sugar, baking powder and salt, then whisk in the coconut milk and water until completely smooth and thin.\n2. Rest the batter for 30 minutes. Rice flour drinks slowly; skip the rest and the puto come out gritty.\n\n## 2. Rig the steamer\n\n1. Set the steamer over a gentle boil and wrap the lid in a tea towel, corners tied up at the handle. This is not optional — condensation dripping from a bare lid craters the glossy tops.\n2. Grease your moulds: puto tins, mini muffin tins or silicone cups all work.\n\n## 3. Steam in batches\n\n1. Stir the batter, fill the moulds four-fifths full and steam over medium-gentle heat for 8 minutes.\n2. Lay a strip of cheese, or a sliver of salted egg, on each cake and steam for 2-3 minutes more, until a toothpick comes out clean. Keep the steam gentle: fierce heat splits the tops.\n3. Rest a minute, loosen with a thin knife, pop them out and repeat with the rest of the batter.\n\n## 4. Serve\n\n1. Pile up and serve warm — beside dinuguan if it is lunch, with coffee if it is merienda. The sweet-against-savoury pairing is the whole point, and nobody has improved on it."
+    },
+    {
+      "name": "Turon",
+      "yields": 6,
+      "prep_time": 20,
+      "cook_time": 15,
+      "time": 35,
+      "tags": [
+        "Filipino",
+        "Dessert",
+        "Vegan",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Saba bananas",
+          "description": "6 ripe, halved lengthways (saba; plantains at a push)"
+        },
+        {
+          "name": "Sweetened jackfruit",
+          "description": "12 strips, jarred (langka)"
+        },
+        {
+          "name": "Spring roll wrappers",
+          "description": "12 large, thawed (lumpia wrappers)"
+        },
+        {
+          "name": "Brown sugar",
+          "description": "100 g, to coat the bananas"
+        },
+        {
+          "name": "Sugar",
+          "description": "3 tbsp, for the pan"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "250 ml, for shallow frying"
+        }
+      ],
+      "description": "Turon is the smell of three in the afternoon: banana and caramel drifting off a street cart, announcing merienda to the whole neighbourhood. What separates a lacquered, crackling turon from a merely fried one happens in the oil, not the wrapper.\n\n## 1. Roll\n\n1. Roll each banana half in the brown sugar until well coated.\n2. Place a banana half near one corner of a wrapper, lay a strip or two of jackfruit along it, fold in the sides and roll tight, sealing the last edge with a wet fingertip. Tight matters — trapped air balloons in hot oil.\n\n## 2. Fry into lacquer\n\n1. Heat 1-2 cm of oil in a wide pan over medium heat. Sprinkle the sugar straight into the oil and wait until it melts into amber streaks. The sugar goes into the pan, not only onto the banana — this is the entire trick.\n2. Lay the turon in seam down and fry, turning, for 3-4 minutes a side, spooning the molten sugar over so it nets onto the wrapper and hardens into deep amber glass.\n3. Mind the heat: caramel goes from lacquer to bitter in about a minute of inattention.\n\n## 3. Drain and serve\n\n1. Lift onto a wire rack, never onto kitchen paper — the caramel welds itself to paper.\n2. Wait 5 minutes, because the filling is molten, then eat standing up, mid-afternoon, as intended."
+    },
+    {
+      "name": "Ginataang bilo-bilo",
+      "yields": 6,
+      "prep_time": 25,
+      "cook_time": 35,
+      "time": 60,
+      "tags": [
+        "Filipino",
+        "Dessert",
+        "Vegan",
+        "Gluten-free",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Glutinous rice flour",
+          "description": "200 g"
+        },
+        {
+          "name": "Water",
+          "description": "160 ml for the dough, 400 ml for the pot, plus a pan-full to boil the sago"
+        },
+        {
+          "name": "Sago pearls",
+          "description": "80 g, small (or tapioca pearls)"
+        },
+        {
+          "name": "Coconut milk",
+          "description": "800 ml (2 tins)"
+        },
+        {
+          "name": "Coconut cream",
+          "description": "200 ml, stirred in at the end (kakang gata)"
+        },
+        {
+          "name": "Sugar",
+          "description": "120 g"
+        },
+        {
+          "name": "Salt",
+          "description": "1 pinch"
+        },
+        {
+          "name": "Sweet potato",
+          "description": "1 medium, peeled, in bite-size chunks (kamote)"
+        },
+        {
+          "name": "Saba bananas",
+          "description": "3, peeled and thickly sliced (plantains work)"
+        },
+        {
+          "name": "Sweetened jackfruit",
+          "description": "8 strips, jarred, sliced (langka)"
+        }
+      ],
+      "description": "Ginataang bilo-bilo is what rainy afternoons are for: a warm, sweet coconut stew of chewy rice balls, sago and fruit, assembled from whatever the cupboard holds. The bilo-bilo carry their own timer — they float when they are done.\n\n## 1. Cook the sago\n\n1. Boil the sago in a pan-full of water, stirring at first so the pearls do not clump, for 15-20 minutes until translucent with only a pinprick of white at the centre. Turn off the heat, cover for 10 minutes to finish, then drain and rinse under cold water.\n\n## 2. Roll the bilo-bilo\n\n1. Mix the glutinous rice flour with the dough water into a soft, pliable dough that no longer sticks to your palms.\n2. Roll into marble-sized balls and keep them under a damp cloth. This stage traditionally goes to the children, which is why half the country believes it learned to cook during a typhoon.\n\n## 3. Build the pot\n\n1. Bring the coconut milk, the pot water, the sugar and the salt to a gentle simmer in a wide pan. Never let it boil hard — coconut milk punished with high heat splits into oil.\n2. Add the sweet potato and simmer for 8 minutes, then the saba, and simmer 5 minutes more.\n\n## 4. The balls set the timer\n\n1. Drop in the bilo-bilo one at a time. They sink, then bob up as they cook through: floating means done, no clock required.\n2. Add the drained sago and the jackfruit, stir in the coconut cream and warm through without letting it boil.\n\n## 5. Serve warm\n\n1. Ladle into bowls while the rain keeps going. It thickens as it stands; tomorrow, loosen the leftovers with a splash of coconut milk and call it a second merienda."
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "note": "Traditional Romanian recipes added to the household by Claude. Every one carries source 'ai://claude-opus-5' and the tag 'AI-written', because the app shows a badge for recipes a model wrote rather than a person cooked. Quantities are household-scale and follow the common versions; adjust to taste.",
+  "note": "The 50 recipes Romanian home cooking actually runs on, added to the household by Claude. Every recipe names the model that wrote it in its source (the first eight are ai://claude-opus-5, the rest ai://claude-fable-5) and carries the tag 'AI-written', because the app shows a badge for recipes a model wrote rather than a person cooked. Quantities are household-scale and follow the common versions; adjust to taste.",
   "recipes": [
     {
       "name": "Sarmale în foi de varză murată",
@@ -7,20 +7,63 @@
       "prep_time": 60,
       "cook_time": 180,
       "time": 240,
-      "tags": ["Romanian", "AI-written"],
+      "tags": [
+        "Romanian",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-opus-5",
       "items": [
-        { "name": "Pickled cabbage", "description": "1 large head (varză murată)" },
-        { "name": "Pork mince", "description": "700 g, not too lean" },
-        { "name": "Smoked pork ribs", "description": "300 g" },
-        { "name": "Rice", "description": "150 g" },
-        { "name": "Onion", "description": "3 large, finely chopped" },
-        { "name": "Tomato paste", "description": "2 tbsp" },
-        { "name": "Sunflower oil", "description": "4 tbsp" },
-        { "name": "Bay leaves", "description": "3" },
-        { "name": "Thyme", "description": "1 tsp dried" },
-        { "name": "Black pepper", "description": "1 tsp" },
-        { "name": "Dill", "description": "1 small bunch", "optional": true },
-        { "name": "Sour cream", "description": "to serve", "optional": true }
+        {
+          "name": "Pickled cabbage",
+          "description": "1 large head (varză murată)"
+        },
+        {
+          "name": "Pork mince",
+          "description": "700 g, not too lean"
+        },
+        {
+          "name": "Smoked pork ribs",
+          "description": "300 g"
+        },
+        {
+          "name": "Rice",
+          "description": "150 g"
+        },
+        {
+          "name": "Onion",
+          "description": "3 large, finely chopped"
+        },
+        {
+          "name": "Tomato paste",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "4 tbsp"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "3"
+        },
+        {
+          "name": "Thyme",
+          "description": "1 tsp dried"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Dill",
+          "description": "1 small bunch",
+          "optional": true
+        },
+        {
+          "name": "Sour cream",
+          "description": "to serve",
+          "optional": true
+        }
       ],
       "description": "The dish every Romanian family argues about. Sour cabbage leaves rolled around pork and rice, then cooked so slowly the leaves go silky. Always better the second day.\n\n## 1. Prepare the cabbage\n\n1. Take the head of pickled cabbage apart leaf by leaf. Rinse each leaf if the brine is very sharp, and taste one — it should be pleasantly sour, not aggressive.\n2. Cut out the thick rib from each leaf so it will roll without cracking. Keep the trimmings and any torn leaves; they line the pot.\n\n## 2. Make the filling\n\n1. Soften the onion in the oil over low heat for 8-10 minutes until translucent but not coloured. Let it cool a little.\n2. Mix the pork mince, rice, cooked onion, tomato paste, thyme and black pepper. Do not salt heavily — the cabbage is already salty.\n3. Fry a teaspoon of the mix in a pan and taste it. This is the only chance to correct the seasoning.\n\n## 3. Roll\n\n1. Put a spoonful of filling on the stem end of each leaf, fold the sides in, and roll into a tight parcel. Tuck the loose end in with a finger.\n2. Keep them roughly the same size so they cook evenly. Smaller is more traditional than larger.\n\n## 4. Layer the pot\n\n1. Line the bottom of a heavy pot with shredded cabbage trimmings.\n2. Pack the rolls in tight circles, seam down, tucking the smoked ribs and bay leaves between the layers.\n3. Cover with the remaining trimmings, then add water until the rolls are just submerged.\n\n## 5. Cook slowly\n\n1. Bring to a bare simmer, cover, and cook for at least 3 hours on the lowest heat. An oven at 150°C does this more evenly than a hob.\n2. Check once an hour and top up with hot water if they look dry.\n3. Rest off the heat for 30 minutes before serving with sour cream, and mămăligă if you are doing it properly."
     },
@@ -30,15 +73,43 @@
       "prep_time": 5,
       "cook_time": 30,
       "time": 35,
-      "tags": ["Romanian", "AI-written"],
+      "tags": [
+        "Romanian",
+        "Main",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-opus-5",
       "items": [
-        { "name": "Cornmeal", "description": "250 g coarse (mălai)" },
-        { "name": "Water", "description": "1 L" },
-        { "name": "Salt", "description": "1 tsp" },
-        { "name": "Butter", "description": "50 g" },
-        { "name": "Telemea cheese", "description": "200 g, crumbled (or feta)" },
-        { "name": "Sour cream", "description": "200 g" },
-        { "name": "Eggs", "description": "4, to fry", "optional": true }
+        {
+          "name": "Cornmeal",
+          "description": "250 g coarse (mălai)"
+        },
+        {
+          "name": "Water",
+          "description": "1 L"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Butter",
+          "description": "50 g"
+        },
+        {
+          "name": "Telemea cheese",
+          "description": "200 g, crumbled (or feta)"
+        },
+        {
+          "name": "Sour cream",
+          "description": "200 g"
+        },
+        {
+          "name": "Eggs",
+          "description": "4, to fry",
+          "optional": true
+        }
       ],
       "description": "Polenta's Romanian cousin, and for centuries the everyday bread of the countryside. Cheese and sour cream turn it into a meal.\n\n## 1. Cook the mămăligă\n\n1. Bring the water and salt to a boil in a heavy pot.\n2. Pour the cornmeal in a steady stream with one hand while whisking hard with the other. Doing it slowly is what prevents lumps.\n3. Switch to a wooden spoon once it thickens. Cook 25-30 minutes over low heat, stirring often, until it pulls away from the sides of the pot.\n4. Stir in the butter at the end.\n\n## 2. Serve\n\n1. Traditionally it is turned out onto a wooden board and cut with a thread, not a knife. A bowl is fine.\n2. Layer hot mămăligă with crumbled cheese so it half melts, and put a generous spoon of sour cream on top.\n3. A fried egg on each portion makes it dinner rather than a side."
     },
@@ -48,21 +119,66 @@
       "prep_time": 30,
       "cook_time": 45,
       "time": 75,
-      "tags": ["Romanian", "AI-written"],
+      "tags": [
+        "Romanian",
+        "Soup",
+        "AI-written"
+      ],
+      "source": "ai://claude-opus-5",
       "items": [
-        { "name": "Pork mince", "description": "500 g" },
-        { "name": "Rice", "description": "60 g" },
-        { "name": "Eggs", "description": "1" },
-        { "name": "Carrots", "description": "2, diced" },
-        { "name": "Parsnip", "description": "1, diced" },
-        { "name": "Celeriac", "description": "150 g, diced" },
-        { "name": "Onion", "description": "1, finely chopped" },
-        { "name": "Potatoes", "description": "2, diced" },
-        { "name": "Borș", "description": "500 ml (or juice of 2 lemons)" },
-        { "name": "Tomato paste", "description": "1 tbsp" },
-        { "name": "Lovage", "description": "1 small bunch (leuștean)" },
-        { "name": "Parsley", "description": "1 small bunch" },
-        { "name": "Sour cream", "description": "to serve", "optional": true }
+        {
+          "name": "Pork mince",
+          "description": "500 g"
+        },
+        {
+          "name": "Rice",
+          "description": "60 g"
+        },
+        {
+          "name": "Eggs",
+          "description": "1"
+        },
+        {
+          "name": "Carrots",
+          "description": "2, diced"
+        },
+        {
+          "name": "Parsnip",
+          "description": "1, diced"
+        },
+        {
+          "name": "Celeriac",
+          "description": "150 g, diced"
+        },
+        {
+          "name": "Onion",
+          "description": "1, finely chopped"
+        },
+        {
+          "name": "Potatoes",
+          "description": "2, diced"
+        },
+        {
+          "name": "Borș",
+          "description": "500 ml (or juice of 2 lemons)"
+        },
+        {
+          "name": "Tomato paste",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Lovage",
+          "description": "1 small bunch (leuștean)"
+        },
+        {
+          "name": "Parsley",
+          "description": "1 small bunch"
+        },
+        {
+          "name": "Sour cream",
+          "description": "to serve",
+          "optional": true
+        }
       ],
       "description": "A sour soup with pork meatballs. The sourness comes from borș — fermented wheat bran liquid — and the finish comes from lovage, which is what makes it taste Romanian rather than merely good.\n\n## 1. Start the vegetables\n\n1. Put 2.5 L water on with the carrot, parsnip, celeriac, onion and a good pinch of salt. Simmer 15 minutes.\n2. Add the potatoes and the tomato paste and simmer another 10.\n\n## 2. Make the perișoare\n\n1. Mix the pork, uncooked rice, egg, a little chopped parsley, salt and pepper.\n2. Wet your hands and roll walnut-sized balls. The rice swells, so keep them small.\n\n## 3. Cook them in the soup\n\n1. Drop the meatballs into the simmering soup one at a time so they do not stick together.\n2. Simmer 20 minutes, uncovered, skimming any foam. Do not stir hard or they break up.\n\n## 4. Sour it\n\n1. Boil the borș separately in a small pan, then add it to the soup. Boiling it first is traditional and takes the raw edge off.\n2. Taste and add more until it is properly sour. Correct the salt afterwards, never before.\n3. Take the pot off the heat, throw in a generous handful of chopped lovage, and cover for 5 minutes.\n4. Serve with sour cream and a hot pepper on the side."
     },
@@ -72,20 +188,61 @@
       "prep_time": 30,
       "cook_time": 15,
       "time": 300,
-      "tags": ["Romanian", "AI-written"],
+      "tags": [
+        "Romanian",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-opus-5",
       "items": [
-        { "name": "Beef mince", "description": "600 g, fatty" },
-        { "name": "Lamb mince", "description": "200 g" },
-        { "name": "Pork mince", "description": "200 g" },
-        { "name": "Garlic", "description": "6 cloves, crushed to a paste" },
-        { "name": "Bicarbonate of soda", "description": "1 tsp" },
-        { "name": "Beef stock", "description": "150 ml, cold" },
-        { "name": "Black pepper", "description": "2 tsp, ground" },
-        { "name": "Ground coriander", "description": "1 tsp" },
-        { "name": "Ground allspice", "description": "1/2 tsp" },
-        { "name": "Dried thyme", "description": "1 tsp" },
-        { "name": "Salt", "description": "2 tsp" },
-        { "name": "Mustard", "description": "to serve" }
+        {
+          "name": "Beef mince",
+          "description": "600 g, fatty"
+        },
+        {
+          "name": "Lamb mince",
+          "description": "200 g"
+        },
+        {
+          "name": "Pork mince",
+          "description": "200 g"
+        },
+        {
+          "name": "Garlic",
+          "description": "6 cloves, crushed to a paste"
+        },
+        {
+          "name": "Bicarbonate of soda",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Beef stock",
+          "description": "150 ml, cold"
+        },
+        {
+          "name": "Black pepper",
+          "description": "2 tsp, ground"
+        },
+        {
+          "name": "Ground coriander",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Ground allspice",
+          "description": "1/2 tsp"
+        },
+        {
+          "name": "Dried thyme",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Salt",
+          "description": "2 tsp"
+        },
+        {
+          "name": "Mustard",
+          "description": "to serve"
+        }
       ],
       "description": "Skinless grilled sausages, the smell of every Romanian summer. The bicarbonate and the cold stock are not optional: together they give mici the springy texture that separates them from ordinary meatballs.\n\n## 1. Mix\n\n1. Combine all three minces with the garlic, spices, salt and bicarbonate.\n2. Add the cold stock a little at a time, working the mixture hard with your hands for a good 10 minutes. It should become sticky and paste-like rather than crumbly.\n\n## 2. Rest — the part people skip\n\n1. Cover and refrigerate at least 4 hours, ideally overnight. The bicarbonate needs time and the flavour needs longer.\n\n## 3. Shape\n\n1. With wet hands, roll thick sausages about 8 cm long and 3 cm across. A piping bag with a wide nozzle makes them uniform.\n2. Chill again for 30 minutes if the kitchen is warm.\n\n## 4. Grill\n\n1. Grill over high heat, turning often, 10-15 minutes. They should char in places and stay juicy inside.\n2. Brush with a little salted water while grilling if they look dry.\n3. Serve with mustard, fresh bread and cold beer. Never with ketchup, unless you enjoy arguments."
     },
@@ -95,20 +252,62 @@
       "prep_time": 25,
       "cook_time": 15,
       "time": 40,
-      "tags": ["Romanian", "AI-written"],
+      "tags": [
+        "Romanian",
+        "Dessert",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-opus-5",
       "items": [
-        { "name": "Cottage cheese", "description": "500 g, well drained (brânză de vaci)" },
-        { "name": "Eggs", "description": "2" },
-        { "name": "Semolina", "description": "3 tbsp" },
-        { "name": "Plain flour", "description": "150 g, plus more to shape" },
-        { "name": "Sugar", "description": "3 tbsp" },
-        { "name": "Baking powder", "description": "1 tsp" },
-        { "name": "Lemon zest", "description": "1 lemon" },
-        { "name": "Vanilla extract", "description": "1 tsp" },
-        { "name": "Salt", "description": "1 pinch" },
-        { "name": "Sunflower oil", "description": "for frying" },
-        { "name": "Sour cream", "description": "300 g, to serve" },
-        { "name": "Sour cherry jam", "description": "to serve" }
+        {
+          "name": "Cottage cheese",
+          "description": "500 g, well drained (brânză de vaci)"
+        },
+        {
+          "name": "Eggs",
+          "description": "2"
+        },
+        {
+          "name": "Semolina",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Plain flour",
+          "description": "150 g, plus more to shape"
+        },
+        {
+          "name": "Sugar",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Baking powder",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Lemon zest",
+          "description": "1 lemon"
+        },
+        {
+          "name": "Vanilla extract",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Salt",
+          "description": "1 pinch"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "for frying"
+        },
+        {
+          "name": "Sour cream",
+          "description": "300 g, to serve"
+        },
+        {
+          "name": "Sour cherry jam",
+          "description": "to serve"
+        }
       ],
       "description": "Fried doughnuts of sweet cheese, each wearing a little hat, buried under sour cream and sour cherry jam. Romania's best dessert argument-ender.\n\n## 1. Make the dough\n\n1. Drain the cheese properly — press it in a sieve or a cloth. Wet cheese means dough you cannot shape.\n2. Mix cheese, eggs, sugar, semolina, lemon zest, vanilla and salt.\n3. Add the flour with the baking powder and work it just until it comes together. Overworking makes them tough.\n4. Rest 15 minutes so the semolina swells.\n\n## 2. Shape\n\n1. With floured hands, take a ball about the size of a small apple and flatten it slightly, then make a hole in the middle with your finger and widen it into a ring.\n2. From the same dough make a small ball — the hat — for each ring.\n\n## 3. Fry\n\n1. Heat 4-5 cm of oil to 160-170°C. Too hot and the outside colours before the middle cooks.\n2. Fry the rings 3-4 minutes a side until deep gold, then the little balls, which take less.\n3. Drain on paper.\n\n## 4. Build\n\n1. Sit each ring on a plate, spoon over cold sour cream, then sour cherry jam, then perch the hat on top.\n2. Serve immediately, while the contrast between hot doughnut and cold cream is still the point."
     },
@@ -118,16 +317,46 @@
       "prep_time": 60,
       "cook_time": 120,
       "time": 180,
-      "tags": ["Romanian", "AI-written"],
+      "tags": [
+        "Romanian",
+        "Preserve",
+        "Vegan",
+        "AI-written"
+      ],
+      "source": "ai://claude-opus-5",
       "items": [
-        { "name": "Aubergine", "description": "2 kg" },
-        { "name": "Red peppers", "description": "1.5 kg" },
-        { "name": "Onion", "description": "1 kg, finely chopped" },
-        { "name": "Tomato paste", "description": "300 g" },
-        { "name": "Sunflower oil", "description": "300 ml" },
-        { "name": "Bay leaves", "description": "4" },
-        { "name": "Black peppercorns", "description": "1 tsp" },
-        { "name": "Salt", "description": "to taste" }
+        {
+          "name": "Aubergine",
+          "description": "2 kg"
+        },
+        {
+          "name": "Red peppers",
+          "description": "1.5 kg"
+        },
+        {
+          "name": "Onion",
+          "description": "1 kg, finely chopped"
+        },
+        {
+          "name": "Tomato paste",
+          "description": "300 g"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "300 ml"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "4"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        }
       ],
       "description": "Autumn in a jar. Made in enormous quantities when peppers are cheap, eaten on bread all winter. The smell of roasting peppers is half the reason to make it.\n\n## 1. Roast\n\n1. Roast the aubergines and peppers whole, over a flame or under a hot grill, until the skins are blackened all over.\n2. Put them in a covered pot or a bag for 20 minutes — the steam loosens the skins.\n3. Peel, deseed the peppers, and drain the aubergines well in a colander. Chop both coarsely. Never use a blender: zacuscă should have texture.\n\n## 2. Cook the base\n\n1. Cook the onion in the oil over low heat for 25-30 minutes until sweet and golden. This is the longest step and the one that decides the flavour.\n2. Add the tomato paste and cook another 5 minutes.\n\n## 3. Bring it together\n\n1. Add the aubergine and peppers, bay leaves and peppercorns.\n2. Cook uncovered over low heat for 1.5-2 hours, stirring often with a wooden spoon, until the oil separates and rises to the surface. That is the sign it is done.\n3. Salt at the very end, tasting as you go.\n\n## 4. Jar it\n\n1. Spoon boiling hot into sterilised jars, seal, and turn upside down.\n2. Wrap the jars in a blanket and leave overnight — cooling slowly is what stops them spoiling.\n3. Keeps a year in a cold, dark place."
     },
@@ -137,14 +366,39 @@
       "prep_time": 20,
       "cook_time": 30,
       "time": 50,
-      "tags": ["Romanian", "AI-written"],
+      "tags": [
+        "Romanian",
+        "Side",
+        "Vegan",
+        "AI-written"
+      ],
+      "source": "ai://claude-opus-5",
       "items": [
-        { "name": "Aubergine", "description": "1.5 kg" },
-        { "name": "Onion", "description": "1 small, very finely chopped" },
-        { "name": "Sunflower oil", "description": "100 ml" },
-        { "name": "Lemon", "description": "1/2, juiced" },
-        { "name": "Salt", "description": "to taste" },
-        { "name": "Tomatoes", "description": "to serve", "optional": true }
+        {
+          "name": "Aubergine",
+          "description": "1.5 kg"
+        },
+        {
+          "name": "Onion",
+          "description": "1 small, very finely chopped"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "100 ml"
+        },
+        {
+          "name": "Lemon",
+          "description": "1/2, juiced"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Tomatoes",
+          "description": "to serve",
+          "optional": true
+        }
       ],
       "description": "Smoked aubergine beaten with oil until creamy. Three ingredients, and all of it depends on how well you burn the aubergines.\n\n## 1. Burn them properly\n\n1. Cook the aubergines whole directly over a flame — a gas hob, a grill, a barbecue — turning until the skin is completely black and the flesh has collapsed. Oven-roasting works but gives you a purée, not a salad: the smoke is the flavour.\n\n## 2. Drain\n\n1. Peel while still hot, taking care not to leave black flecks in the flesh.\n2. Leave in a sieve or on a tilted wooden board for at least 30 minutes. Wet aubergine makes a watery salad, and this cannot be fixed later.\n\n## 3. Beat\n\n1. Chop with a wooden knife on a wooden board — metal is said to discolour it, and after enough repetitions you stop arguing.\n2. Beat with a wooden spoon while pouring the oil in a thin stream, as if making mayonnaise, until pale and creamy.\n3. Beat in the lemon juice and salt, then fold in the raw onion at the very end.\n4. Serve cool with tomatoes and good bread."
     },
@@ -154,21 +408,2520 @@
       "prep_time": 20,
       "cook_time": 40,
       "time": 60,
-      "tags": ["Romanian", "AI-written"],
+      "tags": [
+        "Romanian",
+        "Soup",
+        "AI-written"
+      ],
+      "source": "ai://claude-opus-5",
       "items": [
-        { "name": "Chicken breast", "description": "600 g" },
-        { "name": "Carrots", "description": "2" },
-        { "name": "Parsnip", "description": "1" },
-        { "name": "Celeriac", "description": "100 g" },
-        { "name": "Onion", "description": "1" },
-        { "name": "Garlic", "description": "6 cloves" },
-        { "name": "Sour cream", "description": "400 g" },
-        { "name": "Eggs", "description": "3 yolks" },
-        { "name": "Vinegar", "description": "2 tbsp" },
-        { "name": "Salt", "description": "to taste" },
-        { "name": "Black pepper", "description": "to taste" }
+        {
+          "name": "Chicken breast",
+          "description": "600 g"
+        },
+        {
+          "name": "Carrots",
+          "description": "2"
+        },
+        {
+          "name": "Parsnip",
+          "description": "1"
+        },
+        {
+          "name": "Celeriac",
+          "description": "100 g"
+        },
+        {
+          "name": "Onion",
+          "description": "1"
+        },
+        {
+          "name": "Garlic",
+          "description": "6 cloves"
+        },
+        {
+          "name": "Sour cream",
+          "description": "400 g"
+        },
+        {
+          "name": "Eggs",
+          "description": "3 yolks"
+        },
+        {
+          "name": "Vinegar",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Black pepper",
+          "description": "to taste"
+        }
       ],
       "description": "A creamy garlic and chicken soup from Rădăuți in the north — invented in the 1970s as a tripe-free ciorbă de burtă, and now more popular than the original. Forgiving, rich, and quick by ciorbă standards.\n\n## 1. Poach\n\n1. Simmer the chicken with the whole vegetables in 2.5 L salted water for 30 minutes, skimming the foam in the first few minutes.\n2. Lift out the chicken and the vegetables. Strain the broth back into the pot.\n3. Cut the chicken into thin strips and the carrots into small dice; discard the rest or eat it as the cook's portion.\n\n## 2. Temper the cream\n\n1. Whisk the sour cream with the egg yolks and a ladle of hot broth. Then another. Then a third.\n2. Pour the tempered mixture slowly back into the pot, off the boil, stirring constantly. If it boils after this point it will split.\n\n## 3. Finish\n\n1. Return the chicken and carrots, and warm gently without boiling.\n2. Crush the garlic to a paste with a little salt and stir it in off the heat — raw garlic is the whole character of this soup.\n3. Sharpen with vinegar to taste, season, and serve with a hot pepper and bread."
+    },
+    {
+      "name": "Ciorbă de burtă",
+      "yields": 6,
+      "prep_time": 30,
+      "cook_time": 240,
+      "time": 270,
+      "tags": [
+        "Romanian",
+        "Soup",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Beef tripe",
+          "description": "1.2 kg, cleaned honeycomb tripe"
+        },
+        {
+          "name": "Beef bones",
+          "description": "1 kg, plus a split calf's foot if the butcher will part with one"
+        },
+        {
+          "name": "Onion",
+          "description": "1, peeled and left whole"
+        },
+        {
+          "name": "Carrots",
+          "description": "2, peeled and left whole"
+        },
+        {
+          "name": "Celeriac",
+          "description": "a quarter, in one piece"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Water",
+          "description": "about 4 L, cold"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Eggs",
+          "description": "3, yolks only"
+        },
+        {
+          "name": "Sour cream",
+          "description": "400 g full fat, plus more for the table"
+        },
+        {
+          "name": "Garlic",
+          "description": "1 whole head"
+        },
+        {
+          "name": "Vinegar",
+          "description": "3-4 tbsp, plus more for the table"
+        },
+        {
+          "name": "Hot peppers",
+          "description": "fresh or pickled, to serve",
+          "optional": true
+        }
+      ],
+      "description": "No dish splits Romania cleaner. Half the country orders ciorbă de burtă before sitting down and swears by it at six in the morning after a wedding; the other half will not stay in the room. Creamy, garlicky, sharp with vinegar — the soup is completely sure of itself even if you are not.\n\n## 1. Boil for body\n\n1. Rinse the tripe well under cold water. Put it in your largest pot with the bones and the calf's foot, cover with the cold water and bring it slowly up to a simmer.\n2. Skim the grey foam patiently for the first 20 minutes. What you skim now you will not taste later.\n3. Add the whole onion, carrots, celeriac, bay leaves and peppercorns, salt lightly, and simmer barely moving for 3-4 hours, until a knife slides through the tripe with no argument. A pressure cooker does it in an hour and nobody will know.\n\n## 2. Cut and strain\n\n1. Lift out the tripe, let it cool enough to handle, and cut it into thin strips — pencil-wide, finger-short.\n2. Strain the broth and discard the vegetables. Pick any soft morsels off the foot, then return broth, tripe and morsels to the pot and check the salt.\n\n## 3. The liaison — where it is won or lost\n\n1. Whisk the egg yolks with the sour cream in a large bowl.\n2. Temper it: add hot broth a ladle at a time, whisking, until the bowl is properly warm.\n3. Take the pot off the heat and stir the mixture in. From this moment the soup must never boil again, or it will curdle beyond rescue.\n\n## 4. Garlic and sour\n\n1. Crush the garlic with a pinch of salt to a smooth paste, loosen it with a ladle of soup and stir it through.\n2. Sour with the vinegar a spoonful at a time, tasting as you go. It should sharpen the soup, not pucker it.\n\n## 5. Serve\n\n1. Ladle it out hot, with hot peppers to bite between spoonfuls, and put the vinegar and extra sour cream on the table — nobody trusts anyone else's dosage."
+    },
+    {
+      "name": "Ciorbă de fasole cu afumătură",
+      "yields": 6,
+      "prep_time": 25,
+      "cook_time": 150,
+      "time": 660,
+      "tags": [
+        "Romanian",
+        "Soup",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Dried white beans",
+          "description": "500 g, soaked overnight in plenty of cold water"
+        },
+        {
+          "name": "Smoked pork hock",
+          "description": "1, about 800 g (ciolan afumat)"
+        },
+        {
+          "name": "Onion",
+          "description": "2 for the pot, plus a spare to serve raw if you grew up with it"
+        },
+        {
+          "name": "Carrots",
+          "description": "2, diced"
+        },
+        {
+          "name": "Parsnip",
+          "description": "1, diced"
+        },
+        {
+          "name": "Celeriac",
+          "description": "a quarter, diced"
+        },
+        {
+          "name": "Tomato paste",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Borș",
+          "description": "500 ml (fermented wheat bran souring liquid; sour with vinegar to taste if you cannot find it)"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Lovage",
+          "description": "1 small bunch, chopped"
+        },
+        {
+          "name": "Water",
+          "description": "about 3 L"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste, and late — the hock brings its own"
+        }
+      ],
+      "description": "At every Romanian fair this soup is sold in a hollowed-out loaf, and the queue for it outlasts the music. At home it needs no bread bowl — just a smoked hock, properly soaked beans and lovage at the end, which is not negotiable.\n\n## 1. Soak, boil, discard\n\n1. Soak the beans overnight in plenty of cold water, then drain them.\n2. Cover with fresh water, boil hard for 5 minutes and pour that water away. Every Romanian cook performs this first-boil ritual; your digestion is the reason.\n\n## 2. Build the pot\n\n1. Put the beans and the hock in the pot with about 3 L of cold water. Bring to a simmer, skim, and cook partly covered for an hour.\n2. Add the diced onion, carrots, parsnip, celeriac and the bay leaves. Simmer another 30-40 minutes, until the beans are completely tender and the hock meat wants to leave the bone.\n\n## 3. Sour it\n\n1. Lift out the hock, pull the meat into shreds, and return it to the pot. Stir in the tomato paste.\n2. Add the borș — boiled up briefly in a separate pan if you have a moment, which keeps the soup from clouding — and simmer 5 minutes. Only now taste for salt; the hock has been salting it for you all along.\n\n## 4. Finish\n\n1. Off the heat, stir in the lovage and let the pot stand, covered, for 10 minutes. Lovage is not parsley's understudy; without it this is just bean soup.\n2. Serve very hot, with a quarter of raw onion on the side for those who grew up with it. At a fair it would arrive in a bread bowl; at home a deep plate does fine."
+    },
+    {
+      "name": "Ciorbă țărănească de văcuță",
+      "yields": 6,
+      "prep_time": 25,
+      "cook_time": 120,
+      "time": 145,
+      "tags": [
+        "Romanian",
+        "Soup",
+        "One pot",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Stewing beef",
+          "description": "600 g chuck or brisket, in generous bite-size chunks"
+        },
+        {
+          "name": "Water",
+          "description": "about 3 L, cold"
+        },
+        {
+          "name": "Onion",
+          "description": "1 large, chopped"
+        },
+        {
+          "name": "Carrots",
+          "description": "2, diced"
+        },
+        {
+          "name": "Celeriac",
+          "description": "a quarter, diced"
+        },
+        {
+          "name": "Parsnip",
+          "description": "1, diced"
+        },
+        {
+          "name": "Potatoes",
+          "description": "3 medium, in chunks"
+        },
+        {
+          "name": "Red peppers",
+          "description": "1, diced"
+        },
+        {
+          "name": "Green beans",
+          "description": "a handful, in short lengths"
+        },
+        {
+          "name": "Tomatoes",
+          "description": "3, grated, skins discarded"
+        },
+        {
+          "name": "Borș",
+          "description": "500 ml (fermented wheat bran souring liquid; vinegar at a pinch)"
+        },
+        {
+          "name": "Lovage",
+          "description": "1 small bunch, chopped"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Sour cream",
+          "description": "to serve",
+          "optional": true
+        }
+      ],
+      "description": "On a Romanian menu, țărănească — peasant style — is not an apology but a boast: it means one honest piece of beef and everything the garden had that morning. This is the ciorbă cooks are judged by, because there is nowhere to hide.\n\n## 1. Simmer the beef\n\n1. Put the beef in the cold water with a good pinch of salt and bring it slowly to a simmer.\n2. Skim thoroughly and often in the first half hour, then cook at a bare shiver for about an hour and a half, until nearly tender. Boiling it hard makes the soup cloudy and the beef tight — patience is most of the recipe.\n\n## 2. Crowd in the vegetables\n\n1. Add the onion, carrots, celeriac and parsnip and simmer 10 minutes.\n2. Add the potatoes, red pepper and green beans and cook until everything is just tender.\n3. Stir in the grated tomatoes and give it 5 minutes more.\n\n## 3. Sour it\n\n1. Pour in the borș, bring back to a simmer for 3-4 minutes, and season with salt. It should taste bright, not sharp.\n\n## 4. Finish\n\n1. Off the heat, add a generous handful of lovage and put the lid on for 5 minutes.\n2. Serve with cold sour cream for whoever wants it — in most families that is everyone except the one person who makes a point of it."
+    },
+    {
+      "name": "Ciorbă de legume",
+      "yields": 6,
+      "prep_time": 20,
+      "cook_time": 45,
+      "time": 65,
+      "tags": [
+        "Romanian",
+        "Soup",
+        "Vegan",
+        "Healthy",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Sunflower oil",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Onion",
+          "description": "1 large, chopped"
+        },
+        {
+          "name": "Carrots",
+          "description": "2, diced"
+        },
+        {
+          "name": "Celeriac",
+          "description": "a quarter, diced"
+        },
+        {
+          "name": "Potatoes",
+          "description": "2, in chunks"
+        },
+        {
+          "name": "Red peppers",
+          "description": "1, diced"
+        },
+        {
+          "name": "Green beans",
+          "description": "100 g, in short lengths"
+        },
+        {
+          "name": "Courgette",
+          "description": "1 small, diced"
+        },
+        {
+          "name": "Tomatoes",
+          "description": "3, grated, skins discarded"
+        },
+        {
+          "name": "Borș",
+          "description": "500 ml (fermented wheat bran souring liquid; vinegar at a pinch)"
+        },
+        {
+          "name": "Lovage",
+          "description": "1 small bunch, chopped"
+        },
+        {
+          "name": "Water",
+          "description": "about 2.5 L"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Sour cream",
+          "description": "to serve, for the non-fasting",
+          "optional": true
+        }
+      ],
+      "description": "This is the soup Romanian gardens write themselves in high summer, and the proof that de post — fasting — cooking is not a punishment. No meat, no stock: the vegetables, the borș and a fistful of lovage do everything.\n\n## 1. Sweat the base\n\n1. Warm the oil in the soup pot and soften the onion, carrots and celeriac for 5-6 minutes without colouring. This little sweat is what separates soup from boiled vegetables.\n\n## 2. Layer by cooking time\n\n1. Add the water, bring to the boil and put in the potatoes. Give them 10 minutes.\n2. Add the red pepper and green beans and simmer 8-10 minutes, then the courgette for a final 5 — it collapses into mush if it goes in early.\n3. Stir in the grated tomatoes and cook 5 minutes more.\n\n## 3. Sour it\n\n1. Add the borș, simmer 3-4 minutes and season with salt. Taste: the sourness should lift the vegetables, not bury them.\n\n## 4. Finish\n\n1. Off the heat, stir in the lovage and rest the pot, covered, for 5 minutes.\n2. Serve as it is on fasting days, or with a spoonful of sour cream when nobody is fasting."
+    },
+    {
+      "name": "Ciorbă de cartofi",
+      "yields": 6,
+      "prep_time": 20,
+      "cook_time": 40,
+      "time": 60,
+      "tags": [
+        "Romanian",
+        "Soup",
+        "One pot",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Potatoes",
+          "description": "1 kg, in bite-size chunks"
+        },
+        {
+          "name": "Bacon",
+          "description": "100 g smoked, diced (or a smoked sausage, sliced)",
+          "optional": true
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Onion",
+          "description": "1 large, chopped"
+        },
+        {
+          "name": "Carrots",
+          "description": "2, diced"
+        },
+        {
+          "name": "Celeriac",
+          "description": "a quarter, diced"
+        },
+        {
+          "name": "Red peppers",
+          "description": "1, diced"
+        },
+        {
+          "name": "Tomato paste",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Borș",
+          "description": "400 ml (fermented wheat bran souring liquid; vinegar at a pinch)"
+        },
+        {
+          "name": "Lovage",
+          "description": "1 small bunch, chopped (or tarragon)"
+        },
+        {
+          "name": "Water",
+          "description": "about 2.5 L"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Black pepper",
+          "description": "to taste"
+        }
+      ],
+      "description": "Nobody photographs potato ciorbă, and nobody stops making it either. This is the weekday backbone of Romanian home cooking — cheap, forgiving, and exactly as good as the herb you finish it with.\n\n## 1. Start the base\n\n1. If you are using the bacon, let it render gently in the pot first; otherwise just warm the oil. Soften the onion, carrots and celeriac for 5-6 minutes.\n2. Add the red pepper and the tomato paste and stir for 2 minutes, until the paste darkens a shade.\n\n## 2. Potatoes\n\n1. Add the potatoes and the water, season lightly with salt, and simmer 15-20 minutes. The edges of the potatoes should just start to soften and round off — that slight collapse is what thickens the soup, so do not fight it.\n\n## 3. Sour it\n\n1. Pour in the borș, simmer 5 minutes, and season with salt and pepper.\n\n## 4. Finish\n\n1. Off the heat, stir in the lovage — or tarragon, if your family leans Transylvanian; both lanes are honourable.\n2. Rest 5 minutes with the lid on and serve hot, straight into the middle of an ordinary Tuesday."
+    },
+    {
+      "name": "Supă de pui cu tăiței",
+      "yields": 6,
+      "prep_time": 35,
+      "cook_time": 120,
+      "time": 155,
+      "tags": [
+        "Romanian",
+        "Soup",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Whole chicken",
+          "description": "1 small, about 1.5 kg, jointed into pieces"
+        },
+        {
+          "name": "Water",
+          "description": "3.5 L, cold"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tbsp, plus a pinch for the dough"
+        },
+        {
+          "name": "Onion",
+          "description": "1, peeled and left whole"
+        },
+        {
+          "name": "Carrots",
+          "description": "3, peeled and left whole"
+        },
+        {
+          "name": "Parsnip",
+          "description": "1, peeled"
+        },
+        {
+          "name": "Celeriac",
+          "description": "a quarter, in one piece"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Plain flour",
+          "description": "200 g, for the noodles, plus more for dusting"
+        },
+        {
+          "name": "Eggs",
+          "description": "2, for the noodles"
+        },
+        {
+          "name": "Parsley",
+          "description": "chopped, to finish"
+        }
+      ],
+      "description": "Sunday lunch in Romania does not begin until this reaches the table. A clear chicken soup is a report card: the clarity says you skimmed and never let it boil, and the noodles say whether you rolled them yourself.\n\n## 1. Start cold, skim everything\n\n1. Put the chicken pieces in the cold water with the salt and bring it up slowly, uncovered.\n2. As it approaches a simmer, skim off every scrap of foam. Do this properly for the first 20 minutes; it is most of the secret.\n\n## 2. The bare simmer\n\n1. Add the whole onion, carrots, parsnip, celeriac and the peppercorns.\n2. Keep the pot at a shiver — the surface should tremble, never bubble — for 1.5 to 2 hours. A soup that boils is a soup that clouds, and everyone at the table will know.\n\n## 3. Roll the noodles\n\n1. While the pot murmurs, knead the flour, eggs and a pinch of salt into a stiff dough. Rest it under a bowl for 30 minutes.\n2. Roll it out thin enough to see the table through, dust with flour, roll it up loosely and slice as finely as your knife allows.\n3. Shake the noodles loose and let them dry on the board while the soup finishes.\n\n## 4. Finish and serve\n\n1. Lift out the chicken and carrots and strain the broth into a clean pot. Taste for salt.\n2. Bring it back to a gentle simmer and cook the noodles in it for 3-4 minutes.\n3. Return the carrots in coins and as much chicken as you like — the rest of the bird is traditionally the second course.\n4. Scatter with parsley and serve first, as it was always meant to be."
+    },
+    {
+      "name": "Tochitură moldovenească",
+      "yields": 4,
+      "prep_time": 20,
+      "cook_time": 90,
+      "time": 110,
+      "tags": [
+        "Romanian",
+        "Main",
+        "Gluten-free",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork shoulder",
+          "description": "800 g, in 2-3 cm cubes"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "3 tbsp (lard, if your kitchen keeps it), plus a little for the eggs"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste, plus 1 tsp for the mămăligă"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp, coarsely ground"
+        },
+        {
+          "name": "Dried thyme",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Garlic",
+          "description": "8 cloves, crushed"
+        },
+        {
+          "name": "White wine",
+          "description": "150 ml, dry"
+        },
+        {
+          "name": "Cornmeal",
+          "description": "300 g, for the mămăligă"
+        },
+        {
+          "name": "Water",
+          "description": "1.5 L for the mămăligă, plus splashes for the pan"
+        },
+        {
+          "name": "Eggs",
+          "description": "4"
+        },
+        {
+          "name": "Sheep's cheese",
+          "description": "150 g (telemea), coarsely grated"
+        }
+      ],
+      "description": "Every region claims a tochitură, and Moldova's is the strict one: pork, garlic, wine and the pan juices, with not a tomato in sight. It goes nowhere without mămăligă, a fried egg and a snowfall of grated telemea.\n\n## 1. Brown the pork\n\n1. Dry the pork cubes well, salt them, and brown them in the oil in batches over lively heat. Proper colour now is flavour later; a crowded pan just steams.\n\n## 2. Stew in its own juices\n\n1. Return all the meat to the pan, add the pepper, thyme, bay leaves and a small splash of water, then cover and cook on low for about an hour.\n2. Add water only a splash at a time, when the pan threatens to dry out. The sauce is the pan juices — a drowned tochitură is somebody else's stew.\n\n## 3. Make the mămăligă\n\n1. Bring the water to the boil with a teaspoon of salt and rain in the cornmeal, whisking as you pour.\n2. Switch to a wooden spoon and stir over low heat for 20-25 minutes, until it pulls away from the sides of the pot. Rest it 5 minutes, then turn it out onto a board.\n\n## 4. Garlic and wine\n\n1. Uncover the meat and let the juices reduce until glossy and scant.\n2. Add the crushed garlic and the wine and cook 5 minutes more. The garlic goes in late on purpose — it is meant to shout.\n\n## 5. Build the plate\n\n1. Fry the eggs in a little oil, yolks left loose.\n2. On each plate: a slab of mămăligă, meat and juices over it, the egg on top and a generous grating of telemea. Breaking the yolk is the last step of the sauce."
+    },
+    {
+      "name": "Varză à la Cluj",
+      "yields": 6,
+      "prep_time": 30,
+      "cook_time": 70,
+      "time": 100,
+      "tags": [
+        "Romanian",
+        "Main",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Sauerkraut",
+          "description": "1.2 kg, drained"
+        },
+        {
+          "name": "Pork mince",
+          "description": "600 g, not too lean"
+        },
+        {
+          "name": "Rice",
+          "description": "100 g"
+        },
+        {
+          "name": "Onion",
+          "description": "2, finely chopped"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "4 tbsp"
+        },
+        {
+          "name": "Tomato paste",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Paprika",
+          "description": "1 tbsp, sweet"
+        },
+        {
+          "name": "Dried thyme",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Salt",
+          "description": "carefully — the cabbage brings its own"
+        },
+        {
+          "name": "Sour cream",
+          "description": "400 g, half for the dish, half for the table"
+        }
+      ],
+      "description": "Transylvania's honest confession: everyone loves sarmale, and nobody loves rolling fifty of them on a weeknight. Varză à la Cluj layers the same argument — sour cabbage, pork, rice — into a baking dish and lets the oven do the diplomacy.\n\n## 1. Tame the cabbage\n\n1. Taste the sauerkraut. If it bites back hard, rinse it briefly and squeeze it well; if it is pleasantly sour, just squeeze.\n2. Chop it roughly and fry it in half the oil for about 10 minutes, until softened and faintly golden.\n\n## 2. Make the meat layer\n\n1. Parboil the rice for 8 minutes in salted water and drain it.\n2. In the rest of the oil, soften the onion, then add the mince and fry until it loses its pink. Stir in the paprika, thyme, pepper and tomato paste right at the end — paprika turns bitter if you let it burn.\n3. Mix in the rice and season carefully with salt; the cabbage is salty already.\n\n## 3. Layer\n\n1. In a deep baking dish: a third of the cabbage, half the meat, another third of cabbage, the rest of the meat, and cabbage on top.\n2. Spread half the sour cream over the surface.\n\n## 4. Bake\n\n1. Bake at 180°C for 40-45 minutes, until bubbling at the edges and blushed on top. If it looks dry halfway through, add a small splash of water at the side of the dish.\n\n## 5. Rest and serve\n\n1. Rest it 15 minutes so it slices instead of slumping.\n2. Serve with the rest of the sour cream at the table. All the flavour of sarmale, none of the origami."
+    },
+    {
+      "name": "Fasole cu cârnați",
+      "yields": 6,
+      "prep_time": 20,
+      "cook_time": 120,
+      "time": 620,
+      "tags": [
+        "Romanian",
+        "Main",
+        "Comfort food",
+        "Freezer-friendly",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Dried white beans",
+          "description": "500 g, soaked overnight in plenty of cold water"
+        },
+        {
+          "name": "Smoked sausage",
+          "description": "400 g, in thick coins"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Onion",
+          "description": "3, chopped"
+        },
+        {
+          "name": "Carrots",
+          "description": "2, coarsely grated"
+        },
+        {
+          "name": "Tomato paste",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Paprika",
+          "description": "1 tsp, sweet"
+        },
+        {
+          "name": "Dried thyme",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Water",
+          "description": "about 2 L"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste, added late"
+        },
+        {
+          "name": "Black pepper",
+          "description": "to taste"
+        },
+        {
+          "name": "Gherkins",
+          "description": "or any pickled vegetables, to serve",
+          "optional": true
+        }
+      ],
+      "description": "Every 1 December, Romania's national day, the army ladles this out of field cauldrons to whoever queues in the cold — beans with smoked sausage is the closest thing the country has to an edible flag. Like every bean dish worth the name, it is better the next day.\n\n## 1. Beans first\n\n1. Drain the soaked beans, cover with fresh water, boil hard for 5 minutes and pour that water away.\n2. Cover again with about 2 L of fresh water, add the bay leaves and simmer 60-90 minutes, until tender but still whole. Salt only near the end, as every bean-cooking grandmother insists.\n\n## 2. Brown the sausage, build the base\n\n1. Brown the sausage coins in the oil until the edges catch and the fat runs, then lift them out.\n2. In the same fat, soften the onion and carrots for 8-10 minutes. Stir in the paprika, thyme and tomato paste and cook 2 minutes, until brick-red and glossy.\n\n## 3. Marry them\n\n1. Tip the base and the sausages in with the beans, keeping enough of the cooking liquid for a loose stew — this is not a soup and should not behave like one.\n2. Simmer uncovered for 20-25 minutes, until it thickens and the first beans start breaking at the edges. Season with salt and pepper.\n\n## 4. Rest and serve\n\n1. It improves overnight and freezes without complaint; reheat it loosened with a splash of water.\n2. Serve hot with gherkins or whatever the pickle jar offers — on 1 December, preferably outdoors, where it tastes most like itself."
+    },
+    {
+      "name": "Fasole bătută",
+      "yields": 6,
+      "prep_time": 15,
+      "cook_time": 90,
+      "time": 585,
+      "tags": [
+        "Romanian",
+        "Side",
+        "Vegan",
+        "Healthy",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Dried white beans",
+          "description": "400 g, soaked overnight in plenty of cold water"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, crushed to a paste"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "150 ml in total: 100 ml for the whip, the rest for the onions"
+        },
+        {
+          "name": "Salt",
+          "description": "to taste"
+        },
+        {
+          "name": "Onion",
+          "description": "2 large, thinly sliced"
+        },
+        {
+          "name": "Paprika",
+          "description": "1 heaped tsp, sweet"
+        },
+        {
+          "name": "Bread",
+          "description": "to serve",
+          "optional": true
+        },
+        {
+          "name": "Gherkins",
+          "description": "or any pickles, to serve",
+          "optional": true
+        }
+      ],
+      "description": "Half the Romanian calendar is fasting days, and this is what they taste like: white beans whipped with garlic and oil into something far silkier than it has any right to be, under a lid of paprika-stained onions. Spread it on bread next to a pickle and nobody misses the meat.\n\n## 1. Boil the beans\n\n1. Drain the soaked beans, cover generously with fresh water, add the bay leaves and simmer 60-90 minutes, until a bean squashes between two fingers without argument.\n2. Before draining, save a large cupful of the cooking liquid — the whip depends on it. Discard the bay leaves.\n\n## 2. Whip\n\n1. While the beans are still warm, mash or blend them with the garlic and a good pinch of salt, pouring in 100 ml of the oil in a thin stream as if making mayonnaise.\n2. Loosen with the reserved liquid until glossy and spreadable. Tradition says a wooden spoon and a strong arm; a blender is faster and nobody checks.\n3. Taste — it should be loud with garlic and properly salted, because beans swallow seasoning.\n\n## 3. Make the onion lid\n\n1. Fry the sliced onions slowly in the remaining oil for a good 15 minutes, until deeply golden and sweet. Pale onions are the most common way this dish fails.\n2. Off the heat, stir in the paprika with a spoonful of water so it stains the oil red without burning.\n\n## 4. Serve\n\n1. Spread the beans in a shallow bowl, swirl the top and pour the onions and their red oil over.\n2. Serve at room temperature with bread and gherkins. On a fasting table it is promoted to centrepiece."
+    },
+    {
+      "name": "Varză călită",
+      "yields": 6,
+      "prep_time": 15,
+      "cook_time": 90,
+      "time": 105,
+      "tags": [
+        "Romanian",
+        "Side",
+        "Vegan",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Sauerkraut",
+          "description": "1.5 kg, drained"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "80 ml"
+        },
+        {
+          "name": "Onion",
+          "description": "2 large, sliced"
+        },
+        {
+          "name": "Bacon",
+          "description": "100 g smoked, diced, or a length of smoked sausage",
+          "optional": true
+        },
+        {
+          "name": "Dried thyme",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp, coarsely ground"
+        },
+        {
+          "name": "Tomato paste",
+          "description": "2 tbsp"
+        }
+      ],
+      "description": "The Romanian table's default vegetable: sauerkraut cooked low and slow with onion and thyme until it forgets it was ever raw. It sits beside sausages, under a pork chop or over mămăligă, and it complains about none of them.\n\n## 1. Judge the cabbage\n\n1. Taste the sauerkraut. Pleasantly sour: just squeeze it dry. Aggressive: rinse it once, then squeeze hard. Chop the strands shorter so it eats like a dish, not a garnish.\n\n## 2. Start the onion\n\n1. Warm the oil in a wide, heavy pan and cook the onions gently until golden — a good 10 minutes, no rushing.\n2. If you are using the bacon or sausage, add it now and let the fat run.\n\n## 3. Braise low\n\n1. Add the cabbage, thyme, bay leaves and pepper. Keep the heat low and the lid half on, and cook 60-75 minutes, stirring now and then and adding a splash of water only when it sticks. It should fry-braise, never boil.\n2. Stir in the tomato paste for the last 15 minutes — a little tomato, not a tomato sauce; the cabbage stays in charge.\n3. It is done when soft, sweet-sour, faintly golden and reduced by nearly half.\n\n## 4. Serve\n\n1. Serve hot beside sausages or over mămăligă. It keeps for days in the fridge and, like most things in this cuisine, is quietly better reheated."
+    },
+    {
+      "name": "Musaca de cartofi",
+      "yields": 6,
+      "prep_time": 35,
+      "cook_time": 75,
+      "time": 125,
+      "tags": [
+        "Romanian",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Potatoes",
+          "description": "1.5 kg, waxy if possible"
+        },
+        {
+          "name": "Beef mince",
+          "description": "250 g"
+        },
+        {
+          "name": "Pork mince",
+          "description": "250 g"
+        },
+        {
+          "name": "Onion",
+          "description": "2, finely chopped"
+        },
+        {
+          "name": "Tomato paste",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Eggs",
+          "description": "3"
+        },
+        {
+          "name": "Milk",
+          "description": "200 ml (or 200 g sour cream)"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "for frying, plus 2 tbsp"
+        },
+        {
+          "name": "Dried thyme",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Parsley",
+          "description": "half a bunch, chopped"
+        },
+        {
+          "name": "Tomatoes",
+          "description": "2, sliced, for the top",
+          "optional": true
+        }
+      ],
+      "description": "Romanian musaca owes nothing to Greece: no béchamel, no lamb, just fried potato rounds and well-seasoned mince, set together with beaten eggs and milk. It is what canteens meant when the board said musaca, and what Sunday lunch meant in a block of flats.\n\n## 1. Fry the potatoes\n\n1. Peel the potatoes and slice them into rounds about 5 mm thick — thinner and they dissolve, thicker and they never quite cook.\n2. Fry them in batches in hot oil until pale gold but still firm; they finish cooking in the oven. Drain on paper.\n\n## 2. Cook the mince\n\n1. Soften the chopped onion in 2 tbsp of the oil until translucent.\n2. Add both minces and break them up, cooking until no longer pink and the juices have evaporated.\n3. Stir in the tomato paste, thyme and pepper with a splash of water and simmer 10 minutes until thick — a wet filling makes the layers slide apart. Season with salt and stir in half the parsley.\n\n## 3. Layer\n\n1. Oil a deep baking dish. Lay in half the potato rounds, overlapping like tiles, then all the mince, then the rest of the potatoes.\n2. If you have the tomatoes, lay the slices over the top — many houses do, for the look as much as the taste.\n\n## 4. Pour and bake\n\n1. Beat the eggs with the milk (or sour cream, if that is your house style) and a good pinch of salt, and pour it evenly over so it seeps down into the layers.\n2. Bake at 180°C for 35–40 minutes until the top is golden and the custard has set — a knife should come out clean.\n\n## 5. Rest\n\n1. Wait 15 minutes before cutting; it slices into neat squares instead of collapsing, and it tastes better warm than hot.\n2. Serve with pickles or a tomato salad, with the rest of the parsley scattered over."
+    },
+    {
+      "name": "Chiftele marinate",
+      "yields": 4,
+      "prep_time": 30,
+      "cook_time": 40,
+      "time": 80,
+      "tags": [
+        "Romanian",
+        "Main",
+        "Freezer-friendly",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork mince",
+          "description": "500 g, not too lean"
+        },
+        {
+          "name": "Onion",
+          "description": "1, grated"
+        },
+        {
+          "name": "Potatoes",
+          "description": "1 small, grated raw"
+        },
+        {
+          "name": "Garlic",
+          "description": "3 cloves, crushed"
+        },
+        {
+          "name": "Dill",
+          "description": "half a bunch, chopped"
+        },
+        {
+          "name": "Eggs",
+          "description": "1"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Plain flour",
+          "description": "3 tbsp, for rolling"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "for shallow frying"
+        },
+        {
+          "name": "Passata",
+          "description": "500 ml (suc de roșii)"
+        },
+        {
+          "name": "Sugar",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Dried thyme",
+          "description": "1/2 tsp"
+        }
+      ],
+      "description": "Chiftele are everyday food; drowning them in tomato marinată promotes them to Sunday lunch. The grated potato in the meat is the old trick for meatballs that stay soft even cold from the fridge.\n\n## 1. Mix\n\n1. Grate the onion and the potato on the fine side and squeeze the juice out with your fist — a wet mix means meatballs that fall apart in the pan.\n2. Mix the mince with the onion, potato, crushed garlic, chopped dill, egg and pepper. Season with salt and knead for a minute until it holds together.\n\n## 2. Shape and fry\n\n1. With wet hands, roll balls a little bigger than a walnut, flatten them slightly, and roll each through the flour.\n2. Shallow-fry in hot oil until browned all over but not necessarily cooked through — they finish in the sauce. Drain on paper.\n\n## 3. Make the marinată\n\n1. In a wide pan, simmer the passata with a splash of water, the sugar, bay leaves, thyme and a grind of the pepper for 10 minutes. Taste it: gently sweet-sour, not sharp.\n\n## 4. Marry them\n\n1. Lower the chiftele into the sauce, spoon it over them and simmer gently, uncovered, for 15 minutes until the sauce is thick enough to coat.\n2. Rest at least 10 minutes off the heat; like most Romanian tomato dishes they are better after a night in the fridge.\n3. Serve over mashed potatoes or rice — something to catch the marinată. They freeze beautifully in their sauce, which is why grandmothers always double the batch."
+    },
+    {
+      "name": "Pârjoale moldovenești",
+      "yields": 4,
+      "prep_time": 30,
+      "cook_time": 25,
+      "time": 70,
+      "tags": [
+        "Romanian",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork mince",
+          "description": "600 g, not too lean"
+        },
+        {
+          "name": "Onion",
+          "description": "1 large, grated"
+        },
+        {
+          "name": "Potatoes",
+          "description": "1 medium, grated raw"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, crushed"
+        },
+        {
+          "name": "Dill",
+          "description": "1 bunch, chopped"
+        },
+        {
+          "name": "Parsley",
+          "description": "1 bunch, chopped"
+        },
+        {
+          "name": "Eggs",
+          "description": "2"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Breadcrumbs",
+          "description": "150 g, for coating"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "for shallow frying"
+        }
+      ],
+      "description": "In Moldova a chiftea is a snack and a pârjoală is a meal: palm-sized, oval, flattened, green inside from all the dill and parsley, and soft enough to cut with the side of a fork. The breadcrumb crust and the grated potato are what separate it from every lesser meatball.\n\n## 1. Make the mix\n\n1. Grate the onion and the potato finely and squeeze out as much juice as you can.\n2. Mix the mince with the onion, potato, garlic, eggs, pepper and both herbs. The mix should look slightly too green; that is correct.\n3. Season with salt, knead well for two minutes, and rest it in the fridge for 15 minutes so it firms up for shaping.\n\n## 2. Shape and crust\n\n1. With wet hands, form oval patties the size of your palm and about 2 cm thick, flattening each one slightly.\n2. Press them through the breadcrumbs on both sides and around the edge. The crust is not decoration — it is what lets the inside stay soft.\n\n## 3. Fry\n\n1. Heat about 1 cm of oil over medium heat — a pinch of breadcrumbs should sizzle steadily, not violently.\n2. Fry 4–5 minutes a side until deep golden. They are thick, so high heat gives you a burnt crust and a raw middle; lower the flame and take your time.\n3. Drain on paper. Serve hot with mashed potatoes and pickles — though half of them traditionally disappear cold, straight from the fridge, at 11 pm."
+    },
+    {
+      "name": "Ostropel de pui",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 45,
+      "time": 70,
+      "tags": [
+        "Romanian",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Chicken thighs",
+          "description": "1 kg, bone in, skin on"
+        },
+        {
+          "name": "Onion",
+          "description": "1 small, finely chopped"
+        },
+        {
+          "name": "Garlic",
+          "description": "1 small head (6–8 cloves)"
+        },
+        {
+          "name": "Plain flour",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Tomato paste",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Water",
+          "description": "400 ml, warm"
+        },
+        {
+          "name": "Vinegar",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Dried thyme",
+          "description": "1/2 tsp"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1/2 tsp"
+        }
+      ],
+      "description": "Ostropel is Oltenia's way of stretching one chicken across a family: the meat is the excuse, the garlicky tomato sauce is the dish, and the mămăligă or bread that mops it up is not optional. The garlic goes in at the end, where it can still be heard.\n\n## 1. Brown\n\n1. Season the chicken and brown it in the oil in a wide, deep pan until the skin is golden on both sides. Set it aside and keep the fat.\n\n## 2. Build the sauce\n\n1. Soften the chopped onion in the same fat until translucent.\n2. Sprinkle over the flour and stir for a minute — just enough to give the sauce a little body later, no more.\n3. Stir in the tomato paste, then the warm water, thyme, bay leaves and pepper, scraping up everything stuck to the pan.\n\n## 3. Braise\n\n1. Return the chicken, cover, and simmer on low for 30 minutes, turning once, until the meat is tender and the sauce has thickened enough to coat a piece of bread.\n\n## 4. The garlic moment\n\n1. Crush the garlic to a paste with a little salt and stir it in with the vinegar for the last two minutes, then take the pan off the heat. Long cooking tames garlic, and tame garlic is not ostropel.\n2. Rest, covered, for 10 minutes.\n3. Serve over mămăligă or with plenty of white bread. The chicken can be shared; the sauce cannot."
+    },
+    {
+      "name": "Ciulama de pui",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 60,
+      "time": 75,
+      "tags": [
+        "Romanian",
+        "Main",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Chicken thighs",
+          "description": "900 g, bone in"
+        },
+        {
+          "name": "Water",
+          "description": "1.5 L"
+        },
+        {
+          "name": "Onion",
+          "description": "1, halved"
+        },
+        {
+          "name": "Carrots",
+          "description": "1, whole"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "1"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "8"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tsp, for the poaching pot"
+        },
+        {
+          "name": "Butter",
+          "description": "60 g"
+        },
+        {
+          "name": "Plain flour",
+          "description": "50 g"
+        }
+      ],
+      "description": "Ciulama is pale on purpose: poached chicken folded through a silky roux-and-stock sauce, ladled over mămăligă. Its entire reputation stands or falls on the absence of lumps.\n\n## 1. Poach\n\n1. Put the chicken in a pot with the water, the halved onion, the carrot, bay leaf, peppercorns and salt. Bring to a bare simmer and skim off the grey foam.\n2. Poach gently for 35–40 minutes until tender. Lift out the chicken and strain the stock — you need about 700 ml of it.\n3. Pull the meat off the bones in large pieces, discarding skin and bones.\n\n## 2. Make the roux\n\n1. Melt the butter over low heat, add the flour and stir for 2–3 minutes until it smells faintly biscuity but takes no colour at all. Colour belongs to other dishes; ciulama stays white.\n\n## 3. Marry them — the anti-lump part\n\n1. Take the pan off the heat and add the stock one ladle at a time, whisking each addition completely smooth before the next. Pouring it all in at once is how lumps are born.\n2. Return to a gentle simmer and cook for 10 minutes, stirring, until the sauce coats the back of a spoon. Coats, not glues — thin it with more stock if the spoon disappears, and remember it thickens further as it stands.\n\n## 4. Finish\n\n1. Fold the chicken into the sauce and warm it through for 5 minutes without letting it boil hard. Taste for salt.\n2. Serve over mămăligă — always. Ciulama without mămăligă is a sauce without a job."
+    },
+    {
+      "name": "Papricaș de pui cu găluște",
+      "yields": 4,
+      "prep_time": 25,
+      "cook_time": 55,
+      "time": 85,
+      "tags": [
+        "Romanian",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Chicken thighs",
+          "description": "1 kg, bone in"
+        },
+        {
+          "name": "Onion",
+          "description": "2 large, finely chopped"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "3 tbsp (lard is traditional)"
+        },
+        {
+          "name": "Paprika",
+          "description": "2 tbsp, sweet"
+        },
+        {
+          "name": "Water",
+          "description": "600 ml, hot"
+        },
+        {
+          "name": "Plain flour",
+          "description": "200 g, for the dumplings"
+        },
+        {
+          "name": "Eggs",
+          "description": "2, for the dumplings"
+        },
+        {
+          "name": "Salt",
+          "description": "1 pinch for the dough, plus more for the pot"
+        },
+        {
+          "name": "Sour cream",
+          "description": "200 g"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1/2 tsp"
+        }
+      ],
+      "description": "Papricaș is Transylvania's pot for a cold week: chicken stewed on a bed of onions and sweet paprika, flour dumplings pinched straight into the simmering sauce, sour cream folded through at the end. The Hungarian ancestry is obvious, and nobody minds.\n\n## 1. Bloom the paprika — off the heat\n\n1. Soften the chopped onions in the oil over low heat for 10 minutes until sweet and golden. Lard is more traditional, if your conscience allows.\n2. Take the pot off the heat and only then stir in the paprika for a few seconds. On the flame it scorches almost instantly and turns bitter; off the heat it only blooms.\n\n## 2. Stew\n\n1. Return the pot to the heat, add the chicken and turn it in the red fat, then pour in the hot water and season with salt.\n2. Cover and simmer on low for about 35 minutes, until the chicken is tender. Top up with a little hot water if it looks dry.\n\n## 3. Pinch the dumplings\n\n1. While it stews, beat the eggs with the pinch of salt and work in the flour to a sticky dough that only just holds on a spoon. Rest it 10 minutes.\n2. With a teaspoon dipped in the hot sauce, pinch small dumplings straight into the simmering pot. Simmer 8–10 minutes until they puff and float, then cut one open — the middle must not be doughy.\n\n## 4. Sour cream, gently\n\n1. Off the heat, stir a ladleful of hot sauce into the sour cream, then stir the mixture back into the pot. Straight in, it splits.\n2. Season with the pepper, rest 5 minutes, and serve — with bread, or with nothing, since the dumplings are the starch."
+    },
+    {
+      "name": "Șnițele de pui",
+      "yields": 4,
+      "prep_time": 25,
+      "cook_time": 20,
+      "time": 45,
+      "tags": [
+        "Romanian",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Chicken breast",
+          "description": "3 (about 600 g)"
+        },
+        {
+          "name": "Plain flour",
+          "description": "100 g"
+        },
+        {
+          "name": "Eggs",
+          "description": "3"
+        },
+        {
+          "name": "Breadcrumbs",
+          "description": "200 g"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "for shallow frying"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1/2 tsp"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, for mujdei",
+          "optional": true
+        },
+        {
+          "name": "Lemon",
+          "description": "wedges, to serve instead of mujdei",
+          "optional": true
+        }
+      ],
+      "description": "Every Romanian school trip smelled the same: șnițele fried at dawn, packed cold in paper napkins by somebody's mother. Hot with mujdei they are dinner; cold on a train they are heritage.\n\n## 1. Beat them thin\n\n1. Slice each breast horizontally into two flat escalopes.\n2. Lay them between two sheets of cling film and beat with a rolling pin to 5–7 mm. Thin is the whole point — a thick șnițel is just fried chicken. Season both sides with salt and the pepper.\n\n## 2. Set up the line\n\n1. Three plates: the flour; the eggs beaten with a fork and a pinch of salt; the breadcrumbs.\n2. Coat each piece in that order — flour shaken off, egg, then breadcrumbs pressed on firmly with your palm so the crust cannot peel off in the pan.\n\n## 3. Fry\n\n1. Heat 1 cm of oil over medium heat: a breadcrumb dropped in should fizz at once without browning instantly, about 170°C.\n2. Fry 2–3 minutes a side to a deep, even gold, in batches so the pan never crowds and the oil never cools.\n3. Drain on paper and salt lightly while hot.\n\n## 4. Serve twice\n\n1. Tonight: hot, with mujdei — crush the garlic to a paste with a pinch of salt and loosen it with 3–4 tbsp of cold water — or simply with lemon wedges, and mashed potatoes if it is a proper dinner.\n2. Tomorrow: cold, wrapped in a napkin, on a journey. Many Romanians will tell you this is the better version."
+    },
+    {
+      "name": "Pilaf de pui",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 40,
+      "time": 65,
+      "tags": [
+        "Romanian",
+        "Main",
+        "Comfort food",
+        "One pot",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Chicken thighs",
+          "description": "800 g, bone in"
+        },
+        {
+          "name": "Rice",
+          "description": "300 g, long grain"
+        },
+        {
+          "name": "Onion",
+          "description": "1, finely chopped"
+        },
+        {
+          "name": "Carrots",
+          "description": "1, diced small"
+        },
+        {
+          "name": "Chicken stock",
+          "description": "650 ml, hot"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "1"
+        },
+        {
+          "name": "Dried thyme",
+          "description": "1/2 tsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1/2 tsp"
+        },
+        {
+          "name": "Parsley",
+          "description": "half a bunch, chopped"
+        }
+      ],
+      "description": "Pilaf de pui is the dish canteens, grandmothers and hospital kitchens all agree on: rice toasted in chicken fat, swollen with stock, every grain separate if you did it right. The ten minutes under the lid at the end are where it is decided.\n\n## 1. Brown the chicken\n\n1. Season the thighs and brown them well in the oil in a heavy pot, both sides. Set them aside and leave the fat where it is.\n\n## 2. Toast the rice\n\n1. Soften the onion and carrot in the same fat for 5 minutes.\n2. Add the rice and stir for 2–3 minutes until the grains turn chalky at the edges and start to click against the pot. This toasting is what keeps them separate later; skip it and you have made porridge.\n\n## 3. Absorb\n\n1. Pour in the hot stock — it will spit — and add the bay leaf, thyme and pepper. Nestle the chicken on top with any juices.\n2. Cover and cook on the lowest heat for 18–20 minutes without stirring; stirring wakes the starch and glues the grains. An oven at 180°C for the same time is even safer.\n\n## 4. Rest — the part people skip\n\n1. Off the heat, lid on, 10 full minutes. The last of the moisture finishes the rice; lift the lid early and it escapes as steam.\n2. Fluff with a fork, scatter the parsley, and serve with pickles or a tomato salad — something sharp against all that comfort."
+    },
+    {
+      "name": "Mâncare de mazăre cu pui",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 45,
+      "time": 70,
+      "tags": [
+        "Romanian",
+        "Main",
+        "One pot",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Chicken thighs",
+          "description": "700 g, bone in, or drumsticks"
+        },
+        {
+          "name": "Peas",
+          "description": "800 g, frozen or fresh"
+        },
+        {
+          "name": "Onion",
+          "description": "1, chopped"
+        },
+        {
+          "name": "Carrots",
+          "description": "1, diced"
+        },
+        {
+          "name": "Tomato paste",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Water",
+          "description": "400 ml, hot"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "1"
+        },
+        {
+          "name": "Dill",
+          "description": "1 bunch, chopped"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1/2 tsp"
+        },
+        {
+          "name": "Sugar",
+          "description": "1 pinch, if the peas need it",
+          "optional": true
+        }
+      ],
+      "description": "If Romania has a default weekday dinner, this is it: sweet peas and chicken in a light tomato sauce turned green with dill, eaten with bread and no ceremony. Every kitchen makes it; almost nobody writes it down.\n\n## 1. Colour the chicken\n\n1. Brown the chicken lightly in the oil in a wide pot — colour, not a crust. Set it to one side of the pot.\n\n## 2. Build the base\n\n1. Soften the chopped onion and diced carrot in the same fat.\n2. Stir in the tomato paste for a minute, add the hot water and the bay leaf, and settle the chicken back in. Cover and simmer 20 minutes.\n\n## 3. Peas in\n\n1. Add the peas — frozen straight from the bag is what everyone actually uses — and simmer uncovered for 10–12 minutes.\n2. The sauce should be light but not watery: it must stain the bread, not drown it. A pinch of sugar helps if the peas are dull.\n\n## 4. Dill, then patience\n\n1. Off the heat, season with salt and the pepper and stir in most of the dill. Long cooking turns dill to hay; it goes in at the end or not at all.\n2. Lid on for 10 minutes, the rest of the dill on top, bread on the table. Like most Romanian stews it is better reheated tomorrow."
+    },
+    {
+      "name": "Tocăniță de cartofi",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 45,
+      "time": 70,
+      "tags": [
+        "Romanian",
+        "Main",
+        "Vegan",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Potatoes",
+          "description": "1.2 kg"
+        },
+        {
+          "name": "Onion",
+          "description": "2 large, chopped"
+        },
+        {
+          "name": "Garlic",
+          "description": "3 cloves, sliced"
+        },
+        {
+          "name": "Paprika",
+          "description": "1 tbsp, sweet"
+        },
+        {
+          "name": "Tomato paste",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "4 tbsp"
+        },
+        {
+          "name": "Water",
+          "description": "600 ml, hot"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Dill",
+          "description": "half a bunch, chopped (or parsley)"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1/2 tsp"
+        },
+        {
+          "name": "Smoked sausage",
+          "description": "200 g, sliced — skip for the Lenten version",
+          "optional": true
+        }
+      ],
+      "description": "Tocăniță de cartofi is Lent food, end-of-month food, and quiet proof that onions, paprika and potatoes need nothing else. There is no flour and no cream — the potato thickens its own sauce if you let it.\n\n## 1. Sweeten the onions\n\n1. Cook the chopped onions in the oil over low heat for 10–12 minutes until soft and golden — this is most of the flavour, and rushing it shows.\n2. Add the garlic for a minute, then pull the pot off the heat and stir in the paprika so it blooms without catching. Stir in the tomato paste.\n\n## 2. Simmer\n\n1. Add the potatoes in large bite-sized chunks, the bay leaves and the hot water — it should barely cover them. Season with salt.\n2. Simmer, partly covered, for 20–25 minutes until the potatoes are tender. If you are using the sausage, add the slices halfway; for the Lenten (de post) version leave it out — the dish does not miss it.\n\n## 3. Thicken with itself\n\n1. Crush a few chunks against the side of the pot and stir them through — the starch is the only thickener this dish wants. Simmer 5 more minutes until the sauce clings to the potatoes.\n\n## 4. Finish green\n\n1. Off the heat, add the pepper and the dill — parsley if your house is a parsley house — and let it sit, covered, for 10 minutes.\n2. Serve with bread and pickled vegetables. In Lent, this is the whole dinner."
+    },
+    {
+      "name": "Ghiveci de legume",
+      "yields": 6,
+      "prep_time": 30,
+      "cook_time": 65,
+      "time": 115,
+      "tags": [
+        "Romanian",
+        "Main",
+        "Vegan",
+        "Healthy",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Onion",
+          "description": "2, chopped"
+        },
+        {
+          "name": "Carrots",
+          "description": "2, in thick rounds"
+        },
+        {
+          "name": "Red peppers",
+          "description": "2, in chunks"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, sliced"
+        },
+        {
+          "name": "Potatoes",
+          "description": "400 g, in chunks"
+        },
+        {
+          "name": "Green beans",
+          "description": "200 g, halved"
+        },
+        {
+          "name": "Aubergine",
+          "description": "1, in large chunks"
+        },
+        {
+          "name": "Courgette",
+          "description": "1, in large chunks"
+        },
+        {
+          "name": "Peas",
+          "description": "150 g"
+        },
+        {
+          "name": "Tomatoes",
+          "description": "600 g ripe, halved and grated, skins discarded"
+        },
+        {
+          "name": "Tomato paste",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "100 ml"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Parsley",
+          "description": "1 bunch, chopped"
+        }
+      ],
+      "description": "Ghiveci is what September does to a Romanian garden: everything ripe at once goes into one pot, staggered by cooking time, bound by oil and tomato, and finished in the oven until it tastes like one dish instead of twelve. The vegetable list is a census, not a law — use what the garden or the market gives.\n\n## 1. Start the slow ones\n\n1. In a wide ovenproof pot, soften the onions in the oil for 5 minutes.\n2. Add the carrots and peppers and cook 5 minutes more, then the garlic for one.\n\n## 2. Stagger the rest\n\n1. Add the potatoes and green beans with the grated tomatoes, the tomato paste, the pepper and some salt, and fold everything together.\n2. Lay the aubergine, courgette and peas on top without stirring them in — the soft vegetables collapse if worked from the start. No added water: the vegetables make their own.\n\n## 3. Into the oven\n\n1. Lid on, into the oven at 180°C for 30 minutes.\n2. Uncover, fold gently once from the bottom, and give it 20–25 minutes more until everything is tender, the sauce has thickened and the edges have caught a little — those edges are the flavour.\n\n## 4. Rest, then pick your temperature\n\n1. Scatter the parsley over and rest for at least 20 minutes.\n2. Eat warm with bread, or at room temperature tomorrow, when it is honestly better. It is naturally de post — vegan by design — and in late summer it is dinner for days."
+    },
+    {
+      "name": "Ardei umpluți",
+      "yields": 6,
+      "prep_time": 40,
+      "cook_time": 75,
+      "time": 125,
+      "tags": [
+        "Romanian",
+        "Main",
+        "Freezer-friendly",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Red peppers",
+          "description": "10 smallish, or 8 large — the pale yellow Romanian ardei gras are ideal"
+        },
+        {
+          "name": "Pork mince",
+          "description": "600 g, not too lean"
+        },
+        {
+          "name": "Rice",
+          "description": "100 g"
+        },
+        {
+          "name": "Onion",
+          "description": "2 large, finely chopped"
+        },
+        {
+          "name": "Carrots",
+          "description": "1, coarsely grated"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Tomato passata",
+          "description": "700 ml"
+        },
+        {
+          "name": "Sugar",
+          "description": "1 tsp, for the sauce"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Dill",
+          "description": "1 small bunch, chopped"
+        },
+        {
+          "name": "Sour cream",
+          "description": "to serve",
+          "optional": true
+        }
+      ],
+      "description": "Sarmale's easygoing summer cousin: the same pork-and-rice heart, but the wrapper is a pepper and the sauce is tomato, rounded with a spoon of sugar the way it has always been done. Every Romanian canteen serves them; every home does them better.\n\n## 1. Make the filling\n\n1. Soften the onion and grated carrot in the oil over low heat for 8–10 minutes, until sweet and translucent. Let it cool a little.\n2. Mix the pork mince with the rice, the cooked vegetables, half the dill and the black pepper. Season with salt, but gently — the sauce concentrates around the peppers as it cooks.\n3. Fry a teaspoon of the mixture and taste it; raw filling tells you nothing.\n\n## 2. Stuff the peppers\n\n1. Cut a lid off each pepper at the stem end and pull out the seeds and white ribs.\n2. Fill them only three-quarters full — the rice swells, and an overstuffed pepper splits in the pot.\n3. Set each lid back on like a little hat.\n\n## 3. Build the sauce\n\n1. Stand the peppers upright and snug in a wide pot; they should hold each other up.\n2. Mix the passata with about 300 ml of water, the sugar and the bay leaves, and pour it around the peppers to reach their shoulders. The teaspoon of sugar is traditional, not negotiable — it takes the raw edge off the tomato.\n\n## 4. Simmer\n\n1. Bring to a gentle simmer, lid ajar, and cook for 60–70 minutes, until a fork slides easily into a pepper and the rice inside is done.\n2. Shake the pot now and then instead of stirring, so nothing tears.\n3. They freeze beautifully in their sauce, which is why nobody makes a small batch.\n\n## 5. Serve\n\n1. Rest for 10 minutes, scatter over the rest of the dill, and serve with a spoonful of sour cream melting into the sauce and bread for the plate."
+    },
+    {
+      "name": "Mâncare de fasole verde",
+      "yields": 4,
+      "prep_time": 20,
+      "cook_time": 40,
+      "time": 70,
+      "tags": [
+        "Romanian",
+        "Main",
+        "Vegan",
+        "Healthy",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Green beans",
+          "description": "1 kg, topped and tailed"
+        },
+        {
+          "name": "Onion",
+          "description": "1 large, finely chopped"
+        },
+        {
+          "name": "Garlic",
+          "description": "6 cloves — half for the pot, half raw at the end"
+        },
+        {
+          "name": "Tomatoes",
+          "description": "500 g ripe, grated (the skins stay behind in your hand)"
+        },
+        {
+          "name": "Tomato paste",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "4 tbsp"
+        },
+        {
+          "name": "Dill",
+          "description": "1 small bunch, chopped"
+        },
+        {
+          "name": "Black pepper",
+          "description": "½ tsp"
+        }
+      ],
+      "description": "A pot for high summer, when green beans and ripe tomatoes peak in the same market week. It is vegan by tradition rather than fashion — a Lent dish — and in many houses the garlic goes in twice: once to cook, once raw at the end, which is where the dish actually lives.\n\n## 1. Blanch the beans\n\n1. Snap the beans in half and boil them in well-salted water for 5–6 minutes, until they bend but still resist. Drain.\n\n## 2. Build the tomato base\n\n1. Soften the onion in the oil over medium-low heat for about 8 minutes.\n2. Add half the garlic, sliced, and cook one minute more, until you can smell it.\n3. Add the grated tomatoes and the tomato paste and cook down for 10–12 minutes, until the sauce thickens and the oil creeps back out at the edges — the Romanian sign that a sauce is ready.\n\n## 3. Stew\n\n1. Add the beans, with a splash of water if the pot looks tight, and simmer gently for 15 minutes. The beans should end up properly tender — this is not a crisp French green bean; it is supposed to yield.\n2. Season with the black pepper and salt to taste.\n\n## 4. The second garlic\n\n1. Off the heat, stir in the remaining garlic, crushed raw, and the dill.\n2. Let it sit for 10 minutes before serving, warm or at room temperature, with bread. It is arguably best lukewarm, which suits August."
+    },
+    {
+      "name": "Tocăniță de porc",
+      "yields": 6,
+      "prep_time": 25,
+      "cook_time": 115,
+      "time": 150,
+      "tags": [
+        "Romanian",
+        "Main",
+        "Comfort food",
+        "One pot",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork shoulder",
+          "description": "1 kg, in 3–4 cm chunks"
+        },
+        {
+          "name": "Onion",
+          "description": "5 large, halved and sliced"
+        },
+        {
+          "name": "Garlic",
+          "description": "4 cloves, crushed"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "3 tbsp (lard is the older choice)"
+        },
+        {
+          "name": "Paprika",
+          "description": "1 tbsp, sweet"
+        },
+        {
+          "name": "White wine",
+          "description": "150 ml, dry"
+        },
+        {
+          "name": "Tomato paste",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Dried thyme",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Parsley",
+          "description": "chopped, to serve",
+          "optional": true
+        }
+      ],
+      "description": "Tocăniță is what a Romanian kitchen does with pork, onions and no hurry. The five onions are not a typo: they collapse completely into a sweet, paprika-stained gravy, and that gravy — not the meat — is the point.\n\n## 1. Brown the pork\n\n1. Pat the pork dry and brown it hard in the oil, in batches so it fries rather than steams. Set it aside.\n\n## 2. Melt the onions\n\n1. Tip all the onions into the same pot with a pinch of salt and cook on low for 20–25 minutes, scraping up the pork residue, until soft, golden and losing their shape. This stage cannot be rushed; it is the sauce.\n2. Pull the pot off the heat and stir in the paprika for 30 seconds — on direct heat it turns bitter in moments.\n\n## 3. Simmer\n\n1. Return the pork, pour in the wine and let it bubble for 2 minutes.\n2. Add the tomato paste, bay leaves, thyme and black pepper, then hot water to barely cover.\n3. Lid on, lowest possible heat — or a 160°C oven — for about 75 minutes, until the meat gives to a fork and the onions have all but vanished into the gravy.\n\n## 4. Finish\n\n1. Stir in the crushed garlic and simmer 5 minutes more, then taste for salt.\n2. Rest 10 minutes off the heat.\n3. Serve over mămăligă or mashed potatoes, with parsley on top if you like. The sauce will still demand bread."
+    },
+    {
+      "name": "Bulz ciobănesc",
+      "yields": 4,
+      "prep_time": 25,
+      "cook_time": 50,
+      "time": 85,
+      "tags": [
+        "Romanian",
+        "Main",
+        "Vegetarian",
+        "Gluten-free",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Cornmeal",
+          "description": "300 g, coarse (mălai)"
+        },
+        {
+          "name": "Water",
+          "description": "1.2 L"
+        },
+        {
+          "name": "Salt",
+          "description": "1½ tsp"
+        },
+        {
+          "name": "Sheep's cheese",
+          "description": "300 g (telemea or brânză de burduf) — it must be properly salty"
+        },
+        {
+          "name": "Butter",
+          "description": "60 g, plus more for the dish"
+        },
+        {
+          "name": "Eggs",
+          "description": "4, one per bulz",
+          "optional": true
+        },
+        {
+          "name": "Sour cream",
+          "description": "to serve",
+          "optional": true
+        }
+      ],
+      "description": "Bulz was born at the stână, the mountain sheepfold, where shepherds shaped day-old mămăligă around brânză de burduf and buried it in the embers. It has since walked down into every cabana menu in the Carpathians without losing anything on the way.\n\n## 1. Make a stiff mămăligă\n\n1. Bring the salted water to a boil and rain in the cornmeal, whisking so it cannot clump.\n2. Cook for 25–30 minutes over low heat, stirring with a wooden spoon, until it pulls away from the sides of the pot. It must end up stiffer than porridge — you will be shaping it by hand.\n3. Tip it out and let it cool just enough to handle.\n\n## 2. Shape around the cheese\n\n1. Butter your palms with a little of the butter, take a ball of mămăligă the size of an orange, flatten it, set a generous knob of cheese in the middle and close it into a sealed ball. Make one per person.\n2. Burduf melts into lava; telemea holds its shape better. Both are correct, and anything unsalty is not.\n\n## 3. Bake\n\n1. Sit the balls in a buttered dish, dot with the remaining butter, and bake at 220°C for 15–20 minutes, until patched with gold. A grill — or embers, at the sheepfold — is even better.\n\n## 4. Crown and serve\n\n1. If you are using the eggs, fry them in a knob of butter and sit one on each bulz.\n2. Serve immediately, with cold sour cream. A bulz waits for no one; cold, it is a doorstop."
+    },
+    {
+      "name": "Piftie de porc",
+      "yields": 8,
+      "prep_time": 30,
+      "cook_time": 300,
+      "time": 990,
+      "tags": [
+        "Romanian",
+        "Side",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Pork trotters",
+          "description": "2, split lengthways by the butcher"
+        },
+        {
+          "name": "Pork hock",
+          "description": "1 large (ciolan)"
+        },
+        {
+          "name": "Water",
+          "description": "3 L, cold"
+        },
+        {
+          "name": "Garlic",
+          "description": "1 head, crushed to a paste"
+        },
+        {
+          "name": "Carrots",
+          "description": "2"
+        },
+        {
+          "name": "Onion",
+          "description": "1, peeled and left whole"
+        },
+        {
+          "name": "Bay leaves",
+          "description": "2"
+        },
+        {
+          "name": "Black peppercorns",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Vinegar",
+          "description": "to serve",
+          "optional": true
+        }
+      ],
+      "description": "No Romanian Christmas or New Year table is complete without piftie, and no gelatine sachet is invited: trotters and hock carry all the set the dish needs. The whole test of a good one is whether it cuts clean and holds its edge.\n\n## 1. Clean and soak\n\n1. Scrub the trotters and hock well and singe off any stray hairs. Soak in cold water for an hour, changing it once — clean meat is half of a clear aspic.\n\n## 2. Simmer barely\n\n1. Cover with the 3 litres of cold water and bring only just to a simmer, skimming the grey foam patiently for the first 20 minutes.\n2. Add the whole onion, the carrots, peppercorns, bay leaves and salt. From here the surface should barely shiver: a rolling boil makes cloudy piftie, and cloudy piftie gets talked about.\n3. Cook 4–5 hours, until the meat is falling off the bone.\n\n## 3. Test and season\n\n1. Dab a little broth between finger and thumb; when they stick together, the gelatine is there. If not, simmer on, uncovered.\n2. Lift out the meat and strain the broth through a fine sieve — through cloth, if you want it gala-clear.\n3. Stir the crushed garlic into the hot broth and let it stand 10 minutes. Taste: it should seem slightly oversalted while warm, because cold mutes everything.\n\n## 4. Set cold\n\n1. Pick the meat off the bones in bite-sized pieces and divide it between shallow bowls, with a few slices of the boiled carrot for decoration.\n2. Ladle the broth over, cool to room temperature, then refrigerate overnight until firmly set.\n\n## 5. Serve\n\n1. Serve cold, in the bowl or turned out, with vinegar alongside for those who want it sharper — most do. The knife should leave a clean, glossy cut; if it does, accept the compliments quietly."
+    },
+    {
+      "name": "Salată de boeuf",
+      "yields": 8,
+      "prep_time": 50,
+      "cook_time": 90,
+      "time": 720,
+      "tags": [
+        "Romanian",
+        "Salad",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Stewing beef",
+          "description": "400 g in one piece — brisket or shin; many houses quietly use chicken instead"
+        },
+        {
+          "name": "Potatoes",
+          "description": "4 medium"
+        },
+        {
+          "name": "Carrots",
+          "description": "3"
+        },
+        {
+          "name": "Parsnip",
+          "description": "1 (parsley root is more authentic, and harder to find)"
+        },
+        {
+          "name": "Gherkins",
+          "description": "250 g, plus a few for the top"
+        },
+        {
+          "name": "Peas",
+          "description": "150 g, cooked — a small tin is standard issue"
+        },
+        {
+          "name": "Mayonnaise",
+          "description": "450 g — most to bind, some kept back for the top"
+        },
+        {
+          "name": "Mustard",
+          "description": "1 tbsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "½ tsp"
+        }
+      ],
+      "description": "Despite the French name, no French table has ever seen it: salată de boeuf is thoroughly Romanian, and it anchors every holiday spread from Christmas to christenings. It is mostly a labour of small dicing, which is exactly why it appears only when the occasion deserves it.\n\n## 1. Boil\n\n1. Simmer the beef in salted water until completely tender, 1–1½ hours, and let it cool in its broth. The broth is tomorrow's soup.\n2. Boil the potatoes, carrots and parsnip in their skins until just done — a knife should enter with slight resistance. Overcooked vegetables smear instead of dicing.\n\n## 2. Dice\n\n1. Peel the vegetables, then cut everything — meat, potatoes, carrots, parsnip, gherkins — into small, even dice of about 5 mm, keeping back a few carrot rounds and a gherkin for decorating. No food processor: it makes paste, and everyone will know.\n2. Add the peas whole, reserving a spoonful.\n\n## 3. Fold\n\n1. Stir the mustard and black pepper into most of the mayonnaise.\n2. Fold it through the salad until bound but not drowned. If it tastes flat, a spoonful of gherkin brine fixes it faster than salt.\n\n## 4. Decorate\n\n1. Shape the salad into a smooth dome or loaf on a platter and mask it with the reserved mayonnaise, smoothed like plaster.\n2. Decorate with gherkin fans, carrot flowers and lines of the reserved peas. Every grandmother has a signature pattern; it is never discussed and always noticed.\n\n## 5. Rest overnight\n\n1. Refrigerate overnight. The rest is not optional — the flavours need the night to become one thing.\n2. Serve cold, first on the table, before the sarmale and everything else."
+    },
+    {
+      "name": "Salată orientală",
+      "yields": 4,
+      "prep_time": 20,
+      "cook_time": 30,
+      "time": 60,
+      "tags": [
+        "Romanian",
+        "Salad",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Potatoes",
+          "description": "1 kg, waxy, of similar size"
+        },
+        {
+          "name": "Eggs",
+          "description": "4"
+        },
+        {
+          "name": "Onion",
+          "description": "2 medium, or 1 red"
+        },
+        {
+          "name": "Black olives",
+          "description": "150 g, the wrinkly salt-cured kind with stones"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "5 tbsp"
+        },
+        {
+          "name": "Vinegar",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Black pepper",
+          "description": "½ tsp"
+        }
+      ],
+      "description": "There is nothing oriental about salată orientală — the name is pure menu poetry from a century ago — and no Romanian has ever needed it explained. Potatoes, onion, olives and egg in a sharp oil-and-vinegar dressing: supper on its own, side dish beside anything fried.\n\n## 1. Boil\n\n1. Boil the potatoes whole, in their skins, in salted water until a knife slides through — 20–25 minutes depending on size.\n2. Boil the eggs for 9 minutes alongside, then peel them.\n\n## 2. Slice\n\n1. Peel the potatoes while still warm, holding them in a cloth, and slice into thick rounds. Warm potatoes drink the dressing; cold ones just wear it.\n2. Slice the onion into thin half-moons and leave it in the vinegar while you work — five minutes tames the bite.\n\n## 3. Dress\n\n1. Fold together the potatoes, the onion with its vinegar, the oil, the olives and the black pepper, with salt to taste. It should be a shade sharper than seems polite, because the potatoes will absorb it.\n2. Quarter the eggs and fold them in last, gently, so the yolks stay whole.\n\n## 4. Serve warm or cold\n\n1. Both are correct. Warm, it is supper; cold from the fridge the next day, it is arguably better.\n2. In Lent the eggs simply stay out — the de post version is the original fasting supper — and nobody misses them until Easter."
+    },
+    {
+      "name": "Salată de icre",
+      "yields": 6,
+      "prep_time": 30,
+      "cook_time": 0,
+      "time": 60,
+      "tags": [
+        "Romanian",
+        "Side",
+        "Pescatarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Carp roe",
+          "description": "200 g, salted (icre de crap; pike roe is finer still)"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "350 ml, neutral and fresh"
+        },
+        {
+          "name": "White bread",
+          "description": "2 thick slices, crusts off, plus plenty more to serve"
+        },
+        {
+          "name": "Onion",
+          "description": "1 small"
+        },
+        {
+          "name": "Lemon",
+          "description": "1, juiced"
+        },
+        {
+          "name": "Sparkling water",
+          "description": "a splash, to lighten",
+          "optional": true
+        },
+        {
+          "name": "Black olives",
+          "description": "a few, to garnish",
+          "optional": true
+        }
+      ],
+      "description": "The pale pink spread that opens every proper Romanian celebration. It is only salted roe whipped with oil, mayonnaise-fashion, over a soaked-bread base — some houses swell semolina instead — but the patience of the whipping arm is what separates households.\n\n## 1. Soak the base\n\n1. Soak the bread briefly in cold water, squeeze it firmly dry and crumble it into a roomy bowl. You want a damp crumb, not sludge.\n2. Pick over the roe and lift out any bits of membrane.\n\n## 2. Whip\n\n1. Mix the roe into the bread, then start whipping — wooden spoon by tradition, electric mixer by common sense — adding the oil in a thin thread, exactly as for mayonnaise.\n2. It will pale and thicken as it drinks the oil; stop when it stands in soft peaks and the colour sits between pink and ivory.\n3. If it loosens or splits, a squeeze of lemon and determined beating brings it back.\n\n## 3. Season\n\n1. Add lemon juice to taste. The roe is already salted; it needs no salt from you.\n2. Chop the onion almost to a purée — or grate it and squeeze the flesh dry — and fold it in. Visible chunks of onion turn the whole bowl bitter by evening.\n3. A splash of sparkling water at the end loosens it and lightens the colour another shade, if you like the trick.\n\n## 4. Chill and serve\n\n1. Chill for 30 minutes to firm up.\n2. Serve heaped in a bowl, black olives on top, with plenty of white bread. It is always the first thing to disappear."
+    },
+    {
+      "name": "Drob de miel",
+      "yields": 8,
+      "prep_time": 45,
+      "cook_time": 90,
+      "time": 150,
+      "tags": [
+        "Romanian",
+        "Main",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Lamb offal",
+          "description": "1 kg mixed — liver, heart, lungs, kidneys (the pluck); all liver also works"
+        },
+        {
+          "name": "Spring onions",
+          "description": "2 bunches, chopped, greens and all"
+        },
+        {
+          "name": "Dill",
+          "description": "1 large bunch, chopped"
+        },
+        {
+          "name": "Parsley",
+          "description": "1 large bunch, chopped"
+        },
+        {
+          "name": "Eggs",
+          "description": "8 — 4 raw for the mix, 4 hard-boiled for the middle"
+        },
+        {
+          "name": "Garlic",
+          "description": "3 cloves, crushed"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Caul fat",
+          "description": "1 piece (prapur), to line the tin",
+          "optional": true
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "1 tbsp, for the tin"
+        }
+      ],
+      "description": "The centrepiece of the Romanian Easter table, made in the narrow window between the lamb arriving and the eggs being dyed. Drob is the holiday's thrifty masterpiece: the offal nobody argues over, turned into the slice everybody does.\n\n## 1. Boil the offal\n\n1. Rinse the offal well, cover with cold water and simmer for 30–40 minutes, skimming. Add the liver only for the last 15 minutes, so it stays tender instead of chalky.\n2. Meanwhile hard-boil 4 of the eggs (9 minutes) and peel them. Drain the offal and cool until you can handle it.\n\n## 2. Chop and mix\n\n1. Chop the offal finely with a knife. A machine makes pâté, and drob is emphatically not pâté.\n2. Mix with the spring onions, dill, parsley, garlic, black pepper, salt to taste and the 4 raw eggs. The mixture should look almost too green; that is correct.\n\n## 3. Hide the eggs\n\n1. Line a loaf tin with the caul fat, leaving an overhang — or simply oil the tin well if you could not get it.\n2. Press in half the mixture, lay the peeled eggs end to end in a row down the middle, cover with the rest and press gently. Fold the caul over the top.\n3. The buried eggs are the whole theatre of the dish: done right, every slice comes out wearing a golden ring.\n\n## 4. Bake\n\n1. Bake at 180°C for 45–50 minutes, until browned on top and set to a gentle press.\n\n## 5. Rest and slice\n\n1. Rest at least 15 minutes before slicing thickly — or serve it cold; many houses think drob is best the next day, straight from the fridge.\n2. It belongs on the Easter table beside the dyed eggs and the lamb."
+    },
+    {
+      "name": "Pască",
+      "yields": 8,
+      "prep_time": 50,
+      "cook_time": 50,
+      "time": 270,
+      "tags": [
+        "Romanian",
+        "Baking",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Plain flour",
+          "description": "500 g, strong if you have it"
+        },
+        {
+          "name": "Milk",
+          "description": "200 ml, lukewarm"
+        },
+        {
+          "name": "Fresh yeast",
+          "description": "25 g (or 7 g dried)"
+        },
+        {
+          "name": "Sugar",
+          "description": "150 g — 80 g for the dough, 70 g for the filling"
+        },
+        {
+          "name": "Eggs",
+          "description": "5 — 2 yolks in the dough, 2 whole in the filling, 1 beaten to glaze"
+        },
+        {
+          "name": "Butter",
+          "description": "80 g, soft, plus more for the tin"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Cottage cheese",
+          "description": "500 g, well drained (brânză de vaci)"
+        },
+        {
+          "name": "Semolina",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Raisins",
+          "description": "100 g"
+        },
+        {
+          "name": "Lemon zest",
+          "description": "1 lemon"
+        },
+        {
+          "name": "Vanilla extract",
+          "description": "1 tsp"
+        }
+      ],
+      "description": "Pască is baked once a year, for Easter, and in many families it rides to church in a basket to be blessed at the midnight service before anyone is allowed a slice. It is cozonac dough grown serious: a ring of sweet bread around a heart of sweet cheese.\n\n## 1. Wake the yeast\n\n1. Crumble the yeast into the lukewarm milk with a pinch of the sugar and leave for 10 minutes, until foamy. Milk hotter than your wrist kills it, and nothing rises from there.\n\n## 2. Make the dough\n\n1. Mix the flour with 80 g of the sugar and the salt, then add the 2 yolks and the yeasted milk and bring it together.\n2. Knead for 10–15 minutes, working in the soft butter a little at a time, until glossy, elastic and still slightly sticky — cozonac-type dough is meant to feel too soft.\n3. Cover and prove somewhere warm for about an hour, until doubled.\n\n## 3. Make the filling\n\n1. Stir together the drained cheese, the remaining sugar, the 2 whole eggs, the semolina, raisins, lemon zest and vanilla. The semolina quietly drinks the whey in the oven so the middle does not weep.\n\n## 4. Shape\n\n1. Butter a 26 cm round tin and press two-thirds of the dough over the base and a little way up the sides.\n2. Roll the rest into ropes and twist a ring to sit around the rim.\n3. Spread the filling inside the ring, then lay a thin twisted cross over it if you keep to the old shape — on pască the cross is not decoration.\n\n## 5. Prove and bake\n\n1. Prove for 30 minutes, then brush all the visible dough with the beaten egg.\n2. Bake at 180°C for 45–50 minutes, until the bread is deep gold and the cheese is set with only a slight tremble at the centre.\n\n## 6. Cool completely\n\n1. Cool fully before cutting — the cheese finishes setting as it cools, and a warm cut collapses.\n2. Eaten on Easter morning, after the service, beside dyed eggs and everything else the fast forbade."
+    },
+    {
+      "name": "Cozonac cu nucă",
+      "yields": 8,
+      "prep_time": 60,
+      "cook_time": 45,
+      "time": 260,
+      "tags": [
+        "Romanian",
+        "Baking",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Plain flour",
+          "description": "550 g, plus more for the board"
+        },
+        {
+          "name": "Milk",
+          "description": "250 ml lukewarm, plus 2 tbsp for the glaze"
+        },
+        {
+          "name": "Fresh yeast",
+          "description": "25 g"
+        },
+        {
+          "name": "Sugar",
+          "description": "150 g for the dough, 100 g for the filling"
+        },
+        {
+          "name": "Eggs",
+          "description": "5 — 4 yolks for the dough, 2 of the whites for the filling, 1 whole for the glaze"
+        },
+        {
+          "name": "Butter",
+          "description": "120 g, melted and cooled"
+        },
+        {
+          "name": "Walnuts",
+          "description": "300 g, ground"
+        },
+        {
+          "name": "Cocoa powder",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Rum essence",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Lemon zest",
+          "description": "1 lemon"
+        },
+        {
+          "name": "Vanilla extract",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Salt",
+          "description": "1 tsp"
+        }
+      ],
+      "description": "The bread by which Romanian households are measured, baked for Christmas and Easter and judged across fences. Grandmothers said the dough must be kneaded until the ceiling drips — the sweat was the kneader's own, but the point stands: cozonac forgives nothing done in a hurry.\n\n## 1. Wake the yeast\n\n1. Warm the 250 ml of milk to lukewarm — a finger should sit in it comfortably. Crumble in the yeast with 1 tbsp of the dough sugar and 2 tbsp of the flour, and leave it 10 minutes until it froths.\n2. If it does not froth, stop and buy new yeast; nothing later in the recipe can save a dead sponge.\n\n## 2. Knead — the part the mythology is about\n\n1. Beat the 4 yolks with the rest of the dough sugar, the salt, the lemon zest and the vanilla until pale.\n2. Put the flour in a large warm bowl, add the yeast mixture and the yolk mixture, and bring everything together into a soft, shaggy dough.\n3. Knead for a full 30 minutes, working in the melted butter a spoonful at a time as you go. The dough is ready when it is silky, blistered and pulls cleanly off the bowl and your hands. Underkneaded cozonac bakes into a brick.\n\n## 3. First proof\n\n1. Cover the bowl and leave it somewhere warm and free of draughts for about 90 minutes, until doubled. The dough is heavy with butter and sugar and rises slowly — give it time, not heat.\n\n## 4. Fill and roll\n\n1. Whip 2 of the egg whites to soft peaks, then fold in the ground walnuts, the filling sugar, the cocoa and the rum essence.\n2. Divide the dough in two. Stretch each piece into a rectangle about 1 cm thick, spread half the filling over each to within 2 cm of the edges, and roll into tight logs.\n3. Twist the two logs around each other and lift the plait into a large loaf tin lined with baking paper.\n\n## 5. Proof again, glaze and bake\n\n1. Let it rise in the tin for 45-60 minutes, until the dough reaches the rim.\n2. Brush with the whole egg beaten with 2 tbsp of milk.\n3. Bake at 170°C for about 45 minutes. If the top browns too fast, cover it loosely with baking paper. A skewer pushed to the middle should come out dry.\n4. Tip it out and cool it lying on its side on a clean cloth, turning it now and then, so the crumb sets without collapsing. Cut only when barely warm, if you can manage the wait."
+    },
+    {
+      "name": "Plăcintă cu brânză sărată și mărar",
+      "yields": 6,
+      "prep_time": 25,
+      "cook_time": 40,
+      "time": 80,
+      "tags": [
+        "Romanian",
+        "Baking",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Filo pastry",
+          "description": "400 g (foi de plăcintă), thawed if frozen"
+        },
+        {
+          "name": "Feta cheese",
+          "description": "400 g (telemea), crumbled"
+        },
+        {
+          "name": "Eggs",
+          "description": "4 — 3 in the filling, 1 for the top"
+        },
+        {
+          "name": "Dill",
+          "description": "1 large bunch, finely chopped"
+        },
+        {
+          "name": "Sour cream",
+          "description": "200 g"
+        },
+        {
+          "name": "Butter",
+          "description": "100 g, melted"
+        },
+        {
+          "name": "Black pepper",
+          "description": "1/2 tsp"
+        }
+      ],
+      "description": "The savoury pole of the plăcintă universe: salty telemea, eggs and a serious amount of dill between thin sheets, each one brushed so the whole thing bakes into crisp leaves. At any Romanian table it disappears before the sweet one does.\n\n## 1. Make the filling\n\n1. Crumble the cheese and taste it. Telemea varies: if it is fiercely salty, soak it in cold water for 20 minutes and drain it well.\n2. Mix the cheese with 3 of the eggs, half the sour cream, the dill and the pepper. Add no salt — the cheese carries it all.\n\n## 2. Layer\n\n1. Brush a 30 x 20 cm tray with melted butter. Keep the pastry sheets under a barely damp cloth while you work; they dry and crack in minutes.\n2. Lay in half the sheets one at a time, brushing every second sheet with butter and letting them crumple slightly — the folds are what make the pie light.\n3. Spread the filling evenly, then layer the remaining sheets on top the same way, tucking the edges down the sides.\n\n## 3. Top and bake\n\n1. Whisk the last egg with the rest of the sour cream and spread it over the top; it bakes into a golden skin.\n2. Score the top layers into portions with a sharp knife so it cuts cleanly later instead of shattering.\n3. Bake at 180°C for 35-40 minutes, until deep gold.\n\n## 4. Rest under a cloth\n\n1. Out of the oven, cover the tray with a clean kitchen cloth for 15 minutes. The trapped steam softens the sheets just enough — grandmother's trick, and not optional.\n2. Cut along the scores and serve warm, or cold the next day."
+    },
+    {
+      "name": "Plăcintă cu mere",
+      "yields": 8,
+      "prep_time": 30,
+      "cook_time": 55,
+      "time": 145,
+      "tags": [
+        "Romanian",
+        "Baking",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Apples",
+          "description": "1.5 kg, sharp ones, peeled and coarsely grated"
+        },
+        {
+          "name": "Sugar",
+          "description": "150 g, more if the apples are very sharp"
+        },
+        {
+          "name": "Cinnamon",
+          "description": "2 tsp, ground"
+        },
+        {
+          "name": "Lemon",
+          "description": "1/2, juiced"
+        },
+        {
+          "name": "Filo pastry",
+          "description": "400 g (foi de plăcintă)"
+        },
+        {
+          "name": "Butter",
+          "description": "100 g, melted"
+        },
+        {
+          "name": "Semolina",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Icing sugar",
+          "description": "to dust"
+        }
+      ],
+      "description": "Tray apple pie cut into white-dusted squares — the plăcintă of school canteens, street kiosks and every aunt's kitchen. Its whole craft is one rule: the apples are cooked down before they ever meet the pastry, so the sheets stay pastry instead of turning to paste.\n\n## 1. Cook the apples down — not optional\n\n1. Put the grated apples, the sugar and the lemon juice in a wide pan over medium heat and cook, stirring now and then, for 15-20 minutes until the juice has evaporated and the filling is thick and jammy.\n2. Stir in the cinnamon off the heat and let the filling cool completely. Warm filling steams the pastry from the inside.\n\n## 2. Layer\n\n1. Brush a 30 x 20 cm tray with melted butter. Lay in half the sheets one at a time, brushing every second one and keeping the rest under a cloth so they do not dry out.\n2. Sprinkle the semolina over the last bottom sheet — it drinks up any juice the apples still think about releasing.\n3. Spread the filling, layer the remaining buttered sheets on top and tuck in the edges. Score the top into squares.\n\n## 3. Bake\n\n1. Bake at 180°C for about 35 minutes, until the top is golden and crisp.\n\n## 4. Cool, dust, cut\n\n1. Cool in the tray for at least 30 minutes; the filling needs to settle before you cut.\n2. Dust generously with icing sugar and cut along the scores. Squares are the canonical shape; wedges are for other pies."
+    },
+    {
+      "name": "Gogoși pufoase",
+      "yields": 6,
+      "prep_time": 30,
+      "cook_time": 20,
+      "time": 140,
+      "tags": [
+        "Romanian",
+        "Dessert",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Plain flour",
+          "description": "500 g, plus more for the board"
+        },
+        {
+          "name": "Milk",
+          "description": "250 ml, lukewarm"
+        },
+        {
+          "name": "Fresh yeast",
+          "description": "25 g"
+        },
+        {
+          "name": "Sugar",
+          "description": "60 g for the dough, plus about 100 g for rolling"
+        },
+        {
+          "name": "Eggs",
+          "description": "2 yolks"
+        },
+        {
+          "name": "Butter",
+          "description": "50 g, soft"
+        },
+        {
+          "name": "Lemon zest",
+          "description": "1 lemon"
+        },
+        {
+          "name": "Vanilla extract",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Salt",
+          "description": "1/2 tsp"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "1 L, for deep-frying"
+        }
+      ],
+      "description": "The smell of gogoși frying is a Romanian childhood compressed into one kitchen. They are nothing but a soft yeast dough and hot oil — the fluffiness is bought with patience, and it is bought twice.\n\n## 1. Start the yeast\n\n1. Crumble the yeast into the lukewarm milk with 1 tsp of the dough sugar and leave it for 10 minutes, until frothy.\n\n## 2. Knead a soft dough\n\n1. Whisk the yolks with the rest of the dough sugar, the vanilla, the lemon zest and the salt.\n2. Combine the flour with the milk and the yolk mixture and knead for about 10 minutes, working in the soft butter towards the end.\n3. The dough should stay soft and slightly sticky — softer than bread dough. Resist the urge to add more flour.\n\n## 3. First proof\n\n1. Cover and leave in a warm spot for about 1 hour, until doubled.\n\n## 4. Cut and proof again\n\n1. Roll the dough out 1.5 cm thick on a floured board and cut rounds with a glass, the traditional cutter. Re-roll the scraps once, gently.\n2. Rest the rounds on a floured cloth under a towel for 30 minutes. This second proof is what makes them puff instead of merely fry.\n\n## 5. Fry at a controlled temperature\n\n1. Heat the oil to 170°C in a deep pan — a cube of bread should brown in about 40 seconds. Too hot and they colour before the middle cooks; too cool and they drink oil.\n2. Fry a few at a time, about 2 minutes per side, turning once. A pale belt around the waist of each gogoașă is the sign the proof was right.\n3. Drain on paper and roll in the remaining sugar while still warm. Eat them the same day — by tomorrow they are only bread."
+    },
+    {
+      "name": "Clătite cu dulceață",
+      "yields": 4,
+      "prep_time": 15,
+      "cook_time": 25,
+      "time": 70,
+      "tags": [
+        "Romanian",
+        "Dessert",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Plain flour",
+          "description": "250 g"
+        },
+        {
+          "name": "Eggs",
+          "description": "3"
+        },
+        {
+          "name": "Milk",
+          "description": "500 ml"
+        },
+        {
+          "name": "Water",
+          "description": "100 ml, sparkling if you have it"
+        },
+        {
+          "name": "Sugar",
+          "description": "2 tbsp"
+        },
+        {
+          "name": "Salt",
+          "description": "1 pinch"
+        },
+        {
+          "name": "Vanilla extract",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "2 tbsp for the batter, plus a little for the pan"
+        },
+        {
+          "name": "Jam",
+          "description": "300 g — apricot, sour cherry or the household favourite (dulceață)"
+        },
+        {
+          "name": "Lemon zest",
+          "description": "1/2 lemon",
+          "optional": true
+        },
+        {
+          "name": "Icing sugar",
+          "description": "to dust",
+          "optional": true
+        }
+      ],
+      "description": "Every Romanian family is split between clătite with jam and clătite with sweet cheese, and neither side has ever convinced the other. This is the jam lane — crepes thin enough to read through, rolled tight around dulceață; the sweet-cheese camp, with its brânză dulce and raisins, is respected here but outvoted.\n\n## 1. Mix the batter and rest it\n\n1. Whisk the eggs with the sugar, the salt and the vanilla, then whisk in the milk, and the lemon zest if you are using it.\n2. Add the flour gradually, whisking until smooth, then thin the batter with the water and stir in the 2 tbsp of oil. It should pour like single cream.\n3. Rest the batter for 30 minutes. The flour swells and the crepes stop tearing.\n\n## 2. Fry thin\n\n1. Heat a wide pan over medium-high heat and wipe it with an oiled paper towel — wipe, not pour; the batter already carries its oil.\n2. Pour in a small ladleful and swirl the pan immediately so the batter films the whole base. Thinness is the entire point.\n3. Flip when the edges brown and lift, give it 30 seconds more, and stack on a plate. The first one always fails — it belongs to the cook, by ancient right. Adjust the heat and carry on.\n\n## 3. Fill and roll\n\n1. Spread each crepe with a thin layer of jam and roll it into a snug cigar. Thin — too much jam and it escapes out both ends.\n2. Pile them on a platter, dust with icing sugar if you like, and serve warm or at room temperature."
+    },
+    {
+      "name": "Orez cu lapte",
+      "yields": 4,
+      "prep_time": 5,
+      "cook_time": 40,
+      "time": 45,
+      "tags": [
+        "Romanian",
+        "Dessert",
+        "Vegetarian",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Rice",
+          "description": "200 g, round-grain"
+        },
+        {
+          "name": "Milk",
+          "description": "1 L, whole"
+        },
+        {
+          "name": "Water",
+          "description": "200 ml"
+        },
+        {
+          "name": "Sugar",
+          "description": "80 g, or to taste"
+        },
+        {
+          "name": "Vanilla extract",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Lemon zest",
+          "description": "1 strip",
+          "optional": true
+        },
+        {
+          "name": "Cinnamon",
+          "description": "to serve",
+          "optional": true
+        },
+        {
+          "name": "Jam",
+          "description": "to serve — sour cherry is classic",
+          "optional": true
+        }
+      ],
+      "description": "The pudding of convalescence, of grandmothers and of ordinary Tuesdays. It asks for nothing but milk, rice, vanilla and your continued presence at the stove.\n\n## 1. Start the rice in water\n\n1. Rinse the rice, then simmer it in the water in a heavy pan for about 5 minutes, until the water is absorbed. This head start spares the milk half its time over the flame.\n\n## 2. Low and slow in the milk\n\n1. Add the milk, and the strip of lemon zest if you are using it. Bring it just to the edge of a simmer, then turn the heat as low as it will go.\n2. Cook uncovered for 30-35 minutes, stirring often and scraping the bottom. Milk and rice catch the moment they are left alone; the scorched pot is this dish's only real failure.\n\n## 3. Sweeten late\n\n1. Stir in the sugar for the last 5 minutes, and the vanilla off the heat. Fish out the zest.\n2. Stop while it is still loose — it thickens considerably as it cools.\n\n## 4. Serve — both camps are right\n\n1. Warm, dusted with cinnamon, on cold days.\n2. Or cold from the fridge with a spoonful of jam, which half of Romania insists is the only correct way. The pot is big enough for both."
+    },
+    {
+      "name": "Griș cu lapte",
+      "yields": 4,
+      "prep_time": 5,
+      "cook_time": 15,
+      "time": 25,
+      "tags": [
+        "Romanian",
+        "Dessert",
+        "Vegetarian",
+        "Comfort food",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Milk",
+          "description": "1 L, whole"
+        },
+        {
+          "name": "Semolina",
+          "description": "120 g"
+        },
+        {
+          "name": "Sugar",
+          "description": "60 g"
+        },
+        {
+          "name": "Vanilla extract",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Lemon zest",
+          "description": "1 strip",
+          "optional": true
+        },
+        {
+          "name": "Butter",
+          "description": "a small knob",
+          "optional": true
+        },
+        {
+          "name": "Jam",
+          "description": "to serve — sour cherry, or plum (magiun)"
+        }
+      ],
+      "description": "The first dessert most Romanians ever ate, and the reason a whole nation still checks its puddings for lumps. The entire technique fits in one sentence: rain the semolina in slowly and do not stop whisking.\n\n## 1. Sweeten the milk\n\n1. Bring the milk, the sugar and the strip of lemon zest, if you are using it, to a gentle simmer in a heavy pan.\n\n## 2. Rain in the semolina\n\n1. Pour the semolina in from a height, in the thinnest stream you can manage, whisking constantly with the other hand. The stream may pause; the whisk may not.\n2. If lumps appear anyway, whisk hard now — in two minutes they will be permanent.\n\n## 3. Thicken\n\n1. Turn the heat low and cook for 8-10 minutes, stirring, until it is a thick but pourable porridge. It firms up further as it stands.\n2. Off the heat, remove the zest and stir in the vanilla, and the knob of butter if you want it silkier.\n3. Let it stand for 5 minutes.\n\n## 4. Serve\n\n1. Spoon into bowls and set a generous spoonful of jam in the middle of each. Warm is canonical; the cold leftover slice eaten straight from the fridge is a private national pleasure."
+    },
+    {
+      "name": "Salam de biscuiți",
+      "yields": 8,
+      "prep_time": 25,
+      "cook_time": 5,
+      "time": 210,
+      "tags": [
+        "Romanian",
+        "Dessert",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Plain biscuits",
+          "description": "500 g (petit beurre)"
+        },
+        {
+          "name": "Butter",
+          "description": "200 g"
+        },
+        {
+          "name": "Sugar",
+          "description": "150 g"
+        },
+        {
+          "name": "Cocoa powder",
+          "description": "4 tbsp"
+        },
+        {
+          "name": "Milk",
+          "description": "150 ml"
+        },
+        {
+          "name": "Rum essence",
+          "description": "2 tsp"
+        },
+        {
+          "name": "Raisins",
+          "description": "100 g",
+          "optional": true
+        },
+        {
+          "name": "Turkish delight",
+          "description": "150 g, cubed (rahat)",
+          "optional": true
+        }
+      ],
+      "description": "The no-bake salami that raised every Romanian born before 2000: broken biscuits bound in cocoa and butter, rolled into a log, chilled and sliced so the mosaic shows. It was invented by thrift and kept on by love.\n\n## 1. Break the biscuits\n\n1. Break the biscuits by hand into pieces between a pea and a hazelnut. Do not blitz them to powder — the mosaic in the slice is the whole point, and powder makes paste.\n2. Keep the finer crumbs at the bottom of the bowl; they do the binding.\n\n## 2. Make the cocoa syrup\n\n1. Warm the milk with the sugar and the cocoa, whisking, and let it bubble gently for 2-3 minutes.\n2. Off the heat, stir in the butter until melted, then the rum essence. Let it cool for 10 minutes — hot syrup collapses the biscuits into mush.\n\n## 3. Mix and roll\n\n1. Pour the syrup over the biscuits, add the raisins and the Turkish delight if you are using them, and fold until every piece is dark and the mixture holds together when pressed.\n2. Tip it onto a large sheet of cling film and roll it into a salami 6-7 cm thick, twisting the ends like a boiled-sweet wrapper.\n\n## 4. Chill — the part nobody respects\n\n1. Refrigerate for at least 3 hours, better overnight. Every Romanian child has sawn off a crumbly slice after one hour and been told off; the salami needs its three.\n2. Unwrap and slice about 1 cm thick. The slices should show biscuit, delight and raisin like a terrazzo floor. It keeps a week in the fridge."
+    },
+    {
+      "name": "Chec cu cacao",
+      "yields": 8,
+      "prep_time": 25,
+      "cook_time": 50,
+      "time": 90,
+      "tags": [
+        "Romanian",
+        "Baking",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Eggs",
+          "description": "5, separated, at room temperature"
+        },
+        {
+          "name": "Sugar",
+          "description": "200 g"
+        },
+        {
+          "name": "Plain flour",
+          "description": "250 g"
+        },
+        {
+          "name": "Sunflower oil",
+          "description": "100 ml"
+        },
+        {
+          "name": "Cocoa powder",
+          "description": "3 tbsp"
+        },
+        {
+          "name": "Baking powder",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Vanilla extract",
+          "description": "1 tsp"
+        },
+        {
+          "name": "Salt",
+          "description": "1 pinch, for the whites"
+        },
+        {
+          "name": "Lemon zest",
+          "description": "1/2 lemon",
+          "optional": true
+        }
+      ],
+      "description": "The marbled loaf that lives in every Romanian recipe notebook, and with it the national question, asked through the oven glass: has it sunk in the middle? The lift comes from beaten egg whites; the sinking comes from the oven door.\n\n## 1. Whip the whites\n\n1. Whisk the whites with the pinch of salt to soft peaks, then add half the sugar gradually and keep whisking to a glossy, stiff meringue.\n\n## 2. Build the batter\n\n1. In another bowl, whisk the yolks with the remaining sugar until pale and thick, then whisk in the oil in a thin stream, the vanilla, and the lemon zest if you are using it.\n2. Fold in the meringue and the flour mixed with the baking powder, alternating, with a spatula and a light hand. You spent effort getting air in; do not stir it back out.\n\n## 3. Marble\n\n1. Move a third of the batter to a second bowl and sift the cocoa over it, folding gently until even.\n2. Fill a paper-lined loaf tin with alternating spoonfuls of pale and dark batter, then drag a knife through in one S-shaped stroke. One stroke, maybe two — more and you get a brown cake, not a marbled one.\n\n## 4. Bake — and leave the door shut\n\n1. Bake at 170°C for 45-50 minutes. Do not open the oven for the first 35 minutes: the sunken middle that haunts this cake is almost always a door opened out of curiosity.\n\n## 5. The skewer verdict\n\n1. Test with a skewer straight down the middle — it must come out dry. If it does not, give it 5 more minutes.\n2. Cool in the tin for 15 minutes, then finish on a rack. A split crest down the middle is not a flaw; it is the sign of a chec that rose properly."
+    },
+    {
+      "name": "Lapte de pasăre",
+      "yields": 6,
+      "prep_time": 30,
+      "cook_time": 25,
+      "time": 150,
+      "tags": [
+        "Romanian",
+        "Dessert",
+        "Vegetarian",
+        "AI-written"
+      ],
+      "source": "ai://claude-fable-5",
+      "items": [
+        {
+          "name": "Milk",
+          "description": "1 L, whole"
+        },
+        {
+          "name": "Eggs",
+          "description": "5, separated"
+        },
+        {
+          "name": "Sugar",
+          "description": "150 g — 50 g for the meringues, 100 g for the custard"
+        },
+        {
+          "name": "Vanilla extract",
+          "description": "2 tsp"
+        },
+        {
+          "name": "Salt",
+          "description": "1 pinch, for the whites"
+        },
+        {
+          "name": "Lemon zest",
+          "description": "1 strip",
+          "optional": true
+        }
+      ],
+      "description": "Bird's milk is the Romanian name for something impossibly rare, and the dessert lives up to it: meringue clouds poached in milk, floating on the custard that same milk becomes. Two desserts from one pot, and the pot is mostly patience.\n\n## 1. Scent the milk\n\n1. Bring the milk to a bare simmer in a wide, shallow pan, with the strip of lemon zest if you are using it. Wide matters — the meringues need room to float without touching.\n\n## 2. Poach the clouds\n\n1. Whisk the whites with the pinch of salt to soft peaks, then add the 50 g of sugar gradually and whisk until stiff and glossy.\n2. With the milk at a shiver — trembling, never bubbling — drop in big spoonfuls of meringue, three or four at a time. Poach for 1-2 minutes, turn them gently, and give them 1 minute more.\n3. Lift them out with a slotted spoon onto a tray. They deflate a little as they cool; that is normal, not failure.\n\n## 3. Turn the milk into custard — it must not boil\n\n1. Whisk the yolks with the 100 g of sugar until pale.\n2. Ladle the hot poaching milk into the yolks gradually, whisking all the while, then return everything to the pan.\n3. Cook on the lowest heat, stirring constantly with a wooden spoon, until the custard coats the spoon and a finger drawn across it leaves a clean line. From the moment the yolks go in, boiling is the one unforgivable thing — a single bubble and you have sweet scrambled eggs.\n4. Off the heat, remove the zest and stir in the vanilla. Strain the custard if you have any doubts.\n\n## 4. Chill and float\n\n1. Pour the custard into a wide serving bowl, cool it, then refrigerate for at least 90 minutes.\n2. Float the meringues on top just before serving. It is eaten cold, by tradition on a Sunday, and the argument over who gets the extra cloud is part of the recipe."
     }
   ]
 }

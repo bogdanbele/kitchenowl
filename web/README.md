@@ -30,3 +30,23 @@ If you are developing a production application, we recommend enabling type-aware
 ```
 
 See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+
+## Seed recipes
+
+`public/seeds/` holds curated recipe collections — currently the 50 most common
+Romanian, Filipino and Danish home dishes — kept in the repo so that what a model
+wrote is reviewable like code. Every recipe is tagged `AI-written` and carries an
+`ai://<model>` source, which the app surfaces as a badge.
+
+`src/lib/seeds.test.ts` holds each file to the API's shape and the closed tag
+vocabulary from `src/lib/recipeTags.ts`, so `npm test` catches a malformed seed
+before it becomes a broken recipe in somebody's household.
+
+To push the seeds into a household (idempotent — existing names are skipped):
+
+```sh
+node scripts/seed-recipes.mjs --household 1 --token <access token>
+```
+
+The token comes from a logged-in browser session (localStorage key
+`kitchenowl.access`); the script deliberately takes no passwords.
