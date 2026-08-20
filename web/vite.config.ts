@@ -8,8 +8,9 @@ import tailwindcss from "@tailwindcss/vite";
 // client uses the same relative /api paths in dev as it will in production,
 // where it is served from the same origin as the backend.
 export default defineConfig({
-  // Served from the container under /next so it can sit beside the Flutter
-  // build until it replaces it. Dev stays at the root.
+  // Overridable for serving under a sub-path. It used to default to /next so
+  // this could sit beside the Flutter build; that build is gone and the
+  // container now sets VITE_BASE=/ explicitly, so the root is the default.
   base: process.env.VITE_BASE ?? "/",
   plugins: [react(), tailwindcss()],
   test: {

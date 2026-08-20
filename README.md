@@ -22,54 +22,51 @@
   <a href="https://hosted.weblate.org/engage/kitchenowl/">
     <img alt="Translation" src="https://hosted.weblate.org/widgets/kitchenowl/-/kitchenowl/svg-badge.svg" />
   </a>
-  <a href="https://matrix.to/#/#kitchenowl:matrix.org">
-    <img alt="Matrix" src="https://img.shields.io/matrix/kitchenowl:matrix.org">
-  </a>
   <a href="LICENSE">
     <img alt="License" src="https://img.shields.io/github/license/TomBursch/kitchenowl" />
   </a>
-  <a href="https://github.com/TomBursch/kitchenowl/releases">
-    <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/tombursch/kitchenowl">
-  </a>
-  <a href="https://hub.docker.com/repository/docker/tombursch/kitchenowl">
-    <img alt="Docker pulls" src="https://img.shields.io/docker/pulls/tombursch/kitchenowl" />
-  </a>
 </h4>
-
-<div align="center">
-  <a href='https://play.google.com/store/apps/details?id=com.tombursch.kitchenowl'>
-    <img alt='Get it on Google Play' src='docs/docs/img/badges/playstore.png' height="50" />
-  </a>
-  <a href='https://f-droid.org/packages/com.tombursch.kitchenowl/'>
-    <img alt='Get it on F-Droid' src='docs/docs/img/badges/f-droid.png' height="50"/>
-  </a>
-  <a href='https://apps.apple.com/app/kitchenowl/id1557453670'>
-    <img alt='Get it on the AppStore' src='docs/docs/img/badges/appstore.png' height="50" />
-  </a>
-  <a href='https://my.home-assistant.io/redirect/hacs_repository/?owner=TomBursch&repository=kitchenowl-ha&category=integration'>
-    <img alt='Get it on the Home Assistant Community Store' src='docs/docs/img/badges/hacs_repository.svg' height="50" />
-  </a>
-</div>
 
 <h3 align="center">
  🍫 🥘 🍽
 </h3>
 
-KitchenOwl is a smart self-hosted grocery list and recipe manager. Easily add items to your shopping list before you go shopping. You can also create recipes and get suggestions on what you want to cook. Track your expenses so you know how much you've spent.
+KitchenOwl is a smart self-hosted grocery list and recipe manager. Add items to your
+shopping list before you go shopping, keep recipes and get suggestions on what to
+cook, plan meals, and track what the household spent.
 
-- Native Mobile/Web/Desktop apps with a great design
-- Add items to your shopping list and sync them in real-time with multiple users
-- Partial offline support, so you don't lose track of what to buy even when there is no signal
-- Manage recipes and add them to your shopping list
-- Share recipes with friends and family
-- Create a meal plan to always know what you'll be eating
-- Manage balances and track expenses of your household
+- Add items to your shopping list and sync them in real time between people
+- Manage recipes, scale them, and push their ingredients onto the list
+- Plan meals so you always know what you are eating
+- Track expenses and balances for the household
+- Cooking mode: one screen, big touch targets, timers, screen kept awake
 
-Please keep in mind that this project is still in development.
+## 🧭 What this repository builds
 
-For a full list check out the [website](https://kitchenowl.org). For a list of planned features, take a look at the [Roadmap](https://github.com/users/TomBursch/projects/1)!
+This fork replaced the Flutter client with a React web client. What ships is:
+
+| Directory | What it is |
+| --- | --- |
+| `backend/` | Flask + SQLAlchemy API, Python >= 3.14, dependencies via `uv` |
+| `web/` | The client: React 19, Vite, Tailwind 4, TypeScript |
+| `docs/` | MkDocs documentation source |
+| `kitchenowl/`, `flutter/` | The old Flutter client and its pinned SDK submodule — **no longer built** |
+
+The `Dockerfile` builds `web/` and serves it at the root alongside the API, in one
+image. The Flutter builder that used to stand in front of it is gone: it cloned the
+Flutter SDK and compiled the app on every build, which was most of the build time.
+
+> [!NOTE]
+> `kitchenowl/` and the `flutter/` submodule are still checked in, but nothing
+> references them — not the Dockerfile, not CI, not the compose files. They are dead
+> weight kept for reference and can be deleted whenever you are ready to stop
+> hedging. `git log` has the old builder if it is ever wanted back.
 
 ## 📱 Screenshots
+
+The images below are of the **retired Flutter app**, kept because they are what the
+project has. They do not show the current React client — a genuine set for it has not
+been captured yet.
 
 <table>
   <tr>
@@ -80,22 +77,176 @@ For a full list check out the [website](https://kitchenowl.org). For a list of p
    </tr>
 </table>
 
-## 🤖 App Install
+## 🤖 Where AI is used, and where it is not
 
-Get it in your favorite store or find the current release for your operating system on the [releases page](https://github.com/TomBursch/kitchenowl/releases).
+Two separate integrations, in different places, with different trust levels. Both are
+**opt-in and off by default** — the app is fully usable with neither configured.
 
-## 🚀 Get started
+### In your browser, talking to OpenRouter
 
-Please take a look at the [get started guide](https://docs.kitchenowl.org/latest/self-hosting/).
+Configured under **Settings → AI**. The API key is kept in `localStorage` and sent
+only to `openrouter.ai` — never to the KitchenOwl server, which has no field for it
+and no reason to see it. The trade is the usual one for a `localStorage` secret: any
+script on the origin could read it, which is acceptable for something you host for
+yourself and would not be for a shared service.
+
+| Feature | What it does |
+| --- | --- |
+| Paste-to-recipe | Turns pasted text — a message from a relative, a page you typed up — into a recipe draft |
+| Photo-to-recipe | Reads a photograph of a cookbook page or a handwritten card |
+| Tag suggestions | Labels a recipe from a **closed** vocabulary (see `web/src/lib/recipeTags.ts`) |
+| Pantry translation | Translates Spiso pantry item names to English, batched and cached forever |
+
+The default model is `google/gemini-2.5-flash-lite`, picked by measurement rather than
+reputation: twelve vision models were given the same badly-lit photograph of a
+Romanian page and scored against what it actually said. The property that mattered was
+reading diacritics off a poor photograph — a model that writes "Papanăși" confidently
+is worse than one that fails loudly. The model picker lists the live OpenRouter
+catalogue with context length and price, so this is a default, not a lock.
+
+**Nothing a model writes is allowed to pass as something a person cooked.** Every
+model-produced recipe carries `source: ai://<model>` and an `AI-written` tag, and the
+recipe page shows a badge for it. Drafts are never saved until you press the button — a
+model is a decent typist and an unreliable cook.
+
+Deliberately *not* model-generated: **ingredient substitutes**. Those are written by
+the cook, because a guessed substitution is a wrong dinner.
+
+### On the server, optional
+
+| Variable | Effect |
+| --- | --- |
+| `LLM_MODEL`, `LLM_API_URL` | Enables LLM ingredient parsing in `backend/app/service/ingredient_parsing.py`. Unset means the deterministic parser is used. |
+| `DEEPL_AUTH_KEY` | Enables DeepL translation |
+
+### The seeded recipes
+
+`web/public/seeds/` holds 150 recipes — the 50 most common Romanian, Filipino and
+Danish home dishes — written by a model and kept in the repo so that what it wrote is
+reviewable like code. All 150 are tagged `AI-written` and carry their model in
+`source`. **None has been cooked by a person.** Quantities and times are plausible and
+internally consistent; the first cook of any given one is still a test.
+
+`web/src/lib/seeds.test.ts` holds every seed to the API's shape and the closed tag
+vocabulary, so a malformed seed fails in CI rather than months later as a recipe with
+no method. See [`web/README.md`](web/README.md) for how to load them.
+
+## ⚙️ Configuration
+
+All backend configuration is environment variables. Any of them can instead be read
+from a file by setting `<NAME>_FILE`, which is how you pass Docker secrets.
+
+**The two that matter**
+
+| Variable | Default | Notes |
+| --- | --- | --- |
+| `JWT_SECRET_KEY` | `super-secret` in code, `PLEASE_CHANGE_ME` in the image | **Change it.** Every token signs against this, and changing it later signs everyone out. |
+| `FRONT_URL` | unset | Origin allowed for CORS and Socket.IO. Accepts a comma-separated list. Live updates fail without it when the client is on another origin. |
+
+**Storage and database**
+
+| Variable | Default |
+| --- | --- |
+| `STORAGE_PATH` | project dir (`/data` in Docker) |
+| `DB_DRIVER` | SQLite |
+| `DB_HOST`, `DB_PORT`, `DB_NAME` | — |
+| `DB_POOL_SIZE`, `DB_MAX_OVERFLOW`, `DB_SQLITE_SYNCHRONOUS` | — |
+| `MESSAGE_BROKER` | unset; needed for multi-worker live updates |
+
+**Accounts and sign-in**
+
+`OPEN_REGISTRATION`, `DISABLE_ONBOARDING`, `DISABLE_USERNAME_PASSWORD_LOGIN`,
+`EMAIL_MANDATORY`, `JWT_REFRESH_TOKEN_EXPIRES` (days, default 30), `OIDC_ISSUER`,
+`OIDC_CLIENT_ID`, `OIDC_RFC_COMPLIANT_REDIRECT`, `GOOGLE_CLIENT_ID`,
+`APPLE_CLIENT_ID`.
+
+**Mail, metrics, extras**
+
+`SMTP_HOST`, `SMTP_PORT`, `SMTP_FROM`, `SMTP_REPLY_TO`, `SMTP_USE_TLS`,
+`COLLECT_METRICS`, `METRICS_USER`, `PRIVACY_POLICY_URL`, `TERMS_URL`,
+`KITCHENOWL_MCP_ENABLED` (exposes an MCP endpoint at `/mcp`).
+
+Access tokens last **15 minutes**; refresh tokens `JWT_REFRESH_TOKEN_EXPIRES` days.
+
+## 🛠️ Development
+
+### Backend
+
+```sh
+cd backend
+uv sync
+uv run python wsgi.py
+```
+
+Python >= 3.14. With nothing configured it uses SQLite under `STORAGE_PATH`.
+
+`wsgi.py` rather than `flask run`: the app serves Socket.IO for live updates, and
+`socketio.run` is what starts a server that can carry it. It listens on **:5000**. The
+production image runs the same app under uwsgi instead.
+
+### Web client
+
+```sh
+cd web
+npm install
+npm run dev
+```
+
+Vite serves on `:5173` and **proxies `/api` and `/socket.io`** to the backend, so the
+client uses the same relative paths in development as in production.
+
+| Variable | Default | Notes |
+| --- | --- | --- |
+| `KITCHENOWL_API` | `http://localhost:8088` | Proxy target for both `/api` and `/socket.io` |
+| `VITE_BASE` | `/` | Base path at build time |
+
+The default assumes the backend is the container (`docker-compose` maps it to
+`:8088`). Running the backend directly instead puts it on `:5000`, so point the proxy
+at it:
+
+```sh
+KITCHENOWL_API=http://localhost:5000 npm run dev
+```
+
+The API is proxied rather than called cross-origin deliberately: the backend only
+sends CORS headers when the referrer matches `FRONT_URL`, so a direct call from the
+dev server is rejected.
+
+| Command | What it does |
+| --- | --- |
+| `npm test` | Vitest — 1310 tests |
+| `npm run typecheck` | `tsc -b --noEmit` |
+| `npm run lint` | Oxlint |
+| `npm run build` | Typecheck then production build |
+| `npm run seed:dry` / `npm run seed` | Load the seed recipes into a household |
+
+### Docker
+
+```sh
+docker compose up -d
+```
+
+`docker-compose.yml` pulls published images. To build this tree instead:
+
+```sh
+docker build -t kitchenowl:local .
+```
+
+Variants for Postgres and RabbitMQ are in `docker-compose-postgres.yml` and
+`docker-compose-rabbitmq.yml`.
 
 ## 🙌 Contributing
 
-From opening a bug report to creating a pull request: every contribution is appreciated and welcomed. If you're planning to implement a new feature or change the API please create an issue first. This way, we can ensure your work is not in vain.
-For more information see [Contributing](CONTRIBUTING.md) or get in contact by joining our [Matrix space](https://matrix.to/#/#kitchenowl:matrix.org).
+From opening a bug report to creating a pull request: every contribution is
+appreciated and welcomed. If you're planning to implement a new feature or change the
+API please create an issue first. This way, we can ensure your work is not in vain.
+For more information see [Contributing](CONTRIBUTING.md) or get in contact by joining
+our [Matrix space](https://matrix.to/#/#kitchenowl:matrix.org).
 
 ### 🌍 Translations
 
-You can help translate the App into your language by using [Weblate](https://hosted.weblate.org/engage/kitchenowl/)!
+You can help translate the App into your language by using
+[Weblate](https://hosted.weblate.org/engage/kitchenowl/)!
 
 <p align="center">
   <a href="https://hosted.weblate.org/engage/kitchenowl/">
@@ -103,33 +254,21 @@ You can help translate the App into your language by using [Weblate](https://hos
   </a>
 </p>
 
-## 🛎️ Stay Up-to-Date
-
-KitchenOwl is moving fast, to stay updated consider starring and watching the releases of this repository.
-
-### 💬 Status
-
-- [x] Public Alpha: Still working on stuff (rarely things might break)
-- [ ] Public Beta: Stable and most planned features complete
-- [ ] Public: Production-ready
-
 ## 📚 Related
 
-- [Website](https://kitchenowl.org)
-- [Docs](https://docs.kitchenowl.org)
-- [KitchenOwl Backend](https://github.com/TomBursch/kitchenowl-backend) Repository
-- [KitchenOwl Website](https://github.com/TomBursch/kitchenowl-website) Repository
-- [KitchenOwl Python Client](https://github.com/TomBursch/kitchenowl-python) Repository
-- [KitchenOwl Home Assistant Integration](https://github.com/TomBursch/kitchenowl-ha) Repository
-- [DockerHub](https://hub.docker.com/r/tombursch/kitchenowl)
+- [Website](https://kitchenowl.org) · [Docs](https://docs.kitchenowl.org)
+- [Upstream project](https://github.com/TomBursch/kitchenowl) this fork follows
+- [KitchenOwl Python Client](https://github.com/TomBursch/kitchenowl-python) · [Home Assistant Integration](https://github.com/TomBursch/kitchenowl-ha)
 - [Recipe scrapers](https://github.com/hhursev/recipe-scrapers) used for scraping recipes from the web
+- [Wikimedia Commons](https://commons.wikimedia.org/) for the freely-licensed recipe photographs
 - [Weblate](https://weblate.org/) is helping with continuous localization as part of their ongoing support for open-source software projects.
 
 ### 🔨 Built With
 
-- [Flask](https://flask.palletsprojects.com/)
-- [Flutter](https://flutter.dev/)
+- [Flask](https://flask.palletsprojects.com/) and [SQLAlchemy](https://www.sqlalchemy.org/)
+- [React](https://react.dev/), [Vite](https://vite.dev/) and [Tailwind CSS](https://tailwindcss.com/)
 - [Docker](https://docs.docker.com/)
+- [OpenRouter](https://openrouter.ai/) for the optional in-browser model features
 
 ## 🍀 Contributors
 
@@ -139,4 +278,6 @@ KitchenOwl is moving fast, to stay updated consider starring and watching the re
 
 ## 📜 License
 
-KitchenOwl is Free Software: You can use, study share and improve it at your will. Specifically you can redistribute and/or modify it under the terms of the AGPL-3.0 License.
+KitchenOwl is Free Software: You can use, study share and improve it at your will.
+Specifically you can redistribute and/or modify it under the terms of the AGPL-3.0
+License.
