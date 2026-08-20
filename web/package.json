@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc -b --noEmit"
+    "typecheck": "tsc -b --noEmit",
+    "seed": "node scripts/seed-recipes.mjs --photos",
+    "seed:dry": "node scripts/seed-recipes.mjs --photos --dry-run"
   },
   "dependencies": {
     "@fontsource-variable/fraunces": "^5.3.0",

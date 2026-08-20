@@ -42,11 +42,34 @@ wrote is reviewable like code. Every recipe is tagged `AI-written` and carries a
 vocabulary from `src/lib/recipeTags.ts`, so `npm test` catches a malformed seed
 before it becomes a broken recipe in somebody's household.
 
-To push the seeds into a household (idempotent — existing names are skipped):
+Note that nothing in the app reads these files at runtime — they are input for
+the seeder below, not a data source. Adding a photo to a seed file changes
+nothing until the seeder is run; rebuilding the app will not show it.
+
+To push the seeds into a household, from the machine running the server:
 
 ```sh
-node scripts/seed-recipes.mjs --household 1 --token <access token>
+npm run seed:dry
 ```
 
-The token comes from a logged-in browser session (localStorage key
-`kitchenowl.access`); the script deliberately takes no passwords.
+That reports what it would do and changes nothing. Then:
+
+```sh
+npm run seed
+```
+
+Both prompt for an access token without echoing it, default to household 1 and
+`http://localhost:8088`, and pass `--photos`. Add `--household`/`--server` after
+a `--` if yours differ, e.g. `npm run seed -- --household 2`.
+
+The run is idempotent: a recipe whose name is already present is skipped, and
+`--photos` only fills in a picture where there is none — it never replaces one
+somebody chose. Get the token from a logged-in browser tab's devtools console:
+
+```js
+localStorage.getItem("kitchenowl.access")
+```
+
+Access tokens last 15 minutes, so fetch it when you are ready to run. Prefer the
+prompt to `--token`: a credential on the command line is visible in `ps` and
+kept in the shell's history file. The script takes no passwords in any case.
