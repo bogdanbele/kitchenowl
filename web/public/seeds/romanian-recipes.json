@@ -80,6 +80,12 @@
         "AI-written"
       ],
       "source": "ai://claude-opus-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Spring_-_29_(2011)._(27919284641).jpg?width=800",
+      "photo_credit": {
+        "author": "Radu Chibzii from Chisinau, Republic of Moldova",
+        "licence": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Spring_-_29_(2011)._(27919284641).jpg"
+      },
       "items": [
         {
           "name": "Cornmeal",
@@ -111,7 +117,7 @@
           "optional": true
         }
       ],
-      "description": "Polenta's Romanian cousin, and for centuries the everyday bread of the countryside. Cheese and sour cream turn it into a meal.\n\n## 1. Cook the mămăligă\n\n1. Bring the water and salt to a boil in a heavy pot.\n2. Pour the cornmeal in a steady stream with one hand while whisking hard with the other. Doing it slowly is what prevents lumps.\n3. Switch to a wooden spoon once it thickens. Cook 25-30 minutes over low heat, stirring often, until it pulls away from the sides of the pot.\n4. Stir in the butter at the end.\n\n## 2. Serve\n\n1. Traditionally it is turned out onto a wooden board and cut with a thread, not a knife. A bowl is fine.\n2. Layer hot mămăligă with crumbled cheese so it half melts, and put a generous spoon of sour cream on top.\n3. A fried egg on each portion makes it dinner rather than a side."
+      "description": "Polenta's Romanian cousin, and for centuries the everyday bread of the countryside. Cheese and sour cream turn it into a meal.\n\n## 1. Cook the mămăligă\n\n1. Bring the water and salt to a boil in a heavy pot.\n2. Pour the cornmeal in a steady stream with one hand while whisking hard with the other. Doing it slowly is what prevents lumps.\n3. Switch to a wooden spoon once it thickens. Cook 25-30 minutes over low heat, stirring often, until it pulls away from the sides of the pot.\n4. Stir in the butter at the end.\n\n## 2. Serve\n\n1. Traditionally it is turned out onto a wooden board and cut with a thread, not a knife. A bowl is fine.\n2. Layer hot mămăligă with crumbled cheese so it half melts, and put a generous spoon of sour cream on top.\n3. A fried egg on each portion makes it dinner rather than a side.\n\n---\n\n*Photo: Radu Chibzii from Chisinau, Republic of Moldova · CC BY-SA 2.0 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Spring_-_29_(2011)._(27919284641).jpg)*"
     },
     {
       "name": "Ciorbă de perișoare",
@@ -125,6 +131,12 @@
         "AI-written"
       ],
       "source": "ai://claude-opus-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ciorb%C4%83_cu_peri%C8%99oare.jpg?width=800",
+      "photo_credit": {
+        "author": "Sacha47",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ciorb%C4%83_cu_peri%C8%99oare.jpg"
+      },
       "items": [
         {
           "name": "Pork mince",
@@ -180,7 +192,7 @@
           "optional": true
         }
       ],
-      "description": "A sour soup with pork meatballs. The sourness comes from borș — fermented wheat bran liquid — and the finish comes from lovage, which is what makes it taste Romanian rather than merely good.\n\n## 1. Start the vegetables\n\n1. Put 2.5 L water on with the carrot, parsnip, celeriac, onion and a good pinch of salt. Simmer 15 minutes.\n2. Add the potatoes and the tomato paste and simmer another 10.\n\n## 2. Make the perișoare\n\n1. Mix the pork, uncooked rice, egg, a little chopped parsley, salt and pepper.\n2. Wet your hands and roll walnut-sized balls. The rice swells, so keep them small.\n\n## 3. Cook them in the soup\n\n1. Drop the meatballs into the simmering soup one at a time so they do not stick together.\n2. Simmer 20 minutes, uncovered, skimming any foam. Do not stir hard or they break up.\n\n## 4. Sour it\n\n1. Boil the borș separately in a small pan, then add it to the soup. Boiling it first is traditional and takes the raw edge off.\n2. Taste and add more until it is properly sour. Correct the salt afterwards, never before.\n3. Take the pot off the heat, throw in a generous handful of chopped lovage, and cover for 5 minutes.\n4. Serve with sour cream and a hot pepper on the side."
+      "description": "A sour soup with pork meatballs. The sourness comes from borș — fermented wheat bran liquid — and the finish comes from lovage, which is what makes it taste Romanian rather than merely good.\n\n## 1. Start the vegetables\n\n1. Put 2.5 L water on with the carrot, parsnip, celeriac, onion and a good pinch of salt. Simmer 15 minutes.\n2. Add the potatoes and the tomato paste and simmer another 10.\n\n## 2. Make the perișoare\n\n1. Mix the pork, uncooked rice, egg, a little chopped parsley, salt and pepper.\n2. Wet your hands and roll walnut-sized balls. The rice swells, so keep them small.\n\n## 3. Cook them in the soup\n\n1. Drop the meatballs into the simmering soup one at a time so they do not stick together.\n2. Simmer 20 minutes, uncovered, skimming any foam. Do not stir hard or they break up.\n\n## 4. Sour it\n\n1. Boil the borș separately in a small pan, then add it to the soup. Boiling it first is traditional and takes the raw edge off.\n2. Taste and add more until it is properly sour. Correct the salt afterwards, never before.\n3. Take the pot off the heat, throw in a generous handful of chopped lovage, and cover for 5 minutes.\n4. Serve with sour cream and a hot pepper on the side.\n\n---\n\n*Photo: Sacha47 · CC BY-SA 4.0 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Ciorb%C4%83_cu_peri%C8%99oare.jpg)*"
     },
     {
       "name": "Mici",
@@ -194,6 +206,12 @@
         "AI-written"
       ],
       "source": "ai://claude-opus-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mititei_1.jpg?width=800",
+      "photo_credit": {
+        "author": "Sacha47",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Mititei_1.jpg"
+      },
       "items": [
         {
           "name": "Beef mince",
@@ -244,7 +262,7 @@
           "description": "to serve"
         }
       ],
-      "description": "Skinless grilled sausages, the smell of every Romanian summer. The bicarbonate and the cold stock are not optional: together they give mici the springy texture that separates them from ordinary meatballs.\n\n## 1. Mix\n\n1. Combine all three minces with the garlic, spices, salt and bicarbonate.\n2. Add the cold stock a little at a time, working the mixture hard with your hands for a good 10 minutes. It should become sticky and paste-like rather than crumbly.\n\n## 2. Rest — the part people skip\n\n1. Cover and refrigerate at least 4 hours, ideally overnight. The bicarbonate needs time and the flavour needs longer.\n\n## 3. Shape\n\n1. With wet hands, roll thick sausages about 8 cm long and 3 cm across. A piping bag with a wide nozzle makes them uniform.\n2. Chill again for 30 minutes if the kitchen is warm.\n\n## 4. Grill\n\n1. Grill over high heat, turning often, 10-15 minutes. They should char in places and stay juicy inside.\n2. Brush with a little salted water while grilling if they look dry.\n3. Serve with mustard, fresh bread and cold beer. Never with ketchup, unless you enjoy arguments."
+      "description": "Skinless grilled sausages, the smell of every Romanian summer. The bicarbonate and the cold stock are not optional: together they give mici the springy texture that separates them from ordinary meatballs.\n\n## 1. Mix\n\n1. Combine all three minces with the garlic, spices, salt and bicarbonate.\n2. Add the cold stock a little at a time, working the mixture hard with your hands for a good 10 minutes. It should become sticky and paste-like rather than crumbly.\n\n## 2. Rest — the part people skip\n\n1. Cover and refrigerate at least 4 hours, ideally overnight. The bicarbonate needs time and the flavour needs longer.\n\n## 3. Shape\n\n1. With wet hands, roll thick sausages about 8 cm long and 3 cm across. A piping bag with a wide nozzle makes them uniform.\n2. Chill again for 30 minutes if the kitchen is warm.\n\n## 4. Grill\n\n1. Grill over high heat, turning often, 10-15 minutes. They should char in places and stay juicy inside.\n2. Brush with a little salted water while grilling if they look dry.\n3. Serve with mustard, fresh bread and cold beer. Never with ketchup, unless you enjoy arguments.\n\n---\n\n*Photo: Sacha47 · CC BY-SA 4.0 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mititei_1.jpg)*"
     },
     {
       "name": "Papanași",
@@ -324,6 +342,12 @@
         "AI-written"
       ],
       "source": "ai://claude-opus-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Zacusc%C4%83_bgiu.jpg?width=800",
+      "photo_credit": {
+        "author": "Bogdan",
+        "licence": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Zacusc%C4%83_bgiu.jpg"
+      },
       "items": [
         {
           "name": "Aubergine",
@@ -358,7 +382,7 @@
           "description": "to taste"
         }
       ],
-      "description": "Autumn in a jar. Made in enormous quantities when peppers are cheap, eaten on bread all winter. The smell of roasting peppers is half the reason to make it.\n\n## 1. Roast\n\n1. Roast the aubergines and peppers whole, over a flame or under a hot grill, until the skins are blackened all over.\n2. Put them in a covered pot or a bag for 20 minutes — the steam loosens the skins.\n3. Peel, deseed the peppers, and drain the aubergines well in a colander. Chop both coarsely. Never use a blender: zacuscă should have texture.\n\n## 2. Cook the base\n\n1. Cook the onion in the oil over low heat for 25-30 minutes until sweet and golden. This is the longest step and the one that decides the flavour.\n2. Add the tomato paste and cook another 5 minutes.\n\n## 3. Bring it together\n\n1. Add the aubergine and peppers, bay leaves and peppercorns.\n2. Cook uncovered over low heat for 1.5-2 hours, stirring often with a wooden spoon, until the oil separates and rises to the surface. That is the sign it is done.\n3. Salt at the very end, tasting as you go.\n\n## 4. Jar it\n\n1. Spoon boiling hot into sterilised jars, seal, and turn upside down.\n2. Wrap the jars in a blanket and leave overnight — cooling slowly is what stops them spoiling.\n3. Keeps a year in a cold, dark place."
+      "description": "Autumn in a jar. Made in enormous quantities when peppers are cheap, eaten on bread all winter. The smell of roasting peppers is half the reason to make it.\n\n## 1. Roast\n\n1. Roast the aubergines and peppers whole, over a flame or under a hot grill, until the skins are blackened all over.\n2. Put them in a covered pot or a bag for 20 minutes — the steam loosens the skins.\n3. Peel, deseed the peppers, and drain the aubergines well in a colander. Chop both coarsely. Never use a blender: zacuscă should have texture.\n\n## 2. Cook the base\n\n1. Cook the onion in the oil over low heat for 25-30 minutes until sweet and golden. This is the longest step and the one that decides the flavour.\n2. Add the tomato paste and cook another 5 minutes.\n\n## 3. Bring it together\n\n1. Add the aubergine and peppers, bay leaves and peppercorns.\n2. Cook uncovered over low heat for 1.5-2 hours, stirring often with a wooden spoon, until the oil separates and rises to the surface. That is the sign it is done.\n3. Salt at the very end, tasting as you go.\n\n## 4. Jar it\n\n1. Spoon boiling hot into sterilised jars, seal, and turn upside down.\n2. Wrap the jars in a blanket and leave overnight — cooling slowly is what stops them spoiling.\n3. Keeps a year in a cold, dark place.\n\n---\n\n*Photo: Bogdan · CC BY-SA 3.0 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Zacusc%C4%83_bgiu.jpg)*"
     },
     {
       "name": "Salată de vinete",
@@ -373,6 +397,12 @@
         "AI-written"
       ],
       "source": "ai://claude-opus-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Salata_de_vinete.jpg?width=800",
+      "photo_credit": {
+        "author": "Andrei Stroe",
+        "licence": "CC BY-SA 2.5",
+        "source": "https://commons.wikimedia.org/wiki/File:Salata_de_vinete.jpg"
+      },
       "items": [
         {
           "name": "Aubergine",
@@ -400,7 +430,7 @@
           "optional": true
         }
       ],
-      "description": "Smoked aubergine beaten with oil until creamy. Three ingredients, and all of it depends on how well you burn the aubergines.\n\n## 1. Burn them properly\n\n1. Cook the aubergines whole directly over a flame — a gas hob, a grill, a barbecue — turning until the skin is completely black and the flesh has collapsed. Oven-roasting works but gives you a purée, not a salad: the smoke is the flavour.\n\n## 2. Drain\n\n1. Peel while still hot, taking care not to leave black flecks in the flesh.\n2. Leave in a sieve or on a tilted wooden board for at least 30 minutes. Wet aubergine makes a watery salad, and this cannot be fixed later.\n\n## 3. Beat\n\n1. Chop with a wooden knife on a wooden board — metal is said to discolour it, and after enough repetitions you stop arguing.\n2. Beat with a wooden spoon while pouring the oil in a thin stream, as if making mayonnaise, until pale and creamy.\n3. Beat in the lemon juice and salt, then fold in the raw onion at the very end.\n4. Serve cool with tomatoes and good bread."
+      "description": "Smoked aubergine beaten with oil until creamy. Three ingredients, and all of it depends on how well you burn the aubergines.\n\n## 1. Burn them properly\n\n1. Cook the aubergines whole directly over a flame — a gas hob, a grill, a barbecue — turning until the skin is completely black and the flesh has collapsed. Oven-roasting works but gives you a purée, not a salad: the smoke is the flavour.\n\n## 2. Drain\n\n1. Peel while still hot, taking care not to leave black flecks in the flesh.\n2. Leave in a sieve or on a tilted wooden board for at least 30 minutes. Wet aubergine makes a watery salad, and this cannot be fixed later.\n\n## 3. Beat\n\n1. Chop with a wooden knife on a wooden board — metal is said to discolour it, and after enough repetitions you stop arguing.\n2. Beat with a wooden spoon while pouring the oil in a thin stream, as if making mayonnaise, until pale and creamy.\n3. Beat in the lemon juice and salt, then fold in the raw onion at the very end.\n4. Serve cool with tomatoes and good bread.\n\n---\n\n*Photo: Andrei Stroe · CC BY-SA 2.5 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Salata_de_vinete.jpg)*"
     },
     {
       "name": "Ciorbă rădăuțeană",
@@ -1330,6 +1360,12 @@
         "AI-written"
       ],
       "source": "ai://claude-fable-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Frikadeller.jpg?width=800",
+      "photo_credit": {
+        "author": "Kenneth Jorgensen ( gallery ). Please attribute this image with \"Kenneth Jorgensen\" . An email would also be appreciated.",
+        "licence": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Frikadeller.jpg"
+      },
       "items": [
         {
           "name": "Pork mince",
@@ -1372,7 +1408,7 @@
           "description": "for shallow frying"
         }
       ],
-      "description": "In Moldova a chiftea is a snack and a pârjoală is a meal: palm-sized, oval, flattened, green inside from all the dill and parsley, and soft enough to cut with the side of a fork. The breadcrumb crust and the grated potato are what separate it from every lesser meatball.\n\n## 1. Make the mix\n\n1. Grate the onion and the potato finely and squeeze out as much juice as you can.\n2. Mix the mince with the onion, potato, garlic, eggs, pepper and both herbs. The mix should look slightly too green; that is correct.\n3. Season with salt, knead well for two minutes, and rest it in the fridge for 15 minutes so it firms up for shaping.\n\n## 2. Shape and crust\n\n1. With wet hands, form oval patties the size of your palm and about 2 cm thick, flattening each one slightly.\n2. Press them through the breadcrumbs on both sides and around the edge. The crust is not decoration — it is what lets the inside stay soft.\n\n## 3. Fry\n\n1. Heat about 1 cm of oil over medium heat — a pinch of breadcrumbs should sizzle steadily, not violently.\n2. Fry 4–5 minutes a side until deep golden. They are thick, so high heat gives you a burnt crust and a raw middle; lower the flame and take your time.\n3. Drain on paper. Serve hot with mashed potatoes and pickles — though half of them traditionally disappear cold, straight from the fridge, at 11 pm."
+      "description": "In Moldova a chiftea is a snack and a pârjoală is a meal: palm-sized, oval, flattened, green inside from all the dill and parsley, and soft enough to cut with the side of a fork. The breadcrumb crust and the grated potato are what separate it from every lesser meatball.\n\n## 1. Make the mix\n\n1. Grate the onion and the potato finely and squeeze out as much juice as you can.\n2. Mix the mince with the onion, potato, garlic, eggs, pepper and both herbs. The mix should look slightly too green; that is correct.\n3. Season with salt, knead well for two minutes, and rest it in the fridge for 15 minutes so it firms up for shaping.\n\n## 2. Shape and crust\n\n1. With wet hands, form oval patties the size of your palm and about 2 cm thick, flattening each one slightly.\n2. Press them through the breadcrumbs on both sides and around the edge. The crust is not decoration — it is what lets the inside stay soft.\n\n## 3. Fry\n\n1. Heat about 1 cm of oil over medium heat — a pinch of breadcrumbs should sizzle steadily, not violently.\n2. Fry 4–5 minutes a side until deep golden. They are thick, so high heat gives you a burnt crust and a raw middle; lower the flame and take your time.\n3. Drain on paper. Serve hot with mashed potatoes and pickles — though half of them traditionally disappear cold, straight from the fridge, at 11 pm.\n\n---\n\n*Photo: Kenneth Jorgensen ( gallery ). Please attribute this image with \"Kenneth Jorgensen\" . An email would also be appreciated. · CC BY-SA 3.0 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Frikadeller.jpg)*"
     },
     {
       "name": "Ostropel de pui",
@@ -1386,6 +1422,12 @@
         "AI-written"
       ],
       "source": "ai://claude-fable-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ostrpel.png?width=800",
+      "photo_credit": {
+        "author": "Sacha47",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ostrpel.png"
+      },
       "items": [
         {
           "name": "Chicken thighs",
@@ -1432,7 +1474,7 @@
           "description": "1/2 tsp"
         }
       ],
-      "description": "Ostropel is Oltenia's way of stretching one chicken across a family: the meat is the excuse, the garlicky tomato sauce is the dish, and the mămăligă or bread that mops it up is not optional. The garlic goes in at the end, where it can still be heard.\n\n## 1. Brown\n\n1. Season the chicken and brown it in the oil in a wide, deep pan until the skin is golden on both sides. Set it aside and keep the fat.\n\n## 2. Build the sauce\n\n1. Soften the chopped onion in the same fat until translucent.\n2. Sprinkle over the flour and stir for a minute — just enough to give the sauce a little body later, no more.\n3. Stir in the tomato paste, then the warm water, thyme, bay leaves and pepper, scraping up everything stuck to the pan.\n\n## 3. Braise\n\n1. Return the chicken, cover, and simmer on low for 30 minutes, turning once, until the meat is tender and the sauce has thickened enough to coat a piece of bread.\n\n## 4. The garlic moment\n\n1. Crush the garlic to a paste with a little salt and stir it in with the vinegar for the last two minutes, then take the pan off the heat. Long cooking tames garlic, and tame garlic is not ostropel.\n2. Rest, covered, for 10 minutes.\n3. Serve over mămăligă or with plenty of white bread. The chicken can be shared; the sauce cannot."
+      "description": "Ostropel is Oltenia's way of stretching one chicken across a family: the meat is the excuse, the garlicky tomato sauce is the dish, and the mămăligă or bread that mops it up is not optional. The garlic goes in at the end, where it can still be heard.\n\n## 1. Brown\n\n1. Season the chicken and brown it in the oil in a wide, deep pan until the skin is golden on both sides. Set it aside and keep the fat.\n\n## 2. Build the sauce\n\n1. Soften the chopped onion in the same fat until translucent.\n2. Sprinkle over the flour and stir for a minute — just enough to give the sauce a little body later, no more.\n3. Stir in the tomato paste, then the warm water, thyme, bay leaves and pepper, scraping up everything stuck to the pan.\n\n## 3. Braise\n\n1. Return the chicken, cover, and simmer on low for 30 minutes, turning once, until the meat is tender and the sauce has thickened enough to coat a piece of bread.\n\n## 4. The garlic moment\n\n1. Crush the garlic to a paste with a little salt and stir it in with the vinegar for the last two minutes, then take the pan off the heat. Long cooking tames garlic, and tame garlic is not ostropel.\n2. Rest, covered, for 10 minutes.\n3. Serve over mămăligă or with plenty of white bread. The chicken can be shared; the sauce cannot.\n\n---\n\n*Photo: Sacha47 · CC BY-SA 4.0 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Ostrpel.png)*"
     },
     {
       "name": "Ciulama de pui",
@@ -1862,6 +1904,12 @@
         "AI-written"
       ],
       "source": "ai://claude-fable-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ardei_umplu%C8%9Bi.jpg?width=800",
+      "photo_credit": {
+        "author": "Roxanapatrichi",
+        "licence": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ardei_umplu%C8%9Bi.jpg"
+      },
       "items": [
         {
           "name": "Red peppers",
@@ -1913,7 +1961,7 @@
           "optional": true
         }
       ],
-      "description": "Sarmale's easygoing summer cousin: the same pork-and-rice heart, but the wrapper is a pepper and the sauce is tomato, rounded with a spoon of sugar the way it has always been done. Every Romanian canteen serves them; every home does them better.\n\n## 1. Make the filling\n\n1. Soften the onion and grated carrot in the oil over low heat for 8–10 minutes, until sweet and translucent. Let it cool a little.\n2. Mix the pork mince with the rice, the cooked vegetables, half the dill and the black pepper. Season with salt, but gently — the sauce concentrates around the peppers as it cooks.\n3. Fry a teaspoon of the mixture and taste it; raw filling tells you nothing.\n\n## 2. Stuff the peppers\n\n1. Cut a lid off each pepper at the stem end and pull out the seeds and white ribs.\n2. Fill them only three-quarters full — the rice swells, and an overstuffed pepper splits in the pot.\n3. Set each lid back on like a little hat.\n\n## 3. Build the sauce\n\n1. Stand the peppers upright and snug in a wide pot; they should hold each other up.\n2. Mix the passata with about 300 ml of water, the sugar and the bay leaves, and pour it around the peppers to reach their shoulders. The teaspoon of sugar is traditional, not negotiable — it takes the raw edge off the tomato.\n\n## 4. Simmer\n\n1. Bring to a gentle simmer, lid ajar, and cook for 60–70 minutes, until a fork slides easily into a pepper and the rice inside is done.\n2. Shake the pot now and then instead of stirring, so nothing tears.\n3. They freeze beautifully in their sauce, which is why nobody makes a small batch.\n\n## 5. Serve\n\n1. Rest for 10 minutes, scatter over the rest of the dill, and serve with a spoonful of sour cream melting into the sauce and bread for the plate."
+      "description": "Sarmale's easygoing summer cousin: the same pork-and-rice heart, but the wrapper is a pepper and the sauce is tomato, rounded with a spoon of sugar the way it has always been done. Every Romanian canteen serves them; every home does them better.\n\n## 1. Make the filling\n\n1. Soften the onion and grated carrot in the oil over low heat for 8–10 minutes, until sweet and translucent. Let it cool a little.\n2. Mix the pork mince with the rice, the cooked vegetables, half the dill and the black pepper. Season with salt, but gently — the sauce concentrates around the peppers as it cooks.\n3. Fry a teaspoon of the mixture and taste it; raw filling tells you nothing.\n\n## 2. Stuff the peppers\n\n1. Cut a lid off each pepper at the stem end and pull out the seeds and white ribs.\n2. Fill them only three-quarters full — the rice swells, and an overstuffed pepper splits in the pot.\n3. Set each lid back on like a little hat.\n\n## 3. Build the sauce\n\n1. Stand the peppers upright and snug in a wide pot; they should hold each other up.\n2. Mix the passata with about 300 ml of water, the sugar and the bay leaves, and pour it around the peppers to reach their shoulders. The teaspoon of sugar is traditional, not negotiable — it takes the raw edge off the tomato.\n\n## 4. Simmer\n\n1. Bring to a gentle simmer, lid ajar, and cook for 60–70 minutes, until a fork slides easily into a pepper and the rice inside is done.\n2. Shake the pot now and then instead of stirring, so nothing tears.\n3. They freeze beautifully in their sauce, which is why nobody makes a small batch.\n\n## 5. Serve\n\n1. Rest for 10 minutes, scatter over the rest of the dill, and serve with a spoonful of sour cream melting into the sauce and bread for the plate.\n\n---\n\n*Photo: Roxanapatrichi · CC BY-SA 3.0 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Ardei_umplu%C8%9Bi.jpg)*"
     },
     {
       "name": "Mâncare de fasole verde",

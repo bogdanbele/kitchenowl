@@ -25,13 +25,36 @@ const RECIPE_KEYS = new Set([
   "time",
   "tags",
   "source",
+  "photo",
+  "photo_credit",
   "items",
   "description",
 ]);
 
 // Deliberately absent: "substitutes" (cook-written by design, a model must not
-// seed them) and "videos"/"photo" (a seed must never invent a URL).
+// seed them) and "videos" (a seed must never invent a URL).
 const ITEM_KEYS = new Set(["name", "description", "optional"]);
+
+/**
+ * A photo may only be a Wikimedia Commons file.
+ *
+ * The rule used to be "no photo at all", to stop a model inventing an address.
+ * That is still the risk being managed — the answer is now a source whose
+ * licensing is checkable and whose URL shape can be asserted, rather than
+ * trusting a free-text URL. Anything else, including a link to a recipe blog's
+ * hotlinked JPEG, fails here.
+ */
+// Special:FilePath rather than a direct upload.wikimedia.org address: the upload
+// host rate-limits bulk fetching hard (429, retry-after 600), and this is the
+// URL the recipe server will be asked to fetch. ?width= keeps it card-sized.
+const COMMONS_FILE =
+  /^https:\/\/commons\.wikimedia\.org\/wiki\/Special:FilePath\/\S+\.(jpg|jpeg|png|webp)(\?width=\d+)?$/i;
+const COMMONS_PAGE = /^https:\/\/commons\.wikimedia\.org\/wiki\/File:/;
+const CREDIT_KEYS = new Set(["author", "licence", "source"]);
+
+// Free licences only. A seed must never carry a file that cannot be reused.
+const FREE_LICENCES =
+  /^(CC0|Public domain|CC BY(-SA)? [1-4]\.0|CC BY(-SA)? 2\.5|CC BY(-SA)? 3\.0 [a-z]{2}|GFDL)$/i;
 
 const cuisineSet = new Set<string>(CUISINES);
 const kindSet = new Set<string>(KINDS);
@@ -43,6 +66,12 @@ interface SeedItem {
   optional?: boolean;
 }
 
+interface SeedCredit {
+  author: string;
+  licence: string;
+  source: string;
+}
+
 interface SeedRecipe {
   name: string;
   yields: number;
@@ -51,6 +80,8 @@ interface SeedRecipe {
   time: number;
   tags: string[];
   source: string;
+  photo?: string;
+  photo_credit?: SeedCredit;
   items: SeedItem[];
   description: string;
 }
@@ -169,6 +200,25 @@ for (const { file, note, recipes } of seeds) {
           expect(recipe.description.length).toBeGreaterThan(0);
           expect(recipe.description.startsWith("#")).toBe(false);
           expect(recipe.description).toContain("\n## ");
+        });
+
+        it("never carries a photo it cannot credit", () => {
+          // A picture and its attribution travel together or not at all —
+          // most Commons licences require the credit, and a photo whose
+          // provenance was dropped somewhere cannot be re-checked later.
+          expect(Boolean(recipe.photo)).toBe(Boolean(recipe.photo_credit));
+          if (!recipe.photo) return;
+
+          expect(recipe.photo).toMatch(COMMONS_FILE);
+          const credit = recipe.photo_credit!;
+          for (const key of Object.keys(credit)) {
+            expect(CREDIT_KEYS.has(key), `unexpected credit key "${key}"`).toBe(true);
+          }
+          expect(credit.author.trim().length).toBeGreaterThan(0);
+          // Markup would end up rendered as literal HTML in the credit line.
+          expect(credit.author).not.toMatch(/[<>]/);
+          expect(credit.licence).toMatch(FREE_LICENCES);
+          expect(credit.source).toMatch(COMMONS_PAGE);
         });
       });
     }
