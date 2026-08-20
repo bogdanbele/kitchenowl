@@ -64,18 +64,29 @@ Flutter SDK and compiled the app on every build, which was most of the build tim
 
 ## 📱 Screenshots
 
-The web client: the recipe collection, then a recipe with its photograph, its
-`AI-written` badge, scalable ingredients, and the method in stages.
+**The collection.** Filters are counts, not guesses — every tag says how many recipes
+carry it. A recipe with no photograph gets a coloured card with its initial rather
+than a broken frame, which is the common case: 27 of the 150 seeded recipes have a
+freely licensed photograph.
 
 <p align="center">
-  <img alt="Browsing the recipe collection and opening a recipe" src="docs/docs/img/web/recipe-walkthrough.gif" width="900" />
+  <img alt="The recipe collection, filtered by tag" src="docs/docs/img/web/collection.gif" width="900" />
 </p>
 
-Two details worth pointing out, both visible above. Ingredients you already have are
-ticked off against the pantry and say so (`In the kitchen as Pepper`), and a recipe
-with no photograph gets a coloured card with its initial rather than a broken frame —
-which is most of them, because only 27 of the 150 seeded recipes have a freely
-licensed photograph.
+**A recipe.** Ingredients scale with the serving count, tick off against what the
+kitchen already has and say which name they matched (`In the kitchen as Pepper`), and
+carry the substitutes the cook wrote. The method is stages, not a wall.
+
+<p align="center">
+  <img alt="A recipe with its photograph, ingredients and method" src="docs/docs/img/web/recipe.gif" width="900" />
+</p>
+
+**Cooking mode.** One step at a time, at arm's length, with the screen kept awake and
+only the ingredients that step actually names lit up.
+
+<p align="center">
+  <img alt="Cooking mode, one step at a time" src="docs/docs/img/web/cooking-mode.gif" width="900" />
+</p>
 
 <details>
 <summary>Screenshots of the retired Flutter app</summary>
