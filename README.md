@@ -64,9 +64,23 @@ Flutter SDK and compiled the app on every build, which was most of the build tim
 
 ## 📱 Screenshots
 
-The images below are of the **retired Flutter app**, kept because they are what the
-project has. They do not show the current React client — a genuine set for it has not
-been captured yet.
+The web client: the recipe collection, then a recipe with its photograph, its
+`AI-written` badge, scalable ingredients, and the method in stages.
+
+<p align="center">
+  <img alt="Browsing the recipe collection and opening a recipe" src="docs/docs/img/web/recipe-walkthrough.gif" width="900" />
+</p>
+
+Two details worth pointing out, both visible above. Ingredients you already have are
+ticked off against the pantry and say so (`In the kitchen as Pepper`), and a recipe
+with no photograph gets a coloured card with its initial rather than a broken frame —
+which is most of them, because only 27 of the 150 seeded recipes have a freely
+licensed photograph.
+
+<details>
+<summary>Screenshots of the retired Flutter app</summary>
+
+Kept for reference. These are **not** the current client.
 
 <table>
   <tr>
@@ -76,6 +90,8 @@ been captured yet.
     <td><img alt="Expense page" src="metadata/en-US/images/phoneScreenshots/expenses.png"/></td>
    </tr>
 </table>
+
+</details>
 
 ## 🤖 Where AI is used, and where it is not
 
