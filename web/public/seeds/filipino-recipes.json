@@ -605,6 +605,12 @@
         "AI-written"
       ],
       "source": "ai://claude-fable-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Beef_Tapa_with_Egg.jpg?width=1280",
+      "photo_credit": {
+        "author": "Maffeth.opiana",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Beef_Tapa_with_Egg.jpg"
+      },
       "items": [
         {
           "name": "Beef sirloin",
@@ -652,7 +658,7 @@
           "optional": true
         }
       ],
-      "description": "Tapa is the ta- in tapsilog — cured beef with sinangag (garlic fried rice) and itlog (fried egg), the breakfast the Philippines runs on. The cure does its work overnight; the morning shift takes twenty minutes.\n\n## 1. Slice and cure\n\n1. Slice the sirloin across the grain into thin 3-5 mm pieces. Twenty minutes in the freezer first makes thin slicing much easier.\n2. Mix the soy sauce, calamansi juice, 8 minced garlic cloves, sugar and pepper, and massage it into the beef.\n3. Cover and refrigerate overnight — at least 8 hours. A quick marinade makes soy-flavoured beef; only time makes tapa.\n\n## 2. Fry the tapa\n\n1. Drain the slices and keep the marinade. Fry in 2 tbsp of the oil over medium-high heat in a single layer, in batches, 1-2 minutes a side.\n2. Return everything to the pan with a splash of the reserved marinade and let it reduce to a sticky glaze. The sugar means some dark edges — that char is flavour, but black is bitter, so keep it moving.\n\n## 3. Make the sinangag\n\n1. Wipe the pan, add the remaining oil and the rest of the garlic, chopped, and cook over low heat until pale gold. Pull it early — garlic keeps cooking after you stop.\n2. Add the cold day-old rice, breaking up the clumps, and toss until every grain is coated and hot. Season lightly with salt. Freshly cooked rice turns to mush here; day-old is not a suggestion.\n\n## 4. Build the plate\n\n1. Fry the eggs sunny side up, yolks still loose.\n2. Stir the vinegar with the chopped chilli and a little of the garlic for the sawsawan dip.\n3. Rice, tapa, egg on top, dip on the side. Breaking the yolk over the rice is the whole point of the arrangement."
+      "description": "Tapa is the ta- in tapsilog — cured beef with sinangag (garlic fried rice) and itlog (fried egg), the breakfast the Philippines runs on. The cure does its work overnight; the morning shift takes twenty minutes.\n\n## 1. Slice and cure\n\n1. Slice the sirloin across the grain into thin 3-5 mm pieces. Twenty minutes in the freezer first makes thin slicing much easier.\n2. Mix the soy sauce, calamansi juice, 8 minced garlic cloves, sugar and pepper, and massage it into the beef.\n3. Cover and refrigerate overnight — at least 8 hours. A quick marinade makes soy-flavoured beef; only time makes tapa.\n\n## 2. Fry the tapa\n\n1. Drain the slices and keep the marinade. Fry in 2 tbsp of the oil over medium-high heat in a single layer, in batches, 1-2 minutes a side.\n2. Return everything to the pan with a splash of the reserved marinade and let it reduce to a sticky glaze. The sugar means some dark edges — that char is flavour, but black is bitter, so keep it moving.\n\n## 3. Make the sinangag\n\n1. Wipe the pan, add the remaining oil and the rest of the garlic, chopped, and cook over low heat until pale gold. Pull it early — garlic keeps cooking after you stop.\n2. Add the cold day-old rice, breaking up the clumps, and toss until every grain is coated and hot. Season lightly with salt. Freshly cooked rice turns to mush here; day-old is not a suggestion.\n\n## 4. Build the plate\n\n1. Fry the eggs sunny side up, yolks still loose.\n2. Stir the vinegar with the chopped chilli and a little of the garlic for the sawsawan dip.\n3. Rice, tapa, egg on top, dip on the side. Breaking the yolk over the rice is the whole point of the arrangement.\n\n---\n\n*Photo: Maffeth.opiana · CC BY-SA 4.0 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Beef_Tapa_with_Egg.jpg)*"
     },
     {
       "name": "Pork tocino",
@@ -668,6 +674,12 @@
         "AI-written"
       ],
       "source": "ai://claude-fable-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pork_tocino_with_eggs%2C_rice%2C_and_atchara_(typical_Filipino_breakfast).jpg?width=1280",
+      "photo_credit": {
+        "author": "Obsidian Soul",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Pork_tocino_with_eggs,_rice,_and_atchara_(typical_Filipino_breakfast).jpg"
+      },
       "items": [
         {
           "name": "Pork shoulder",
@@ -707,7 +719,7 @@
           "description": "1 tbsp"
         }
       ],
-      "description": "Tocino is breakfast candy — pork cured sweet with sugar, salt and garlic, stained red the traditional way with annatto. Pampanga invented it; the rest of the country adopted it wholesale.\n\n## 1. Slice and cure\n\n1. Slice the pork shoulder across the grain into thin 5 mm pieces; slightly frozen meat slices cleaner.\n2. Mix the sugar, salt, minced garlic, annatto powder, pepper and the pineapple juice if using, and massage it into the pork until every slice is coated and faintly sticky.\n3. Pack into a container or zip bag and refrigerate for at least 24 hours, turning once a day. Three days is where tocino really lives — the cure needs time to go all the way in.\n\n## 2. Cook it gently — water first\n\n1. Lay the slices in a cold frying pan with the 120 ml water and set it over medium heat, uncovered.\n2. Let the water simmer away for 10-12 minutes, turning the pork now and then; it cooks through while the water lasts. Do not skip straight to frying — the sugar in the cure burns long before the pork cooks.\n\n## 3. Caramelise\n\n1. When the water is gone, add the oil and drop the heat to medium-low.\n2. Turn often as the fat renders and the cure caramelises, 5-8 minutes, until the edges are sticky, lacquered mahogany. Sweet smoke is progress; acrid smoke means the pan is too hot.\n\n## 4. Serve\n\n1. With garlic fried rice and a fried egg this becomes tosilog. A saucer of spiced vinegar on the side is the correct counterweight to all that sugar."
+      "description": "Tocino is breakfast candy — pork cured sweet with sugar, salt and garlic, stained red the traditional way with annatto. Pampanga invented it; the rest of the country adopted it wholesale.\n\n## 1. Slice and cure\n\n1. Slice the pork shoulder across the grain into thin 5 mm pieces; slightly frozen meat slices cleaner.\n2. Mix the sugar, salt, minced garlic, annatto powder, pepper and the pineapple juice if using, and massage it into the pork until every slice is coated and faintly sticky.\n3. Pack into a container or zip bag and refrigerate for at least 24 hours, turning once a day. Three days is where tocino really lives — the cure needs time to go all the way in.\n\n## 2. Cook it gently — water first\n\n1. Lay the slices in a cold frying pan with the 120 ml water and set it over medium heat, uncovered.\n2. Let the water simmer away for 10-12 minutes, turning the pork now and then; it cooks through while the water lasts. Do not skip straight to frying — the sugar in the cure burns long before the pork cooks.\n\n## 3. Caramelise\n\n1. When the water is gone, add the oil and drop the heat to medium-low.\n2. Turn often as the fat renders and the cure caramelises, 5-8 minutes, until the edges are sticky, lacquered mahogany. Sweet smoke is progress; acrid smoke means the pan is too hot.\n\n## 4. Serve\n\n1. With garlic fried rice and a fried egg this becomes tosilog. A saucer of spiced vinegar on the side is the correct counterweight to all that sugar.\n\n---\n\n*Photo: Obsidian Soul · CC BY-SA 4.0 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Pork_tocino_with_eggs,_rice,_and_atchara_(typical_Filipino_breakfast).jpg)*"
     },
     {
       "name": "Skinless longganisa",
@@ -723,6 +735,12 @@
         "AI-written"
       ],
       "source": "ai://claude-fable-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Skinless_Longganisa_Silog%2C_Nov_2025.jpg?width=1280",
+      "photo_credit": {
+        "author": "Ralff Nestor Nacor",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Skinless_Longganisa_Silog,_Nov_2025.jpg"
+      },
       "items": [
         {
           "name": "Pork mince",
@@ -762,7 +780,7 @@
           "description": "3 tbsp, for frying"
         }
       ],
-      "description": "Longganisa splits the country into sweet (hamonado) and garlicky (de recado) camps; the skinless home version refuses to choose. No casings, no equipment — just wax paper, a cold fridge, and a quantity of garlic that should worry you slightly.\n\n## 1. Mix\n\n1. Mix the pork mince with the minced garlic, brown sugar, soy sauce, vinegar, salt, pepper and paprika.\n2. Knead for 2-3 minutes until the mixture turns tacky and drags against the bowl — that stickiness is what holds the patties together without a casing.\n3. Fry a teaspoon of the mixture and taste it. This is your only chance to correct the seasoning.\n\n## 2. Roll and chill\n\n1. Shape 2 tbsp portions into stubby logs about 8 cm long and roll each in a square of wax paper, twisting the ends like a sweet.\n2. Chill for at least 2 hours, overnight if you can — the sugar dissolves, the logs firm up and the garlic settles in.\n3. This is also the freezing point: lay them flat in a bag and they keep for months. Fry from frozen, adding a few minutes.\n\n## 3. Fry\n\n1. Unwrap and fry in the oil over medium-low heat, rolling the logs every couple of minutes, 8-10 minutes in all. All that sugar burns before pork cooks if the pan is hot, so low and patient wins.\n2. They are done when caramelised deep brown all over and firm to the touch.\n\n## 4. Serve\n\n1. With sinangag and a fried egg this is longsilog, and the day starts properly. A vinegar dip on the side is customary."
+      "description": "Longganisa splits the country into sweet (hamonado) and garlicky (de recado) camps; the skinless home version refuses to choose. No casings, no equipment — just wax paper, a cold fridge, and a quantity of garlic that should worry you slightly.\n\n## 1. Mix\n\n1. Mix the pork mince with the minced garlic, brown sugar, soy sauce, vinegar, salt, pepper and paprika.\n2. Knead for 2-3 minutes until the mixture turns tacky and drags against the bowl — that stickiness is what holds the patties together without a casing.\n3. Fry a teaspoon of the mixture and taste it. This is your only chance to correct the seasoning.\n\n## 2. Roll and chill\n\n1. Shape 2 tbsp portions into stubby logs about 8 cm long and roll each in a square of wax paper, twisting the ends like a sweet.\n2. Chill for at least 2 hours, overnight if you can — the sugar dissolves, the logs firm up and the garlic settles in.\n3. This is also the freezing point: lay them flat in a bag and they keep for months. Fry from frozen, adding a few minutes.\n\n## 3. Fry\n\n1. Unwrap and fry in the oil over medium-low heat, rolling the logs every couple of minutes, 8-10 minutes in all. All that sugar burns before pork cooks if the pan is hot, so low and patient wins.\n2. They are done when caramelised deep brown all over and firm to the touch.\n\n## 4. Serve\n\n1. With sinangag and a fried egg this is longsilog, and the day starts properly. A vinegar dip on the side is customary.\n\n---\n\n*Photo: Ralff Nestor Nacor · CC BY-SA 4.0 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Skinless_Longganisa_Silog,_Nov_2025.jpg)*"
     },
     {
       "name": "Bistek Tagalog",
@@ -777,6 +795,12 @@
         "AI-written"
       ],
       "source": "ai://claude-fable-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bistek_Tagalog_DSCF3899.jpg?width=1280",
+      "photo_credit": {
+        "author": "Joy D. Ganaden",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Bistek_Tagalog_DSCF3899.jpg"
+      },
       "items": [
         {
           "name": "Beef sirloin",
@@ -807,7 +831,7 @@
           "description": "3 tbsp"
         }
       ],
-      "description": "Bistek is beefsteak passed through a Filipino kitchen: thin sirloin braised in soy and calamansi, buried under onions and aimed directly at rice. The onions work two shifts — half melt into the sauce, half land on top barely cooked, sweet and crunchy.\n\n## 1. Pound and marinate\n\n1. Slice the sirloin thinly across the grain, then pound the slices gently between cling film until about 5 mm thin.\n2. Marinate in the soy sauce, calamansi juice, half the garlic and the pepper for 30 minutes to an hour. Not longer — the citrus starts cooking the surface and turns it grey.\n\n## 2. Sear\n\n1. Drain the beef well, reserving every drop of the marinade.\n2. Sear in hot oil in batches, about a minute a side, just taking colour. Crowd the pan and the beef boils now instead of braising later.\n\n## 3. First shift of onions\n\n1. In the same pan, soften half the onion rings over medium heat for 6-8 minutes until sweet and collapsing, adding the rest of the garlic for the last minute.\n2. Return the beef with the reserved marinade and a splash of water. Simmer gently, covered, for 15-20 minutes until the beef is tender and the sauce is a loose, dark gravy. Taste — if it has gone flat, a fresh squeeze of calamansi wakes it up.\n\n## 4. Second shift\n\n1. Lay the remaining onion rings on top, cover, and give them 2 minutes — warmed through, still with bite. They are garnish and vegetable at once.\n2. Serve over rice with the sauce spooned generously. The sauce is the reason the rice is there."
+      "description": "Bistek is beefsteak passed through a Filipino kitchen: thin sirloin braised in soy and calamansi, buried under onions and aimed directly at rice. The onions work two shifts — half melt into the sauce, half land on top barely cooked, sweet and crunchy.\n\n## 1. Pound and marinate\n\n1. Slice the sirloin thinly across the grain, then pound the slices gently between cling film until about 5 mm thin.\n2. Marinate in the soy sauce, calamansi juice, half the garlic and the pepper for 30 minutes to an hour. Not longer — the citrus starts cooking the surface and turns it grey.\n\n## 2. Sear\n\n1. Drain the beef well, reserving every drop of the marinade.\n2. Sear in hot oil in batches, about a minute a side, just taking colour. Crowd the pan and the beef boils now instead of braising later.\n\n## 3. First shift of onions\n\n1. In the same pan, soften half the onion rings over medium heat for 6-8 minutes until sweet and collapsing, adding the rest of the garlic for the last minute.\n2. Return the beef with the reserved marinade and a splash of water. Simmer gently, covered, for 15-20 minutes until the beef is tender and the sauce is a loose, dark gravy. Taste — if it has gone flat, a fresh squeeze of calamansi wakes it up.\n\n## 4. Second shift\n\n1. Lay the remaining onion rings on top, cover, and give them 2 minutes — warmed through, still with bite. They are garnish and vegetable at once.\n2. Serve over rice with the sauce spooned generously. The sauce is the reason the rice is there.\n\n---\n\n*Photo: Joy D. Ganaden · CC BY-SA 4.0 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Bistek_Tagalog_DSCF3899.jpg)*"
     },
     {
       "name": "Pork menudo",
@@ -822,6 +846,12 @@
         "AI-written"
       ],
       "source": "ai://claude-fable-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pork_Menudo.jpg?width=1280",
+      "photo_credit": {
+        "author": "Strawberrysweet07",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Pork_Menudo.jpg"
+      },
       "items": [
         {
           "name": "Pork shoulder",
@@ -882,7 +912,7 @@
           "optional": true
         }
       ],
-      "description": "Menudo is the tidy stew: pork and liver in tomato sauce, everything diced small and equal, potatoes and carrots included. Households differ on raisins and hotdogs; no serious household differs on the liver.\n\n## 1. Marinate and dice\n\n1. Dice the pork into 2 cm pieces and marinate in the soy sauce and calamansi juice for 30 minutes.\n2. Meanwhile dice the potatoes, carrots and red pepper to match. The neat, even dice is what makes it menudo and not just stew.\n\n## 2. Build the stew\n\n1. Soften the garlic and onion in the oil, then add the drained pork — keep the marinade — and sear until the edges take colour.\n2. Add the passata, the reserved marinade and a splash of water. Cover and simmer for 25-30 minutes until the pork is tender.\n\n## 3. Vegetables\n\n1. Add the potatoes and carrots and cook 10-12 minutes until just tender.\n2. Add the red pepper — and the raisins or hotdog coins if yours is that kind of household. Both have partisans, both are optional, neither is wrong.\n\n## 4. The liver, late\n\n1. Stir in the diced liver and give it 3-4 minutes, no more. Long-cooked liver turns grainy and bitter, which is exactly how liver got its reputation.\n2. Season with the fish sauce, rest 5 minutes off the heat, and serve over rice."
+      "description": "Menudo is the tidy stew: pork and liver in tomato sauce, everything diced small and equal, potatoes and carrots included. Households differ on raisins and hotdogs; no serious household differs on the liver.\n\n## 1. Marinate and dice\n\n1. Dice the pork into 2 cm pieces and marinate in the soy sauce and calamansi juice for 30 minutes.\n2. Meanwhile dice the potatoes, carrots and red pepper to match. The neat, even dice is what makes it menudo and not just stew.\n\n## 2. Build the stew\n\n1. Soften the garlic and onion in the oil, then add the drained pork — keep the marinade — and sear until the edges take colour.\n2. Add the passata, the reserved marinade and a splash of water. Cover and simmer for 25-30 minutes until the pork is tender.\n\n## 3. Vegetables\n\n1. Add the potatoes and carrots and cook 10-12 minutes until just tender.\n2. Add the red pepper — and the raisins or hotdog coins if yours is that kind of household. Both have partisans, both are optional, neither is wrong.\n\n## 4. The liver, late\n\n1. Stir in the diced liver and give it 3-4 minutes, no more. Long-cooked liver turns grainy and bitter, which is exactly how liver got its reputation.\n2. Season with the fish sauce, rest 5 minutes off the heat, and serve over rice.\n\n---\n\n*Photo: Strawberrysweet07 · CC BY-SA 4.0 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Pork_Menudo.jpg)*"
     },
     {
       "name": "Chicken afritada",
@@ -899,6 +929,12 @@
         "AI-written"
       ],
       "source": "ai://claude-fable-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken_Afritada_on_white_rice_with_pineapple_tidbits_(Philippines).jpg?width=1280",
+      "photo_credit": {
+        "author": "Jo Paragas",
+        "licence": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Chicken_Afritada_on_white_rice_with_pineapple_tidbits_(Philippines).jpg"
+      },
       "items": [
         {
           "name": "Chicken thighs",
@@ -950,7 +986,7 @@
           "optional": true
         }
       ],
-      "description": "Every Filipino kitchen runs a rotation of tomato braises, and afritada is the weeknight one: chicken, potatoes and red peppers in a single pot, seasoned with fish sauce rather than ceremony.\n\n## 1. Brown\n\n1. Brown the chicken thighs well in the oil, 3-4 minutes a side, and set aside. That colour is most of the flavour of the finished sauce.\n2. Soften the garlic and onion in the same fat.\n\n## 2. Braise\n\n1. Return the chicken with the passata, 250 ml of water, the bay leaves and the pepper. Cover and simmer gently for 20 minutes.\n\n## 3. Vegetables\n\n1. Add the potatoes and carrots and cook 12-15 minutes until tender.\n2. Add the red pepper strips for the last 5 minutes so they keep their colour and a little bite; the peas, if using, go in for the final 2.\n\n## 4. Season and serve\n\n1. Season with the fish sauce, a tablespoon at a time, tasting as you go. It seasons deeper than salt — it is what makes the pot taste of a Filipino kitchen and not an Italian one.\n2. Rest for a few minutes and serve with plenty of rice; the sauce should be loose enough to flood it."
+      "description": "Every Filipino kitchen runs a rotation of tomato braises, and afritada is the weeknight one: chicken, potatoes and red peppers in a single pot, seasoned with fish sauce rather than ceremony.\n\n## 1. Brown\n\n1. Brown the chicken thighs well in the oil, 3-4 minutes a side, and set aside. That colour is most of the flavour of the finished sauce.\n2. Soften the garlic and onion in the same fat.\n\n## 2. Braise\n\n1. Return the chicken with the passata, 250 ml of water, the bay leaves and the pepper. Cover and simmer gently for 20 minutes.\n\n## 3. Vegetables\n\n1. Add the potatoes and carrots and cook 12-15 minutes until tender.\n2. Add the red pepper strips for the last 5 minutes so they keep their colour and a little bite; the peas, if using, go in for the final 2.\n\n## 4. Season and serve\n\n1. Season with the fish sauce, a tablespoon at a time, tasting as you go. It seasons deeper than salt — it is what makes the pot taste of a Filipino kitchen and not an Italian one.\n2. Rest for a few minutes and serve with plenty of rice; the sauce should be loose enough to flood it.\n\n---\n\n*Photo: Jo Paragas · CC BY 2.0 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Chicken_Afritada_on_white_rice_with_pineapple_tidbits_(Philippines).jpg)*"
     },
     {
       "name": "Beef kaldereta",
@@ -965,6 +1001,12 @@
         "AI-written"
       ],
       "source": "ai://claude-fable-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Beef_caldereta_from_the_Philippines.jpg?width=1280",
+      "photo_credit": {
+        "author": "Obsidian Soul",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Beef_caldereta_from_the_Philippines.jpg"
+      },
       "items": [
         {
           "name": "Stewing beef",
@@ -1023,7 +1065,7 @@
           "description": "3 tbsp"
         }
       ],
-      "description": "Kaldereta is what the tomato braise becomes when there is something to celebrate — the fiesta pot. Goat is the festive original; beef is the lane most households actually drive. The signature move is a whole tin of liver spread stirred in near the end, which thickens the sauce and gives it a dark, savoury depth nothing else can fake.\n\n## 1. Sear\n\n1. Pat the beef dry and sear it hard in the oil, in batches, until properly crusted. Set aside.\n2. Soften the garlic and onion in the same pot.\n\n## 2. Stew until it gives\n\n1. Return the beef with the passata, enough water to nearly cover, the bay leaves and the pepper. Cover and simmer on the lowest heat for 1.5-2 hours, until a fork slides in without argument. The clock is a suggestion; the fork is the law.\n2. Check occasionally and top up with hot water if it threatens to catch.\n\n## 3. Vegetables\n\n1. Add the potatoes and carrots and cook 15 minutes.\n2. Add the red pepper for 5 more.\n\n## 4. The liver spread\n\n1. Stir in the whole tin of liver spread and watch the sauce change within a minute — thicker, darker, deeper. This is the moment it stops being afritada with ambitions and becomes kaldereta.\n2. Add the olives and chillies and simmer 3-4 minutes, then season with the fish sauce. The heat should prickle, not punish — scale the chillies to your table.\n3. Rest 10 minutes and serve at the centre of the table with rice, which is where it expects to be."
+      "description": "Kaldereta is what the tomato braise becomes when there is something to celebrate — the fiesta pot. Goat is the festive original; beef is the lane most households actually drive. The signature move is a whole tin of liver spread stirred in near the end, which thickens the sauce and gives it a dark, savoury depth nothing else can fake.\n\n## 1. Sear\n\n1. Pat the beef dry and sear it hard in the oil, in batches, until properly crusted. Set aside.\n2. Soften the garlic and onion in the same pot.\n\n## 2. Stew until it gives\n\n1. Return the beef with the passata, enough water to nearly cover, the bay leaves and the pepper. Cover and simmer on the lowest heat for 1.5-2 hours, until a fork slides in without argument. The clock is a suggestion; the fork is the law.\n2. Check occasionally and top up with hot water if it threatens to catch.\n\n## 3. Vegetables\n\n1. Add the potatoes and carrots and cook 15 minutes.\n2. Add the red pepper for 5 more.\n\n## 4. The liver spread\n\n1. Stir in the whole tin of liver spread and watch the sauce change within a minute — thicker, darker, deeper. This is the moment it stops being afritada with ambitions and becomes kaldereta.\n2. Add the olives and chillies and simmer 3-4 minutes, then season with the fish sauce. The heat should prickle, not punish — scale the chillies to your table.\n3. Rest 10 minutes and serve at the centre of the table with rice, which is where it expects to be.\n\n---\n\n*Photo: Obsidian Soul · CC0 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Beef_caldereta_from_the_Philippines.jpg)*"
     },
     {
       "name": "Giniling na baboy",
@@ -1039,6 +1081,12 @@
         "AI-written"
       ],
       "source": "ai://claude-fable-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pork_Giniling%2C_Mar_2024.jpg?width=1280",
+      "photo_credit": {
+        "author": "Ralff Nestor Nacor",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Pork_Giniling,_Mar_2024.jpg"
+      },
       "items": [
         {
           "name": "Pork mince",
@@ -1091,7 +1139,7 @@
           "optional": true
         }
       ],
-      "description": "Giniling is the weekday answer: pork mince and small-diced vegetables in a quick tomato sauce, over rice inside 45 minutes. It also comes with a plan — tomorrow it becomes tortang giniling.\n\n## 1. Sauté\n\n1. Soften the garlic and onion in the oil.\n2. Add the pork mince, breaking it up, and cook until no longer pink. Pour the fish sauce straight onto the meat and let it sizzle for a minute — it seasons from the inside instead of sitting on top.\n\n## 2. Simmer\n\n1. Add the passata and a splash of water and simmer for 10 minutes over medium-low heat.\n\n## 3. Vegetables\n\n1. Add the potatoes and carrots — 1 cm dice, no bigger — and cook 10-12 minutes until tender and the sauce clings rather than pools.\n2. The peas go in for the last 2 minutes. Boiled quail eggs or raisins go in now too, if your household holds with either; both are optional and both are defensible.\n\n## 4. Serve — twice\n\n1. Season with the pepper and spoon over rice so the sauce soaks in.\n2. Leftovers have a destiny: folded into a thick omelette tomorrow they become tortang giniling, the rare leftover people plan for."
+      "description": "Giniling is the weekday answer: pork mince and small-diced vegetables in a quick tomato sauce, over rice inside 45 minutes. It also comes with a plan — tomorrow it becomes tortang giniling.\n\n## 1. Sauté\n\n1. Soften the garlic and onion in the oil.\n2. Add the pork mince, breaking it up, and cook until no longer pink. Pour the fish sauce straight onto the meat and let it sizzle for a minute — it seasons from the inside instead of sitting on top.\n\n## 2. Simmer\n\n1. Add the passata and a splash of water and simmer for 10 minutes over medium-low heat.\n\n## 3. Vegetables\n\n1. Add the potatoes and carrots — 1 cm dice, no bigger — and cook 10-12 minutes until tender and the sauce clings rather than pools.\n2. The peas go in for the last 2 minutes. Boiled quail eggs or raisins go in now too, if your household holds with either; both are optional and both are defensible.\n\n## 4. Serve — twice\n\n1. Season with the pepper and spoon over rice so the sauce soaks in.\n2. Leftovers have a destiny: folded into a thick omelette tomorrow they become tortang giniling, the rare leftover people plan for.\n\n---\n\n*Photo: Ralff Nestor Nacor · CC BY-SA 4.0 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Pork_Giniling,_Mar_2024.jpg)*"
     },
     {
       "name": "Filipino spaghetti",
@@ -1105,6 +1153,12 @@
         "AI-written"
       ],
       "source": "ai://claude-fable-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Filipino_Spaghetti_(repost).jpg?width=1280",
+      "photo_credit": {
+        "author": "Arnold Gatilao",
+        "licence": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Filipino_Spaghetti_(repost).jpg"
+      },
       "items": [
         {
           "name": "Spaghetti",
@@ -1147,7 +1201,7 @@
           "description": "2 tbsp"
         }
       ],
-      "description": "Filipino spaghetti is sweet, scattered with hotdog coins, roofed in cheese, and unembarrassed about all of it. It is birthday law — no children's party is legitimate without a red mountain of it — and banana ketchup is not standing in for tomato sauce. It is the ingredient.\n\n## 1. Make the sauce\n\n1. Soften the garlic and onion in the oil, then brown the pork mince, breaking it up as it cooks.\n2. Add the hotdog coins and fry for 2 minutes until the edges curl.\n3. Add the banana ketchup, passata and sugar. Simmer gently for 20-25 minutes. Taste it: it should be sweeter than your instincts allow. Trust the birthday, not your instincts.\n\n## 2. Boil the spaghetti\n\n1. Cook the spaghetti a good 2 minutes past the packet time. Filipino spaghetti is soft on purpose; al dente is an Italian concern, and this dish has none.\n\n## 3. Combine\n\n1. Toss the drained spaghetti through the sauce until every strand is red. The sauce should coat generously and keep soaking in as it sits — a dry Filipino spaghetti is a failed one.\n\n## 4. The roof\n\n1. Shower the grated cheese over the hot spaghetti so it half-melts into the top.\n2. Serve immediately, ideally beside fried chicken, ideally at a birthday. It reheats well the next day."
+      "description": "Filipino spaghetti is sweet, scattered with hotdog coins, roofed in cheese, and unembarrassed about all of it. It is birthday law — no children's party is legitimate without a red mountain of it — and banana ketchup is not standing in for tomato sauce. It is the ingredient.\n\n## 1. Make the sauce\n\n1. Soften the garlic and onion in the oil, then brown the pork mince, breaking it up as it cooks.\n2. Add the hotdog coins and fry for 2 minutes until the edges curl.\n3. Add the banana ketchup, passata and sugar. Simmer gently for 20-25 minutes. Taste it: it should be sweeter than your instincts allow. Trust the birthday, not your instincts.\n\n## 2. Boil the spaghetti\n\n1. Cook the spaghetti a good 2 minutes past the packet time. Filipino spaghetti is soft on purpose; al dente is an Italian concern, and this dish has none.\n\n## 3. Combine\n\n1. Toss the drained spaghetti through the sauce until every strand is red. The sauce should coat generously and keep soaking in as it sits — a dry Filipino spaghetti is a failed one.\n\n## 4. The roof\n\n1. Shower the grated cheese over the hot spaghetti so it half-melts into the top.\n2. Serve immediately, ideally beside fried chicken, ideally at a birthday. It reheats well the next day.\n\n---\n\n*Photo: Arnold Gatilao · CC BY 2.0 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Filipino_Spaghetti_(repost).jpg)*"
     },
     {
       "name": "Chicken sopas",
@@ -1162,6 +1216,12 @@
         "AI-written"
       ],
       "source": "ai://claude-fable-5",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Sopas_Dish_(Filipino_Comfort_Food).jpg?width=1280",
+      "photo_credit": {
+        "author": "SytheeBoyo",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Sopas_Dish_(Filipino_Comfort_Food).jpg"
+      },
       "items": [
         {
           "name": "Chicken thighs",
@@ -1217,7 +1277,7 @@
           "optional": true
         }
       ],
-      "description": "Sopas is the pot that goes on when it rains or when somebody is ill: elbow macaroni and shredded chicken in a broth turned creamy with evaporated milk. Nobody has proven it cures a cold; nobody in the Philippines needs it proven.\n\n## 1. Poach and shred\n\n1. Simmer the chicken thighs in the water for 20-25 minutes, skimming any foam.\n2. Lift the chicken out, shred the meat, discard skin and bones — and keep every drop of the broth.\n\n## 2. Sauté\n\n1. In the emptied pot, soften the garlic, onion and celery in the oil. Add the hotdog coins now if using — plenty of households do.\n\n## 3. Cook the macaroni in the broth\n\n1. Return the broth, bring it to a boil, and add the macaroni and carrots. Cook 8-10 minutes until just tender.\n2. Know that sopas drinks its own broth as it sits — soup at dinner, stew by breakfast. Loosen leftovers with water and nobody will mind.\n\n## 4. Milk and cabbage\n\n1. Return the shredded chicken, pour in the evaporated milk and add the cabbage. Keep it below a boil from here — 3-4 gentle minutes, so the cabbage wilts and the milk does not curdle.\n2. Season with the fish sauce and the pepper.\n\n## 5. Serve\n\n1. Serve steaming, in a bowl — or a mug, if it is for the patient."
+      "description": "Sopas is the pot that goes on when it rains or when somebody is ill: elbow macaroni and shredded chicken in a broth turned creamy with evaporated milk. Nobody has proven it cures a cold; nobody in the Philippines needs it proven.\n\n## 1. Poach and shred\n\n1. Simmer the chicken thighs in the water for 20-25 minutes, skimming any foam.\n2. Lift the chicken out, shred the meat, discard skin and bones — and keep every drop of the broth.\n\n## 2. Sauté\n\n1. In the emptied pot, soften the garlic, onion and celery in the oil. Add the hotdog coins now if using — plenty of households do.\n\n## 3. Cook the macaroni in the broth\n\n1. Return the broth, bring it to a boil, and add the macaroni and carrots. Cook 8-10 minutes until just tender.\n2. Know that sopas drinks its own broth as it sits — soup at dinner, stew by breakfast. Loosen leftovers with water and nobody will mind.\n\n## 4. Milk and cabbage\n\n1. Return the shredded chicken, pour in the evaporated milk and add the cabbage. Keep it below a boil from here — 3-4 gentle minutes, so the cabbage wilts and the milk does not curdle.\n2. Season with the fish sauce and the pepper.\n\n## 5. Serve\n\n1. Serve steaming, in a bowl — or a mug, if it is for the patient.\n\n---\n\n*Photo: SytheeBoyo · CC0 · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sopas_Dish_(Filipino_Comfort_Food).jpg)*"
     },
     {
       "name": "Lechon kawali",
